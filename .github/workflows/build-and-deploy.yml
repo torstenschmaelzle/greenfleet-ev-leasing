@@ -96,7 +96,7 @@ jobs:
             mkdir ./letsencrypt/acme.json
             touch ./letsencrypt/acme.json
             sudo chmod 0600 ./letsencrypt/acme.json
-            sudo docker-compose down --remove-orphans
+            sudo docker compose down --remove-orphans
             sudo echo "PUB_IP=${{ secrets.SSH_HOST }}" | sed -e 's/\./-/g' > .env
             sudo echo "PWD=/home/${{ secrets.SSH_USER }}/" >> .env
-            sudo docker-compose up -d
+            sudo docker compose up -d
