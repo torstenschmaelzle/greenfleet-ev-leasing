@@ -68,4 +68,32 @@ class AmountTest {
         // then
         assertThat(sum).isEqualTo(Amount.of(100, Currency.EUR));
     }
+
+    @Test
+    void givenAnAmountinEUR_whenConvertToUSD_thenConvertedAmountIsCorrect() {
+        // given
+        var amount = Amount.of(100, Currency.EUR);
+        double exchangeRate = 1.03; // Example exchange rate from EUR to USD
+
+        // when
+        var convertedAmount = amount.convertTo(Currency.USD, exchangeRate);
+
+        // then
+        assertThat(convertedAmount).isEqualTo(Amount.of(103, Currency.USD));
+    }
+
+    @Test
+    void givenAnAmountinUSD_whenConvertToEUR_thenConvertedAmountIsCorrect() {
+        // given
+        var amount = Amount.of(100, Currency.USD);
+        double exchangeRate = 0.97; // Example exchange rate from USD to EUR
+
+        // when
+        var convertedAmount = amount.convertTo(Currency.EUR, exchangeRate);
+
+        // then
+        assertThat(convertedAmount).isEqualTo(Amount.of(97, Currency.EUR));
+    }
+
+
 }

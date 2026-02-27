@@ -33,6 +33,11 @@ public record Amount(long amountInCents, Currency currency) {
 
         return ofCents(this.amountInCents - otherAmount.amountInCents, this.currency);
     }
+	public Amount convertTo(Currency targetCurrency, double exchangeRate) {
+		assert targetCurrency != null;
+		long newAmountInCents = Math.round(this.amountInCents * exchangeRate);
+		return ofCents(newAmountInCents, targetCurrency);
+	}
 
     @Override
 	public String toString() {
