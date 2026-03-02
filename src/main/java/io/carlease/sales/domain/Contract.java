@@ -54,13 +54,22 @@ public class Contract {
 		return this.calculation.isPresent();
 	}
 
-	public void calculateInstallmentFor(LeaseTerm leaseTerm, Interest interest) {
+	public void calculateInstallmentFor(LeaseTerm leaseTerm, Interest interest){
+
+		double downPayment = 0.0;
+		double residualValue = 0.0;
+
+		calculateInstallmentFor(leaseTerm,interest,downPayment,residualValue );
+	}
+
+	public void calculateInstallmentFor(LeaseTerm leaseTerm, Interest interest, double downPayment, double residualValue) {
+
 		requireNonNull(leaseTerm);
 		requireNonNull(interest);
 		assert !isApproved();
 
-		double downPayment = 0;
-		double residualValue = 0;
+		if (downPayment < 0){throw new IllegalArgumentException("Down Payment must be positive");}
+		if (residualValue < 0){throw new IllegalArgumentException("Residual Value must be positive");}
 
 		double pmt = FinancialCalculator.pmt(
 			leaseTerm.noOfMonths(),
