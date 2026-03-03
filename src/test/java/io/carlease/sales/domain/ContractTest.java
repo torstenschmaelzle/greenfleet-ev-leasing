@@ -3,6 +3,7 @@ package io.carlease.sales.domain;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 class ContractTest {
 
@@ -114,5 +115,125 @@ class ContractTest {
 		// then
 		assertThat(hashcode1).isEqualTo(hashcode2);
 	}
+	// Given BDD Scenario
+	@Test
+	void givenAContractWithDownPaymentAndResidualValue_whenCalculate_thenInstallmentMatchesScenario() {
+
+		// given
+		var contract = new Contract(ContractNumber.of("4711"),
+				Customer.of("John Buyer"),
+				Car.of("Volkswagen ID.3"),
+				Amount.of(40_000, Currency.EUR));
+		// when
+		contract.calculateInstallmentFor(
+				LeaseTerm.ofMonths(48),
+				Interest.of(3.7),
+				5_000,
+				10_000
+		);
+		// then
+		assertThat(contract.isCalculated()).isTrue();
+		assertThat(contract.installment()).isEqualTo(Amount.of(42.89, Currency.EUR));
+	}
+	@Test
+	void whenCalculatedWithOldMethod_thenSameAsNewMethodWithZeroDownPaymentAndResidualValue() {
+		// given
+		var c1 = new Contract(ContractNumber.of("4711"),
+				Customer.of("John Buyer"),
+				Car.of("Volkswagen ID.3"),
+				Amount.of(40_000, Currency.EUR));
+
+		var c2 = new Contract(ContractNumber.of("4711"),
+				Customer.of("John Buyer"),
+				Car.of("Volkswagen ID.3"),
+				Amount.of(40_000, Currency.EUR));
+
+		// when
+		c1.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7));
+		c2.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), 0, 0);
+
+		// then
+		assertThat(c1.isCalculated()).isTrue();
+		assertThat(c2.isCalculated()).isTrue();
+		assertThat(c1.installment()).isEqualTo(c2.installment());
+		assertThat(c1.leaseTerm()).isEqualTo(c2.leaseTerm());
+		assertThat(c1.interest()).isEqualTo(c2.interest());
+	}
+
+	@Test
+	void givenNegativeDownPayment_whenCalculate_thenThrowsIllegalArgumentException() {
+		// given
+		var contract = new Contract(ContractNumber.of("4711"),
+				Customer.of("John Buyer"),
+				Car.of("Volkswagen ID.3"),
+				Amount.of(40_000, Currency.EUR));
+
+		// when / then
+		assertThatThrownBy(() ->
+				contract.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), -1, 0)
+		).isInstanceOf(IllegalArgumentException.class);
+	}
+
+
+	@Test
+	void givenNegativeResidualValue_whenCalculate_thenThrowsIllegalArgumentException() {
+		// given
+		var contract = new Contract(ContractNumber.of("4711"),
+				Customer.of("John Buyer"),
+				Car.of("Volkswagen ID.3"),
+				Amount.of(40_000, Currency.EUR));
+
+		// when / then
+		assertThatThrownBy(() ->
+				contract.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), 0, -1)
+		).isInstanceOf(IllegalArgumentException.class);
+	}
+	@Test
+	void whenDownPaymentIncreases_thenInstallmentDecreases() {
+		// given
+		var noDp = new Contract(ContractNumber.of("4711"),
+				Customer.of("John Buyer"),
+				Car.of("Volkswagen ID.3"),
+				Amount.of(40_000, Currency.EUR));
+
+		var withDp = new Contract(ContractNumber.of("4711"),
+				Customer.of("John Buyer"),
+				Car.of("Volkswagen ID.3"),
+				Amount.of(40_000, Currency.EUR));
+
+		// when
+		noDp.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), 0, 0);
+		withDp.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), 5_000, 0);
+
+		// then
+		assertThat(withDp.installment().amount()).isLessThan(noDp.installment().amount());
+	}
+
+
+	@Test
+	void whenResidualValueIncreases_thenInstallmentDecreases() {
+		// given
+		var noRv = new Contract(ContractNumber.of("4711"),
+				Customer.of("John Buyer"),
+				Car.of("Volkswagen ID.3"),
+				Amount.of(40_000, Currency.EUR));
+
+		var withRv = new Contract(ContractNumber.of("4711"),
+				Customer.of("John Buyer"),
+				Car.of("Volkswagen ID.3"),
+				Amount.of(40_000, Currency.EUR));
+
+		// when
+		noRv.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), 0, 0);
+		withRv.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), 0, 10_000);
+
+		// then
+		assertThat(withRv.installment().amount()).isLessThan(noRv.installment().amount());
+	}
+
+
+
+
+
 
 }
