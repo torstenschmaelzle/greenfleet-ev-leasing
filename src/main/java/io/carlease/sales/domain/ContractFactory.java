@@ -9,7 +9,7 @@ import static java.util.Objects.requireNonNull;
 @Factory
 public class ContractFactory {
 
-	public static Contract restoreContract(ContractNumber number, Customer lessee, Car car, Amount price, Optional<LeaseTerm> leaseTerm, Optional<Interest> interest, Optional<SignDate> approvalDate) {
+	public static Contract restoreContract(ContractNumber number, Customer lessee, Car car, Amount price, Optional<LeaseTerm> leaseTerm, Optional<Interest> interest, Optional<SignDate> approvalDate, double downPayment, double residualValue) {
 		requireNonNull(number);
 		requireNonNull(lessee);
 		requireNonNull(car);
@@ -17,7 +17,7 @@ public class ContractFactory {
 
 		var contract = new Contract(number, lessee, car, price);
         if (leaseTerm.isPresent() && interest.isPresent()) {
-            contract.calculateInstallmentFor(leaseTerm.get(), interest.get());
+            contract.calculateInstallmentFor(leaseTerm.get(), interest.get(), downPayment, residualValue);
         }
         approvalDate.ifPresent(contract::approve);
 
