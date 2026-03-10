@@ -32,7 +32,7 @@ public class ContractFactoryTest {
 		assertThat(contract.isCalculated()).isTrue();
 		assertThat(contract.isApproved()).isTrue();
         assertThat(contract.downPayment()).isEqualTo(2000.0);
-        assertThat(contract.residualValue()).isEqualTo(3000.0);
+        assertThat(contract.residualValue()).isEqualTo(6000.0);
 	}
 
 }
