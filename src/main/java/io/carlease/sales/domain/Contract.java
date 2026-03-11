@@ -15,7 +15,7 @@ public class Contract {
 	private final Customer lessee;
 	private final Car car;
 	private final Amount price;
-	private record Calculation(LeaseTerm leaseTerm, Interest interest, Amount installment) {}
+	private record Calculation(LeaseTerm leaseTerm, Interest interest, Amount installment, double downPayment, double residualValue ) {}
     private Optional<Calculation> calculation;
     private Optional<SignDate> approvalDate;
 
@@ -78,7 +78,7 @@ public class Contract {
 			residualValue,
 			downPayment);
 
-		this.calculation = Optional.of(new Calculation(leaseTerm, interest, Amount.of(pmt, price.currency())));
+		this.calculation = Optional.of(new Calculation(leaseTerm, interest, Amount.of(pmt, price.currency()), downPayment, residualValue));
 
 		assert isCalculated();
 	}
@@ -97,6 +97,16 @@ public class Contract {
 		assert isCalculated();
 		return this.calculation.get().installment();
 	}
+
+    public double downPayment() {
+        assert isCalculated();
+        return this.calculation.get().downPayment();
+    }
+
+    public double residualValue() {
+        assert isCalculated();
+        return this.calculation.get().residualValue();
+    }
 
 	public void approve(SignDate date) {
 		requireNonNull(date);

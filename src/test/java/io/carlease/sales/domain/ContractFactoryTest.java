@@ -20,7 +20,9 @@ public class ContractFactoryTest {
 				Amount.of(20_000, Currency.EUR),
                 Optional.of(LeaseTerm.ofMonths(48)),
                 Optional.of(Interest.of(3.6)),
-				Optional.of(SignDate.of(2018, 04, 12)));
+				Optional.of(SignDate.of(2018, 04, 12)),
+                2000.0,
+                6000.0);
 
 		// then
 		assertThat(contract.number()).isEqualTo(ContractNumber.of("4711"));
@@ -29,6 +31,8 @@ public class ContractFactoryTest {
 		assertThat(contract.price()).isEqualTo(Amount.of(20_000, Currency.EUR));
 		assertThat(contract.isCalculated()).isTrue();
 		assertThat(contract.isApproved()).isTrue();
+        assertThat(contract.downPayment()).isEqualTo(2000.0);
+        assertThat(contract.residualValue()).isEqualTo(6000.0);
 	}
 
 }
