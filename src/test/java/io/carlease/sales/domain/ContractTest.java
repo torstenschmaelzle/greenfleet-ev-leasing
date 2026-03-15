@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
-
+import java.util.Optional;
 class ContractTest {
 
 	@Test
@@ -231,9 +231,69 @@ class ContractTest {
 		assertThat(withRv.installment().amount()).isLessThan(noRv.installment().amount());
 	}
 
+	@Test
+	void givenAnApprovedContract_whenSign_thenContractIsSigned() {
+		// given
+		var contract = new Contract(
+				ContractNumber.of("4711"),
+				Customer.of("John Buyer"),
+				Car.of("Mercedes Benz C-Class"),
+				Amount.of(20_000, Currency.EUR));
 
+		contract.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7));
+		contract.approve(SignDate.of(2018, 12, 24));
 
+		// when
+		contract.sign(SignDate.of(2018, 12, 25));
 
+		// then
+		assertThat(contract.isSigned()).isTrue();
+		assertThat(contract.signatureDate()).isEqualTo(SignDate.of(2018, 12, 25));
+	}
+
+	@Test
+	void givenAnApprovedContract_whenSign_thenApprovalDateIsStillPresent() {
+		// given
+		var contract = new Contract(
+				ContractNumber.of("4711"),
+				Customer.of("John Buyer"),
+				Car.of("Mercedes Benz C-Class"),
+				Amount.of(20_000, Currency.EUR));
+
+		contract.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7));
+		contract.approve(SignDate.of(2018, 12, 24));
+
+		// when
+		contract.sign(SignDate.of(2018, 12, 25));
+
+		// then
+		assertThat(contract.isApproved()).isTrue();
+		assertThat(contract.approvalDate()).isEqualTo(SignDate.of(2018, 12, 24));
+		assertThat(contract.isSigned()).isTrue();
+	}
+
+	@Test
+	void givenASignedContractData_whenRestoreContract_thenContractIsSigned() {
+		// when
+		var contract = ContractFactory.restoreContract(
+				ContractNumber.of("4711"),
+				Customer.of("John Buyer"),
+				Car.of("Mercedes Benz C-Class"),
+				Amount.of(20_000, Currency.EUR),
+				Optional.of(LeaseTerm.ofMonths(48)),
+				Optional.of(Interest.of(3.7)),
+				Optional.of(SignDate.of(2018, 12, 24)),
+				Optional.of(SignDate.of(2018, 12, 25)),
+				0.0,
+				0.0
+		);
+
+		// then
+		assertThat(contract.isCalculated()).isTrue();
+		assertThat(contract.isApproved()).isTrue();
+		assertThat(contract.isSigned()).isTrue();
+		assertThat(contract.signatureDate()).isEqualTo(SignDate.of(2018, 12, 25));
+	}
 
 
 }

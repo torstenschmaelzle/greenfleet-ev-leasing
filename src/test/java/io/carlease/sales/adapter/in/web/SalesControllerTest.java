@@ -13,6 +13,7 @@ import static org.mockito.BDDMockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import io.carlease.sales.application.port.in.SignContractUseCase;
 
 @WebMvcTest(controllers = SalesController.class)
 public class SalesControllerTest {
@@ -30,6 +31,9 @@ public class SalesControllerTest {
 
     @MockBean
     private ApproveContractUseCase approveContractUseCase;
+
+    @MockBean
+    private SignContractUseCase signContractUseCase;
 
     @Test
     void testFilloutContract() throws Exception {
@@ -58,6 +62,26 @@ public class SalesControllerTest {
                         Customer.of("John Buyer"),
                         Car.of("Volkswagen ID.3"),
                         Amount.of(50000, Currency.valueOf("EUR")));
+    }
+
+    @Test
+    void testSignContract() throws Exception {
+
+        // arrange (given)
+        willDoNothing().given(signContractUseCase).with(
+                eq(ContractNumber.of("1")),
+                any(SignDate.class)
+        );
+
+        // act (when)
+        mockMvc.perform(post("/sales/sign_contract")
+                        .param("number", "1"))
+                .andExpect(status().isFound())
+                .andExpect(redirectedUrl("/sales/view_contract?number=1"));
+
+        // assert (then)
+        then(signContractUseCase).should()
+                .with(eq(ContractNumber.of("1")), any(SignDate.class));
     }
 
 }

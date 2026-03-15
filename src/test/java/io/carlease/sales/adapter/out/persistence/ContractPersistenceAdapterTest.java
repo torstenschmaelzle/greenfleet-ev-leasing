@@ -40,4 +40,29 @@ public class ContractPersistenceAdapterTest {
         assertThat(contractRepository.count()).isEqualTo(1);
     }
 
+    @Test
+    void savesAndLoadsSignedContract() {
+        // given
+        Contract contract = new Contract(
+                ContractNumber.of("1"),
+                Customer.of("John Buyer"),
+                Car.of("Volkswagen ID.3"),
+                Amount.of(50000, Currency.valueOf("EUR"))
+        );
+
+        contract.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7));
+        contract.approve(SignDate.of(2026, 3, 15));
+        contract.sign(SignDate.of(2026, 3, 16));
+
+        // when
+        contractPersistenceAdapter.save(contract);
+        Contract loadedContract = contractPersistenceAdapter.with(ContractNumber.of("1"));
+
+        // then
+        assertThat(loadedContract.isCalculated()).isTrue();
+        assertThat(loadedContract.isApproved()).isTrue();
+        assertThat(loadedContract.isSigned()).isTrue();
+        assertThat(loadedContract.signatureDate()).isEqualTo(SignDate.of(2026, 3, 16));
+    }
+
 }
