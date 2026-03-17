@@ -22,21 +22,18 @@ public class SalesController {
 	private final SignContractUseCase signContractUseCase;
 	private final CalculateInstallmentUseCase calculateInstallmentUseCase;
 
-	public SalesController(
-			FilloutContractUseCase filloutContractUseCase,
-			ViewContractUseCase viewContractUseCase,
-			ApproveContractUseCase approveContractUseCase,
-			SignContractUseCase signContractUseCase) {
-		this.filloutContractUseCase = filloutContractUseCase;
-		this.viewContractUseCase = viewContractUseCase;
-		this.approveContractUseCase = approveContractUseCase;
-		this.signContractUseCase = signContractUseCase;
-			CalculateInstallmentUseCase calculateInstallmentUseCase) {
-		this.filloutContractUseCase = filloutContractUseCase;
-		this.viewContractUseCase = viewContractUseCase;
-		this.approveContractUseCase = approveContractUseCase;
-		this.calculateInstallmentUseCase = calculateInstallmentUseCase;
-	}
+public SalesController(
+        FilloutContractUseCase filloutContractUseCase,
+        ViewContractUseCase viewContractUseCase,
+        ApproveContractUseCase approveContractUseCase,
+        SignContractUseCase signContractUseCase,
+        CalculateInstallmentUseCase calculateInstallmentUseCase) {
+    this.filloutContractUseCase = filloutContractUseCase;
+    this.viewContractUseCase = viewContractUseCase;
+    this.approveContractUseCase = approveContractUseCase;
+    this.signContractUseCase = signContractUseCase;
+    this.calculateInstallmentUseCase = calculateInstallmentUseCase;
+}
 
 	@GetMapping("/sales/view_contract")
 	public Contract viewContract(
