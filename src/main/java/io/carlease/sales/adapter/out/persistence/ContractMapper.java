@@ -17,6 +17,7 @@ public class ContractMapper {
                 contract.isCalculated() ? contract.leaseTerm().noOfMonths() : null,
                 contract.isCalculated() ? contract.interest().perYear() : null,
                 contract.isApproved() ? contract.approvalDate().date() : null,
+                contract.isSigned() ? contract.signatureDate().date() : null,
                 contract.isCalculated() ? contract.downPayment() : null,
                 contract.isCalculated() ? contract.residualValue() : null);
     }
@@ -35,6 +36,9 @@ public class ContractMapper {
                         : Optional.empty(),
                 contractJpaEntity.getApprovalDate() != null
                         ? Optional.of(SignDate.of(contractJpaEntity.getApprovalDate()))
+                        : Optional.empty(),
+                contractJpaEntity.getSignatureDate() != null
+                        ? Optional.of(SignDate.of(contractJpaEntity.getSignatureDate()))
                         : Optional.empty(),
                 contractJpaEntity.getDownPayment() != null ? contractJpaEntity.getDownPayment() : 0.0,
                 contractJpaEntity.getResidualValue() != null ? contractJpaEntity.getResidualValue() : 0.0);

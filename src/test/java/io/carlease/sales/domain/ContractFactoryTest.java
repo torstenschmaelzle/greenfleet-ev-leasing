@@ -21,6 +21,7 @@ public class ContractFactoryTest {
                 Optional.of(LeaseTerm.ofMonths(48)),
                 Optional.of(Interest.of(3.6)),
 				Optional.of(SignDate.of(2018, 04, 12)),
+				Optional.empty(),
                 2000.0,
                 6000.0);
 

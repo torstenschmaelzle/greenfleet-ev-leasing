@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
+import io.carlease.sales.application.port.in.SignContractUseCase;
 
 @Controller
 public class SalesController {
@@ -18,12 +19,18 @@ public class SalesController {
 	private final FilloutContractUseCase filloutContractUseCase;
 	private final ViewContractUseCase viewContractUseCase;
 	private final ApproveContractUseCase approveContractUseCase;
+	private final SignContractUseCase signContractUseCase;
 	private final CalculateInstallmentUseCase calculateInstallmentUseCase;
 
 	public SalesController(
 			FilloutContractUseCase filloutContractUseCase,
 			ViewContractUseCase viewContractUseCase,
 			ApproveContractUseCase approveContractUseCase,
+			SignContractUseCase signContractUseCase) {
+		this.filloutContractUseCase = filloutContractUseCase;
+		this.viewContractUseCase = viewContractUseCase;
+		this.approveContractUseCase = approveContractUseCase;
+		this.signContractUseCase = signContractUseCase;
 			CalculateInstallmentUseCase calculateInstallmentUseCase) {
 		this.filloutContractUseCase = filloutContractUseCase;
 		this.viewContractUseCase = viewContractUseCase;
@@ -67,6 +74,19 @@ public class SalesController {
 		return "redirect:/sales/view_contract?number=" + number;
 	}
 
+	@PostMapping("/sales/sign_contract")
+	public String signContract(
+			@RequestParam(name = "number") String number)
+	{
+		this.signContractUseCase.with(
+				ContractNumber.of(number),
+				SignDate.of(LocalDate.now().getYear(),
+						LocalDate.now().getMonth().getValue(),
+						LocalDate.now().getDayOfMonth()));
+		return "redirect:/sales/view_contract?number=" + number;
+	}
+
+}
 	@PostMapping("/sales/calculate_installment")
 	public String calculateInstallment(
 			@RequestParam(name = "number") String number,

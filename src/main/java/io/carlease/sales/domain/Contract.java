@@ -18,6 +18,7 @@ public class Contract {
 	private record Calculation(LeaseTerm leaseTerm, Interest interest, Amount installment, double downPayment, double residualValue ) {}
     private Optional<Calculation> calculation;
     private Optional<SignDate> approvalDate;
+	private Optional<SignDate> signatureDate;
 
 	public Contract(ContractNumber number, Customer lessee, Car car, Amount price) {
         requireNonNull(number);
@@ -31,6 +32,7 @@ public class Contract {
 		this.price = price;
 		this.calculation = Optional.empty();
 		this.approvalDate = Optional.empty();
+		this.signatureDate = Optional.empty();
 	}
 
 	@Identity
@@ -83,6 +85,28 @@ public class Contract {
 		assert isCalculated();
 	}
 
+	//state soll auf signed wechseln
+	public void sign(SignDate date) {
+		requireNonNull(date);
+		assert isCalculated();
+		assert isApproved();
+		assert !isSigned();
+
+		this.signatureDate = Optional.of(date);
+
+		assert isSigned();
+	}
+
+	public boolean isSigned() {
+		return this.signatureDate.isPresent();
+	}
+
+	public SignDate signatureDate() {
+		assert isSigned();
+		return this.signatureDate.get();
+	}
+
+
     public LeaseTerm leaseTerm() {
     	assert isCalculated();
 	    return this.calculation.get().leaseTerm();
@@ -130,7 +154,7 @@ public class Contract {
 	@Override
 	public String toString() {
 		return "Contract [number=" + number() + ", lessee=" + this.lessee + ", car=" + this.car
-				+ ", price=" + this.price + ", signDate=" + this.approvalDate + "]";
+				+ ", price=" + this.price + ", signDate=" + this.approvalDate + ", signatureDate=" + this.signatureDate + "]";
 	}
 
 	@Override

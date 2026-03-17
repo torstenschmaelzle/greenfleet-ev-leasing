@@ -35,6 +35,8 @@ public class ContractJpaEntity {
 
 	private LocalDate approvalDate;
 
+	private LocalDate signatureDate;
+
     private Double downPayment;
 
     private Double residualValue;
