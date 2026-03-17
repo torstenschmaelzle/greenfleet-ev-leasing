@@ -21,6 +21,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import io.carlease.sales.application.port.in.SignContractUseCase;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import io.carlease.sales.domain.SignDate;
 
 @WebMvcTest(controllers = SalesController.class)
 public class SalesControllerTest {
@@ -39,6 +42,8 @@ public class SalesControllerTest {
 
     @MockBean
     private SignContractUseCase signContractUseCase;
+
+    @MockBean
     private CalculateInstallmentUseCase calculateInstallmentUseCase;
 
     @Test
@@ -88,8 +93,7 @@ public class SalesControllerTest {
         then(signContractUseCase).should()
                 .with(eq(ContractNumber.of("1")), any(SignDate.class));
     }
-
-}
+    @Test
     void testCalculateInstallment() throws Exception {
 
         willDoNothing().given(calculateInstallmentUseCase).calculateInstallment(
