@@ -15,10 +15,10 @@ public class EnergyConsumption {
 
     public static EnergyConsumption of(BigDecimal kwhPer100km) {
         if (kwhPer100km == null) {
-            throw new IllegalArgumentException("Energy consumption must not be null");
+            throw new InvalidVehicleAttributeException("kwhPer100km", "must not be null");
         }
         if (kwhPer100km.compareTo(BigDecimal.ZERO) <= 0) {
-            throw new IllegalArgumentException("Energy consumption must be greater than 0");
+            throw new InvalidVehicleAttributeException("kwhPer100km", "must be greater than 0");
         }
         return new EnergyConsumption(kwhPer100km);
     }

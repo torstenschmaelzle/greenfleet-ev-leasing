@@ -7,31 +7,26 @@ import java.math.BigDecimal;
 @ValueObject
 public class Percentage {
 
-
     private final BigDecimal value;
-
 
     private Percentage(BigDecimal value) {
         this.value = value;
     }
 
-
     public static Percentage of(BigDecimal value) {
         if (value == null) {
-            throw new IllegalArgumentException("Percentage must not be null");
+            throw new InvalidVehicleAttributeException("value", "must not be null");
         }
         if (value.compareTo(BigDecimal.ZERO) < 0) {
-            throw new IllegalArgumentException("Percentage must not be negative");
+            throw new InvalidVehicleAttributeException("value", "must not be negative");
         }
         if (value.compareTo(new BigDecimal("100")) > 0) {
-            throw new IllegalArgumentException("Percentage must not exceed 100");
+            throw new InvalidVehicleAttributeException("value", "must not exceed 100");
         }
         return new Percentage(value);
     }
 
-
     public BigDecimal getValue() { return value; }
-
 
     @Override
     public boolean equals(Object obj) {

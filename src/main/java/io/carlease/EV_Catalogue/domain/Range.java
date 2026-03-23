@@ -13,10 +13,10 @@ public class Range {
 
     public static Range ofKm(Integer valueKm) {
         if (valueKm == null) {
-            throw new IllegalArgumentException("Range must not be null");
+            throw new InvalidVehicleAttributeException("valueKm", "must not be null");
         }
         if (valueKm <= 0) {
-            throw new IllegalArgumentException("Range must be greater than 0 km");
+            throw new InvalidVehicleAttributeException("valueKm", "must be greater than 0");
         }
         return new Range(valueKm);
     }
@@ -29,6 +29,5 @@ public class Range {
         if (obj == null || getClass() != obj.getClass()) return false;
         Range other = (Range) obj;
         return valueKm.equals(other.valueKm);
-
     }
 }

@@ -23,19 +23,19 @@ public class VehicleSpecification {
     public static VehicleSpecification of(String brand, String model, Range rangeKm,
                                            VehicleType vehicleType, EnergyConsumption consumptionKwhPer100km) {
         if (brand == null || brand.isBlank()) {
-            throw new IllegalArgumentException("brand must not be null or blank");
+            throw new InvalidVehicleAttributeException("brand", "must not be null or blank");
         }
         if (model == null || model.isBlank()) {
-            throw new IllegalArgumentException("model must not be null or blank");
+            throw new InvalidVehicleAttributeException("model", "must not be null or blank");
         }
         if (rangeKm == null) {
-            throw new IllegalArgumentException("rangeKm must not be null");
+            throw new InvalidVehicleAttributeException("rangeKm", "must not be null");
         }
         if (vehicleType == null) {
-            throw new IllegalArgumentException("vehicleType must not be null");
+            throw new InvalidVehicleAttributeException("vehicleType", "must not be null");
         }
         if (consumptionKwhPer100km == null) {
-            throw new IllegalArgumentException("consumptionKwhPer100km must not be null");
+            throw new InvalidVehicleAttributeException("consumptionKwhPer100km", "must not be null");
         }
         return new VehicleSpecification(brand, model, rangeKm, vehicleType, consumptionKwhPer100km);
     }

@@ -5,8 +5,6 @@ import org.jmolecules.ddd.annotation.Identity;
 
 import java.util.*;
 
-import static java.util.Objects.requireNonNull;
-
 @Entity
 public class Vehicle {
 
@@ -26,14 +24,14 @@ public class Vehicle {
                    Performance performance,
                    Amount monthlyLeasePrice,
                    List<BatteryHealthRecord> initialHealthRecords) {
-        requireNonNull(vehicleId);
-        requireNonNull(vehicleSpecification);
-        requireNonNull(batterySpecification);
-        requireNonNull(performance);
-        requireNonNull(monthlyLeasePrice);
-        requireNonNull(initialHealthRecords);
+        if (vehicleId == null) throw new InvalidVehicleAttributeException("vehicleId", "must not be null");
+        if (vehicleSpecification == null) throw new InvalidVehicleAttributeException("vehicleSpecification", "must not be null");
+        if (batterySpecification == null) throw new InvalidVehicleAttributeException("batterySpecification", "must not be null");
+        if (performance == null) throw new InvalidVehicleAttributeException("performance", "must not be null");
+        if (monthlyLeasePrice == null) throw new InvalidVehicleAttributeException("monthlyLeasePrice", "must not be null");
+        if (initialHealthRecords == null) throw new InvalidVehicleAttributeException("initialHealthRecords", "must not be null");
         if (initialHealthRecords.isEmpty()) {
-            throw new IllegalArgumentException("initialHealthRecords must not be empty");
+            throw new InvalidVehicleAttributeException("initialHealthRecords", "must not be empty");
         }
         this.vehicleId = vehicleId;
         this.vehicleSpecification = vehicleSpecification;
@@ -46,17 +44,17 @@ public class Vehicle {
     }
 
     public void updateVehicleSpecification(VehicleSpecification specification) {
-        requireNonNull(specification);
+        if (specification == null) throw new InvalidVehicleAttributeException("specification", "must not be null");
         this.vehicleSpecification = specification;
     }
 
     public void updateMonthlyLeasePrice(Amount price) {
-        requireNonNull(price);
+        if (price == null) throw new InvalidVehicleAttributeException("price", "must not be null");
         this.monthlyLeasePrice = price;
     }
 
     public void updateBatterySpecification(BatterySpecification specification) {
-        requireNonNull(specification);
+        if (specification == null) throw new InvalidVehicleAttributeException("specification", "must not be null");
         this.batterySpecification = specification;
     }
 
@@ -77,8 +75,7 @@ public class Vehicle {
 
     public void lockVehicle(LockDuration duration) {
         if (status != VehicleStatus.AVAILABLE) {
-            throw new IllegalStateException(
-                    "Vehicle can only be locked when AVAILABLE, current status: " + status);
+            throw new VehicleNotAvailableException(vehicleId, status);
         }
         this.lock = new ReservationLock(duration);
         this.status = VehicleStatus.RESERVED;
@@ -86,8 +83,7 @@ public class Vehicle {
 
     public void releaseLock() {
         if (status != VehicleStatus.RESERVED) {
-            throw new IllegalStateException(
-                    "Lock can only be released when RESERVED, current status: " + status);
+            throw new VehicleLockViolationException(vehicleId, status);
         }
         this.lock = null;
         this.status = VehicleStatus.AVAILABLE;
@@ -95,8 +91,7 @@ public class Vehicle {
 
     public void confirmContract() {
         if (status != VehicleStatus.RESERVED) {
-            throw new IllegalStateException(
-                    "Contract can only be confirmed when RESERVED, current status: " + status);
+            throw new VehicleContractViolationException(vehicleId, status);
         }
         this.lock = null;
         this.status = VehicleStatus.UNDER_CONTRACT;
@@ -104,11 +99,10 @@ public class Vehicle {
 
     public void remove() {
         if (status == VehicleStatus.REMOVED) {
-            throw new IllegalStateException("Vehicle is already REMOVED");
+            throw new VehicleRemovalException(vehicleId, status);
         }
         if (status != VehicleStatus.AVAILABLE) {
-            throw new IllegalStateException(
-                    "Vehicle can only be removed when AVAILABLE, current status: " + status);
+            throw new VehicleRemovalException(vehicleId, status);
         }
         this.status = VehicleStatus.REMOVED;
     }

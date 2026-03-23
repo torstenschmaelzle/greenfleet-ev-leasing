@@ -19,13 +19,13 @@ public class Performance {
 
     public static Performance of(Integer horsePowerHp, BigDecimal accelerationSec, Integer topSpeedKmh) {
         if (horsePowerHp == null) {
-            throw new IllegalArgumentException("horsePowerHp must not be null");
+            throw new InvalidVehicleAttributeException("horsePowerHp", "must not be null");
         }
         if (accelerationSec == null) {
-            throw new IllegalArgumentException("accelerationSec must not be null");
+            throw new InvalidVehicleAttributeException("accelerationSec", "must not be null");
         }
         if (topSpeedKmh == null) {
-            throw new IllegalArgumentException("topSpeedKmh must not be null");
+            throw new InvalidVehicleAttributeException("topSpeedKmh", "must not be null");
         }
         return new Performance(horsePowerHp, accelerationSec, topSpeedKmh);
     }
