@@ -13,13 +13,13 @@ public class VehicleId {
 
     public static VehicleId of(String vin) {
         if (vin == null || vin.isBlank()) {
-            throw new IllegalArgumentException("VIN must not be null or blank");
+            throw new InvalidVehicleAttributeException("vin", "must not be null or blank");
         }
         if (vin.length() != 17) {
-            throw new IllegalArgumentException("VIN must be exactly 17 characters");
+            throw new InvalidVehicleAttributeException("vin", "must be exactly 17 characters");
         }
         if (!vin.matches("[a-zA-Z0-9]+")) {
-            throw new IllegalArgumentException("VIN must contain only alphanumeric characters");
+            throw new InvalidVehicleAttributeException("vin", "must contain only alphanumeric characters");
         }
         return new VehicleId(vin);
     }

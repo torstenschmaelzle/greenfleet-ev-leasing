@@ -16,7 +16,7 @@ class ReservationLock {
 
     ReservationLock(LockDuration duration) {
         if (duration == null) {
-            throw new IllegalArgumentException("duration must not be null");
+            throw new InvalidVehicleAttributeException("duration", "must not be null");
         }
         this.lockId = UUID.randomUUID();
         this.lockedAt = Instant.now();

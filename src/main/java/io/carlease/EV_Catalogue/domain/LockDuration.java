@@ -13,10 +13,10 @@ public class LockDuration {
 
     public static LockDuration ofHours(Integer hours) {
         if (hours == null) {
-            throw new IllegalArgumentException("Lock duration must not be null");
+            throw new InvalidVehicleAttributeException("hours", "must not be null");
         }
         if (hours <= 0) {
-            throw new IllegalArgumentException("Lock duration must be greater than 0 hours");
+            throw new InvalidVehicleAttributeException("hours", "must be greater than 0");
         }
         return new LockDuration(hours);
     }

@@ -2,8 +2,6 @@ package io.carlease.EV_Catalogue.domain;
 
 import org.jmolecules.ddd.annotation.ValueObject;
 
-import static java.util.Objects.requireNonNull;
-
 @ValueObject
 public class Amount {
 
@@ -16,12 +14,12 @@ public class Amount {
     }
 
     public static Amount of(long amountInCents, Currency currency) {
-        requireNonNull(currency);
+        if (currency == null) throw new InvalidVehicleAttributeException("currency", "must not be null");
         return new Amount(amountInCents, currency);
     }
 
     public static Amount ofCents(long amountInCents, Currency currency) {
-        requireNonNull(currency);
+        if (currency == null) throw new InvalidVehicleAttributeException("currency", "must not be null");
         return new Amount(amountInCents, currency);
     }
 
@@ -39,20 +37,20 @@ public class Amount {
 
     public Amount add(Amount other) {
         if (other.currency != this.currency) {
-            throw new IllegalArgumentException("Cannot add amounts of different currencies");
+            throw new InvalidVehicleAttributeException("currency", "amounts must have the same currency");
         }
         return Amount.of(this.amountInCents + other.amountInCents, this.currency);
     }
 
     public Amount subtract(Amount other) {
         if (other.currency != this.currency) {
-            throw new IllegalArgumentException("Cannot subtract amounts of different currencies");
+            throw new InvalidVehicleAttributeException("currency", "amounts must have the same currency");
         }
         return Amount.of(this.amountInCents - other.amountInCents, this.currency);
     }
 
     public Amount convertTo(Currency target, double rate) {
-        requireNonNull(target);
+        if (target == null) throw new InvalidVehicleAttributeException("currency", "must not be null");
         return Amount.of(Math.round(this.amountInCents * rate), target);
     }
 

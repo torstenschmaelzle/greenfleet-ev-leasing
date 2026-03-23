@@ -15,10 +15,10 @@ class BatteryHealthRecord {
 
     BatteryHealthRecord(Percentage stateOfHealth, Range measuredRangeKm) {
         if (stateOfHealth == null) {
-            throw new IllegalArgumentException("stateOfHealth must not be null");
+            throw new InvalidVehicleAttributeException("stateOfHealth", "must not be null");
         }
         if (measuredRangeKm == null) {
-            throw new IllegalArgumentException("measuredRangeKm must not be null");
+            throw new InvalidVehicleAttributeException("measuredRangeKm", "must not be null");
         }
         this.recordId = UUID.randomUUID();
         this.measuredAt = Instant.now();
