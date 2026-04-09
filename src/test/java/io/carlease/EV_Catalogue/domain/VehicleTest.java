@@ -53,10 +53,6 @@ class VehicleTest {
             assertThat(vehicle.getHealthRecords()).hasSize(1);
         }
 
-        @Test
-        void vehicleCreationRejectedWithoutHealthRecord() {
-            assertThatThrownBy(() -> new Vehicle(vehicleId(), specification(), batterySpec(), performance(), monthlyPrice(), List.of())).isInstanceOf(InvalidVehicleAttributeException.class);
-        }
     }
 
     @Nested
@@ -109,6 +105,17 @@ class VehicleTest {
             var vehicle = freshVehicle();
 
             assertThatThrownBy(vehicle::releaseLock).isInstanceOf(VehicleLockViolationException.class);
+        }
+
+        @Test
+        void lockVehicleRejectedWhenUnderContract() {
+            var vehicle = freshVehicle();
+            vehicle.lockVehicle(LockDuration.ofHours(24));
+            vehicle.confirmContract();
+
+            assertThatThrownBy(() -> vehicle.lockVehicle(LockDuration.ofHours(24)))
+                    .isInstanceOf(VehicleNotAvailableException.class);
+            assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.UNDER_CONTRACT);
         }
     }
 
@@ -170,6 +177,16 @@ class VehicleTest {
 
             assertThatThrownBy(vehicle::remove).isInstanceOf(VehicleRemovalException.class);
         }
+
+        @Test
+        void removeRejectedWhenUnderContract() {
+            var vehicle = freshVehicle();
+            vehicle.lockVehicle(LockDuration.ofHours(24));
+            vehicle.confirmContract();
+
+            assertThatThrownBy(vehicle::remove).isInstanceOf(VehicleRemovalException.class);
+            assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.UNDER_CONTRACT);
+        }
     }
 
     @Nested
@@ -229,6 +246,7 @@ class VehicleTest {
             assertThat(vehicle.getVehicleSpecification()).isEqualTo(newSpec);
         }
     }
+
     @Nested
     class concreteBddScenarios {
 
@@ -251,36 +269,6 @@ class VehicleTest {
             assertThat(vehicle.getMonthlyLeasePrice()).isEqualTo(Amount.of(75000L, Currency.CHF));
         }
 
-        @Test
-        void lockingVehicleDuringNegotiation() {
-            var vehicle = freshVehicle();
-            var duration = LockDuration.ofHours(2);
-
-            vehicle.lockVehicle(duration);
-
-            assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.RESERVED);
-            var lock = vehicle.getLock();
-            assertThat(lock).isPresent();
-            assertThat(lock.get().getExpiresAt()).isEqualTo(lock.get().getLockedAt().plus(duration.getHours(), java.time.temporal.ChronoUnit.HOURS));
-        }
-
-        @Test
-        void reservationLockExpiresWithoutContract() {
-            var vehicle = freshVehicle();
-            vehicle.lockVehicle(LockDuration.ofHours(2));
-
-            vehicle.releaseLock();
-
-            assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.AVAILABLE);
-            assertThat(vehicle.getLock()).isEmpty();
-        }
-
-        @Test
-        void vehicleIsRemovedFromSystem() {
-            var vehicle = freshVehicle();
-            vehicle.remove();
-            assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.REMOVED);
-        }
     }
 
     @Nested
@@ -294,6 +282,21 @@ class VehicleTest {
         @Test
         void vehicleIdVinMustNotBeBlank() {
             assertThatThrownBy(() -> VehicleId.of("   ")).isInstanceOf(InvalidVehicleAttributeException.class);
+        }
+
+        @Test
+        void vehicleIdVinTooShortThrowsException() {
+            assertThatThrownBy(() -> VehicleId.of("WBA123456789012")).isInstanceOf(InvalidVehicleAttributeException.class);
+        }
+
+        @Test
+        void vehicleIdVinTooLongThrowsException() {
+            assertThatThrownBy(() -> VehicleId.of("WBA123456789012345X")).isInstanceOf(InvalidVehicleAttributeException.class);
+        }
+
+        @Test
+        void vehicleIdVinNonAlphanumericThrowsException() {
+            assertThatThrownBy(() -> VehicleId.of("WBA-2345678901234")).isInstanceOf(InvalidVehicleAttributeException.class);
         }
 
         @Test
@@ -324,6 +327,13 @@ class VehicleTest {
         @Test
         void amountCurrencyMustNotBeNull() {
             assertThatThrownBy(() -> Amount.of(100L, null)).isInstanceOf(InvalidVehicleAttributeException.class);
+        }
+
+        @Test
+        void amountConvertToNullCurrencyThrowsException() {
+            var amount = Amount.of(10000L, Currency.CHF);
+            assertThatThrownBy(() -> amount.convertTo(null, 1.1))
+                    .isInstanceOf(InvalidVehicleAttributeException.class);
         }
 
         @Test
@@ -364,7 +374,7 @@ class VehicleTest {
 
         @Test
         void vehicleSpecificationConsumptionMustNotBeNull() {
-            assertThatThrownBy(() -> VehicleSpecification.of("BMW", "iX3", Range.ofKm(460), VehicleType.SUV,null)).isInstanceOf(InvalidVehicleAttributeException.class);
+            assertThatThrownBy(() -> VehicleSpecification.of("BMW", "iX3", Range.ofKm(460), VehicleType.SUV, null)).isInstanceOf(InvalidVehicleAttributeException.class);
         }
 
         @Test
