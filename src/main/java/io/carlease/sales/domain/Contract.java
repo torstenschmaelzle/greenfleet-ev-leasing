@@ -68,6 +68,12 @@ public class Contract {
 
 		requireNonNull(leaseTerm);
 		requireNonNull(interest);
+		if (downPayment.amountInCents() < 0) {
+			throw new IllegalArgumentException("Down payment must not be negative");
+		}
+		if (residualValue.amountInCents() < 0) {
+			throw new IllegalArgumentException("Residual value must not be negative");
+		}
 		assert !isApproved();
 
 		double pmt = FinancialCalculator.pmt(

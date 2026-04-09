@@ -18,11 +18,11 @@ class BatteryHealthRecordTest {
 
     @Test
     void stateOfHealthMustNotBeNull() {
-        assertThatThrownBy(() -> new BatteryHealthRecord(null, validRange())).isInstanceOf(InvalidVehicleAttributeException.class);
+        assertThatThrownBy(() -> new BatteryHealthMeasurement(null, validRange())).isInstanceOf(InvalidVehicleAttributeException.class);
     }
 
     @Test
     void measuredRangeKmMustNotBeNull() {
-        assertThatThrownBy(() -> new BatteryHealthRecord(validSoh(), null)).isInstanceOf(InvalidVehicleAttributeException.class);
+        assertThatThrownBy(() -> new BatteryHealthMeasurement(validSoh(), null)).isInstanceOf(InvalidVehicleAttributeException.class);
     }
 }

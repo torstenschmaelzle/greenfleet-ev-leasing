@@ -128,8 +128,8 @@ class ContractTest {
 		contract.calculateInstallmentFor(
 				LeaseTerm.ofMonths(48),
 				Interest.of(3.7),
-				5_000,
-				10_000
+				Amount.of(5_000, Currency.EUR),
+				Amount.of(10_000, Currency.EUR)
 		);
 		// then
 		assertThat(contract.isCalculated()).isTrue();
@@ -150,7 +150,7 @@ class ContractTest {
 
 		// when
 		c1.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7));
-		c2.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), 0, 0);
+		c2.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), Amount.of(0, Currency.EUR), Amount.of(0, Currency.EUR));
 
 		// then
 		assertThat(c1.isCalculated()).isTrue();
@@ -170,7 +170,7 @@ class ContractTest {
 
 		// when / then
 		assertThatThrownBy(() ->
-				contract.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), -1, 0)
+				contract.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), Amount.of(-1, Currency.EUR), Amount.of(0, Currency.EUR))
 		).isInstanceOf(IllegalArgumentException.class);
 	}
 
@@ -185,7 +185,7 @@ class ContractTest {
 
 		// when / then
 		assertThatThrownBy(() ->
-				contract.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), 0, -1)
+				contract.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), Amount.of(0, Currency.EUR), Amount.of(-1, Currency.EUR))
 		).isInstanceOf(IllegalArgumentException.class);
 	}
 	@Test
@@ -202,8 +202,8 @@ class ContractTest {
 				Amount.of(40_000, Currency.EUR));
 
 		// when
-		noDp.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), 0, 0);
-		withDp.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), 5_000, 0);
+		noDp.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), Amount.of(0, Currency.EUR), Amount.of(0, Currency.EUR));
+		withDp.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), Amount.of(5_000, Currency.EUR), Amount.of(0, Currency.EUR));
 
 		// then
 		assertThat(withDp.installment().amount()).isLessThan(noDp.installment().amount());
@@ -224,8 +224,8 @@ class ContractTest {
 				Amount.of(40_000, Currency.EUR));
 
 		// when
-		noRv.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), 0, 0);
-		withRv.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), 0, 10_000);
+		noRv.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), Amount.of(0, Currency.EUR), Amount.of(0, Currency.EUR));
+		withRv.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), Amount.of(0, Currency.EUR), Amount.of(10_000, Currency.EUR));
 
 		// then
 		assertThat(withRv.installment().amount()).isLessThan(noRv.installment().amount());
@@ -284,8 +284,8 @@ class ContractTest {
 				Optional.of(Interest.of(3.7)),
 				Optional.of(SignDate.of(2018, 12, 24)),
 				Optional.of(SignDate.of(2018, 12, 25)),
-				0.0,
-				0.0
+				Amount.of(0, Currency.EUR),
+				Amount.of(0, Currency.EUR)
 		);
 
 		// then

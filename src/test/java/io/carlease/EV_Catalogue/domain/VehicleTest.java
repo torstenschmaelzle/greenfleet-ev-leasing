@@ -3,7 +3,10 @@ package io.carlease.EV_Catalogue.domain;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Field;
 import java.math.BigDecimal;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -32,11 +35,11 @@ class VehicleTest {
     }
 
     private Amount monthlyPrice() {
-        return Amount.of(75000L, Currency.CHF);
+        return Amount.ofCents(75000L, Currency.CHF);
     }
 
     private Vehicle freshVehicle() {
-        var healthRecord = new BatteryHealthRecord(Percentage.of(new BigDecimal("95")), Range.ofKm(440));
+        var healthRecord = new BatteryHealthMeasurement(Percentage.of(new BigDecimal("95")), Range.ofKm(440));
         return new Vehicle(vehicleId(), specification(), batterySpec(), performance(), monthlyPrice(), List.of(healthRecord));
     }
 
@@ -50,7 +53,7 @@ class VehicleTest {
 
             assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.AVAILABLE);
             assertThat(vehicle.getLock()).isEmpty();
-            assertThat(vehicle.getHealthRecords()).hasSize(1);
+            assertThat(vehicle.getHealthMeasurements()).hasSize(1);
         }
 
     }
@@ -61,7 +64,7 @@ class VehicleTest {
         @Test
         void availableVehicleIsLocked() {
             var vehicle = freshVehicle();
-            var duration = LockDuration.ofHours(48);
+            var duration = LockDuration.ofHours(2);
 
             vehicle.lockVehicle(duration);
 
@@ -75,9 +78,9 @@ class VehicleTest {
         @Test
         void lockRejectedOnNonAvailableVehicle() {
             var vehicle = freshVehicle();
-            vehicle.lockVehicle(LockDuration.ofHours(24));
+            vehicle.lockVehicle(LockDuration.ofHours(2));
 
-            assertThatThrownBy(() -> vehicle.lockVehicle(LockDuration.ofHours(24))).isInstanceOf(VehicleNotAvailableException.class);
+            assertThatThrownBy(() -> vehicle.lockVehicle(LockDuration.ofHours(2))).isInstanceOf(VehicleNotAvailableException.class);
             assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.RESERVED);
         }
 
@@ -86,13 +89,13 @@ class VehicleTest {
             var vehicle = freshVehicle();
             vehicle.remove();
 
-            assertThatThrownBy(() -> vehicle.lockVehicle(LockDuration.ofHours(24))).isInstanceOf(VehicleNotAvailableException.class);
+            assertThatThrownBy(() -> vehicle.lockVehicle(LockDuration.ofHours(2))).isInstanceOf(VehicleNotAvailableException.class);
         }
 
         @Test
         void lockIsReleased() {
             var vehicle = freshVehicle();
-            vehicle.lockVehicle(LockDuration.ofHours(24));
+            vehicle.lockVehicle(LockDuration.ofHours(2));
 
             vehicle.releaseLock();
 
@@ -108,12 +111,27 @@ class VehicleTest {
         }
 
         @Test
+        void expiredLockIsAutoClearedAndVehicleCanBeLockedAgain() throws Exception {
+            var vehicle = freshVehicle();
+            vehicle.lockVehicle(LockDuration.ofHours(2));
+            var lock = vehicle.getLock().get();
+            Field lockedAt = ReservationLock.class.getDeclaredField("lockedAt");
+            lockedAt.setAccessible(true);
+            lockedAt.set(lock, Instant.now().minus(3, ChronoUnit.HOURS));
+
+            vehicle.lockVehicle(LockDuration.ofHours(2));
+
+            assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.RESERVED);
+            assertThat(vehicle.getLock()).isPresent();
+        }
+
+        @Test
         void lockVehicleRejectedWhenUnderContract() {
             var vehicle = freshVehicle();
-            vehicle.lockVehicle(LockDuration.ofHours(24));
-            vehicle.confirmContract();
+            vehicle.lockVehicle(LockDuration.ofHours(2));
+            vehicle.assignToContract();
 
-            assertThatThrownBy(() -> vehicle.lockVehicle(LockDuration.ofHours(24)))
+            assertThatThrownBy(() -> vehicle.lockVehicle(LockDuration.ofHours(2)))
                     .isInstanceOf(VehicleNotAvailableException.class);
             assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.UNDER_CONTRACT);
         }
@@ -125,9 +143,9 @@ class VehicleTest {
         @Test
         void contractConfirmedOnReservedVehicle() {
             var vehicle = freshVehicle();
-            vehicle.lockVehicle(LockDuration.ofHours(24));
+            vehicle.lockVehicle(LockDuration.ofHours(2));
 
-            vehicle.confirmContract();
+            vehicle.assignToContract();
 
             assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.UNDER_CONTRACT);
             assertThat(vehicle.getLock()).isEmpty();
@@ -137,17 +155,17 @@ class VehicleTest {
         void contractConfirmationRejectedWhenNotReserved() {
             var vehicle = freshVehicle();
 
-            assertThatThrownBy(vehicle::confirmContract).isInstanceOf(VehicleContractViolationException.class);
+            assertThatThrownBy(vehicle::assignToContract).isInstanceOf(VehicleContractViolationException.class);
             assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.AVAILABLE);
         }
 
         @Test
         void contractConfirmationRejectedWhenAlreadyUnderContract() {
             var vehicle = freshVehicle();
-            vehicle.lockVehicle(LockDuration.ofHours(24));
-            vehicle.confirmContract();
+            vehicle.lockVehicle(LockDuration.ofHours(2));
+            vehicle.assignToContract();
 
-            assertThatThrownBy(vehicle::confirmContract).isInstanceOf(VehicleContractViolationException.class);
+            assertThatThrownBy(vehicle::assignToContract).isInstanceOf(VehicleContractViolationException.class);
         }
     }
 
@@ -164,7 +182,7 @@ class VehicleTest {
         @Test
         void removalRejectedOnReservedVehicle() {
             var vehicle = freshVehicle();
-            vehicle.lockVehicle(LockDuration.ofHours(24));
+            vehicle.lockVehicle(LockDuration.ofHours(2));
 
             assertThatThrownBy(vehicle::remove).isInstanceOf(VehicleRemovalException.class);
             assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.RESERVED);
@@ -181,8 +199,8 @@ class VehicleTest {
         @Test
         void removeRejectedWhenUnderContract() {
             var vehicle = freshVehicle();
-            vehicle.lockVehicle(LockDuration.ofHours(24));
-            vehicle.confirmContract();
+            vehicle.lockVehicle(LockDuration.ofHours(2));
+            vehicle.assignToContract();
 
             assertThatThrownBy(vehicle::remove).isInstanceOf(VehicleRemovalException.class);
             assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.UNDER_CONTRACT);
@@ -195,15 +213,15 @@ class VehicleTest {
         @Test
         void healthRecordIsAdded() {
             var vehicle = freshVehicle();
-            int sizeBefore = vehicle.getHealthRecords().size();
+            int sizeBefore = vehicle.getHealthMeasurements().size();
             var newSoh = Percentage.of(new BigDecimal("87"));
             var newRange = Range.ofKm(400);
 
-            vehicle.addBatteryHealthRecord(newSoh, newRange);
+            vehicle.addBatteryHealthMeasurement(new BatteryHealthMeasurement(newSoh, newRange));
 
-            assertThat(vehicle.getHealthRecords()).hasSize(sizeBefore + 1);
-            var latest = vehicle.getLatestBatteryHealthRecord();
-            assertThat(latest.getRecordId()).isNotNull();
+            assertThat(vehicle.getHealthMeasurements()).hasSize(sizeBefore + 1);
+            var latest = vehicle.getLatestBatteryHealthMeasurement();
+            assertThat(latest.getMeasurementId()).isNotNull();
             assertThat(latest.getMeasuredAt()).isNotNull();
             assertThat(latest.getStateOfHealth()).isEqualTo(newSoh);
             assertThat(latest.getMeasuredRangeKm()).isEqualTo(newRange);
@@ -212,14 +230,14 @@ class VehicleTest {
         @Test
         void latestHealthRecordIsTheMostRecent() throws InterruptedException {
             var vehicle = freshVehicle();
-            vehicle.addBatteryHealthRecord(Percentage.of(new BigDecimal("90")), Range.ofKm(430));
+            vehicle.addBatteryHealthMeasurement(new BatteryHealthMeasurement(Percentage.of(new BigDecimal("90")), Range.ofKm(430)));
             //make sure the next record has a later timestamp
             Thread.sleep(1);
             var newerSoh = Percentage.of(new BigDecimal("85"));
 
-            vehicle.addBatteryHealthRecord(newerSoh, Range.ofKm(395));
+            vehicle.addBatteryHealthMeasurement(new BatteryHealthMeasurement(newerSoh, Range.ofKm(395)));
 
-            assertThat(vehicle.getLatestBatteryHealthRecord().getStateOfHealth()).isEqualTo(newerSoh);
+            assertThat(vehicle.getLatestBatteryHealthMeasurement().getStateOfHealth()).isEqualTo(newerSoh);
         }
     }
 
@@ -229,7 +247,7 @@ class VehicleTest {
         @Test
         void leasePriceIsUpdated() {
             var vehicle = freshVehicle();
-            var newPrice = Amount.of(80000L, Currency.CHF);
+            var newPrice = Amount.ofCents(80000L, Currency.CHF);
 
             vehicle.updateMonthlyLeasePrice(newPrice);
 
@@ -256,8 +274,8 @@ class VehicleTest {
             var spec = VehicleSpecification.of("BMW", "iX3", Range.ofKm(460), VehicleType.SUV, EnergyConsumption.of(new BigDecimal("17")));
             var battery = BatterySpecification.of(new BigDecimal("80"), new BigDecimal("400"), new BigDecimal("11"));
             var perf = Performance.of(286, new BigDecimal("6.8"), 180);
-            var price = Amount.of(75000L, Currency.CHF);
-            var healthRecord = new BatteryHealthRecord(Percentage.of(new BigDecimal("100")), Range.ofKm(460));
+            var price = Amount.ofCents(75000L, Currency.CHF);
+            var healthRecord = new BatteryHealthMeasurement(Percentage.of(new BigDecimal("100")), Range.ofKm(460));
 
             var vehicle = new Vehicle(vin, spec, battery, perf, price, List.of(healthRecord));
 
@@ -266,7 +284,7 @@ class VehicleTest {
             assertThat(vehicle.getVehicleSpecification().getModel()).isEqualTo("iX3");
             assertThat(vehicle.getVehicleSpecification().getRangeKm()).isEqualTo(Range.ofKm(460));
             assertThat(vehicle.getVehicleSpecification().getVehicleType()).isEqualTo(VehicleType.SUV);
-            assertThat(vehicle.getMonthlyLeasePrice()).isEqualTo(Amount.of(75000L, Currency.CHF));
+            assertThat(vehicle.getMonthlyLeasePrice()).isEqualTo(Amount.ofCents(75000L, Currency.CHF));
         }
 
     }
@@ -326,28 +344,42 @@ class VehicleTest {
 
         @Test
         void amountCurrencyMustNotBeNull() {
-            assertThatThrownBy(() -> Amount.of(100L, null)).isInstanceOf(InvalidVehicleAttributeException.class);
+            assertThatThrownBy(() -> Amount.ofCents(100L, null)).isInstanceOf(InvalidVehicleAttributeException.class);
+        }
+
+        @Test
+        void amountInCentsMustNotBeNegative() {
+            assertThatThrownBy(() -> Amount.ofCents(-1L, Currency.CHF)).isInstanceOf(InvalidVehicleAttributeException.class);
         }
 
         @Test
         void amountConvertToNullCurrencyThrowsException() {
-            var amount = Amount.of(10000L, Currency.CHF);
-            assertThatThrownBy(() -> amount.convertTo(null, 1.1))
-                    .isInstanceOf(InvalidVehicleAttributeException.class);
+            var amount = Amount.ofCents(10000L, Currency.CHF);
+            assertThatThrownBy(() -> amount.convertTo(null, 1.1)).isInstanceOf(InvalidVehicleAttributeException.class);
+        }
+
+        @Test
+        void amountConvertToAppliesRateAndChangesCurrency() {
+            var chf = Amount.ofCents(10000L, Currency.CHF);
+
+            var eur = chf.convertTo(Currency.EUR, 0.95);
+
+            assertThat(eur.getCurrency()).isEqualTo(Currency.EUR);
+            assertThat(eur.getAmountInCents()).isEqualTo(Math.round(10000L * 0.95));
         }
 
         @Test
         void amountAddRequiresSameCurrency() {
-            var chf = Amount.of(100L, Currency.CHF);
-            var eur = Amount.of(100L, Currency.EUR);
+            var chf = Amount.ofCents(100L, Currency.CHF);
+            var eur = Amount.ofCents(100L, Currency.EUR);
 
             assertThatThrownBy(() -> chf.add(eur)).isInstanceOf(InvalidVehicleAttributeException.class);
         }
 
         @Test
         void amountSubtractRequiresSameCurrency() {
-            var chf = Amount.of(100L, Currency.CHF);
-            var eur = Amount.of(50L, Currency.EUR);
+            var chf = Amount.ofCents(100L, Currency.CHF);
+            var eur = Amount.ofCents(50L, Currency.EUR);
 
             assertThatThrownBy(() -> chf.subtract(eur)).isInstanceOf(InvalidVehicleAttributeException.class);
         }
