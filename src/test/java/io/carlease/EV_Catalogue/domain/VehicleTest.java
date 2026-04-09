@@ -40,7 +40,7 @@ class VehicleTest {
 
     private Vehicle freshVehicle() {
         var healthRecord = new BatteryHealthMeasurement(Percentage.of(new BigDecimal("95")), Range.ofKm(440));
-        return new Vehicle(vehicleId(), specification(), batterySpec(), performance(), monthlyPrice(), List.of(healthRecord));
+        return Vehicle.create(vehicleId(), specification(), batterySpec(), performance(), monthlyPrice(), List.of(healthRecord));
     }
 
     //tests
@@ -277,7 +277,7 @@ class VehicleTest {
             var price = Amount.ofCents(75000L, Currency.CHF);
             var healthRecord = new BatteryHealthMeasurement(Percentage.of(new BigDecimal("100")), Range.ofKm(460));
 
-            var vehicle = new Vehicle(vin, spec, battery, perf, price, List.of(healthRecord));
+            var vehicle = Vehicle.create(vin, spec, battery, perf, price, List.of(healthRecord));
 
             assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.AVAILABLE);
             assertThat(vehicle.getVehicleSpecification().getBrand()).isEqualTo("BMW");
@@ -426,7 +426,7 @@ class VehicleTest {
 
         @Test
         void vehicleHealthRecordsMustNeverBeEmpty() {
-            assertThatThrownBy(() -> new Vehicle(vehicleId(), specification(), batterySpec(), performance(), monthlyPrice(), List.of())).isInstanceOf(InvalidVehicleAttributeException.class);
+            assertThatThrownBy(() -> Vehicle.create(vehicleId(), specification(), batterySpec(), performance(), monthlyPrice(), List.of())).isInstanceOf(InvalidVehicleAttributeException.class);
         }
     }
 }

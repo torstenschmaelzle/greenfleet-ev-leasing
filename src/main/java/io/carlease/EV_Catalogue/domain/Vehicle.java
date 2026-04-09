@@ -18,7 +18,16 @@ public class Vehicle {
     private Performance performance;
     private ReservationLock lock;
 
-    public Vehicle(VehicleId vehicleId,
+    public static Vehicle create(VehicleId vehicleId,
+                                VehicleSpecification vehicleSpecification,
+                                BatterySpecification batterySpecification,
+                                Performance performance,
+                                Amount monthlyLeasePrice,
+                                List<BatteryHealthMeasurement> initialHealthMeasurements) {
+        return new Vehicle(vehicleId, vehicleSpecification, batterySpecification, performance, monthlyLeasePrice, initialHealthMeasurements);
+    }
+
+    private Vehicle(VehicleId vehicleId,
                    VehicleSpecification vehicleSpecification,
                    BatterySpecification batterySpecification,
                    Performance performance,
