@@ -15,7 +15,7 @@ public class Contract {
 	private final Customer lessee;
 	private final Car car;
 	private final Amount price;
-	private record Calculation(LeaseTerm leaseTerm, Interest interest, Amount installment, double downPayment, double residualValue ) {}
+	private record Calculation(LeaseTerm leaseTerm, Interest interest, Amount installment, Amount downPayment, Amount residualValue ) {}
     private Optional<Calculation> calculation;
     private Optional<SignDate> approvalDate;
 	private Optional<SignDate> signatureDate;
@@ -58,27 +58,24 @@ public class Contract {
 
 	public void calculateInstallmentFor(LeaseTerm leaseTerm, Interest interest){
 
-		double downPayment = 0.0;
-		double residualValue = 0.0;
+        Amount downPayment = Amount.ofCents(0, price.currency());
+        Amount residualValue = Amount.ofCents(0, price.currency());
 
 		calculateInstallmentFor(leaseTerm,interest,downPayment,residualValue );
 	}
 
-	public void calculateInstallmentFor(LeaseTerm leaseTerm, Interest interest, double downPayment, double residualValue) {
+	public void calculateInstallmentFor(LeaseTerm leaseTerm, Interest interest, Amount downPayment, Amount residualValue) {
 
 		requireNonNull(leaseTerm);
 		requireNonNull(interest);
 		assert !isApproved();
 
-		if (downPayment < 0){throw new IllegalArgumentException("Down Payment must be positive");}
-		if (residualValue < 0){throw new IllegalArgumentException("Residual Value must be positive");}
-
 		double pmt = FinancialCalculator.pmt(
 			leaseTerm.noOfMonths(),
 			interest.perMonth(),
 			-1 * price().amount(),
-			residualValue,
-			downPayment);
+			residualValue.amount(),
+			downPayment.amount());
 
 		this.calculation = Optional.of(new Calculation(leaseTerm, interest, Amount.of(pmt, price.currency()), downPayment, residualValue));
 
@@ -122,12 +119,12 @@ public class Contract {
 		return this.calculation.get().installment();
 	}
 
-    public double downPayment() {
+    public Amount downPayment() {
         assert isCalculated();
         return this.calculation.get().downPayment();
     }
 
-    public double residualValue() {
+    public Amount residualValue() {
         assert isCalculated();
         return this.calculation.get().residualValue();
     }

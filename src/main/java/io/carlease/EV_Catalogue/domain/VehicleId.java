@@ -2,6 +2,8 @@ package io.carlease.EV_Catalogue.domain;
 
 import org.jmolecules.ddd.annotation.ValueObject;
 
+import java.util.Objects;
+
 @ValueObject
 public class VehicleId {
 
@@ -24,7 +26,7 @@ public class VehicleId {
         return new VehicleId(vin);
     }
 
-    public String getId() {
+    public String getVin() {
         return vin;
     }
 
@@ -35,4 +37,9 @@ public class VehicleId {
         VehicleId other = (VehicleId) obj;
         return vin.equals(other.vin);
     }
+    @Override
+    public int hashCode() {
+        return Objects.hash(vin);
+    }
+
 }

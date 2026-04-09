@@ -18,8 +18,8 @@ public class ContractMapper {
                 contract.isCalculated() ? contract.interest().perYear() : null,
                 contract.isApproved() ? contract.approvalDate().date() : null,
                 contract.isSigned() ? contract.signatureDate().date() : null,
-                contract.isCalculated() ? contract.downPayment() : null,
-                contract.isCalculated() ? contract.residualValue() : null);
+                contract.isCalculated() ? contract.downPayment().amount() : null,
+                contract.isCalculated() ? contract.residualValue().amount() : null);
     }
 
     public static Contract mapToContract(ContractJpaEntity contractJpaEntity) {
@@ -40,8 +40,13 @@ public class ContractMapper {
                 contractJpaEntity.getSignatureDate() != null
                         ? Optional.of(SignDate.of(contractJpaEntity.getSignatureDate()))
                         : Optional.empty(),
-                contractJpaEntity.getDownPayment() != null ? contractJpaEntity.getDownPayment() : 0.0,
-                contractJpaEntity.getResidualValue() != null ? contractJpaEntity.getResidualValue() : 0.0);
+                contractJpaEntity.getDownPayment() != null
+                        ? Amount.of(contractJpaEntity.getDownPayment(), Currency.valueOf(contractJpaEntity.getPriceCurrency()))
+                        : Amount.ofCents(0, Currency.valueOf(contractJpaEntity.getPriceCurrency())),
+                contractJpaEntity.getResidualValue() != null
+                        ? Amount.of(contractJpaEntity.getResidualValue(), Currency.valueOf(contractJpaEntity.getPriceCurrency()))
+                        : Amount.ofCents(0, Currency.valueOf(contractJpaEntity.getPriceCurrency()))
+        );
     }
 
 }

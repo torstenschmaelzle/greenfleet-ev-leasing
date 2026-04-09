@@ -2,6 +2,8 @@ package io.carlease.EV_Catalogue.domain;
 
 import org.jmolecules.ddd.annotation.ValueObject;
 
+import java.util.Objects;
+
 @ValueObject
 public class LockDuration {
 
@@ -36,4 +38,9 @@ public class LockDuration {
         LockDuration other = (LockDuration) obj;
         return hours.equals(other.hours);
     }
+    @Override
+    public int hashCode() {
+        return Objects.hash(hours);
+    }
+
 }

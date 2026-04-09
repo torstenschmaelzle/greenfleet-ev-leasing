@@ -2,6 +2,8 @@ package io.carlease.EV_Catalogue.domain;
 
 import org.jmolecules.ddd.annotation.ValueObject;
 
+import java.util.Objects;
+
 @ValueObject
 public class VehicleSpecification {
 
@@ -71,4 +73,9 @@ public class VehicleSpecification {
                 && vehicleType == other.vehicleType
                 && consumptionKwhPer100km.equals(other.consumptionKwhPer100km);
     }
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model, rangeKm, vehicleType, consumptionKwhPer100km);
+    }
+
 }
