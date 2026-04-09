@@ -4,5 +4,5 @@ import org.jmolecules.ddd.annotation.ValueObject;
 
 @ValueObject
 public enum Currency {
-    CHF, USD, EUR
+    CHF, EUR, USD, GBP
 }

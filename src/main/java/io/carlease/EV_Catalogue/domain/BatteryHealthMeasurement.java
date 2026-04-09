@@ -6,28 +6,28 @@ import java.time.Instant;
 import java.util.UUID;
 
 @Entity
-class BatteryHealthRecord {
+public class BatteryHealthMeasurement {
 
-    private final UUID recordId;
+    private final UUID measurementId;
     private final Instant measuredAt;
     private final Percentage stateOfHealth;
     private final Range measuredRangeKm;
 
-    BatteryHealthRecord(Percentage stateOfHealth, Range measuredRangeKm) {
+    public BatteryHealthMeasurement(Percentage stateOfHealth, Range measuredRangeKm) {
         if (stateOfHealth == null) {
             throw new InvalidVehicleAttributeException("stateOfHealth", "must not be null");
         }
         if (measuredRangeKm == null) {
             throw new InvalidVehicleAttributeException("measuredRangeKm", "must not be null");
         }
-        this.recordId = UUID.randomUUID();
+        this.measurementId = UUID.randomUUID();
         this.measuredAt = Instant.now();
         this.stateOfHealth = stateOfHealth;
         this.measuredRangeKm = measuredRangeKm;
     }
 
-    public UUID getRecordId() {
-        return recordId;
+    public UUID getMeasurementId() {
+        return measurementId;
     }
 
     public Instant getMeasuredAt() {

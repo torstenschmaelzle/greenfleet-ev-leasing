@@ -3,6 +3,7 @@ package io.carlease.EV_Catalogue.domain;
 import org.jmolecules.ddd.annotation.ValueObject;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 @ValueObject
 public class BatterySpecification {
@@ -56,8 +57,17 @@ public class BatterySpecification {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         BatterySpecification other = (BatterySpecification) obj;
-        return capacityKwh.equals(other.capacityKwh)
-                && voltageV.equals(other.voltageV)
-                && maxChargeSpeedKw.equals(other.maxChargeSpeedKw);
+        return capacityKwh.compareTo(other.capacityKwh) == 0
+                && voltageV.compareTo(other.voltageV) == 0
+                && maxChargeSpeedKw.compareTo(other.maxChargeSpeedKw) == 0;
     }
+    @Override
+    public int hashCode() {
+        return Objects.hash(
+                capacityKwh.stripTrailingZeros(),
+                voltageV.stripTrailingZeros(),
+                maxChargeSpeedKw.stripTrailingZeros()
+        );
+    }
+
 }

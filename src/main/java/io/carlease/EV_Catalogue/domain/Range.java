@@ -2,6 +2,8 @@ package io.carlease.EV_Catalogue.domain;
 
 import org.jmolecules.ddd.annotation.ValueObject;
 
+import java.util.Objects;
+
 @ValueObject
 public class Range {
 
@@ -30,4 +32,9 @@ public class Range {
         Range other = (Range) obj;
         return valueKm.equals(other.valueKm);
     }
+    @Override
+    public int hashCode() {
+        return Objects.hash(valueKm);
+    }
+
 }

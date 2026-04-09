@@ -2,10 +2,7 @@ package io.carlease.sales.application.service;
 
 import io.carlease.sales.application.port.in.CalculateInstallmentUseCase;
 import io.carlease.sales.application.port.out.ContractPersistencePort;
-import io.carlease.sales.domain.Contract;
-import io.carlease.sales.domain.ContractNumber;
-import io.carlease.sales.domain.Interest;
-import io.carlease.sales.domain.LeaseTerm;
+import io.carlease.sales.domain.*;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -36,8 +33,8 @@ public class CalculateInstallmentService implements CalculateInstallmentUseCase 
         contract.calculateInstallmentFor(
                 new LeaseTerm(leaseTerm),
                 new Interest(interest),
-                downPayment,
-                residualValue
+                Amount.of(downPayment, contract.price().currency()),
+                Amount.of(residualValue, contract.price().currency())
         );
 
         contractPersistencePort.save(contract);

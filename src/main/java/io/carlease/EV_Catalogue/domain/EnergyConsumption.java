@@ -3,6 +3,7 @@ package io.carlease.EV_Catalogue.domain;
 import org.jmolecules.ddd.annotation.ValueObject;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 @ValueObject
 public class EnergyConsumption {
@@ -32,6 +33,11 @@ public class EnergyConsumption {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         EnergyConsumption other = (EnergyConsumption) obj;
-        return kwhPer100km.equals(other.kwhPer100km);
+        return kwhPer100km.compareTo(other.kwhPer100km) == 0;
     }
+    @Override
+    public int hashCode() {
+        return Objects.hash(kwhPer100km.stripTrailingZeros());
+    }
+
 }
