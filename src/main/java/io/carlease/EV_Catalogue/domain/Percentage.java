@@ -3,6 +3,7 @@ package io.carlease.EV_Catalogue.domain;
 import org.jmolecules.ddd.annotation.ValueObject;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 @ValueObject
 public class Percentage {
@@ -33,6 +34,11 @@ public class Percentage {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Percentage other = (Percentage) obj;
-        return value.equals(other.value);
+        return value.compareTo(other.value) == 0;
     }
+    @Override
+    public int hashCode() {
+        return Objects.hash(value.stripTrailingZeros());
+    }
+
 }

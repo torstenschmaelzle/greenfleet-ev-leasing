@@ -3,6 +3,7 @@ package io.carlease.EV_Catalogue.domain;
 import org.jmolecules.ddd.annotation.ValueObject;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 @ValueObject
 public class Performance {
@@ -21,11 +22,20 @@ public class Performance {
         if (horsePowerHp == null) {
             throw new InvalidVehicleAttributeException("horsePowerHp", "must not be null");
         }
+        if (horsePowerHp <= 0) {
+            throw new InvalidVehicleAttributeException("horsePowerHp", "must be greater than 0");
+        }
         if (accelerationSec == null) {
             throw new InvalidVehicleAttributeException("accelerationSec", "must not be null");
         }
+        if (accelerationSec.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new InvalidVehicleAttributeException("accelerationSec", "must be greater than 0");
+        }
         if (topSpeedKmh == null) {
             throw new InvalidVehicleAttributeException("topSpeedKmh", "must not be null");
+        }
+        if (topSpeedKmh <= 0) {
+            throw new InvalidVehicleAttributeException("topSpeedKmh", "must be greater than 0");
         }
         return new Performance(horsePowerHp, accelerationSec, topSpeedKmh);
     }
@@ -47,8 +57,13 @@ public class Performance {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Performance other = (Performance) obj;
-        return horsePowerHp.equals(other.horsePowerHp)
-                && accelerationSec.equals(other.accelerationSec)
+        return horsePowerHp.compareTo(other.horsePowerHp) == 0
+                && accelerationSec.compareTo(other.accelerationSec) == 0
                 && topSpeedKmh.equals(other.topSpeedKmh);
     }
+    @Override
+    public int hashCode() {
+        return Objects.hash(horsePowerHp, accelerationSec.stripTrailingZeros(), topSpeedKmh);
+    }
+
 }

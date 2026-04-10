@@ -7,25 +7,23 @@ import java.time.temporal.ChronoUnit;
 import java.util.UUID;
 
 @Entity
-class ReservationLock {
+public class ReservationLock {
 
     private final UUID lockId;
     private final Instant lockedAt;
-    private final Instant expiresAt;
     private final LockDuration duration;
 
-    ReservationLock(LockDuration duration) {
+    public ReservationLock(LockDuration duration) {
         if (duration == null) {
             throw new InvalidVehicleAttributeException("duration", "must not be null");
         }
         this.lockId = UUID.randomUUID();
         this.lockedAt = Instant.now();
-        this.expiresAt = lockedAt.plus(duration.getHours(), ChronoUnit.HOURS);
         this.duration = duration;
     }
 
     public boolean isExpired() {
-        return Instant.now().isAfter(expiresAt);
+        return Instant.now().isAfter(getExpiresAt());
     }
 
     public UUID getLockId() {
@@ -37,7 +35,7 @@ class ReservationLock {
     }
 
     public Instant getExpiresAt() {
-        return expiresAt;
+        return lockedAt.plus(duration.getHours(), ChronoUnit.HOURS);
     }
 
     public LockDuration getDuration() {

@@ -1,11 +1,11 @@
 package io.carlease.EV_Catalogue.domain;
 
-import org.jmolecules.ddd.annotation.Entity;
+import org.jmolecules.ddd.annotation.AggregateRoot;
 import org.jmolecules.ddd.annotation.Identity;
 
 import java.util.*;
 
-@Entity
+@AggregateRoot
 public class Vehicle {
 
     @Identity
@@ -14,24 +14,33 @@ public class Vehicle {
     private Amount monthlyLeasePrice;
     private VehicleStatus status;
     private BatterySpecification batterySpecification;
-    private final List<BatteryHealthRecord> healthRecords;
+    private final List<BatteryHealthMeasurement> healthMeasurements;
     private Performance performance;
     private ReservationLock lock;
 
-    public Vehicle(VehicleId vehicleId,
+    public static Vehicle create(VehicleId vehicleId,
+                                VehicleSpecification vehicleSpecification,
+                                BatterySpecification batterySpecification,
+                                Performance performance,
+                                Amount monthlyLeasePrice,
+                                List<BatteryHealthMeasurement> initialHealthMeasurements) {
+        return new Vehicle(vehicleId, vehicleSpecification, batterySpecification, performance, monthlyLeasePrice, initialHealthMeasurements);
+    }
+
+    private Vehicle(VehicleId vehicleId,
                    VehicleSpecification vehicleSpecification,
                    BatterySpecification batterySpecification,
                    Performance performance,
                    Amount monthlyLeasePrice,
-                   List<BatteryHealthRecord> initialHealthRecords) {
+                   List<BatteryHealthMeasurement> initialHealthMeasurements) {
         if (vehicleId == null) throw new InvalidVehicleAttributeException("vehicleId", "must not be null");
         if (vehicleSpecification == null) throw new InvalidVehicleAttributeException("vehicleSpecification", "must not be null");
         if (batterySpecification == null) throw new InvalidVehicleAttributeException("batterySpecification", "must not be null");
         if (performance == null) throw new InvalidVehicleAttributeException("performance", "must not be null");
         if (monthlyLeasePrice == null) throw new InvalidVehicleAttributeException("monthlyLeasePrice", "must not be null");
-        if (initialHealthRecords == null) throw new InvalidVehicleAttributeException("initialHealthRecords", "must not be null");
-        if (initialHealthRecords.isEmpty()) {
-            throw new InvalidVehicleAttributeException("initialHealthRecords", "must not be empty");
+        if (initialHealthMeasurements == null) throw new InvalidVehicleAttributeException("initialHealthMeasurements", "must not be null");
+        if (initialHealthMeasurements.isEmpty()) {
+            throw new InvalidVehicleAttributeException("initialHealthMeasurements", "must not be empty");
         }
         this.vehicleId = vehicleId;
         this.vehicleSpecification = vehicleSpecification;
@@ -40,7 +49,7 @@ public class Vehicle {
         this.monthlyLeasePrice = monthlyLeasePrice;
         this.status = VehicleStatus.AVAILABLE;
         this.lock = null;
-        this.healthRecords = new ArrayList<>(initialHealthRecords);
+        this.healthMeasurements = new ArrayList<>(initialHealthMeasurements);
     }
 
     public void updateVehicleSpecification(VehicleSpecification specification) {
@@ -58,15 +67,16 @@ public class Vehicle {
         this.batterySpecification = specification;
     }
 
-    public void addBatteryHealthRecord(Percentage stateOfHealth, Range measuredRangeKm) {
-        BatteryHealthRecord record = new BatteryHealthRecord(stateOfHealth, measuredRangeKm);
-        this.healthRecords.add(record);
+    public void addBatteryHealthMeasurement(BatteryHealthMeasurement measurement) {
+        if (measurement == null) throw new InvalidVehicleAttributeException("measurement", "must not be null");
+        this.healthMeasurements.add(measurement);
     }
 
-    public BatteryHealthRecord getLatestBatteryHealthRecord() {
-        return healthRecords.stream()
-                .max(Comparator.comparing(BatteryHealthRecord::getMeasuredAt))
-                .orElseThrow();
+
+    public BatteryHealthMeasurement getLatestBatteryHealthMeasurement() {
+        return healthMeasurements.stream()
+                .max(Comparator.comparing(BatteryHealthMeasurement::getMeasuredAt))
+                .orElseThrow(() -> new InvalidVehicleAttributeException("healthMeasurements", "no measurements present"));
     }
 
     public Amount getMonthlyLeasePrice() {
@@ -74,12 +84,17 @@ public class Vehicle {
     }
 
     public void lockVehicle(LockDuration duration) {
+        if (status == VehicleStatus.RESERVED && lock != null && lock.isExpired()) {
+            this.lock = null;
+            this.status = VehicleStatus.AVAILABLE;
+        }
         if (status != VehicleStatus.AVAILABLE) {
             throw new VehicleNotAvailableException(vehicleId, status);
         }
         this.lock = new ReservationLock(duration);
         this.status = VehicleStatus.RESERVED;
     }
+
 
     public void releaseLock() {
         if (status != VehicleStatus.RESERVED) {
@@ -89,7 +104,7 @@ public class Vehicle {
         this.status = VehicleStatus.AVAILABLE;
     }
 
-    public void confirmContract() {
+    public void assignToContract() {
         if (status != VehicleStatus.RESERVED) {
             throw new VehicleContractViolationException(vehicleId, status);
         }
@@ -98,9 +113,6 @@ public class Vehicle {
     }
 
     public void remove() {
-        if (status == VehicleStatus.REMOVED) {
-            throw new VehicleRemovalException(vehicleId, status);
-        }
         if (status != VehicleStatus.AVAILABLE) {
             throw new VehicleRemovalException(vehicleId, status);
         }
@@ -111,7 +123,7 @@ public class Vehicle {
         return status == VehicleStatus.AVAILABLE;
     }
 
-    public VehicleId getId() {
+    public VehicleId getVehicleId() {
         return vehicleId;
     }
 
@@ -131,11 +143,12 @@ public class Vehicle {
         return performance;
     }
 
-    public List<BatteryHealthRecord> getHealthRecords() {
-        return Collections.unmodifiableList(healthRecords);
+    public List<BatteryHealthMeasurement> getHealthMeasurements() {
+        return Collections.unmodifiableList(healthMeasurements);
     }
 
     public Optional<ReservationLock> getLock() {
         return Optional.ofNullable(lock);
     }
+
 }

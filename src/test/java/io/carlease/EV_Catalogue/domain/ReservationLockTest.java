@@ -16,9 +16,9 @@ class ReservationLockTest {
         return new ReservationLock(LockDuration.ofHours(hours));
     }
 
-    //Sets the expiresAt field of a ReservationLock instance to a specific Instant using reflection
-    private void setExpiresAt(ReservationLock lock, Instant instant) throws Exception {
-        Field field = ReservationLock.class.getDeclaredField("expiresAt");
+    //Sets the lockedAt field of a ReservationLock instance to a specific Instant using reflection
+    private void setLockedAt(ReservationLock lock, Instant instant) throws Exception {
+        Field field = ReservationLock.class.getDeclaredField("lockedAt");
         //bypass private access modifier
         field.setAccessible(true);
         field.set(lock, instant);
@@ -30,14 +30,15 @@ class ReservationLockTest {
 
         @Test
         void expiredLockIsDetected() throws Exception {
-            var lock = lockWithHours(1);
-            setExpiresAt(lock, Instant.now().minus(1, ChronoUnit.HOURS));
+            var lock = lockWithHours(2);
+            // Set lockedAt to 3 hours ago so that lockedAt + 2h is 1 hour in the past
+            setLockedAt(lock, Instant.now().minus(3, ChronoUnit.HOURS));
             assertThat(lock.isExpired()).isTrue();
         }
 
         @Test
         void activeLockIsNotExpired() {
-            var lock = lockWithHours(1);
+            var lock = lockWithHours(2);
             assertThat(lock.isExpired()).isFalse();
         }
     }
