@@ -3,7 +3,10 @@ package io.carlease.EV_Catalogue.domain;
 import org.jmolecules.ddd.annotation.AggregateRoot;
 import org.jmolecules.ddd.annotation.Identity;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 @AggregateRoot
 public class Vehicle {
@@ -23,8 +26,10 @@ public class Vehicle {
                                 BatterySpecification batterySpecification,
                                 Performance performance,
                                 Amount monthlyLeasePrice,
-                                List<BatteryHealthMeasurement> initialHealthMeasurements) {
-        return new Vehicle(vehicleId, vehicleSpecification, batterySpecification, performance, monthlyLeasePrice, initialHealthMeasurements);
+                                Percentage initialStateofHealth,
+                                 Range initialMessureRangeKM) {
+        BatteryHealthMeasurement initialHealthMeasurement = new BatteryHealthMeasurement(initialStateofHealth, initialMessureRangeKM);
+        return new Vehicle(vehicleId, vehicleSpecification, batterySpecification, performance, monthlyLeasePrice, List.of(initialHealthMeasurement));
     }
 
     private Vehicle(VehicleId vehicleId,
@@ -67,16 +72,30 @@ public class Vehicle {
         this.batterySpecification = specification;
     }
 
-    public void addBatteryHealthMeasurement(BatteryHealthMeasurement measurement) {
+    public void updateBatteryHealthMeasurement(Percentage stateOfHealth, Range measuredRangeKm) {
+        BatteryHealthMeasurement measurement =  new BatteryHealthMeasurement(stateOfHealth, measuredRangeKm);
+        this.addBatteryHealthMeasurement(measurement);
+    }
+
+    private void addBatteryHealthMeasurement(BatteryHealthMeasurement measurement) {
         if (measurement == null) throw new InvalidVehicleAttributeException("measurement", "must not be null");
         this.healthMeasurements.add(measurement);
     }
 
 
-    public BatteryHealthMeasurement getLatestBatteryHealthMeasurement() {
-        return healthMeasurements.stream()
-                .max(Comparator.comparing(BatteryHealthMeasurement::getMeasuredAt))
-                .orElseThrow(() -> new InvalidVehicleAttributeException("healthMeasurements", "no measurements present"));
+    private BatteryHealthMeasurement getLatestBatteryHealthMeasurement() {
+        if (healthMeasurements.isEmpty()) {
+            throw new InvalidVehicleAttributeException("healthMeasurements", "no measurements present");
+        }
+        return healthMeasurements.get(healthMeasurements.size() - 1);
+    }
+
+    public Percentage getLatestStateOfHealth() {
+        return getLatestBatteryHealthMeasurement().getStateOfHealth();
+    }
+
+    public Range getLatestMeasuredRangeKm() {
+        return getLatestBatteryHealthMeasurement().getMeasuredRangeKm();
     }
 
     public Amount getMonthlyLeasePrice() {

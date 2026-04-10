@@ -39,8 +39,7 @@ class VehicleTest {
     }
 
     private Vehicle freshVehicle() {
-        var healthRecord = new BatteryHealthMeasurement(Percentage.of(new BigDecimal("95")), Range.ofKm(440));
-        return Vehicle.create(vehicleId(), specification(), batterySpec(), performance(), monthlyPrice(), List.of(healthRecord));
+        return Vehicle.create(vehicleId(), specification(), batterySpec(), performance(), monthlyPrice(),Percentage.of(new BigDecimal("95")), Range.ofKm(440) );
     }
 
     //tests
@@ -217,10 +216,11 @@ class VehicleTest {
             var newSoh = Percentage.of(new BigDecimal("87"));
             var newRange = Range.ofKm(400);
 
-            vehicle.addBatteryHealthMeasurement(new BatteryHealthMeasurement(newSoh, newRange));
+            vehicle.updateBatteryHealthMeasurement(newSoh, newRange);
 
             assertThat(vehicle.getHealthMeasurements()).hasSize(sizeBefore + 1);
-            var latest = vehicle.getLatestBatteryHealthMeasurement();
+            var measurements = vehicle.getHealthMeasurements();
+            var latest = measurements.get(measurements.size() - 1);
             assertThat(latest.getMeasurementId()).isNotNull();
             assertThat(latest.getMeasuredAt()).isNotNull();
             assertThat(latest.getStateOfHealth()).isEqualTo(newSoh);
@@ -230,14 +230,14 @@ class VehicleTest {
         @Test
         void latestHealthRecordIsTheMostRecent() throws InterruptedException {
             var vehicle = freshVehicle();
-            vehicle.addBatteryHealthMeasurement(new BatteryHealthMeasurement(Percentage.of(new BigDecimal("90")), Range.ofKm(430)));
+            vehicle.updateBatteryHealthMeasurement(Percentage.of(new BigDecimal("90")), Range.ofKm(430));
             //make sure the next record has a later timestamp
             Thread.sleep(1);
             var newerSoh = Percentage.of(new BigDecimal("85"));
 
-            vehicle.addBatteryHealthMeasurement(new BatteryHealthMeasurement(newerSoh, Range.ofKm(395)));
+            vehicle.updateBatteryHealthMeasurement(newerSoh, Range.ofKm(395));
 
-            assertThat(vehicle.getLatestBatteryHealthMeasurement().getStateOfHealth()).isEqualTo(newerSoh);
+            assertThat(vehicle.getLatestStateOfHealth()).isEqualTo(newerSoh);
         }
     }
 
@@ -275,9 +275,8 @@ class VehicleTest {
             var battery = BatterySpecification.of(new BigDecimal("80"), new BigDecimal("400"), new BigDecimal("11"));
             var perf = Performance.of(286, new BigDecimal("6.8"), 180);
             var price = Amount.ofCents(75000L, Currency.CHF);
-            var healthRecord = new BatteryHealthMeasurement(Percentage.of(new BigDecimal("100")), Range.ofKm(460));
 
-            var vehicle = Vehicle.create(vin, spec, battery, perf, price, List.of(healthRecord));
+            var vehicle = Vehicle.create(vin, spec, battery, perf, price, Percentage.of(new BigDecimal("100")), Range.ofKm(460));
 
             assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.AVAILABLE);
             assertThat(vehicle.getVehicleSpecification().getBrand()).isEqualTo("BMW");
@@ -424,9 +423,5 @@ class VehicleTest {
             assertThatThrownBy(() -> BatterySpecification.of(new BigDecimal("80"), new BigDecimal("400"), BigDecimal.ZERO)).isInstanceOf(InvalidVehicleAttributeException.class);
         }
 
-        @Test
-        void vehicleHealthRecordsMustNeverBeEmpty() {
-            assertThatThrownBy(() -> Vehicle.create(vehicleId(), specification(), batterySpec(), performance(), monthlyPrice(), List.of())).isInstanceOf(InvalidVehicleAttributeException.class);
-        }
     }
 }

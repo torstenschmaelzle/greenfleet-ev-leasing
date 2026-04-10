@@ -13,7 +13,7 @@ public class BatteryHealthMeasurement {
     private final Percentage stateOfHealth;
     private final Range measuredRangeKm;
 
-    public BatteryHealthMeasurement(Percentage stateOfHealth, Range measuredRangeKm) {
+    BatteryHealthMeasurement(Percentage stateOfHealth, Range measuredRangeKm) {
         if (stateOfHealth == null) {
             throw new InvalidVehicleAttributeException("stateOfHealth", "must not be null");
         }

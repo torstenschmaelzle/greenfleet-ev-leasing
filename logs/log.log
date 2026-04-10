@@ -258,3 +258,994 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 15-03-2026 17:36:31.220 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
 15-03-2026 17:36:31.328 [main] INFO  i.c.s.a.o.p.ContractPersistenceAdapterTest.logStarted - Started ContractPersistenceAdapterTest in 0.834 seconds (process running for 2.962)
 15-03-2026 17:36:31.545 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 10:31:56.691 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 122468 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+10-04-2026 10:31:56.695 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+10-04-2026 10:31:56.769 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+10-04-2026 10:31:56.770 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+10-04-2026 10:31:57.897 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+10-04-2026 10:31:58.001 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 90 ms. Found 2 JPA repository interfaces.
+10-04-2026 10:31:58.835 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+10-04-2026 10:31:58.854 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+10-04-2026 10:31:58.855 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+10-04-2026 10:31:58.944 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+10-04-2026 10:31:58.944 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2173 ms
+10-04-2026 10:31:59.001 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+10-04-2026 10:31:59.305 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+10-04-2026 10:31:59.308 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+10-04-2026 10:31:59.332 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+10-04-2026 10:32:08.057 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 8405 ms
+10-04-2026 10:32:08.743 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+10-04-2026 10:32:08.802 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 93 classes. Took 32 ms.
+10-04-2026 10:32:08.804 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+10-04-2026 10:32:09.207 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+10-04-2026 10:32:09.241 [ForkJoinPool.commonPool-worker-2] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+10-04-2026 10:32:09.402 [ForkJoinPool.commonPool-worker-2] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 161 ms.
+10-04-2026 10:32:09.694 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+10-04-2026 10:32:09.803 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.4.1.Final
+10-04-2026 10:32:09.860 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+10-04-2026 10:32:10.285 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+10-04-2026 10:32:11.925 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+10-04-2026 10:32:12.039 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 10:32:12.796 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+10-04-2026 10:32:13.489 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+10-04-2026 10:32:13.540 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+10-04-2026 10:32:13.540 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+10-04-2026 10:32:13.592 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+10-04-2026 10:32:13.606 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+10-04-2026 10:32:13.609 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+10-04-2026 10:32:13.620 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+10-04-2026 10:32:13.633 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+10-04-2026 10:32:13.633 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+10-04-2026 10:32:13.633 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+10-04-2026 10:32:13.633 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+10-04-2026 10:32:13.633 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+10-04-2026 10:32:13.638 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+10-04-2026 10:32:13.638 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+10-04-2026 10:32:13.638 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+10-04-2026 10:32:13.640 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+10-04-2026 10:32:13.640 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+10-04-2026 10:32:13.640 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+10-04-2026 10:32:13.640 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+10-04-2026 10:32:13.640 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+10-04-2026 10:32:13.640 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+10-04-2026 10:32:13.643 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+10-04-2026 10:32:13.643 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 10:32:13.643 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 10:32:13.643 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+10-04-2026 10:32:13.643 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 10:32:13.643 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 10:32:13.643 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 10:32:13.643 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+10-04-2026 10:32:13.643 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+10-04-2026 10:32:13.643 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+10-04-2026 10:32:13.643 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+10-04-2026 10:32:13.645 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+10-04-2026 10:32:13.645 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+10-04-2026 10:32:13.645 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+10-04-2026 10:32:13.645 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+10-04-2026 10:32:13.645 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+10-04-2026 10:32:13.645 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+10-04-2026 10:32:13.645 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+10-04-2026 10:32:13.645 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+10-04-2026 10:32:13.645 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+10-04-2026 10:32:13.645 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+10-04-2026 10:32:13.645 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+10-04-2026 10:32:13.645 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+10-04-2026 10:32:13.645 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+10-04-2026 10:32:13.645 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+10-04-2026 10:32:13.645 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+10-04-2026 10:32:13.645 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+10-04-2026 10:32:13.653 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+10-04-2026 10:32:13.689 [restartedMain] INFO  c.v.f.s.DefaultDeploymentConfiguration.logMessages - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+10-04-2026 10:32:13.747 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+10-04-2026 10:32:13.757 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 17.673 seconds (process running for 18.712)
+10-04-2026 10:32:17.377 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10-04-2026 10:32:17.377 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+10-04-2026 10:32:17.379 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
+10-04-2026 10:32:17.474 [http-nio-8080-exec-1] INFO  c.v.flow.spring.SpringInstantiator.getI18NProvider - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+10-04-2026 10:33:05.104 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 10:33:05.111 [SpringApplicationShutdownHook] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+10-04-2026 10:33:05.112 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+10-04-2026 10:33:05.114 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+10-04-2026 10:33:10.687 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 125776 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+10-04-2026 10:33:10.690 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+10-04-2026 10:33:10.755 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+10-04-2026 10:33:10.755 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+10-04-2026 10:33:11.694 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+10-04-2026 10:33:11.789 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 85 ms. Found 2 JPA repository interfaces.
+10-04-2026 10:33:12.519 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+10-04-2026 10:33:12.533 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+10-04-2026 10:33:12.534 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+10-04-2026 10:33:12.615 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+10-04-2026 10:33:12.615 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1859 ms
+10-04-2026 10:33:12.669 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+10-04-2026 10:33:12.897 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+10-04-2026 10:33:12.900 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+10-04-2026 10:33:12.914 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+10-04-2026 10:33:21.191 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 8005 ms
+10-04-2026 10:33:21.693 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+10-04-2026 10:33:21.743 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 97 classes. Took 29 ms.
+10-04-2026 10:33:21.746 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+10-04-2026 10:33:22.043 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+10-04-2026 10:33:22.085 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+10-04-2026 10:33:22.148 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 63 ms.
+10-04-2026 10:33:22.442 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+10-04-2026 10:33:22.502 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.4.1.Final
+10-04-2026 10:33:22.543 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+10-04-2026 10:33:22.804 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+10-04-2026 10:33:24.069 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+10-04-2026 10:33:24.151 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 10:33:24.532 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+10-04-2026 10:33:24.961 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+10-04-2026 10:33:25.000 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+10-04-2026 10:33:25.001 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+10-04-2026 10:33:25.044 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+10-04-2026 10:33:25.053 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+10-04-2026 10:33:25.059 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+10-04-2026 10:33:25.066 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+10-04-2026 10:33:25.075 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+10-04-2026 10:33:25.077 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+10-04-2026 10:33:25.077 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+10-04-2026 10:33:25.078 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+10-04-2026 10:33:25.079 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+10-04-2026 10:33:25.080 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+10-04-2026 10:33:25.081 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+10-04-2026 10:33:25.082 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+10-04-2026 10:33:25.083 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+10-04-2026 10:33:25.083 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+10-04-2026 10:33:25.084 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+10-04-2026 10:33:25.085 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+10-04-2026 10:33:25.085 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+10-04-2026 10:33:25.085 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+10-04-2026 10:33:25.086 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+10-04-2026 10:33:25.087 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 10:33:25.087 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 10:33:25.087 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+10-04-2026 10:33:25.087 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 10:33:25.087 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 10:33:25.087 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 10:33:25.088 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+10-04-2026 10:33:25.088 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+10-04-2026 10:33:25.088 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+10-04-2026 10:33:25.088 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+10-04-2026 10:33:25.088 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+10-04-2026 10:33:25.089 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+10-04-2026 10:33:25.089 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+10-04-2026 10:33:25.089 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+10-04-2026 10:33:25.091 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+10-04-2026 10:33:25.091 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+10-04-2026 10:33:25.091 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+10-04-2026 10:33:25.091 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+10-04-2026 10:33:25.091 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+10-04-2026 10:33:25.092 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+10-04-2026 10:33:25.092 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+10-04-2026 10:33:25.094 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+10-04-2026 10:33:25.095 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+10-04-2026 10:33:25.095 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+10-04-2026 10:33:25.095 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+10-04-2026 10:33:25.095 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+10-04-2026 10:33:25.099 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+10-04-2026 10:33:25.176 [restartedMain] INFO  c.v.f.s.DefaultDeploymentConfiguration.logMessages - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+10-04-2026 10:33:25.246 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+10-04-2026 10:33:25.266 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 15.091 seconds (process running for 15.964)
+10-04-2026 10:33:27.038 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10-04-2026 10:33:27.038 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+10-04-2026 10:33:27.040 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
+10-04-2026 10:33:27.163 [http-nio-8080-exec-1] INFO  c.v.flow.spring.SpringInstantiator.getI18NProvider - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+10-04-2026 10:34:06.941 [http-nio-8080-exec-9] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: wwwwwwwwwwwwwwwww
+10-04-2026 10:35:44.258 [http-nio-8080-exec-10] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: sssssssssssssssss
+10-04-2026 10:36:02.819 [http-nio-8080-exec-5] INFO  i.c.E.a.service.UpdateVehicleService.update - Vehicle updated in EV catalogue: sssssssssssssssss
+10-04-2026 10:54:58.341 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 10:54:58.353 [SpringApplicationShutdownHook] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+10-04-2026 10:54:58.353 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+10-04-2026 10:54:58.355 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+10-04-2026 10:55:04.039 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 102068 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+10-04-2026 10:55:04.042 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+10-04-2026 10:55:04.113 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+10-04-2026 10:55:04.113 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+10-04-2026 10:55:05.050 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+10-04-2026 10:55:05.156 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 95 ms. Found 2 JPA repository interfaces.
+10-04-2026 10:55:05.880 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+10-04-2026 10:55:05.894 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+10-04-2026 10:55:05.896 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+10-04-2026 10:55:05.976 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+10-04-2026 10:55:05.976 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1862 ms
+10-04-2026 10:55:06.028 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+10-04-2026 10:55:06.268 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+10-04-2026 10:55:06.272 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+10-04-2026 10:55:06.286 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+10-04-2026 10:55:20.315 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 13752 ms
+10-04-2026 10:55:20.317 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Due to slow search it is recommended to use the whitelisted-packages feature to make scanning faster.
+
+See the whitelisted-packages section in the docs at https://vaadin.com/docs/latest/flow/integrations/spring/configuration#special-configuration-parameters
+10-04-2026 10:55:21.265 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+10-04-2026 10:55:21.351 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 97 classes. Took 56 ms.
+10-04-2026 10:55:21.355 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+10-04-2026 10:55:21.949 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+10-04-2026 10:55:22.028 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+10-04-2026 10:55:22.153 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 126 ms.
+10-04-2026 10:55:22.779 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+10-04-2026 10:55:22.914 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.4.1.Final
+10-04-2026 10:55:23.003 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+10-04-2026 10:55:23.553 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+10-04-2026 10:55:25.249 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+10-04-2026 10:55:25.329 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 10:55:25.733 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+10-04-2026 10:55:26.189 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+10-04-2026 10:55:26.230 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+10-04-2026 10:55:26.231 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+10-04-2026 10:55:26.274 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+10-04-2026 10:55:26.284 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+10-04-2026 10:55:26.291 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+10-04-2026 10:55:26.297 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+10-04-2026 10:55:26.307 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+10-04-2026 10:55:26.308 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+10-04-2026 10:55:26.309 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+10-04-2026 10:55:26.310 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+10-04-2026 10:55:26.311 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+10-04-2026 10:55:26.312 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+10-04-2026 10:55:26.313 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+10-04-2026 10:55:26.313 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+10-04-2026 10:55:26.314 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+10-04-2026 10:55:26.315 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+10-04-2026 10:55:26.315 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+10-04-2026 10:55:26.316 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+10-04-2026 10:55:26.316 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+10-04-2026 10:55:26.316 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+10-04-2026 10:55:26.317 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+10-04-2026 10:55:26.317 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 10:55:26.318 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 10:55:26.318 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+10-04-2026 10:55:26.318 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 10:55:26.319 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 10:55:26.319 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 10:55:26.320 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+10-04-2026 10:55:26.320 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+10-04-2026 10:55:26.320 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+10-04-2026 10:55:26.320 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+10-04-2026 10:55:26.321 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+10-04-2026 10:55:26.321 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+10-04-2026 10:55:26.321 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+10-04-2026 10:55:26.322 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+10-04-2026 10:55:26.323 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+10-04-2026 10:55:26.323 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+10-04-2026 10:55:26.323 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+10-04-2026 10:55:26.323 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+10-04-2026 10:55:26.323 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+10-04-2026 10:55:26.323 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+10-04-2026 10:55:26.323 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+10-04-2026 10:55:26.326 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+10-04-2026 10:55:26.326 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+10-04-2026 10:55:26.326 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+10-04-2026 10:55:26.327 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+10-04-2026 10:55:26.327 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+10-04-2026 10:55:26.331 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+10-04-2026 10:55:26.374 [restartedMain] INFO  c.v.f.s.DefaultDeploymentConfiguration.logMessages - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+10-04-2026 10:55:26.425 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+10-04-2026 10:55:26.438 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 22.908 seconds (process running for 23.747)
+10-04-2026 10:55:29.668 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10-04-2026 10:55:29.668 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+10-04-2026 10:55:29.670 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 2 ms
+10-04-2026 10:55:29.795 [http-nio-8080-exec-1] INFO  c.v.flow.spring.SpringInstantiator.getI18NProvider - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+10-04-2026 10:56:12.334 [http-nio-8080-exec-6] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: wwwwwwwwwwwwwwwww
+10-04-2026 10:56:23.092 [http-nio-8080-exec-5] INFO  i.c.E.a.service.UpdateVehicleService.update - Vehicle updated in EV catalogue: wwwwwwwwwwwwwwwww
+10-04-2026 10:57:24.566 [http-nio-8080-exec-9] INFO  i.c.E.a.service.UpdateVehicleService.update - Vehicle updated in EV catalogue: wwwwwwwwwwwwwwwww
+10-04-2026 10:57:42.537 [http-nio-8080-exec-7] INFO  i.c.E.a.service.UpdateVehicleService.update - Vehicle updated in EV catalogue: wwwwwwwwwwwwwwwww
+10-04-2026 11:00:09.563 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 11:00:09.577 [SpringApplicationShutdownHook] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+10-04-2026 11:00:09.577 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+10-04-2026 11:00:09.577 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+10-04-2026 11:00:16.487 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 118024 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+10-04-2026 11:00:16.490 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+10-04-2026 11:00:16.552 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+10-04-2026 11:00:16.552 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+10-04-2026 11:00:17.526 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+10-04-2026 11:00:17.628 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 92 ms. Found 2 JPA repository interfaces.
+10-04-2026 11:00:18.361 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+10-04-2026 11:00:18.374 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+10-04-2026 11:00:18.376 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+10-04-2026 11:00:18.468 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+10-04-2026 11:00:18.469 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1915 ms
+10-04-2026 11:00:18.520 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+10-04-2026 11:00:18.747 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+10-04-2026 11:00:18.750 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+10-04-2026 11:00:18.764 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+10-04-2026 11:00:27.623 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 8590 ms
+10-04-2026 11:00:28.181 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+10-04-2026 11:00:28.233 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 97 classes. Took 30 ms.
+10-04-2026 11:00:28.235 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+10-04-2026 11:00:28.509 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+10-04-2026 11:00:28.540 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+10-04-2026 11:00:28.592 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 52 ms.
+10-04-2026 11:00:28.894 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+10-04-2026 11:00:28.963 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.4.1.Final
+10-04-2026 11:00:29.009 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+10-04-2026 11:00:29.302 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+10-04-2026 11:00:30.667 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+10-04-2026 11:00:30.757 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 11:00:31.167 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+10-04-2026 11:00:31.681 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+10-04-2026 11:00:31.726 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+10-04-2026 11:00:31.727 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+10-04-2026 11:00:31.777 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+10-04-2026 11:00:31.787 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+10-04-2026 11:00:31.794 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+10-04-2026 11:00:31.800 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+10-04-2026 11:00:31.810 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+10-04-2026 11:00:31.811 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+10-04-2026 11:00:31.811 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+10-04-2026 11:00:31.812 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+10-04-2026 11:00:31.813 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+10-04-2026 11:00:31.814 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+10-04-2026 11:00:31.815 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+10-04-2026 11:00:31.816 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+10-04-2026 11:00:31.817 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+10-04-2026 11:00:31.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+10-04-2026 11:00:31.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+10-04-2026 11:00:31.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+10-04-2026 11:00:31.819 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+10-04-2026 11:00:31.819 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+10-04-2026 11:00:31.819 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+10-04-2026 11:00:31.820 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:00:31.820 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:00:31.820 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+10-04-2026 11:00:31.821 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:00:31.821 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:00:31.821 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:00:31.821 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+10-04-2026 11:00:31.821 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+10-04-2026 11:00:31.821 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+10-04-2026 11:00:31.822 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+10-04-2026 11:00:31.822 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+10-04-2026 11:00:31.823 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+10-04-2026 11:00:31.823 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+10-04-2026 11:00:31.823 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+10-04-2026 11:00:31.823 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+10-04-2026 11:00:31.823 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+10-04-2026 11:00:31.823 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+10-04-2026 11:00:31.823 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+10-04-2026 11:00:31.824 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+10-04-2026 11:00:31.824 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+10-04-2026 11:00:31.824 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+10-04-2026 11:00:31.826 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+10-04-2026 11:00:31.827 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+10-04-2026 11:00:31.827 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+10-04-2026 11:00:31.827 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+10-04-2026 11:00:31.827 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+10-04-2026 11:00:31.832 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+10-04-2026 11:00:31.878 [restartedMain] INFO  c.v.f.s.DefaultDeploymentConfiguration.logMessages - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+10-04-2026 11:00:31.930 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+10-04-2026 11:00:31.942 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 15.992 seconds (process running for 16.865)
+10-04-2026 11:00:32.044 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10-04-2026 11:00:32.044 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+10-04-2026 11:00:32.046 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 2 ms
+10-04-2026 11:00:32.189 [http-nio-8080-exec-1] INFO  c.v.flow.spring.SpringInstantiator.getI18NProvider - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+10-04-2026 11:01:01.629 [http-nio-8080-exec-4] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: wwwwwwwwwwwwwwwww
+10-04-2026 11:01:12.118 [http-nio-8080-exec-5] INFO  i.c.E.a.service.UpdateVehicleService.update - Vehicle updated in EV catalogue: wwwwwwwwwwwwwwwww
+10-04-2026 11:02:00.575 [http-nio-8080-exec-8] INFO  i.c.E.a.service.UpdateVehicleService.update - Vehicle updated in EV catalogue: wwwwwwwwwwwwwwwww
+10-04-2026 11:02:23.586 [http-nio-8080-exec-8] INFO  i.c.E.a.service.UpdateVehicleService.update - Vehicle updated in EV catalogue: wwwwwwwwwwwwwwwww
+10-04-2026 11:03:00.649 [http-nio-8080-exec-1] INFO  i.c.E.a.service.UpdateVehicleService.update - Vehicle updated in EV catalogue: wwwwwwwwwwwwwwwww
+10-04-2026 11:07:26.707 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener.onApplicationEvent - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+10-04-2026 11:07:26.734 [Thread-6] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 11:07:26.739 [Thread-6] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+10-04-2026 11:07:26.739 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+10-04-2026 11:07:26.743 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+10-04-2026 11:07:26.867 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 118024 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+10-04-2026 11:07:26.867 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+10-04-2026 11:07:27.082 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+10-04-2026 11:07:27.111 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 21 ms. Found 2 JPA repository interfaces.
+10-04-2026 11:07:27.214 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+10-04-2026 11:07:27.216 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+10-04-2026 11:07:27.216 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+10-04-2026 11:07:27.247 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+10-04-2026 11:07:27.247 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 380 ms
+10-04-2026 11:07:27.263 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-2 - Starting...
+10-04-2026 11:07:27.266 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-2 - Added connection conn11: url=jdbc:h2:mem:testdb user=SA
+10-04-2026 11:07:27.266 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-2 - Start completed.
+10-04-2026 11:07:27.266 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+10-04-2026 11:07:27.773 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 426 ms
+10-04-2026 11:07:27.773 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+10-04-2026 11:07:27.791 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 97 classes. Took 2 ms.
+10-04-2026 11:07:27.791 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+10-04-2026 11:07:27.933 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+10-04-2026 11:07:27.939 [ForkJoinPool.commonPool-worker-2] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+10-04-2026 11:07:27.984 [ForkJoinPool.commonPool-worker-2] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 39 ms.
+10-04-2026 11:07:28.136 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+10-04-2026 11:07:28.136 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+10-04-2026 11:07:28.136 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+10-04-2026 11:07:28.230 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+10-04-2026 11:07:28.246 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 11:07:28.352 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+10-04-2026 11:07:28.458 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+10-04-2026 11:07:28.468 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+10-04-2026 11:07:28.468 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+10-04-2026 11:07:28.473 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+10-04-2026 11:07:28.475 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+10-04-2026 11:07:28.477 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+10-04-2026 11:07:28.477 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+10-04-2026 11:07:28.479 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+10-04-2026 11:07:28.479 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+10-04-2026 11:07:28.479 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+10-04-2026 11:07:28.479 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+10-04-2026 11:07:28.479 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+10-04-2026 11:07:28.481 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+10-04-2026 11:07:28.484 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+10-04-2026 11:07:28.484 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+10-04-2026 11:07:28.484 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+10-04-2026 11:07:28.484 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+10-04-2026 11:07:28.484 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+10-04-2026 11:07:28.484 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+10-04-2026 11:07:28.484 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+10-04-2026 11:07:28.484 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+10-04-2026 11:07:28.484 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+10-04-2026 11:07:28.484 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+10-04-2026 11:07:28.484 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+10-04-2026 11:07:28.484 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+10-04-2026 11:07:28.484 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+10-04-2026 11:07:28.484 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+10-04-2026 11:07:28.484 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+10-04-2026 11:07:28.484 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+10-04-2026 11:07:28.484 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+10-04-2026 11:07:28.499 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 1.661 seconds (process running for 433.425)
+10-04-2026 11:07:28.507 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation unchanged
+10-04-2026 11:07:28.520 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10-04-2026 11:07:28.520 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+10-04-2026 11:07:28.521 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
+10-04-2026 11:07:28.527 [http-nio-8080-exec-1] INFO  c.v.flow.spring.SpringInstantiator.getI18NProvider - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+10-04-2026 11:07:29.920 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener.onApplicationEvent - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+10-04-2026 11:07:29.936 [Thread-15] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 11:07:29.936 [Thread-15] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+10-04-2026 11:07:29.938 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown initiated...
+10-04-2026 11:07:29.938 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown completed.
+10-04-2026 11:07:30.054 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 118024 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+10-04-2026 11:07:30.054 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+10-04-2026 11:07:30.236 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+10-04-2026 11:07:30.265 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 21 ms. Found 2 JPA repository interfaces.
+10-04-2026 11:07:30.355 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+10-04-2026 11:07:30.355 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+10-04-2026 11:07:30.355 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+10-04-2026 11:07:30.385 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+10-04-2026 11:07:30.385 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 329 ms
+10-04-2026 11:07:30.402 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-3 - Starting...
+10-04-2026 11:07:30.402 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-3 - Added connection conn21: url=jdbc:h2:mem:testdb user=SA
+10-04-2026 11:07:30.407 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-3 - Start completed.
+10-04-2026 11:07:30.408 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+10-04-2026 11:07:30.880 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 421 ms
+10-04-2026 11:07:30.888 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+10-04-2026 11:07:30.906 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 97 classes. Took 10 ms.
+10-04-2026 11:07:30.907 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+10-04-2026 11:07:31.038 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+10-04-2026 11:07:31.040 [ForkJoinPool.commonPool-worker-2] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+10-04-2026 11:07:31.084 [ForkJoinPool.commonPool-worker-2] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 37 ms.
+10-04-2026 11:07:31.227 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+10-04-2026 11:07:31.227 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+10-04-2026 11:07:31.243 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+10-04-2026 11:07:31.359 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+10-04-2026 11:07:31.369 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 11:07:31.527 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+10-04-2026 11:07:31.669 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+10-04-2026 11:07:31.669 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+10-04-2026 11:07:31.669 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+10-04-2026 11:07:31.685 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+10-04-2026 11:07:31.685 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+10-04-2026 11:07:31.685 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+10-04-2026 11:07:31.685 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+10-04-2026 11:07:31.685 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+10-04-2026 11:07:31.685 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+10-04-2026 11:07:31.692 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+10-04-2026 11:07:31.707 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+10-04-2026 11:07:31.723 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+10-04-2026 11:07:31.723 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 1.693 seconds (process running for 436.655)
+10-04-2026 11:07:31.733 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation unchanged
+10-04-2026 11:07:31.753 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10-04-2026 11:07:31.753 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+10-04-2026 11:07:31.755 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
+10-04-2026 11:07:31.758 [http-nio-8080-exec-1] INFO  c.v.flow.spring.SpringInstantiator.getI18NProvider - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+10-04-2026 11:08:30.432 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 11:08:30.437 [SpringApplicationShutdownHook] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+10-04-2026 11:08:30.437 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-3 - Shutdown initiated...
+10-04-2026 11:08:30.437 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-3 - Shutdown completed.
+10-04-2026 11:08:35.816 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 124276 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+10-04-2026 11:08:35.821 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+10-04-2026 11:08:35.884 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+10-04-2026 11:08:35.885 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+10-04-2026 11:08:36.810 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+10-04-2026 11:08:36.917 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 97 ms. Found 2 JPA repository interfaces.
+10-04-2026 11:08:37.627 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+10-04-2026 11:08:37.643 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+10-04-2026 11:08:37.644 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+10-04-2026 11:08:37.726 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+10-04-2026 11:08:37.726 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1840 ms
+10-04-2026 11:08:37.783 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+10-04-2026 11:08:38.011 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+10-04-2026 11:08:38.013 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+10-04-2026 11:08:38.027 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+10-04-2026 11:08:46.754 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 8447 ms
+10-04-2026 11:08:47.207 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+10-04-2026 11:08:47.253 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 97 classes. Took 26 ms.
+10-04-2026 11:08:47.256 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+10-04-2026 11:08:47.501 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+10-04-2026 11:08:47.532 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+10-04-2026 11:08:47.577 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 45 ms.
+10-04-2026 11:08:47.869 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+10-04-2026 11:08:47.926 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.4.1.Final
+10-04-2026 11:08:47.967 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+10-04-2026 11:08:48.228 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+10-04-2026 11:08:49.457 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+10-04-2026 11:08:49.539 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 11:08:49.961 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+10-04-2026 11:08:50.415 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+10-04-2026 11:08:50.453 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+10-04-2026 11:08:50.454 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+10-04-2026 11:08:50.498 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+10-04-2026 11:08:50.508 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+10-04-2026 11:08:50.515 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+10-04-2026 11:08:50.520 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+10-04-2026 11:08:50.530 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+10-04-2026 11:08:50.531 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+10-04-2026 11:08:50.532 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+10-04-2026 11:08:50.534 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+10-04-2026 11:08:50.534 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+10-04-2026 11:08:50.535 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+10-04-2026 11:08:50.536 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+10-04-2026 11:08:50.537 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+10-04-2026 11:08:50.538 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+10-04-2026 11:08:50.539 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+10-04-2026 11:08:50.540 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+10-04-2026 11:08:50.540 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+10-04-2026 11:08:50.540 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+10-04-2026 11:08:50.541 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+10-04-2026 11:08:50.541 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+10-04-2026 11:08:50.542 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:08:50.542 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:08:50.542 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+10-04-2026 11:08:50.543 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:08:50.543 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:08:50.543 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:08:50.543 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+10-04-2026 11:08:50.543 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+10-04-2026 11:08:50.543 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+10-04-2026 11:08:50.544 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+10-04-2026 11:08:50.544 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+10-04-2026 11:08:50.545 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+10-04-2026 11:08:50.545 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+10-04-2026 11:08:50.546 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+10-04-2026 11:08:50.546 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+10-04-2026 11:08:50.546 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+10-04-2026 11:08:50.546 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+10-04-2026 11:08:50.546 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+10-04-2026 11:08:50.546 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+10-04-2026 11:08:50.546 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+10-04-2026 11:08:50.547 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+10-04-2026 11:08:50.550 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+10-04-2026 11:08:50.550 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+10-04-2026 11:08:50.550 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+10-04-2026 11:08:50.550 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+10-04-2026 11:08:50.550 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+10-04-2026 11:08:50.554 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+10-04-2026 11:08:50.600 [restartedMain] INFO  c.v.f.s.DefaultDeploymentConfiguration.logMessages - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+10-04-2026 11:08:50.650 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+10-04-2026 11:08:50.663 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 15.354 seconds (process running for 16.215)
+10-04-2026 11:08:50.807 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10-04-2026 11:08:50.809 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+10-04-2026 11:08:50.810 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
+10-04-2026 11:08:51.674 [http-nio-8080-exec-4] INFO  c.v.flow.spring.SpringInstantiator.getI18NProvider - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+10-04-2026 11:09:22.511 [http-nio-8080-exec-6] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: wwwwwwwwwwwwwwwww
+10-04-2026 11:09:32.724 [http-nio-8080-exec-8] INFO  i.c.E.a.service.UpdateVehicleService.update - Vehicle updated in EV catalogue: wwwwwwwwwwwwwwwww
+10-04-2026 11:09:41.099 [http-nio-8080-exec-6] INFO  i.c.E.a.service.UpdateVehicleService.update - Vehicle updated in EV catalogue: wwwwwwwwwwwwwwwww
+10-04-2026 11:10:23.350 [http-nio-8080-exec-3] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: eeeeeeeeeeeeeeeee
+10-04-2026 11:10:33.514 [http-nio-8080-exec-4] INFO  i.c.E.a.service.UpdateVehicleService.update - Vehicle updated in EV catalogue: eeeeeeeeeeeeeeeee
+10-04-2026 11:22:39.022 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener.onApplicationEvent - Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+10-04-2026 11:22:39.046 [Thread-6] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 11:22:39.046 [Thread-6] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+10-04-2026 11:22:39.054 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+10-04-2026 11:22:39.054 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+10-04-2026 11:22:39.170 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 124276 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+10-04-2026 11:22:39.170 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+10-04-2026 11:22:39.404 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+10-04-2026 11:22:39.432 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 22 ms. Found 2 JPA repository interfaces.
+10-04-2026 11:22:39.555 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+10-04-2026 11:22:39.555 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+10-04-2026 11:22:39.555 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+10-04-2026 11:22:39.594 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+10-04-2026 11:22:39.594 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 422 ms
+10-04-2026 11:22:39.612 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-2 - Starting...
+10-04-2026 11:22:39.612 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-2 - Added connection conn11: url=jdbc:h2:mem:testdb user=SA
+10-04-2026 11:22:39.612 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-2 - Start completed.
+10-04-2026 11:22:39.612 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+10-04-2026 11:22:40.134 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 435 ms
+10-04-2026 11:22:40.146 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+10-04-2026 11:22:40.154 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 97 classes. Took 8 ms.
+10-04-2026 11:22:40.154 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+10-04-2026 11:22:40.294 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+10-04-2026 11:22:40.304 [ForkJoinPool.commonPool-worker-2] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+10-04-2026 11:22:40.335 [ForkJoinPool.commonPool-worker-2] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 37 ms.
+10-04-2026 11:22:40.498 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+10-04-2026 11:22:40.502 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+10-04-2026 11:22:40.508 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+10-04-2026 11:22:40.598 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+10-04-2026 11:22:40.610 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 11:22:40.736 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+10-04-2026 11:22:40.866 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+10-04-2026 11:22:40.882 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+10-04-2026 11:22:40.882 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+10-04-2026 11:22:40.882 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+10-04-2026 11:22:40.882 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+10-04-2026 11:22:40.882 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+10-04-2026 11:22:40.882 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+10-04-2026 11:22:40.882 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+10-04-2026 11:22:40.882 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+10-04-2026 11:22:40.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+10-04-2026 11:22:40.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+10-04-2026 11:22:40.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+10-04-2026 11:22:40.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+10-04-2026 11:22:40.913 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+10-04-2026 11:22:40.913 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 1.773 seconds (process running for 846.473)
+10-04-2026 11:22:40.921 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation unchanged
+10-04-2026 11:22:40.943 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10-04-2026 11:22:40.944 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+10-04-2026 11:22:40.945 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
+10-04-2026 11:22:40.952 [http-nio-8080-exec-1] INFO  c.v.flow.spring.SpringInstantiator.getI18NProvider - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+10-04-2026 11:22:42.322 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener.onApplicationEvent - Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
+10-04-2026 11:22:42.341 [Thread-15] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 11:22:42.341 [Thread-15] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+10-04-2026 11:22:42.341 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown initiated...
+10-04-2026 11:22:42.343 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown completed.
+10-04-2026 11:22:42.462 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 124276 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+10-04-2026 11:22:42.462 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+10-04-2026 11:22:42.658 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+10-04-2026 11:22:42.679 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 21 ms. Found 2 JPA repository interfaces.
+10-04-2026 11:22:42.768 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+10-04-2026 11:22:42.768 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+10-04-2026 11:22:42.768 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+10-04-2026 11:22:42.800 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+10-04-2026 11:22:42.800 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 336 ms
+10-04-2026 11:22:42.815 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-3 - Starting...
+10-04-2026 11:22:42.815 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-3 - Added connection conn21: url=jdbc:h2:mem:testdb user=SA
+10-04-2026 11:22:42.815 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-3 - Start completed.
+10-04-2026 11:22:42.815 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+10-04-2026 11:22:43.318 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 433 ms
+10-04-2026 11:22:43.320 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+10-04-2026 11:22:43.342 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 97 classes. Took 11 ms.
+10-04-2026 11:22:43.342 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+10-04-2026 11:22:43.471 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+10-04-2026 11:22:43.487 [ForkJoinPool.commonPool-worker-2] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+10-04-2026 11:22:43.540 [ForkJoinPool.commonPool-worker-2] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 56 ms.
+10-04-2026 11:22:43.689 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+10-04-2026 11:22:43.692 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+10-04-2026 11:22:43.692 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+10-04-2026 11:22:43.800 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+10-04-2026 11:22:43.812 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 11:22:43.928 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+10-04-2026 11:22:44.030 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+10-04-2026 11:22:44.038 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+10-04-2026 11:22:44.039 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+10-04-2026 11:22:44.043 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+10-04-2026 11:22:44.046 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+10-04-2026 11:22:44.047 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+10-04-2026 11:22:44.047 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+10-04-2026 11:22:44.047 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+10-04-2026 11:22:44.047 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+10-04-2026 11:22:44.048 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+10-04-2026 11:22:44.048 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+10-04-2026 11:22:44.048 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+10-04-2026 11:22:44.048 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+10-04-2026 11:22:44.048 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+10-04-2026 11:22:44.048 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+10-04-2026 11:22:44.048 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+10-04-2026 11:22:44.048 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+10-04-2026 11:22:44.050 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+10-04-2026 11:22:44.050 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+10-04-2026 11:22:44.050 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+10-04-2026 11:22:44.050 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+10-04-2026 11:22:44.050 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+10-04-2026 11:22:44.051 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:22:44.051 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:22:44.051 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+10-04-2026 11:22:44.051 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:22:44.051 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:22:44.051 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:22:44.051 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+10-04-2026 11:22:44.052 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+10-04-2026 11:22:44.052 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+10-04-2026 11:22:44.052 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+10-04-2026 11:22:44.052 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+10-04-2026 11:22:44.052 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+10-04-2026 11:22:44.052 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+10-04-2026 11:22:44.052 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+10-04-2026 11:22:44.052 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+10-04-2026 11:22:44.053 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+10-04-2026 11:22:44.053 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+10-04-2026 11:22:44.053 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+10-04-2026 11:22:44.053 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+10-04-2026 11:22:44.053 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+10-04-2026 11:22:44.053 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+10-04-2026 11:22:44.063 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+10-04-2026 11:22:44.063 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+10-04-2026 11:22:44.064 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+10-04-2026 11:22:44.064 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+10-04-2026 11:22:44.064 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+10-04-2026 11:22:44.064 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+10-04-2026 11:22:44.078 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+10-04-2026 11:22:44.084 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 1.652 seconds (process running for 849.641)
+10-04-2026 11:22:44.084 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation unchanged
+10-04-2026 11:22:44.102 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10-04-2026 11:22:44.103 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+10-04-2026 11:22:44.104 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
+10-04-2026 11:22:44.110 [http-nio-8080-exec-1] INFO  c.v.flow.spring.SpringInstantiator.getI18NProvider - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+10-04-2026 11:24:25.476 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 11:24:25.477 [SpringApplicationShutdownHook] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+10-04-2026 11:24:25.478 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-3 - Shutdown initiated...
+10-04-2026 11:24:25.478 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-3 - Shutdown completed.
+10-04-2026 11:24:28.406 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 94384 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+10-04-2026 11:24:28.409 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+10-04-2026 11:24:28.476 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+10-04-2026 11:24:28.477 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+10-04-2026 11:24:29.378 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+10-04-2026 11:24:29.481 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 93 ms. Found 2 JPA repository interfaces.
+10-04-2026 11:24:30.191 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+10-04-2026 11:24:30.205 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+10-04-2026 11:24:30.205 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+10-04-2026 11:24:30.285 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+10-04-2026 11:24:30.285 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1807 ms
+10-04-2026 11:24:30.337 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+10-04-2026 11:24:30.559 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+10-04-2026 11:24:30.561 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+10-04-2026 11:24:30.575 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+10-04-2026 11:24:38.938 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 8086 ms
+10-04-2026 11:24:39.398 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+10-04-2026 11:24:39.447 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 97 classes. Took 28 ms.
+10-04-2026 11:24:39.451 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+10-04-2026 11:24:39.711 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+10-04-2026 11:24:39.742 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+10-04-2026 11:24:39.789 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 48 ms.
+10-04-2026 11:24:40.084 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+10-04-2026 11:24:40.144 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.4.1.Final
+10-04-2026 11:24:40.183 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+10-04-2026 11:24:40.460 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+10-04-2026 11:24:41.749 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+10-04-2026 11:24:41.834 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 11:24:42.256 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+10-04-2026 11:24:42.710 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+10-04-2026 11:24:42.753 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+10-04-2026 11:24:42.753 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+10-04-2026 11:24:42.797 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+10-04-2026 11:24:42.808 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+10-04-2026 11:24:42.814 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+10-04-2026 11:24:42.820 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+10-04-2026 11:24:42.830 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+10-04-2026 11:24:42.832 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+10-04-2026 11:24:42.832 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+10-04-2026 11:24:42.833 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+10-04-2026 11:24:42.834 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+10-04-2026 11:24:42.835 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+10-04-2026 11:24:42.836 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+10-04-2026 11:24:42.836 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+10-04-2026 11:24:42.837 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+10-04-2026 11:24:42.838 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+10-04-2026 11:24:42.838 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+10-04-2026 11:24:42.838 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+10-04-2026 11:24:42.839 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+10-04-2026 11:24:42.839 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+10-04-2026 11:24:42.840 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+10-04-2026 11:24:42.841 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:24:42.841 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:24:42.841 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+10-04-2026 11:24:42.841 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:24:42.841 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:24:42.841 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:24:42.842 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+10-04-2026 11:24:42.842 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+10-04-2026 11:24:42.842 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+10-04-2026 11:24:42.842 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+10-04-2026 11:24:42.843 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+10-04-2026 11:24:42.843 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+10-04-2026 11:24:42.843 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+10-04-2026 11:24:42.843 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+10-04-2026 11:24:42.843 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+10-04-2026 11:24:42.844 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+10-04-2026 11:24:42.845 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+10-04-2026 11:24:42.847 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+10-04-2026 11:24:42.847 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+10-04-2026 11:24:42.847 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+10-04-2026 11:24:42.848 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+10-04-2026 11:24:42.850 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+10-04-2026 11:24:42.851 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+10-04-2026 11:24:42.851 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+10-04-2026 11:24:42.851 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+10-04-2026 11:24:42.851 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+10-04-2026 11:24:42.856 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+10-04-2026 11:24:42.901 [restartedMain] INFO  c.v.f.s.DefaultDeploymentConfiguration.logMessages - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+10-04-2026 11:24:42.952 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+10-04-2026 11:24:42.964 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 15.076 seconds (process running for 15.964)
+10-04-2026 11:27:46.540 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10-04-2026 11:27:46.541 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+10-04-2026 11:27:46.544 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 2 ms
+10-04-2026 11:31:56.553 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener.onApplicationEvent - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+10-04-2026 11:31:56.563 [Thread-6] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 11:31:56.578 [Thread-6] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+10-04-2026 11:31:56.578 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+10-04-2026 11:31:56.585 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+10-04-2026 11:31:56.697 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 94384 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+10-04-2026 11:31:56.697 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+10-04-2026 11:31:56.930 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+10-04-2026 11:31:56.947 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 20 ms. Found 2 JPA repository interfaces.
+10-04-2026 11:31:57.055 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+10-04-2026 11:31:57.057 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+10-04-2026 11:31:57.057 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+10-04-2026 11:31:57.090 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+10-04-2026 11:31:57.090 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 393 ms
+10-04-2026 11:31:57.097 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-2 - Starting...
+10-04-2026 11:31:57.107 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+10-04-2026 11:31:57.107 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-2 - Start completed.
+10-04-2026 11:31:57.107 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+10-04-2026 11:31:57.634 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 444 ms
+10-04-2026 11:31:57.650 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+10-04-2026 11:31:57.667 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 97 classes. Took 17 ms.
+10-04-2026 11:31:57.667 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+10-04-2026 11:31:57.920 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+10-04-2026 11:31:57.931 [ForkJoinPool.commonPool-worker-2] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+10-04-2026 11:31:57.975 [ForkJoinPool.commonPool-worker-2] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 58 ms.
+10-04-2026 11:31:58.156 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+10-04-2026 11:31:58.160 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+10-04-2026 11:31:58.164 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+10-04-2026 11:31:58.263 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+10-04-2026 11:31:58.271 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+10-04-2026 11:31:58.377 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+10-04-2026 11:31:58.490 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+10-04-2026 11:31:58.499 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+10-04-2026 11:31:58.499 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+10-04-2026 11:31:58.499 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+10-04-2026 11:31:58.499 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+10-04-2026 11:31:58.499 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+10-04-2026 11:31:58.499 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+10-04-2026 11:31:58.499 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+10-04-2026 11:31:58.499 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+10-04-2026 11:31:58.499 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+10-04-2026 11:31:58.499 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+10-04-2026 11:31:58.499 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+10-04-2026 11:31:58.499 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+10-04-2026 11:31:58.499 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+10-04-2026 11:31:58.499 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+10-04-2026 11:31:58.499 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+10-04-2026 11:31:58.511 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+10-04-2026 11:31:58.518 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+10-04-2026 11:31:58.518 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+10-04-2026 11:31:58.518 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+10-04-2026 11:31:58.518 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+10-04-2026 11:31:58.518 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+10-04-2026 11:31:58.518 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+10-04-2026 11:31:58.518 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+10-04-2026 11:31:58.518 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+10-04-2026 11:31:58.518 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+10-04-2026 11:31:58.518 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+10-04-2026 11:31:58.527 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+10-04-2026 11:31:58.535 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 1.862 seconds (process running for 451.534)
+10-04-2026 11:31:58.537 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation unchanged
+10-04-2026 11:32:47.474 [http-nio-8080-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10-04-2026 11:32:47.474 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+10-04-2026 11:32:47.474 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 0 ms
+10-04-2026 12:18:28.078 [http-nio-8080-exec-3] INFO  c.v.flow.spring.SpringInstantiator.getI18NProvider - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+10-04-2026 12:18:52.210 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=39m12s831ms267µs700ns).
