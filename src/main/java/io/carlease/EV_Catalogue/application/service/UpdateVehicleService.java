@@ -30,14 +30,14 @@ public class UpdateVehicleService implements updateVehicle {
                        Range newMeasuredRangeKm) {
 
         Vehicle vehicle = persistVehiclePort.findById(vehicleId)
-                .orElseThrow(() -> new IllegalArgumentException("Vehicle not found: " + vehicleId.getId()));
+                .orElseThrow(() -> new IllegalArgumentException("Vehicle not found: " + vehicleId.getVin()));
 
         vehicle.updateVehicleSpecification(specification);
         vehicle.updateBatterySpecification(batterySpecification);
         vehicle.updateMonthlyLeasePrice(monthlyLeasePrice);
-        vehicle.addBatteryHealthRecord(newStateOfHealth, newMeasuredRangeKm);
+        vehicle.updateBatteryHealthMeasurement(newStateOfHealth, newMeasuredRangeKm);
 
         persistVehiclePort.save(vehicle);
-        logger.info("Vehicle updated in EV catalogue: {}", vehicleId.getId());
+        logger.info("Vehicle updated in EV catalogue: {}", vehicleId.getVin());
     }
 }

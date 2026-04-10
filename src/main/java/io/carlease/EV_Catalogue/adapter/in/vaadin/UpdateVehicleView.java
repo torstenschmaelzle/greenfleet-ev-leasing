@@ -348,7 +348,7 @@ public class UpdateVehicleView extends VerticalLayout implements BeforeEnterObse
     }
 
     private void prefillFields(Vehicle v) {
-        vinDisplay.setValue(v.getId().getId());
+        vinDisplay.setValue(v.getVehicleId().getVin());
         brandField.setValue(v.getVehicleSpecification().getBrand());
         modelField.setValue(v.getVehicleSpecification().getModel());
         rangeKmField.setValue(v.getVehicleSpecification().getRangeKm().getValue());
@@ -363,8 +363,7 @@ public class UpdateVehicleView extends VerticalLayout implements BeforeEnterObse
         leasePriceField.setValue((double) v.getMonthlyLeasePrice().getAmountInCents());
         currencyComboBox.setValue(v.getMonthlyLeasePrice().getCurrency());
 
-        var latestRecord = v.getLatestBatteryHealthRecord();
-        stateOfHealthField.setValue(latestRecord.getStateOfHealth().getValue().doubleValue());
-        measuredRangeField.setValue(latestRecord.getMeasuredRangeKm().getValue());
+        stateOfHealthField.setValue(v.getLatestStateOfHealth().getValue().doubleValue());
+        measuredRangeField.setValue(v.getLatestMeasuredRangeKm().getValue());
     }
 }

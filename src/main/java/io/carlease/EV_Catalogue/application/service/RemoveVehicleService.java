@@ -25,11 +25,11 @@ public class RemoveVehicleService implements removeVehicle {
     @Override
     public void remove(VehicleId vehicleId) {
         Vehicle vehicle = persistVehiclePort.findById(vehicleId)
-                .orElseThrow(() -> new IllegalArgumentException("Vehicle not found: " + vehicleId.getId()));
+                .orElseThrow(() -> new IllegalArgumentException("Vehicle not found: " + vehicleId.getVin()));
 
         vehicle.remove();
 
         persistVehiclePort.deleteById(vehicleId);
-        logger.info("Vehicle removed from EV catalogue: {}", vehicleId.getId());
+        logger.info("Vehicle removed from EV catalogue: {}", vehicleId.getVin());
     }
 }

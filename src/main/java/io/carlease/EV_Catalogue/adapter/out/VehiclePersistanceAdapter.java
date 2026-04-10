@@ -25,17 +25,17 @@ public class VehiclePersistanceAdapter implements VehiclePersistancePort {
 
     @Override
     public boolean existsById(VehicleId vehicleId) {
-        return vehicleRepository.existsById(vehicleId.getId());
+        return vehicleRepository.existsById(vehicleId.getVin());
     }
 
     @Override
     public Optional<Vehicle> findById(VehicleId vehicleId) {
-        return vehicleRepository.findById(vehicleId.getId())
+        return vehicleRepository.findById(vehicleId.getVin())
                 .map(VehicleMapper::mapToDomain);
     }
 
     @Override
     public void deleteById(VehicleId vehicleId) {
-        vehicleRepository.deleteById(vehicleId.getId());
+        vehicleRepository.deleteById(vehicleId.getVin());
     }
 }

@@ -33,8 +33,8 @@ public class AddVehicleService implements addVehicle {
                     Range initialMeasuredRangeKm) {
 
         if (persistVehiclePort.existsById(vehicleId)) {
-            logger.warn("Vehicle already exists in catalogue: {}", vehicleId.getId());
-            throw new IllegalStateException("Vehicle already exists in catalogue: " + vehicleId.getId());
+            logger.warn("Vehicle already exists in catalogue: {}", vehicleId.getVin());
+            throw new IllegalStateException("Vehicle already exists in catalogue: " + vehicleId.getVin());
         }
 
         // NOTE: BatteryHealthRecord is package-private in the domain.
@@ -45,11 +45,11 @@ public class AddVehicleService implements addVehicle {
         // TEMP: BatteryHealthRecord wurde temporär public gemacht.
         // Sobald VehicleFactory im Domain-Package existiert, rückgängig machen.
 
-        BatteryHealthRecord initialRecord = new BatteryHealthRecord(initialStateOfHealth, initialMeasuredRangeKm);
-        Vehicle vehicle = new Vehicle(vehicleId, specification, batterySpecification,
-                performance, monthlyLeasePrice, List.of(initialRecord));
+        //BatteryHealthRecord initialRecord = new BatteryHealthRecord(initialStateOfHealth, initialMeasuredRangeKm);
+        Vehicle vehicle =  Vehicle.create(vehicleId, specification, batterySpecification,
+                performance, monthlyLeasePrice, initialStateOfHealth, initialMeasuredRangeKm);
 
         persistVehiclePort.save(vehicle);
-        logger.info("Vehicle added to EV catalogue: {}", vehicleId.getId());
+        logger.info("Vehicle added to EV catalogue: {}", vehicleId.getVin());
     }
 }

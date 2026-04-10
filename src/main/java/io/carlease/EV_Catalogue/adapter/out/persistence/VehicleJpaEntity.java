@@ -52,5 +52,6 @@ public class VehicleJpaEntity {
     // BatteryHealthRecords
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "battery_health_records", joinColumns = @JoinColumn(name = "vin"))
+    @OrderColumn(name = "measurement_order")
     private List<BatteryHealthRecordEmbeddable> healthRecords;
 }

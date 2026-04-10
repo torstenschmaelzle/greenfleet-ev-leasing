@@ -64,7 +64,7 @@ public class EVCatalogueVaadinController {
                         BigDecimal.valueOf(voltageV),
                         BigDecimal.valueOf(maxChargeSpeedKw)
                 ),
-                Amount.of(monthlyLeasePriceCents, Currency.valueOf(currency)),
+                Amount.ofCents(monthlyLeasePriceCents, Currency.valueOf(currency)),
                 Percentage.of(BigDecimal.valueOf(newStateOfHealth)),
                 Range.ofKm(newMeasuredRangeKm)
         );
@@ -106,7 +106,7 @@ public class EVCatalogueVaadinController {
                         BigDecimal.valueOf(accelerationSec),
                         topSpeedKmh
                 ),
-                Amount.of(monthlyLeasePriceCents, Currency.valueOf(currency)),
+                Amount.ofCents(monthlyLeasePriceCents, Currency.valueOf(currency)),
                 Percentage.of(BigDecimal.valueOf(initialStateOfHealth)),
                 Range.ofKm(initialMeasuredRangeKm)
         );

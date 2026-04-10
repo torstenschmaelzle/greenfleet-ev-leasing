@@ -160,7 +160,7 @@ public class ListCatalogueView extends VerticalLayout implements BeforeEnterObse
         grid.addThemeVariants(GridVariant.LUMO_ROW_STRIPES, GridVariant.LUMO_NO_BORDER);
         grid.setHeightFull();
 
-        grid.addColumn(v -> v.getId().getId())
+        grid.addColumn(v -> v.getVehicleId().getVin())
                 .setHeader("VIN")
                 .setWidth("190px")
                 .setFlexGrow(0)
@@ -249,7 +249,7 @@ public class ListCatalogueView extends VerticalLayout implements BeforeEnterObse
         editButton.getElement().setAttribute("title", "Edit vehicle");
         editButton.addClickListener(e ->
                 editButton.getUI().ifPresent(ui ->
-                        ui.navigate("update-vehicle/" + vehicle.getId().getId())));
+                        ui.navigate("update-vehicle/" + vehicle.getVehicleId().getVin())));
 
         Button deleteButton = buildDeleteButton(vehicle);
 
@@ -265,7 +265,7 @@ public class ListCatalogueView extends VerticalLayout implements BeforeEnterObse
         deleteButton.getElement().setAttribute("title", "Remove vehicle");
 
         deleteButton.addClickListener(e -> {
-            String vin = vehicle.getId().getId();
+            String vin = vehicle.getVehicleId().getVin();
             String label = vehicle.getVehicleSpecification().getBrand()
                     + " " + vehicle.getVehicleSpecification().getModel()
                     + " (" + vin + ")";
@@ -320,7 +320,7 @@ public class ListCatalogueView extends VerticalLayout implements BeforeEnterObse
         String lower = query.toLowerCase();
         List<Vehicle> filtered = allVehicles.stream()
                 .filter(v ->
-                        v.getId().getId().toLowerCase().contains(lower) ||
+                        v.getVehicleId().getVin().toLowerCase().contains(lower) ||
                         v.getVehicleSpecification().getBrand().toLowerCase().contains(lower) ||
                         v.getVehicleSpecification().getModel().toLowerCase().contains(lower))
                 .toList();

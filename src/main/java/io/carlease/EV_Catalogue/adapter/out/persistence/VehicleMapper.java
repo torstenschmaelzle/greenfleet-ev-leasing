@@ -10,9 +10,9 @@ import java.util.stream.Collectors;
 public class VehicleMapper {
 
     public static VehicleJpaEntity mapToJpaEntity(Vehicle vehicle) {
-        List<BatteryHealthRecordEmbeddable> healthRecords = vehicle.getHealthRecords().stream()
+        List<BatteryHealthRecordEmbeddable> healthRecords = vehicle.getHealthMeasurements().stream()
                 .map(record -> new BatteryHealthRecordEmbeddable(
-                        record.getRecordId().toString(),
+                        record.getMeasurementId().toString(),
                         record.getMeasuredAt(),
                         record.getStateOfHealth().getValue(),
                         record.getMeasuredRangeKm().getValue()
@@ -22,7 +22,7 @@ public class VehicleMapper {
         ReservationLock lock = vehicle.getLock().orElse(null);
 
         return new VehicleJpaEntity(
-                vehicle.getId().getId(),
+                vehicle.getVehicleId().getVin(),
                 vehicle.getVehicleSpecification().getBrand(),
                 vehicle.getVehicleSpecification().getModel(),
                 vehicle.getVehicleSpecification().getRangeKm().getValue(),
@@ -45,17 +45,15 @@ public class VehicleMapper {
         );
     }
 
-    // TODO: Vehicle has no restore-constructor — status is always reconstructed as AVAILABLE.
-    // A VehicleFactory.restore(...) in the domain package is needed for correct status reconstitution.
     public static Vehicle mapToDomain(VehicleJpaEntity entity) {
-        List<BatteryHealthRecord> healthRecords = entity.getHealthRecords().stream()
-                .map(r -> new BatteryHealthRecord(
-                        Percentage.of(r.getStateOfHealth()),
-                        Range.ofKm(r.getMeasuredRangeKm())
-                ))
-                .collect(Collectors.toList());
+        List<BatteryHealthRecordEmbeddable> records = entity.getHealthRecords();
+        if (records == null || records.isEmpty()) {
+            throw new InvalidVehicleAttributeException("healthMeasurements",
+                    "no battery health records found for vehicle: " + entity.getVin());
+        }
+        BatteryHealthRecordEmbeddable first = records.get(0);
 
-        return new Vehicle(
+        Vehicle vehicle = Vehicle.create(
                 VehicleId.of(entity.getVin()),
                 VehicleSpecification.of(
                         entity.getBrand(),
@@ -74,8 +72,18 @@ public class VehicleMapper {
                         entity.getAccelerationSec(),
                         entity.getTopSpeedKmh()
                 ),
-                Amount.of(entity.getMonthlyLeasePriceCents(), Currency.valueOf(entity.getMonthlyLeasePriceCurrency())),
-                healthRecords
+                Amount.ofCents(entity.getMonthlyLeasePriceCents(), Currency.valueOf(entity.getMonthlyLeasePriceCurrency())),
+                Percentage.of(first.getStateOfHealth()),
+                Range.ofKm(first.getMeasuredRangeKm())
         );
+
+        for (int i = 1; i < records.size(); i++) {
+            vehicle.updateBatteryHealthMeasurement(
+                    Percentage.of(records.get(i).getStateOfHealth()),
+                    Range.ofKm(records.get(i).getMeasuredRangeKm())
+            );
+        }
+
+        return vehicle;
     }
 }
