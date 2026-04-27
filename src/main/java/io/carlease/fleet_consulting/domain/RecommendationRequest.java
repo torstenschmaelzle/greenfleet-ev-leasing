@@ -13,12 +13,15 @@ public class RecommendationRequest {
     private final UUID requestId;
     private final FleetRequirements requirements;
     private final List<VehicleRecommendation> recommendations;
+    private final ScoringStrategy scoringStrategy;
 
-    public RecommendationRequest(UUID requestId, FleetRequirements requirements) {
+    public RecommendationRequest(UUID requestId, FleetRequirements requirements, ScoringStrategy scoringStrategy) {
         if (requestId == null) throw new InvalidFleetAttributeException("requestId", "must not be null");
         if (requirements == null) throw new InvalidFleetAttributeException("requirements", "must not be null");
+        if (scoringStrategy == null) throw new InvalidFleetAttributeException("scoringStrategy", "must not be null");
         this.requestId = requestId;
         this.requirements = requirements;
+        this.scoringStrategy = scoringStrategy;
         this.recommendations = new ArrayList<>();
     }
 
@@ -26,11 +29,15 @@ public class RecommendationRequest {
         if (vehicles == null) throw new InvalidFleetAttributeException("vehicles", "must not be null");
         recommendations.clear();
         for (VehicleSummary vehicle : vehicles) {
+            if (!vehicle.isAvailable()) continue;
             VehicleRecommendation recommendation = VehicleRecommendation.evaluate(
                     vehicle.getMonthlyLeasePrice(),
                     vehicle.getKwhPer100km(),
                     vehicle.getRangeKm(),
-                    requirements
+                    requirements,
+                    scoringStrategy,
+                    vehicle.getModelName(),
+                    vehicle.getVehicleType()
             );
             recommendations.add(recommendation);
         }
@@ -55,6 +62,10 @@ public class RecommendationRequest {
 
     public FleetRequirements getRequirements() {
         return requirements;
+    }
+
+    public ScoringStrategy getScoringStrategy() {
+        return scoringStrategy;
     }
 
     public List<VehicleRecommendation> getRecommendations() {

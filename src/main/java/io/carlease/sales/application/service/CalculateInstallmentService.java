@@ -21,6 +21,7 @@ public class CalculateInstallmentService implements CalculateInstallmentUseCase 
             double interest,
             double downPayment,
             double residualValue
+
     ) {
         ContractNumber number = new ContractNumber(contractNumber);
 
