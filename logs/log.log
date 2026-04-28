@@ -13,3 +13,1168 @@
 27-04-2026 18:01:40.072 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
 27-04-2026 18:01:40.075 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
 27-04-2026 18:01:40.097 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+28-04-2026 14:38:55.652 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 69076 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+28-04-2026 14:38:55.655 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+28-04-2026 14:38:55.720 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+28-04-2026 14:38:55.721 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+28-04-2026 14:38:56.720 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+28-04-2026 14:38:56.821 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 91 ms. Found 2 JPA repository interfaces.
+28-04-2026 14:38:57.548 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+28-04-2026 14:38:57.562 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+28-04-2026 14:38:57.562 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+28-04-2026 14:38:57.643 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+28-04-2026 14:38:57.643 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1921 ms
+28-04-2026 14:38:57.697 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+28-04-2026 14:38:57.918 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+28-04-2026 14:38:57.921 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+28-04-2026 14:38:57.935 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+28-04-2026 14:39:06.416 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 8181 ms
+28-04-2026 14:39:07.014 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+28-04-2026 14:39:07.112 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 98 classes. Took 59 ms.
+28-04-2026 14:39:07.115 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+28-04-2026 14:39:07.621 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+28-04-2026 14:39:07.688 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+28-04-2026 14:39:07.799 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 111 ms.
+28-04-2026 14:39:08.400 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+28-04-2026 14:39:08.544 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.4.1.Final
+28-04-2026 14:39:08.617 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+28-04-2026 14:39:09.121 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+28-04-2026 14:39:11.513 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-04-2026 14:39:11.654 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 14:39:12.493 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2026 14:39:13.374 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+28-04-2026 14:39:13.459 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+28-04-2026 14:39:13.459 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+28-04-2026 14:39:13.549 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+28-04-2026 14:39:13.565 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+28-04-2026 14:39:13.577 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+28-04-2026 14:39:13.585 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+28-04-2026 14:39:13.601 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+28-04-2026 14:39:13.601 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+28-04-2026 14:39:13.610 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+28-04-2026 14:39:13.612 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+28-04-2026 14:39:13.613 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+28-04-2026 14:39:13.615 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+28-04-2026 14:39:13.616 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+28-04-2026 14:39:13.617 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+28-04-2026 14:39:13.619 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+28-04-2026 14:39:13.620 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+28-04-2026 14:39:13.621 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+28-04-2026 14:39:13.622 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+28-04-2026 14:39:13.622 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+28-04-2026 14:39:13.623 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+28-04-2026 14:39:13.639 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+28-04-2026 14:39:13.639 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+28-04-2026 14:39:13.639 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+28-04-2026 14:39:13.639 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+28-04-2026 14:39:13.652 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+28-04-2026 14:39:13.731 [restartedMain] INFO  c.v.f.s.DefaultDeploymentConfiguration.logMessages - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+28-04-2026 14:39:13.824 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+28-04-2026 14:39:13.842 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 18.725 seconds (process running for 19.597)
+28-04-2026 14:39:13.933 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+28-04-2026 14:39:13.934 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+28-04-2026 14:39:13.937 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 2 ms
+28-04-2026 14:39:14.192 [http-nio-8080-exec-1] INFO  c.v.flow.spring.SpringInstantiator.getI18NProvider - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+28-04-2026 14:39:14.939 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000001
+28-04-2026 14:39:14.939 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+28-04-2026 14:39:14.952 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000001
+28-04-2026 14:39:14.954 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+28-04-2026 14:39:14.967 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLSPLAID0001
+28-04-2026 14:39:14.968 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model S Plaid
+28-04-2026 14:39:14.982 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLXLNG000001
+28-04-2026 14:39:14.982 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model X Long Range
+28-04-2026 14:39:14.996 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400001
+28-04-2026 14:39:14.996 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+28-04-2026 14:39:15.010 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00001
+28-04-2026 14:39:15.011 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+28-04-2026 14:39:15.021 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIXXDRIVE500001
+28-04-2026 14:39:15.022 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX xDrive50
+28-04-2026 14:39:15.036 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION01
+28-04-2026 14:39:15.037 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+28-04-2026 14:39:15.049 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID3PRO58KWH0001
+28-04-2026 14:39:15.050 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.3 Pro
+28-04-2026 14:39:15.061 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIETRON55QUA001
+28-04-2026 14:39:15.062 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi e-tron 55 quattro
+28-04-2026 14:39:15.074 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIQ4ETRON400001
+28-04-2026 14:39:15.074 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi Q4 e-tron 40
+28-04-2026 14:39:15.085 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQC400001
+28-04-2026 14:39:15.086 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQC 400 4MATIC
+28-04-2026 14:39:15.097 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQS450001
+28-04-2026 14:39:15.098 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQS 450+
+28-04-2026 14:39:15.108 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: PORSCHETAYCAN4S01
+28-04-2026 14:39:15.108 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Porsche Taycan 4S
+28-04-2026 14:39:15.119 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD01
+28-04-2026 14:39:15.120 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+28-04-2026 14:39:15.131 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ6RWD01
+28-04-2026 14:39:15.131 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 6 RWD
+28-04-2026 14:39:15.141 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: KIAEV6GTLAWD00001
+28-04-2026 14:39:15.142 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Kia EV6 GT-Line AWD
+28-04-2026 14:39:15.151 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VOLVOXC40RCHG0001
+28-04-2026 14:39:15.152 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volvo XC40 Recharge AWD
+28-04-2026 14:39:15.161 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: POLESTAR2LNGRNG01
+28-04-2026 14:39:15.162 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Polestar 2 Long Range AWD
+28-04-2026 14:39:15.172 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: RENAULTZOE50KWH01
+28-04-2026 14:39:15.172 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Renault Zoe R135 Z.E.50
+28-04-2026 14:58:40.238 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener.onApplicationEvent - Restarting due to 41 class path changes (0 additions, 41 deletions, 0 modifications)
+28-04-2026 14:58:40.264 [Thread-6] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 14:58:40.270 [Thread-6] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+28-04-2026 14:58:40.271 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+28-04-2026 14:58:40.274 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+28-04-2026 14:58:40.390 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 69076 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+28-04-2026 14:58:40.391 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+28-04-2026 14:58:40.640 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+28-04-2026 14:58:40.666 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 24 ms. Found 2 JPA repository interfaces.
+28-04-2026 14:58:40.780 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+28-04-2026 14:58:40.781 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+28-04-2026 14:58:40.781 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+28-04-2026 14:58:40.819 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+28-04-2026 14:58:40.820 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 427 ms
+28-04-2026 14:58:40.837 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-2 - Starting...
+28-04-2026 14:58:40.840 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+28-04-2026 14:58:40.841 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-2 - Start completed.
+28-04-2026 14:58:40.842 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+28-04-2026 14:58:41.458 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 509 ms
+28-04-2026 14:58:41.471 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+28-04-2026 14:58:41.487 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 96 classes. Took 13 ms.
+28-04-2026 14:58:41.487 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+28-04-2026 14:58:41.640 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+28-04-2026 14:58:41.652 [ForkJoinPool.commonPool-worker-2] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+28-04-2026 14:58:41.694 [ForkJoinPool.commonPool-worker-2] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 42 ms.
+28-04-2026 14:58:41.858 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+28-04-2026 14:58:41.862 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+28-04-2026 14:58:41.867 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+28-04-2026 14:58:41.970 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-04-2026 14:58:41.978 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 14:58:42.027 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'vehiclePersistanceAdapter': Lookup method resolution failed
+28-04-2026 14:58:42.027 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 14:58:42.028 [restartedMain] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+28-04-2026 14:58:42.029 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown initiated...
+28-04-2026 14:58:42.030 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown completed.
+28-04-2026 14:58:42.032 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Stopping service [Tomcat]
+28-04-2026 14:58:42.042 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger.logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+28-04-2026 14:58:42.066 [restartedMain] ERROR o.s.boot.SpringApplication.reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'vehiclePersistanceAdapter': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:497) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:367) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1293) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1188) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:959) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.2.jar:3.2.2]
+	at io.carlease.CarLeaseApplication.main(CarLeaseApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.2.jar:3.2.2]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [io.carlease.EV_Catalogue.adapter.out.VehiclePersistanceAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@796bc142]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.1.3.jar:6.1.3]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:475) ~[spring-beans-6.1.3.jar:6.1.3]
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: io/carlease/EV_Catalogue/domain/Vehicle
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.1.3.jar:6.1.3]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: io.carlease.EV_Catalogue.domain.Vehicle
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.2.2.jar:3.2.2]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	... 30 common frames omitted
+28-04-2026 14:58:47.366 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 69076 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+28-04-2026 14:58:47.367 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+28-04-2026 14:58:47.606 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+28-04-2026 14:58:47.633 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 26 ms. Found 2 JPA repository interfaces.
+28-04-2026 14:58:47.729 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+28-04-2026 14:58:47.731 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+28-04-2026 14:58:47.731 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+28-04-2026 14:58:47.761 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+28-04-2026 14:58:47.762 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 394 ms
+28-04-2026 14:58:47.778 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-3 - Starting...
+28-04-2026 14:58:47.781 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:testdb user=SA
+28-04-2026 14:58:47.781 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-3 - Start completed.
+28-04-2026 14:58:47.781 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+28-04-2026 14:58:48.272 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 430 ms
+28-04-2026 14:58:48.283 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+28-04-2026 14:58:48.294 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 97 classes. Took 10 ms.
+28-04-2026 14:58:48.294 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+28-04-2026 14:58:48.431 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+28-04-2026 14:58:48.441 [ForkJoinPool.commonPool-worker-2] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+28-04-2026 14:58:48.479 [ForkJoinPool.commonPool-worker-2] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 38 ms.
+28-04-2026 14:58:48.631 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+28-04-2026 14:58:48.635 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+28-04-2026 14:58:48.639 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+28-04-2026 14:58:48.721 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-04-2026 14:58:48.729 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 14:58:48.840 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2026 14:58:48.954 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+28-04-2026 14:58:48.963 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+28-04-2026 14:58:48.963 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+28-04-2026 14:58:48.970 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+28-04-2026 14:58:48.972 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+28-04-2026 14:58:48.973 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+28-04-2026 14:58:48.973 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+28-04-2026 14:58:48.974 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+28-04-2026 14:58:48.974 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+28-04-2026 14:58:48.974 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+28-04-2026 14:58:48.975 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+28-04-2026 14:58:48.975 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+28-04-2026 14:58:48.975 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+28-04-2026 14:58:48.975 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+28-04-2026 14:58:48.975 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+28-04-2026 14:58:48.975 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+28-04-2026 14:58:48.976 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+28-04-2026 14:58:48.976 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+28-04-2026 14:58:48.976 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+28-04-2026 14:58:48.976 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+28-04-2026 14:58:48.976 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+28-04-2026 14:58:48.976 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+28-04-2026 14:58:48.976 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 14:58:48.976 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 14:58:48.976 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+28-04-2026 14:58:48.976 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 14:58:48.977 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 14:58:48.977 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 14:58:48.977 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+28-04-2026 14:58:48.977 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+28-04-2026 14:58:48.977 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+28-04-2026 14:58:48.977 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+28-04-2026 14:58:48.977 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+28-04-2026 14:58:48.977 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+28-04-2026 14:58:48.977 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+28-04-2026 14:58:48.977 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+28-04-2026 14:58:48.977 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+28-04-2026 14:58:48.977 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+28-04-2026 14:58:48.977 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+28-04-2026 14:58:48.977 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+28-04-2026 14:58:48.978 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+28-04-2026 14:58:48.978 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+28-04-2026 14:58:48.978 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+28-04-2026 14:58:48.978 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+28-04-2026 14:58:48.978 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+28-04-2026 14:58:48.978 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+28-04-2026 14:58:48.978 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+28-04-2026 14:58:48.978 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+28-04-2026 14:58:48.978 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+28-04-2026 14:58:48.990 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+28-04-2026 14:58:48.995 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 1.653 seconds (process running for 1193.621)
+28-04-2026 14:58:49.016 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000001
+28-04-2026 14:58:49.017 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+28-04-2026 14:58:49.023 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000001
+28-04-2026 14:58:49.023 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+28-04-2026 14:58:49.029 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLSPLAID0001
+28-04-2026 14:58:49.029 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model S Plaid
+28-04-2026 14:58:49.032 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+28-04-2026 14:58:49.033 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+28-04-2026 14:58:49.034 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLXLNG000001
+28-04-2026 14:58:49.034 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
+28-04-2026 14:58:49.034 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model X Long Range
+28-04-2026 14:58:49.039 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400001
+28-04-2026 14:58:49.039 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+28-04-2026 14:58:49.041 [http-nio-8080-exec-1] INFO  c.v.flow.spring.SpringInstantiator.getI18NProvider - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+28-04-2026 14:58:49.046 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00001
+28-04-2026 14:58:49.047 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+28-04-2026 14:58:49.053 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIXXDRIVE500001
+28-04-2026 14:58:49.054 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX xDrive50
+28-04-2026 14:58:49.059 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION01
+28-04-2026 14:58:49.060 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+28-04-2026 14:58:49.066 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID3PRO58KWH0001
+28-04-2026 14:58:49.066 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.3 Pro
+28-04-2026 14:58:49.072 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIETRON55QUA001
+28-04-2026 14:58:49.072 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi e-tron 55 quattro
+28-04-2026 14:58:49.077 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIQ4ETRON400001
+28-04-2026 14:58:49.077 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi Q4 e-tron 40
+28-04-2026 14:58:49.085 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQC400001
+28-04-2026 14:58:49.085 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQC 400 4MATIC
+28-04-2026 14:58:49.090 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQS450001
+28-04-2026 14:58:49.090 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQS 450+
+28-04-2026 14:58:49.096 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: PORSCHETAYCAN4S01
+28-04-2026 14:58:49.097 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Porsche Taycan 4S
+28-04-2026 14:58:49.102 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD01
+28-04-2026 14:58:49.102 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+28-04-2026 14:58:49.107 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ6RWD01
+28-04-2026 14:58:49.107 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 6 RWD
+28-04-2026 14:58:49.111 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: KIAEV6GTLAWD00001
+28-04-2026 14:58:49.111 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Kia EV6 GT-Line AWD
+28-04-2026 14:58:49.117 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VOLVOXC40RCHG0001
+28-04-2026 14:58:49.117 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volvo XC40 Recharge AWD
+28-04-2026 14:58:49.121 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: POLESTAR2LNGRNG01
+28-04-2026 14:58:49.121 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Polestar 2 Long Range AWD
+28-04-2026 14:58:49.125 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: RENAULTZOE50KWH01
+28-04-2026 14:58:49.125 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Renault Zoe R135 Z.E.50
+28-04-2026 14:58:49.127 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation unchanged
+28-04-2026 15:00:39.874 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener.onApplicationEvent - Restarting due to 45 class path changes (0 additions, 45 deletions, 0 modifications)
+28-04-2026 15:00:39.895 [Thread-15] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:00:39.896 [Thread-15] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+28-04-2026 15:00:39.896 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-3 - Shutdown initiated...
+28-04-2026 15:00:39.897 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-3 - Shutdown completed.
+28-04-2026 15:00:40.001 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 69076 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+28-04-2026 15:00:40.002 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+28-04-2026 15:00:40.215 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+28-04-2026 15:00:40.244 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+28-04-2026 15:00:40.343 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+28-04-2026 15:00:40.344 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+28-04-2026 15:00:40.344 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+28-04-2026 15:00:40.379 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+28-04-2026 15:00:40.380 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 377 ms
+28-04-2026 15:00:40.396 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-4 - Starting...
+28-04-2026 15:00:40.398 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-4 - Added connection conn30: url=jdbc:h2:mem:testdb user=SA
+28-04-2026 15:00:40.398 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-4 - Start completed.
+28-04-2026 15:00:40.399 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+28-04-2026 15:00:40.945 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 485 ms
+28-04-2026 15:00:40.953 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+28-04-2026 15:00:40.964 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 96 classes. Took 9 ms.
+28-04-2026 15:00:40.965 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+28-04-2026 15:00:41.112 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+28-04-2026 15:00:41.124 [ForkJoinPool.commonPool-worker-3] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+28-04-2026 15:00:41.168 [ForkJoinPool.commonPool-worker-3] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 44 ms.
+28-04-2026 15:00:41.326 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+28-04-2026 15:00:41.329 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+28-04-2026 15:00:41.332 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+28-04-2026 15:00:41.429 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-04-2026 15:00:41.437 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:00:41.486 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'vehiclePersistanceAdapter': Lookup method resolution failed
+28-04-2026 15:00:41.486 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:00:41.487 [restartedMain] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+28-04-2026 15:00:41.488 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-4 - Shutdown initiated...
+28-04-2026 15:00:41.489 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-4 - Shutdown completed.
+28-04-2026 15:00:41.489 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Stopping service [Tomcat]
+28-04-2026 15:00:41.496 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger.logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+28-04-2026 15:00:41.499 [restartedMain] ERROR o.s.boot.SpringApplication.reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'vehiclePersistanceAdapter': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:497) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:367) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1293) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1188) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:959) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.2.jar:3.2.2]
+	at io.carlease.CarLeaseApplication.main(CarLeaseApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.2.jar:3.2.2]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [io.carlease.EV_Catalogue.adapter.out.VehiclePersistanceAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@6b5af6f8]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.1.3.jar:6.1.3]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:475) ~[spring-beans-6.1.3.jar:6.1.3]
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: io/carlease/EV_Catalogue/domain/Vehicle
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.1.3.jar:6.1.3]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: io.carlease.EV_Catalogue.domain.Vehicle
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.2.2.jar:3.2.2]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	... 30 common frames omitted
+28-04-2026 15:00:46.396 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 69076 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+28-04-2026 15:00:46.396 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+28-04-2026 15:00:46.645 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+28-04-2026 15:00:46.671 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 26 ms. Found 2 JPA repository interfaces.
+28-04-2026 15:00:46.768 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+28-04-2026 15:00:46.769 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+28-04-2026 15:00:46.769 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+28-04-2026 15:00:46.800 [restartedMain] INFO  o.a.c.c.C.[Tomcat-2].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+28-04-2026 15:00:46.800 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 402 ms
+28-04-2026 15:00:46.816 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-5 - Starting...
+28-04-2026 15:00:46.818 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-5 - Added connection conn40: url=jdbc:h2:mem:testdb user=SA
+28-04-2026 15:00:46.818 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-5 - Start completed.
+28-04-2026 15:00:46.819 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+28-04-2026 15:00:47.350 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 456 ms
+28-04-2026 15:00:47.357 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+28-04-2026 15:00:47.369 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 97 classes. Took 10 ms.
+28-04-2026 15:00:47.370 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+28-04-2026 15:00:47.512 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+28-04-2026 15:00:47.523 [ForkJoinPool.commonPool-worker-3] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+28-04-2026 15:00:47.560 [ForkJoinPool.commonPool-worker-3] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 36 ms.
+28-04-2026 15:00:47.717 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+28-04-2026 15:00:47.720 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+28-04-2026 15:00:47.723 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+28-04-2026 15:00:47.788 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-04-2026 15:00:47.796 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:00:47.897 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2026 15:00:48.009 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+28-04-2026 15:00:48.017 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+28-04-2026 15:00:48.017 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+28-04-2026 15:00:48.022 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+28-04-2026 15:00:48.024 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+28-04-2026 15:00:48.025 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+28-04-2026 15:00:48.025 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+28-04-2026 15:00:48.025 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+28-04-2026 15:00:48.025 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+28-04-2026 15:00:48.025 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+28-04-2026 15:00:48.026 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+28-04-2026 15:00:48.026 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+28-04-2026 15:00:48.026 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+28-04-2026 15:00:48.027 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+28-04-2026 15:00:48.027 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+28-04-2026 15:00:48.027 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+28-04-2026 15:00:48.028 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+28-04-2026 15:00:48.028 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+28-04-2026 15:00:48.028 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+28-04-2026 15:00:48.028 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+28-04-2026 15:00:48.028 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+28-04-2026 15:00:48.028 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+28-04-2026 15:00:48.028 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:00:48.028 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:00:48.028 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+28-04-2026 15:00:48.028 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:00:48.028 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:00:48.028 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:00:48.028 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+28-04-2026 15:00:48.029 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+28-04-2026 15:00:48.029 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+28-04-2026 15:00:48.029 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+28-04-2026 15:00:48.029 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+28-04-2026 15:00:48.029 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+28-04-2026 15:00:48.029 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+28-04-2026 15:00:48.029 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+28-04-2026 15:00:48.029 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+28-04-2026 15:00:48.029 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+28-04-2026 15:00:48.029 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+28-04-2026 15:00:48.029 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+28-04-2026 15:00:48.029 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+28-04-2026 15:00:48.029 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+28-04-2026 15:00:48.029 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+28-04-2026 15:00:48.029 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+28-04-2026 15:00:48.029 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+28-04-2026 15:00:48.029 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+28-04-2026 15:00:48.029 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+28-04-2026 15:00:48.030 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+28-04-2026 15:00:48.030 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+28-04-2026 15:00:48.042 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+28-04-2026 15:00:48.047 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 1.676 seconds (process running for 1312.672)
+28-04-2026 15:00:48.063 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000001
+28-04-2026 15:00:48.064 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+28-04-2026 15:00:48.069 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000001
+28-04-2026 15:00:48.069 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+28-04-2026 15:00:48.074 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLSPLAID0001
+28-04-2026 15:00:48.075 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model S Plaid
+28-04-2026 15:00:48.080 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLXLNG000001
+28-04-2026 15:00:48.080 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model X Long Range
+28-04-2026 15:00:48.085 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400001
+28-04-2026 15:00:48.085 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+28-04-2026 15:00:48.089 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00001
+28-04-2026 15:00:48.089 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+28-04-2026 15:00:48.093 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIXXDRIVE500001
+28-04-2026 15:00:48.093 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX xDrive50
+28-04-2026 15:00:48.096 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION01
+28-04-2026 15:00:48.096 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+28-04-2026 15:00:48.101 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID3PRO58KWH0001
+28-04-2026 15:00:48.101 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.3 Pro
+28-04-2026 15:00:48.104 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIETRON55QUA001
+28-04-2026 15:00:48.104 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi e-tron 55 quattro
+28-04-2026 15:00:48.108 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIQ4ETRON400001
+28-04-2026 15:00:48.109 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi Q4 e-tron 40
+28-04-2026 15:00:48.113 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQC400001
+28-04-2026 15:00:48.114 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQC 400 4MATIC
+28-04-2026 15:00:48.118 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQS450001
+28-04-2026 15:00:48.118 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQS 450+
+28-04-2026 15:00:48.122 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: PORSCHETAYCAN4S01
+28-04-2026 15:00:48.123 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Porsche Taycan 4S
+28-04-2026 15:00:48.126 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD01
+28-04-2026 15:00:48.126 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+28-04-2026 15:00:48.130 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ6RWD01
+28-04-2026 15:00:48.130 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 6 RWD
+28-04-2026 15:00:48.133 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat-2].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+28-04-2026 15:00:48.133 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+28-04-2026 15:00:48.134 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
+28-04-2026 15:00:48.134 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: KIAEV6GTLAWD00001
+28-04-2026 15:00:48.134 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Kia EV6 GT-Line AWD
+28-04-2026 15:00:48.138 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VOLVOXC40RCHG0001
+28-04-2026 15:00:48.138 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volvo XC40 Recharge AWD
+28-04-2026 15:00:48.139 [http-nio-8080-exec-1] INFO  c.v.flow.spring.SpringInstantiator.getI18NProvider - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+28-04-2026 15:00:48.142 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: POLESTAR2LNGRNG01
+28-04-2026 15:00:48.142 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Polestar 2 Long Range AWD
+28-04-2026 15:00:48.145 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: RENAULTZOE50KWH01
+28-04-2026 15:00:48.145 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Renault Zoe R135 Z.E.50
+28-04-2026 15:00:48.146 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation unchanged
+28-04-2026 15:02:47.257 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener.onApplicationEvent - Restarting due to 46 class path changes (0 additions, 46 deletions, 0 modifications)
+28-04-2026 15:02:47.274 [Thread-27] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:02:47.275 [Thread-27] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+28-04-2026 15:02:47.276 [Thread-27] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-5 - Shutdown initiated...
+28-04-2026 15:02:47.276 [Thread-27] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-5 - Shutdown completed.
+28-04-2026 15:02:47.373 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 69076 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+28-04-2026 15:02:47.373 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+28-04-2026 15:02:47.577 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+28-04-2026 15:02:47.607 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+28-04-2026 15:02:47.702 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+28-04-2026 15:02:47.703 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+28-04-2026 15:02:47.703 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+28-04-2026 15:02:47.736 [restartedMain] INFO  o.a.c.c.C.[Tomcat-2].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+28-04-2026 15:02:47.736 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 361 ms
+28-04-2026 15:02:47.752 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-6 - Starting...
+28-04-2026 15:02:47.754 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-6 - Added connection conn50: url=jdbc:h2:mem:testdb user=SA
+28-04-2026 15:02:47.754 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-6 - Start completed.
+28-04-2026 15:02:47.754 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+28-04-2026 15:02:48.287 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 469 ms
+28-04-2026 15:02:48.295 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+28-04-2026 15:02:48.306 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 96 classes. Took 10 ms.
+28-04-2026 15:02:48.306 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+28-04-2026 15:02:48.447 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+28-04-2026 15:02:48.458 [ForkJoinPool.commonPool-worker-4] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+28-04-2026 15:02:48.495 [ForkJoinPool.commonPool-worker-4] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 37 ms.
+28-04-2026 15:02:48.654 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+28-04-2026 15:02:48.657 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+28-04-2026 15:02:48.661 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+28-04-2026 15:02:48.720 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-04-2026 15:02:48.726 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:02:48.771 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'vehiclePersistanceAdapter': Lookup method resolution failed
+28-04-2026 15:02:48.771 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:02:48.772 [restartedMain] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+28-04-2026 15:02:48.773 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-6 - Shutdown initiated...
+28-04-2026 15:02:48.774 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-6 - Shutdown completed.
+28-04-2026 15:02:48.774 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Stopping service [Tomcat]
+28-04-2026 15:02:48.781 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger.logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+28-04-2026 15:02:48.784 [restartedMain] ERROR o.s.boot.SpringApplication.reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'vehiclePersistanceAdapter': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:497) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:367) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1293) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1188) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:959) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.2.jar:3.2.2]
+	at io.carlease.CarLeaseApplication.main(CarLeaseApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.2.jar:3.2.2]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [io.carlease.EV_Catalogue.adapter.out.VehiclePersistanceAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@2fcfb348]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.1.3.jar:6.1.3]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:475) ~[spring-beans-6.1.3.jar:6.1.3]
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: io/carlease/EV_Catalogue/domain/Vehicle
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.1.3.jar:6.1.3]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: io.carlease.EV_Catalogue.domain.Vehicle
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.2.2.jar:3.2.2]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	... 30 common frames omitted
+28-04-2026 15:02:53.708 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 69076 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+28-04-2026 15:02:53.708 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+28-04-2026 15:02:53.929 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+28-04-2026 15:02:53.955 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 25 ms. Found 2 JPA repository interfaces.
+28-04-2026 15:02:54.045 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+28-04-2026 15:02:54.046 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+28-04-2026 15:02:54.046 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+28-04-2026 15:02:54.076 [restartedMain] INFO  o.a.c.c.C.[Tomcat-3].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+28-04-2026 15:02:54.076 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 366 ms
+28-04-2026 15:02:54.092 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-7 - Starting...
+28-04-2026 15:02:54.094 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-7 - Added connection conn60: url=jdbc:h2:mem:testdb user=SA
+28-04-2026 15:02:54.094 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-7 - Start completed.
+28-04-2026 15:02:54.094 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+28-04-2026 15:02:54.582 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 426 ms
+28-04-2026 15:02:54.590 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+28-04-2026 15:02:54.601 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 97 classes. Took 9 ms.
+28-04-2026 15:02:54.601 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+28-04-2026 15:02:54.735 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+28-04-2026 15:02:54.744 [ForkJoinPool.commonPool-worker-4] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+28-04-2026 15:02:54.777 [ForkJoinPool.commonPool-worker-4] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 33 ms.
+28-04-2026 15:02:54.923 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+28-04-2026 15:02:54.925 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+28-04-2026 15:02:54.929 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+28-04-2026 15:02:54.982 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-04-2026 15:02:54.986 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:02:55.084 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2026 15:02:55.196 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+28-04-2026 15:02:55.205 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+28-04-2026 15:02:55.205 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+28-04-2026 15:02:55.209 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+28-04-2026 15:02:55.211 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+28-04-2026 15:02:55.212 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+28-04-2026 15:02:55.212 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+28-04-2026 15:02:55.212 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+28-04-2026 15:02:55.212 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+28-04-2026 15:02:55.213 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+28-04-2026 15:02:55.213 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+28-04-2026 15:02:55.213 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+28-04-2026 15:02:55.213 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+28-04-2026 15:02:55.213 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+28-04-2026 15:02:55.213 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+28-04-2026 15:02:55.213 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+28-04-2026 15:02:55.214 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+28-04-2026 15:02:55.214 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+28-04-2026 15:02:55.214 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+28-04-2026 15:02:55.214 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+28-04-2026 15:02:55.214 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+28-04-2026 15:02:55.214 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+28-04-2026 15:02:55.214 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:02:55.214 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:02:55.214 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+28-04-2026 15:02:55.214 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:02:55.214 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:02:55.214 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:02:55.214 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+28-04-2026 15:02:55.214 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+28-04-2026 15:02:55.214 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+28-04-2026 15:02:55.214 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+28-04-2026 15:02:55.215 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+28-04-2026 15:02:55.215 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+28-04-2026 15:02:55.215 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+28-04-2026 15:02:55.215 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+28-04-2026 15:02:55.215 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+28-04-2026 15:02:55.215 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+28-04-2026 15:02:55.215 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+28-04-2026 15:02:55.215 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+28-04-2026 15:02:55.215 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+28-04-2026 15:02:55.215 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+28-04-2026 15:02:55.215 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+28-04-2026 15:02:55.215 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+28-04-2026 15:02:55.215 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+28-04-2026 15:02:55.215 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+28-04-2026 15:02:55.215 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+28-04-2026 15:02:55.215 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+28-04-2026 15:02:55.216 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+28-04-2026 15:02:55.227 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+28-04-2026 15:02:55.232 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 1.546 seconds (process running for 1439.857)
+28-04-2026 15:02:55.246 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000001
+28-04-2026 15:02:55.246 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+28-04-2026 15:02:55.250 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000001
+28-04-2026 15:02:55.250 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+28-04-2026 15:02:55.253 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLSPLAID0001
+28-04-2026 15:02:55.253 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model S Plaid
+28-04-2026 15:02:55.256 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat-3].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+28-04-2026 15:02:55.257 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+28-04-2026 15:02:55.257 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLXLNG000001
+28-04-2026 15:02:55.260 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
+28-04-2026 15:02:55.260 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model X Long Range
+28-04-2026 15:02:55.265 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400001
+28-04-2026 15:02:55.266 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+28-04-2026 15:02:55.266 [http-nio-8080-exec-1] INFO  c.v.flow.spring.SpringInstantiator.getI18NProvider - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+28-04-2026 15:02:55.272 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00001
+28-04-2026 15:02:55.272 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+28-04-2026 15:02:55.276 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIXXDRIVE500001
+28-04-2026 15:02:55.276 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX xDrive50
+28-04-2026 15:02:55.279 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION01
+28-04-2026 15:02:55.279 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+28-04-2026 15:02:55.283 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID3PRO58KWH0001
+28-04-2026 15:02:55.283 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.3 Pro
+28-04-2026 15:02:55.287 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIETRON55QUA001
+28-04-2026 15:02:55.287 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi e-tron 55 quattro
+28-04-2026 15:02:55.290 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIQ4ETRON400001
+28-04-2026 15:02:55.290 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi Q4 e-tron 40
+28-04-2026 15:02:55.295 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQC400001
+28-04-2026 15:02:55.295 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQC 400 4MATIC
+28-04-2026 15:02:55.298 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQS450001
+28-04-2026 15:02:55.298 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQS 450+
+28-04-2026 15:02:55.303 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: PORSCHETAYCAN4S01
+28-04-2026 15:02:55.303 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Porsche Taycan 4S
+28-04-2026 15:02:55.306 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD01
+28-04-2026 15:02:55.306 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+28-04-2026 15:02:55.315 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ6RWD01
+28-04-2026 15:02:55.316 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 6 RWD
+28-04-2026 15:02:55.323 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: KIAEV6GTLAWD00001
+28-04-2026 15:02:55.324 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Kia EV6 GT-Line AWD
+28-04-2026 15:02:55.328 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VOLVOXC40RCHG0001
+28-04-2026 15:02:55.328 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volvo XC40 Recharge AWD
+28-04-2026 15:02:55.332 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: POLESTAR2LNGRNG01
+28-04-2026 15:02:55.333 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Polestar 2 Long Range AWD
+28-04-2026 15:02:55.336 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: RENAULTZOE50KWH01
+28-04-2026 15:02:55.336 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Renault Zoe R135 Z.E.50
+28-04-2026 15:02:55.337 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation unchanged
+28-04-2026 15:11:54.670 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener.onApplicationEvent - Restarting due to 49 class path changes (0 additions, 49 deletions, 0 modifications)
+28-04-2026 15:11:54.687 [Thread-38] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:11:54.688 [Thread-38] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+28-04-2026 15:11:54.688 [Thread-38] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-7 - Shutdown initiated...
+28-04-2026 15:11:54.689 [Thread-38] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-7 - Shutdown completed.
+28-04-2026 15:11:54.803 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 69076 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+28-04-2026 15:11:54.803 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+28-04-2026 15:11:55.015 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+28-04-2026 15:11:55.040 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 24 ms. Found 2 JPA repository interfaces.
+28-04-2026 15:11:55.161 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+28-04-2026 15:11:55.163 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+28-04-2026 15:11:55.163 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+28-04-2026 15:11:55.201 [restartedMain] INFO  o.a.c.c.C.[Tomcat-3].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+28-04-2026 15:11:55.201 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 396 ms
+28-04-2026 15:11:55.222 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-8 - Starting...
+28-04-2026 15:11:55.225 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-8 - Added connection conn70: url=jdbc:h2:mem:testdb user=SA
+28-04-2026 15:11:55.226 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-8 - Start completed.
+28-04-2026 15:11:55.227 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+28-04-2026 15:11:55.768 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 480 ms
+28-04-2026 15:11:55.778 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+28-04-2026 15:11:55.790 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 96 classes. Took 11 ms.
+28-04-2026 15:11:55.791 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+28-04-2026 15:11:55.842 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+28-04-2026 15:11:55.857 [ForkJoinPool.commonPool-worker-5] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+28-04-2026 15:11:56.000 [ForkJoinPool.commonPool-worker-5] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 143 ms.
+28-04-2026 15:11:56.172 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+28-04-2026 15:11:56.176 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+28-04-2026 15:11:56.181 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+28-04-2026 15:11:56.249 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-04-2026 15:11:56.257 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:11:56.315 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'vehiclePersistanceAdapter': Lookup method resolution failed
+28-04-2026 15:11:56.315 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:11:56.316 [restartedMain] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+28-04-2026 15:11:56.316 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-8 - Shutdown initiated...
+28-04-2026 15:11:56.318 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-8 - Shutdown completed.
+28-04-2026 15:11:56.318 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Stopping service [Tomcat]
+28-04-2026 15:11:56.325 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger.logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+28-04-2026 15:11:56.328 [restartedMain] ERROR o.s.boot.SpringApplication.reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'vehiclePersistanceAdapter': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:497) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:367) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1293) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1188) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:959) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.2.jar:3.2.2]
+	at io.carlease.CarLeaseApplication.main(CarLeaseApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.2.jar:3.2.2]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [io.carlease.EV_Catalogue.adapter.out.VehiclePersistanceAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@5c2e5498]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.1.3.jar:6.1.3]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:475) ~[spring-beans-6.1.3.jar:6.1.3]
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: io/carlease/EV_Catalogue/domain/Vehicle
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.1.3.jar:6.1.3]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: io.carlease.EV_Catalogue.domain.Vehicle
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.2.2.jar:3.2.2]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	... 30 common frames omitted
+28-04-2026 15:12:01.211 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 69076 (C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04\target\classes started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+28-04-2026 15:12:01.211 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+28-04-2026 15:12:01.463 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+28-04-2026 15:12:01.491 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 28 ms. Found 2 JPA repository interfaces.
+28-04-2026 15:12:01.584 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+28-04-2026 15:12:01.586 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+28-04-2026 15:12:01.586 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+28-04-2026 15:12:01.626 [restartedMain] INFO  o.a.c.c.C.[Tomcat-4].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+28-04-2026 15:12:01.626 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 413 ms
+28-04-2026 15:12:01.642 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-9 - Starting...
+28-04-2026 15:12:01.644 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-9 - Added connection conn80: url=jdbc:h2:mem:testdb user=SA
+28-04-2026 15:12:01.645 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-9 - Start completed.
+28-04-2026 15:12:01.645 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+28-04-2026 15:12:02.159 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 451 ms
+28-04-2026 15:12:02.168 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+28-04-2026 15:12:02.180 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 96 classes. Took 11 ms.
+28-04-2026 15:12:02.180 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+28-04-2026 15:12:02.320 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+28-04-2026 15:12:02.332 [ForkJoinPool.commonPool-worker-5] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+28-04-2026 15:12:02.402 [ForkJoinPool.commonPool-worker-5] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 70 ms.
+28-04-2026 15:12:02.558 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+28-04-2026 15:12:02.561 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+28-04-2026 15:12:02.565 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+28-04-2026 15:12:02.624 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-04-2026 15:12:02.633 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:12:02.743 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2026 15:12:02.878 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+28-04-2026 15:12:02.888 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+28-04-2026 15:12:02.888 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+28-04-2026 15:12:02.894 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+28-04-2026 15:12:02.896 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+28-04-2026 15:12:02.897 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+28-04-2026 15:12:02.898 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+28-04-2026 15:12:02.898 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+28-04-2026 15:12:02.899 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+28-04-2026 15:12:02.899 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+28-04-2026 15:12:02.899 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+28-04-2026 15:12:02.899 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+28-04-2026 15:12:02.899 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+28-04-2026 15:12:02.900 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+28-04-2026 15:12:02.900 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+28-04-2026 15:12:02.900 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+28-04-2026 15:12:02.900 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+28-04-2026 15:12:02.900 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+28-04-2026 15:12:02.900 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+28-04-2026 15:12:02.901 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+28-04-2026 15:12:02.901 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+28-04-2026 15:12:02.901 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+28-04-2026 15:12:02.901 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:12:02.901 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:12:02.901 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+28-04-2026 15:12:02.901 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:12:02.901 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:12:02.901 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:12:02.901 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+28-04-2026 15:12:02.901 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+28-04-2026 15:12:02.901 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+28-04-2026 15:12:02.901 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+28-04-2026 15:12:02.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+28-04-2026 15:12:02.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+28-04-2026 15:12:02.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+28-04-2026 15:12:02.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+28-04-2026 15:12:02.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+28-04-2026 15:12:02.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+28-04-2026 15:12:02.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+28-04-2026 15:12:02.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+28-04-2026 15:12:02.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+28-04-2026 15:12:02.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+28-04-2026 15:12:02.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+28-04-2026 15:12:02.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+28-04-2026 15:12:02.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+28-04-2026 15:12:02.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+28-04-2026 15:12:02.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+28-04-2026 15:12:02.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+28-04-2026 15:12:02.902 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+28-04-2026 15:12:02.914 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+28-04-2026 15:12:02.919 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 1.73 seconds (process running for 1987.545)
+28-04-2026 15:12:02.935 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000001
+28-04-2026 15:12:02.935 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+28-04-2026 15:12:02.939 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000001
+28-04-2026 15:12:02.939 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+28-04-2026 15:12:02.942 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLSPLAID0001
+28-04-2026 15:12:02.943 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model S Plaid
+28-04-2026 15:12:02.946 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLXLNG000001
+28-04-2026 15:12:02.947 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model X Long Range
+28-04-2026 15:12:02.949 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400001
+28-04-2026 15:12:02.950 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+28-04-2026 15:12:02.956 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat-4].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+28-04-2026 15:12:02.956 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+28-04-2026 15:12:02.957 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00001
+28-04-2026 15:12:02.957 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+28-04-2026 15:12:02.957 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
+28-04-2026 15:12:02.960 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIXXDRIVE500001
+28-04-2026 15:12:02.961 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX xDrive50
+28-04-2026 15:12:02.970 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION01
+28-04-2026 15:12:02.970 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+28-04-2026 15:12:02.973 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID3PRO58KWH0001
+28-04-2026 15:12:02.974 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.3 Pro
+28-04-2026 15:12:02.977 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIETRON55QUA001
+28-04-2026 15:12:02.977 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi e-tron 55 quattro
+28-04-2026 15:12:02.980 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIQ4ETRON400001
+28-04-2026 15:12:02.980 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi Q4 e-tron 40
+28-04-2026 15:12:02.983 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQC400001
+28-04-2026 15:12:02.983 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQC 400 4MATIC
+28-04-2026 15:12:02.986 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQS450001
+28-04-2026 15:12:02.986 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQS 450+
+28-04-2026 15:12:02.990 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: PORSCHETAYCAN4S01
+28-04-2026 15:12:02.990 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Porsche Taycan 4S
+28-04-2026 15:12:02.993 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD01
+28-04-2026 15:12:02.993 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+28-04-2026 15:12:03.001 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ6RWD01
+28-04-2026 15:12:03.002 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 6 RWD
+28-04-2026 15:12:03.006 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: KIAEV6GTLAWD00001
+28-04-2026 15:12:03.006 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Kia EV6 GT-Line AWD
+28-04-2026 15:12:03.010 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VOLVOXC40RCHG0001
+28-04-2026 15:12:03.010 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volvo XC40 Recharge AWD
+28-04-2026 15:12:03.014 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: POLESTAR2LNGRNG01
+28-04-2026 15:12:03.014 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Polestar 2 Long Range AWD
+28-04-2026 15:12:03.017 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: RENAULTZOE50KWH01
+28-04-2026 15:12:03.017 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Renault Zoe R135 Z.E.50
+28-04-2026 15:12:03.018 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation unchanged
+28-04-2026 15:12:33.367 [main] INFO  i.c.E.a.i.w.EVCatalogueControllerTest.logStarting - Starting EVCatalogueControllerTest using Java 17.0.16 with PID 38272 (started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+28-04-2026 15:12:33.371 [main] INFO  i.c.E.a.i.w.EVCatalogueControllerTest.logStartupProfileInfo - The following 1 profile is active: "dev"
+28-04-2026 15:12:38.873 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext.log - Initializing Spring TestDispatcherServlet ''
+28-04-2026 15:12:38.875 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
+28-04-2026 15:12:38.879 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 3 ms
+28-04-2026 15:12:39.001 [main] INFO  i.c.E.a.i.w.EVCatalogueControllerTest.logStarted - Started EVCatalogueControllerTest in 6.404 seconds (process running for 9.024)
+28-04-2026 15:12:39.747 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [io.carlease.EV_Catalogue.adapter.out.ListCatalogueAdapterTest]: ListCatalogueAdapterTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+28-04-2026 15:12:39.807 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration io.carlease.CarLeaseApplication for test class io.carlease.EV_Catalogue.adapter.out.ListCatalogueAdapterTest
+28-04-2026 15:12:39.813 [main] INFO  o.s.b.d.r.RestartApplicationListener.onApplicationStartingEvent - Restart disabled due to context in which it is running
+28-04-2026 15:12:39.876 [main] INFO  i.c.E.a.out.ListCatalogueAdapterTest.logStarting - Starting ListCatalogueAdapterTest using Java 17.0.16 with PID 38272 (started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+28-04-2026 15:12:39.878 [main] INFO  i.c.E.a.out.ListCatalogueAdapterTest.logStartupProfileInfo - The following 1 profile is active: "dev"
+28-04-2026 15:12:40.451 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+28-04-2026 15:12:40.623 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 148 ms. Found 2 JPA repository interfaces.
+28-04-2026 15:12:40.790 [main] INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor.process - Replacing 'dataSource' DataSource bean with embedded version
+28-04-2026 15:12:40.974 [main] INFO  o.s.j.d.e.EmbeddedDatabaseFactory.initDatabase - Starting embedded database: url='jdbc:h2:mem:ee84d122-b2ea-4396-a078-236b830f7651;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+28-04-2026 15:12:41.776 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+28-04-2026 15:12:41.971 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.4.1.Final
+28-04-2026 15:12:42.066 [main] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+28-04-2026 15:12:42.208 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+28-04-2026 15:12:43.591 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-04-2026 15:12:43.689 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:12:44.163 [main] INFO  i.c.E.a.out.ListCatalogueAdapterTest.logStarted - Started ListCatalogueAdapterTest in 4.351 seconds (process running for 14.186)
+28-04-2026 15:12:44.772 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [io.carlease.EV_Catalogue.adapter.out.VehiclePersistanceAdapterTest]: VehiclePersistanceAdapterTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+28-04-2026 15:12:44.792 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration io.carlease.CarLeaseApplication for test class io.carlease.EV_Catalogue.adapter.out.VehiclePersistanceAdapterTest
+28-04-2026 15:12:44.799 [main] INFO  o.s.b.d.r.RestartApplicationListener.onApplicationStartingEvent - Restart disabled due to context in which it is running
+28-04-2026 15:12:44.827 [main] INFO  i.c.E.a.o.VehiclePersistanceAdapterTest.logStarting - Starting VehiclePersistanceAdapterTest using Java 17.0.16 with PID 38272 (started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+28-04-2026 15:12:44.828 [main] INFO  i.c.E.a.o.VehiclePersistanceAdapterTest.logStartupProfileInfo - The following 1 profile is active: "dev"
+28-04-2026 15:12:44.961 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+28-04-2026 15:12:45.000 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 37 ms. Found 2 JPA repository interfaces.
+28-04-2026 15:12:45.015 [main] INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor.process - Replacing 'dataSource' DataSource bean with embedded version
+28-04-2026 15:12:45.030 [main] INFO  o.s.j.d.e.EmbeddedDatabaseFactory.initDatabase - Starting embedded database: url='jdbc:h2:mem:6c0ee83f-b509-43d4-996c-0955aaf8c538;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+28-04-2026 15:12:45.060 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+28-04-2026 15:12:45.066 [main] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+28-04-2026 15:12:45.073 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+28-04-2026 15:12:45.186 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-04-2026 15:12:45.195 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:12:45.268 [main] INFO  i.c.E.a.o.VehiclePersistanceAdapterTest.logStarted - Started VehiclePersistanceAdapterTest in 0.471 seconds (process running for 15.291)
+28-04-2026 15:12:46.436 [main] WARN  i.c.E.a.service.AddVehicleService.add - Vehicle already exists in catalogue: WBA12345678654234
+28-04-2026 15:12:46.450 [main] WARN  i.c.E.a.service.AddVehicleService.add - Vehicle already exists in catalogue: WBA12345678654234
+28-04-2026 15:12:46.460 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: WBA12345678654234
+28-04-2026 15:12:46.476 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [io.carlease.EV_Catalogue.application.service.AddVehicleSystemTest]: AddVehicleSystemTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+28-04-2026 15:12:46.497 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration io.carlease.CarLeaseApplication for test class io.carlease.EV_Catalogue.application.service.AddVehicleSystemTest
+28-04-2026 15:12:46.515 [main] INFO  o.s.b.d.r.RestartApplicationListener.onApplicationStartingEvent - Restart disabled due to context in which it is running
+28-04-2026 15:12:46.564 [main] INFO  i.c.E.a.service.AddVehicleSystemTest.logStarting - Starting AddVehicleSystemTest using Java 17.0.16 with PID 38272 (started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+28-04-2026 15:12:46.565 [main] INFO  i.c.E.a.service.AddVehicleSystemTest.logStartupProfileInfo - The following 1 profile is active: "dev"
+28-04-2026 15:12:47.166 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+28-04-2026 15:12:47.201 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 33 ms. Found 2 JPA repository interfaces.
+28-04-2026 15:12:48.121 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 0 (http)
+28-04-2026 15:12:48.142 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+28-04-2026 15:12:48.143 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+28-04-2026 15:12:48.283 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+28-04-2026 15:12:48.283 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1715 ms
+28-04-2026 15:12:48.334 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+28-04-2026 15:12:48.369 [main] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection conn14: url=jdbc:h2:mem:testdb user=SA
+28-04-2026 15:12:48.373 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+28-04-2026 15:12:48.391 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+28-04-2026 15:13:16.812 [main] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 27752 ms
+28-04-2026 15:13:16.813 [main] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Due to slow search it is recommended to use the whitelisted-packages feature to make scanning faster.
+
+See the whitelisted-packages section in the docs at https://vaadin.com/docs/latest/flow/integrations/spring/configuration#special-configuration-parameters
+28-04-2026 15:13:17.494 [main] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04 folder.
+28-04-2026 15:13:17.555 [main] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 97 classes. Took 38 ms.
+28-04-2026 15:13:17.559 [main] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+28-04-2026 15:13:17.982 [main] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+28-04-2026 15:13:18.026 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+28-04-2026 15:13:18.116 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 89 ms.
+28-04-2026 15:13:18.316 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+28-04-2026 15:13:18.321 [main] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+28-04-2026 15:13:18.327 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+28-04-2026 15:13:18.442 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-04-2026 15:13:18.485 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:13:18.757 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-04-2026 15:13:19.195 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+28-04-2026 15:13:19.195 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+28-04-2026 15:13:19.258 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+28-04-2026 15:13:19.271 [main] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+28-04-2026 15:13:19.280 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+28-04-2026 15:13:19.288 [main] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+28-04-2026 15:13:19.302 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+28-04-2026 15:13:19.304 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+28-04-2026 15:13:19.305 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+28-04-2026 15:13:19.307 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+28-04-2026 15:13:19.308 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+28-04-2026 15:13:19.309 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+28-04-2026 15:13:19.311 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+28-04-2026 15:13:19.312 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+28-04-2026 15:13:19.314 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+28-04-2026 15:13:19.315 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+28-04-2026 15:13:19.316 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+28-04-2026 15:13:19.317 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+28-04-2026 15:13:19.317 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+28-04-2026 15:13:19.317 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+28-04-2026 15:13:19.318 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+28-04-2026 15:13:19.319 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:13:19.319 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:13:19.320 [main] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+28-04-2026 15:13:19.320 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:13:19.321 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:13:19.321 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+28-04-2026 15:13:19.321 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+28-04-2026 15:13:19.321 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+28-04-2026 15:13:19.322 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+28-04-2026 15:13:19.322 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+28-04-2026 15:13:19.323 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+28-04-2026 15:13:19.323 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+28-04-2026 15:13:19.323 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+28-04-2026 15:13:19.324 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+28-04-2026 15:13:19.324 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+28-04-2026 15:13:19.325 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+28-04-2026 15:13:19.325 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+28-04-2026 15:13:19.325 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+28-04-2026 15:13:19.325 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+28-04-2026 15:13:19.326 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+28-04-2026 15:13:19.326 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+28-04-2026 15:13:19.330 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+28-04-2026 15:13:19.330 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+28-04-2026 15:13:19.331 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+28-04-2026 15:13:19.331 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+28-04-2026 15:13:19.331 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+28-04-2026 15:13:19.339 [main] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+28-04-2026 15:13:19.392 [main] INFO  c.v.f.s.DefaultDeploymentConfiguration.logMessages - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+28-04-2026 15:13:19.503 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 57027 (http) with context path ''
+28-04-2026 15:13:19.513 [main] INFO  i.c.E.a.service.AddVehicleSystemTest.logStarted - Started AddVehicleSystemTest in 33.0 seconds (process running for 49.536)
+28-04-2026 15:13:19.552 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000001
+28-04-2026 15:13:19.552 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+28-04-2026 15:13:19.561 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000001
+28-04-2026 15:13:19.562 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+28-04-2026 15:13:19.572 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLSPLAID0001
+28-04-2026 15:13:19.572 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model S Plaid
+28-04-2026 15:13:19.582 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLXLNG000001
+28-04-2026 15:13:19.583 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model X Long Range
+28-04-2026 15:13:19.591 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400001
+28-04-2026 15:13:19.592 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+28-04-2026 15:13:19.600 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00001
+28-04-2026 15:13:19.600 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+28-04-2026 15:13:19.609 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIXXDRIVE500001
+28-04-2026 15:13:19.609 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX xDrive50
+28-04-2026 15:13:19.618 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION01
+28-04-2026 15:13:19.618 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+28-04-2026 15:13:19.625 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID3PRO58KWH0001
+28-04-2026 15:13:19.626 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.3 Pro
+28-04-2026 15:13:19.633 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIETRON55QUA001
+28-04-2026 15:13:19.634 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi e-tron 55 quattro
+28-04-2026 15:13:19.641 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIQ4ETRON400001
+28-04-2026 15:13:19.641 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi Q4 e-tron 40
+28-04-2026 15:13:19.649 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQC400001
+28-04-2026 15:13:19.650 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQC 400 4MATIC
+28-04-2026 15:13:19.658 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQS450001
+28-04-2026 15:13:19.659 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQS 450+
+28-04-2026 15:13:19.670 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: PORSCHETAYCAN4S01
+28-04-2026 15:13:19.670 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Porsche Taycan 4S
+28-04-2026 15:13:19.677 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD01
+28-04-2026 15:13:19.678 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+28-04-2026 15:13:19.685 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ6RWD01
+28-04-2026 15:13:19.685 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 6 RWD
+28-04-2026 15:13:19.691 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: KIAEV6GTLAWD00001
+28-04-2026 15:13:19.691 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Kia EV6 GT-Line AWD
+28-04-2026 15:13:19.697 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VOLVOXC40RCHG0001
+28-04-2026 15:13:19.698 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volvo XC40 Recharge AWD
+28-04-2026 15:13:19.704 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: POLESTAR2LNGRNG01
+28-04-2026 15:13:19.704 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Polestar 2 Long Range AWD
+28-04-2026 15:13:19.710 [main] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: RENAULTZOE50KWH01
+28-04-2026 15:13:19.711 [main] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Renault Zoe R135 Z.E.50
+28-04-2026 15:13:19.862 [http-nio-auto-1-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+28-04-2026 15:13:19.862 [http-nio-auto-1-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+28-04-2026 15:13:19.864 [http-nio-auto-1-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 2 ms
+28-04-2026 15:13:19.897 [http-nio-auto-1-exec-1] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: WBA12345678901234
+28-04-2026 15:13:20.014 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [io.carlease.EV_Catalogue.application.service.ListCatalogueSystemTest]: ListCatalogueSystemTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+28-04-2026 15:13:20.017 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration io.carlease.CarLeaseApplication for test class io.carlease.EV_Catalogue.application.service.ListCatalogueSystemTest
+28-04-2026 15:13:20.210 [main] INFO  i.c.E.a.service.RemoveVehicleService.remove - Vehicle removed from EV catalogue: WBA12345678654234
+28-04-2026 15:13:20.214 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [io.carlease.EV_Catalogue.application.service.RemoveVehicleSystemTest]: RemoveVehicleSystemTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+28-04-2026 15:13:20.216 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration io.carlease.CarLeaseApplication for test class io.carlease.EV_Catalogue.application.service.RemoveVehicleSystemTest
+28-04-2026 15:13:20.253 [http-nio-auto-1-exec-9] INFO  i.c.E.a.service.RemoveVehicleService.remove - Vehicle removed from EV catalogue: WBA00000000000030
+28-04-2026 15:13:20.275 [main] INFO  i.c.E.a.service.UpdateVehicleService.update - Vehicle updated in EV catalogue: WBA12345678654234
+28-04-2026 15:13:20.285 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [io.carlease.EV_Catalogue.application.service.UpdateVehicleSystemTest]: UpdateVehicleSystemTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+28-04-2026 15:13:20.287 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration io.carlease.CarLeaseApplication for test class io.carlease.EV_Catalogue.application.service.UpdateVehicleSystemTest
+28-04-2026 15:13:20.324 [http-nio-auto-1-exec-4] INFO  i.c.E.a.service.UpdateVehicleService.update - Vehicle updated in EV catalogue: WBA00000000000001
+28-04-2026 15:13:20.563 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [io.carlease.sales.adapter.in.web.SalesControllerTest]: SalesControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+28-04-2026 15:13:20.589 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration io.carlease.CarLeaseApplication for test class io.carlease.sales.adapter.in.web.SalesControllerTest
+28-04-2026 15:13:20.594 [main] INFO  o.s.b.d.r.RestartApplicationListener.onApplicationStartingEvent - Restart disabled due to context in which it is running
+28-04-2026 15:13:20.624 [main] INFO  i.c.s.a.in.web.SalesControllerTest.logStarting - Starting SalesControllerTest using Java 17.0.16 with PID 38272 (started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+28-04-2026 15:13:20.626 [main] INFO  i.c.s.a.in.web.SalesControllerTest.logStartupProfileInfo - The following 1 profile is active: "dev"
+28-04-2026 15:13:21.201 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext.log - Initializing Spring TestDispatcherServlet ''
+28-04-2026 15:13:21.203 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
+28-04-2026 15:13:21.204 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 0 ms
+28-04-2026 15:13:21.211 [main] INFO  i.c.s.a.in.web.SalesControllerTest.logStarted - Started SalesControllerTest in 0.617 seconds (process running for 51.234)
+28-04-2026 15:13:21.254 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [io.carlease.sales.adapter.out.persistence.ContractPersistenceAdapterTest]: ContractPersistenceAdapterTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+28-04-2026 15:13:21.282 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration io.carlease.CarLeaseApplication for test class io.carlease.sales.adapter.out.persistence.ContractPersistenceAdapterTest
+28-04-2026 15:13:21.286 [main] INFO  o.s.b.d.r.RestartApplicationListener.onApplicationStartingEvent - Restart disabled due to context in which it is running
+28-04-2026 15:13:21.311 [main] INFO  i.c.s.a.o.p.ContractPersistenceAdapterTest.logStarting - Starting ContractPersistenceAdapterTest using Java 17.0.16 with PID 38272 (started by paulk in C:\Users\paulk\IdeaProjects\BSC_FS26_SE_GROUP04)
+28-04-2026 15:13:21.312 [main] INFO  i.c.s.a.o.p.ContractPersistenceAdapterTest.logStartupProfileInfo - The following 1 profile is active: "dev"
+28-04-2026 15:13:21.402 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+28-04-2026 15:13:21.437 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 33 ms. Found 2 JPA repository interfaces.
+28-04-2026 15:13:21.447 [main] INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor.process - Replacing 'dataSource' DataSource bean with embedded version
+28-04-2026 15:13:21.455 [main] INFO  o.s.j.d.e.EmbeddedDatabaseFactory.initDatabase - Starting embedded database: url='jdbc:h2:mem:1ecb4500-9907-49ce-a171-ba6fa1fe1393;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+28-04-2026 15:13:21.479 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+28-04-2026 15:13:21.482 [main] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+28-04-2026 15:13:21.490 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+28-04-2026 15:13:21.588 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-04-2026 15:13:21.597 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:13:21.649 [main] INFO  i.c.s.a.o.p.ContractPersistenceAdapterTest.logStarted - Started ContractPersistenceAdapterTest in 0.364 seconds (process running for 51.672)
+28-04-2026 15:13:22.994 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:13:23.001 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:13:23.027 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+28-04-2026 15:13:23.029 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+28-04-2026 15:13:23.035 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+28-04-2026 15:13:23.060 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
