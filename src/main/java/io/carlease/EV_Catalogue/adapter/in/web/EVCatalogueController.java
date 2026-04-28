@@ -5,6 +5,7 @@ import io.carlease.EV_Catalogue.application.port.in.addVehicle;
 import io.carlease.EV_Catalogue.application.port.in.removeVehicle;
 import io.carlease.EV_Catalogue.application.port.in.updateVehicle;
 import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.shared.domain.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

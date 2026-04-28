@@ -1,5 +1,7 @@
 package io.carlease.EV_Catalogue.domain;
 
+import io.carlease.shared.domain.*;
+
 import org.jmolecules.ddd.annotation.AggregateRoot;
 import org.jmolecules.ddd.annotation.Identity;
 

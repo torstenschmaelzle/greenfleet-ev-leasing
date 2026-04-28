@@ -19,9 +19,9 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.Route;
-import io.carlease.EV_Catalogue.domain.Currency;
+import io.carlease.shared.domain.Currency;
 import io.carlease.EV_Catalogue.domain.Vehicle;
-import io.carlease.EV_Catalogue.domain.VehicleType;
+import io.carlease.shared.domain.VehicleType;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Route("update-vehicle/:vin")

@@ -1,4 +1,4 @@
-package io.carlease.fleet_consulting.domain;
+package io.carlease.shared.domain;
 
 import org.jmolecules.ddd.annotation.ValueObject;
 
@@ -16,25 +16,25 @@ public class Amount {
     }
 
     public static Amount ofCents(long amountInCents, Currency currency) {
-        if (currency == null) throw new InvalidFleetAttributeException("currency", "must not be null");
-        if (amountInCents < 0) throw new InvalidFleetAttributeException("amountInCents", "must not be negative");
+        if (currency == null) throw new InvalidAmountException("currency must not be null");
+        if (amountInCents < 0) throw new InvalidAmountException("amountInCents must not be negative");
         return new Amount(amountInCents, currency);
     }
 
     public Amount add(Amount other) {
         if (other.currency != this.currency)
-            throw new InvalidFleetAttributeException("currency", "amounts must have the same currency");
+            throw new InvalidAmountException("amounts must have the same currency");
         return Amount.ofCents(this.amountInCents + other.amountInCents, this.currency);
     }
 
     public Amount subtract(Amount other) {
         if (other.currency != this.currency)
-            throw new InvalidFleetAttributeException("currency", "amounts must have the same currency");
+            throw new InvalidAmountException("amounts must have the same currency");
         return Amount.ofCents(this.amountInCents - other.amountInCents, this.currency);
     }
 
     public Amount convertTo(Currency target, double rate) {
-        if (target == null) throw new InvalidFleetAttributeException("currency", "must not be null");
+        if (target == null) throw new InvalidAmountException("target currency must not be null");
         return Amount.ofCents(Math.round(this.amountInCents * rate), target);
     }
 

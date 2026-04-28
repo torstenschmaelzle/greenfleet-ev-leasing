@@ -1,5 +1,8 @@
 package io.carlease.EV_Catalogue.domain;
 
+import io.carlease.shared.domain.*;
+import io.carlease.shared.domain.InvalidAmountException;
+
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -343,18 +346,18 @@ class VehicleTest {
 
         @Test
         void amountCurrencyMustNotBeNull() {
-            assertThatThrownBy(() -> Amount.ofCents(100L, null)).isInstanceOf(InvalidVehicleAttributeException.class);
+            assertThatThrownBy(() -> Amount.ofCents(100L, null)).isInstanceOf(InvalidAmountException.class);
         }
 
         @Test
         void amountInCentsMustNotBeNegative() {
-            assertThatThrownBy(() -> Amount.ofCents(-1L, Currency.CHF)).isInstanceOf(InvalidVehicleAttributeException.class);
+            assertThatThrownBy(() -> Amount.ofCents(-1L, Currency.CHF)).isInstanceOf(InvalidAmountException.class);
         }
 
         @Test
         void amountConvertToNullCurrencyThrowsException() {
             var amount = Amount.ofCents(10000L, Currency.CHF);
-            assertThatThrownBy(() -> amount.convertTo(null, 1.1)).isInstanceOf(InvalidVehicleAttributeException.class);
+            assertThatThrownBy(() -> amount.convertTo(null, 1.1)).isInstanceOf(InvalidAmountException.class);
         }
 
         @Test
@@ -372,7 +375,7 @@ class VehicleTest {
             var chf = Amount.ofCents(100L, Currency.CHF);
             var eur = Amount.ofCents(100L, Currency.EUR);
 
-            assertThatThrownBy(() -> chf.add(eur)).isInstanceOf(InvalidVehicleAttributeException.class);
+            assertThatThrownBy(() -> chf.add(eur)).isInstanceOf(InvalidAmountException.class);
         }
 
         @Test
@@ -380,7 +383,7 @@ class VehicleTest {
             var chf = Amount.ofCents(100L, Currency.CHF);
             var eur = Amount.ofCents(50L, Currency.EUR);
 
-            assertThatThrownBy(() -> chf.subtract(eur)).isInstanceOf(InvalidVehicleAttributeException.class);
+            assertThatThrownBy(() -> chf.subtract(eur)).isInstanceOf(InvalidAmountException.class);
         }
 
         @Test

@@ -5,6 +5,7 @@ import io.carlease.EV_Catalogue.application.port.in.addVehicle;
 import io.carlease.EV_Catalogue.application.port.in.removeVehicle;
 import io.carlease.EV_Catalogue.application.port.in.updateVehicle;
 import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.shared.domain.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
