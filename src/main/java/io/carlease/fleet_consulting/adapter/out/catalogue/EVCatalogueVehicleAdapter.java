@@ -27,6 +27,7 @@ public class EVCatalogueVehicleAdapter implements GetVehiclesPort {
 
     private VehicleSummary toVehicleSummary(Vehicle vehicle) {
         return VehicleSummary.of(
+                vehicle.getVehicleId().getVin(),
                 vehicle.getMonthlyLeasePrice(),
                 vehicle.getVehicleSpecification().getConsumptionKwhPer100km().getValue().doubleValue(),
                 Kilometre.of(vehicle.getVehicleSpecification().getRangeKm().getValue()),

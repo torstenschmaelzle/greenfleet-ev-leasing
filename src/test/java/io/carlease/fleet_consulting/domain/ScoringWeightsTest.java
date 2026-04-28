@@ -18,13 +18,13 @@ class ScoringWeightsTest {
         }
 
         @Test
-        void negativeCostWeightIsRejected() {
+        void negativeCo2WeightIsRejected() {
             assertThatThrownBy(() -> ScoringWeights.of(51, -1, 50))
                     .isInstanceOf(InvalidFleetAttributeException.class);
         }
 
         @Test
-        void negativeCo2WeightIsRejected() {
+        void negativeCostWeightIsRejected() {
             assertThatThrownBy(() -> ScoringWeights.of(51, 50, -1))
                     .isInstanceOf(InvalidFleetAttributeException.class);
         }
@@ -38,16 +38,42 @@ class ScoringWeightsTest {
 
     @Test
     void storesWeightsCorrectly() {
+        // of(rangeWeight, co2Weight, costWeight)
         ScoringWeights weights = ScoringWeights.of(50, 30, 20);
 
         assertThat(weights.getRangeWeight()).isEqualTo(50);
-        assertThat(weights.getCostWeight()).isEqualTo(30);
-        assertThat(weights.getCo2Weight()).isEqualTo(20);
+        assertThat(weights.getCo2Weight()).isEqualTo(30);
+        assertThat(weights.getCostWeight()).isEqualTo(20);
     }
+
     @Test
     void zeroWeightIsValid() {
-        ScoringWeights weights = ScoringWeights.of(0, 0, 100);
+        ScoringWeights weights = ScoringWeights.of(0, 100, 0);
 
         assertThat(weights.getCo2Weight()).isEqualTo(100);
+    }
+
+    @Nested
+    class FactoryMethods {
+
+        @Test
+        void balancedSumsToHundred() {
+            ScoringWeights w = ScoringWeights.balanced();
+            assertThat(w.getRangeWeight() + w.getCo2Weight() + w.getCostWeight()).isEqualTo(100);
+        }
+
+        @Test
+        void ecoHasHighCo2Weight() {
+            ScoringWeights w = ScoringWeights.eco();
+            assertThat(w.getCo2Weight()).isEqualTo(60);
+            assertThat(w.getRangeWeight() + w.getCo2Weight() + w.getCostWeight()).isEqualTo(100);
+        }
+
+        @Test
+        void economicHasHighCostWeight() {
+            ScoringWeights w = ScoringWeights.economic();
+            assertThat(w.getCostWeight()).isEqualTo(60);
+            assertThat(w.getRangeWeight() + w.getCo2Weight() + w.getCostWeight()).isEqualTo(100);
+        }
     }
 }
