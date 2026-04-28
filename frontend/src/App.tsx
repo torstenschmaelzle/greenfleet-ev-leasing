@@ -5,6 +5,7 @@ import CataloguePage from './pages/CataloguePage';
 import AddVehiclePage from './pages/AddVehiclePage';
 import UpdateVehiclePage from './pages/UpdateVehiclePage';
 import DashboardLayout from './components/DashboardLayout';
+import FleetConsultingPage from './pages/FleetConsultingPage';
 
 function RequireAuth({ children }: { children: JSX.Element }) {
   const { user, loading } = useAuth();
@@ -36,6 +37,7 @@ export default function App() {
           >
             <Route index element={<Navigate to="catalogue" replace />} />
             <Route path="catalogue" element={<CataloguePage />} />
+            <Route path="fleet-consulting" element={<FleetConsultingPage />} />
             <Route
               path="add-vehicle"
               element={

@@ -47,6 +47,50 @@ export interface AddVehicleRequest {
   initialMeasuredRangeKm: number;
 }
 
+export interface Amount {
+  amountInCents: number;
+  currency: Currency;
+}
+
+export interface Kilometre {
+  value: number;
+}
+
+export interface RangeFit {
+  requiredKm: Kilometre;
+  actualKm: Kilometre;
+  sufficient: boolean;
+}
+
+export interface TotalCostOfOwnership {
+  monthlyLeaseCost: Amount;
+  monthlyChargingCost: Amount;
+  monthlyTotal: Amount;
+  annualTotal: Amount;
+}
+
+export interface Co2Impact {
+  evGramsPerKm: number;
+  annualSavingsKg: number;
+}
+
+export interface SuitabilityScore {
+  score: number;
+}
+
+export interface VehicleRecommendation {
+  brand: string;
+  model: string;
+  vehicleType: VehicleType;
+  rangeKm: Kilometre;
+  monthlyLeasePrice: Amount;
+  kwhPer100km: number;
+  rangeFit: RangeFit;
+  tco: TotalCostOfOwnership;
+  co2Impact: Co2Impact;
+  suitabilityScore: SuitabilityScore;
+}
+
 export interface UpdateVehicleRequest {
   brand: string;
   model: string;

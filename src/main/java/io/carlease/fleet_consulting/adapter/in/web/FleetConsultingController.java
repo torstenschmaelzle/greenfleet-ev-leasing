@@ -5,14 +5,15 @@ import io.carlease.fleet_consulting.domain.*;
 import io.carlease.shared.domain.Amount;
 import io.carlease.shared.domain.Currency;
 import io.carlease.shared.domain.VehicleType;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
+@RequestMapping("/api/fleet-consulting")
 public class FleetConsultingController {
 
     private final GetRecommendationUseCase getRecommendationUseCase;
@@ -21,8 +22,7 @@ public class FleetConsultingController {
         this.getRecommendationUseCase = getRecommendationUseCase;
     }
 
-    @GetMapping("/fleet-consulting/recommendations")
-    @ResponseBody
+    @GetMapping("/recommendations")
     public List<VehicleRecommendation> getRecommendations(
             @RequestParam(name = "daily_route_km") int dailyRouteKm,
             @RequestParam(name = "number_of_drivers") int numberOfDrivers,

@@ -53,19 +53,18 @@ export default function DashboardLayout() {
           🚗 EV Catalogue
         </NavLink>
 
-        {/* Fleet Consulting — greyed out */}
-        <div style={{
-          display: 'flex', alignItems: 'center', gap: 8,
-          padding: '9px 12px', borderRadius: 6,
-          color: 'rgba(255,255,255,0.4)',
-        }}>
+        <NavLink
+          to="/dashboard/fleet-consulting"
+          style={({ isActive }) => ({
+            display: 'flex', alignItems: 'center', gap: 8,
+            padding: '9px 12px', borderRadius: 6, textDecoration: 'none',
+            color: 'white', fontWeight: isActive ? 600 : 400,
+            background: isActive ? 'rgba(255,255,255,0.18)' : 'transparent',
+            marginBottom: 2,
+          })}
+        >
           📊 Fleet Consulting
-          <span style={{
-            marginLeft: 'auto', fontSize: 9,
-            background: 'rgba(255,255,255,0.12)',
-            padding: '2px 6px', borderRadius: 4,
-          }}>soon</span>
-        </div>
+        </NavLink>
 
         {/* Sales — greyed out */}
         <div style={{
