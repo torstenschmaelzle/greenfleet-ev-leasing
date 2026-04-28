@@ -16,8 +16,13 @@ function RequireAuth({ children }: { children: JSX.Element }) {
 
 function RequireWorker({ children }: { children: JSX.Element }) {
   const { user } = useAuth();
-  if (user?.role !== 'WORKER') return <Navigate to="/dashboard/catalogue" replace />;
+  if (user?.role !== 'WORKER') return <Navigate to="/dashboard/fleet-consulting" replace />;
   return children;
+}
+
+function DashboardIndex() {
+  const { user } = useAuth();
+  return <Navigate to={user?.role === 'WORKER' ? 'catalogue' : 'fleet-consulting'} replace />;
 }
 
 export default function App() {
@@ -35,8 +40,15 @@ export default function App() {
               </RequireAuth>
             }
           >
-            <Route index element={<Navigate to="catalogue" replace />} />
-            <Route path="catalogue" element={<CataloguePage />} />
+            <Route index element={<DashboardIndex />} />
+            <Route
+              path="catalogue"
+              element={
+                <RequireWorker>
+                  <CataloguePage />
+                </RequireWorker>
+              }
+            />
             <Route path="fleet-consulting" element={<FleetConsultingPage />} />
             <Route
               path="add-vehicle"
