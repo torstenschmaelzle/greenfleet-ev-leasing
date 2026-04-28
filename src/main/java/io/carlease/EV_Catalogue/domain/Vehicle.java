@@ -103,15 +103,19 @@ public class Vehicle {
     }
 
     public void lockVehicle(LockDuration duration) {
-        if (status == VehicleStatus.RESERVED && lock != null && lock.isExpired()) {
-            this.lock = null;
-            this.status = VehicleStatus.AVAILABLE;
-        }
+        clearExpiredLockIfPresent();
         if (status != VehicleStatus.AVAILABLE) {
             throw new VehicleNotAvailableException(vehicleId, status);
         }
         this.lock = new ReservationLock(duration);
         this.status = VehicleStatus.RESERVED;
+    }
+
+    private void clearExpiredLockIfPresent() {
+        if (status == VehicleStatus.RESERVED && lock != null && lock.isExpired()) {
+            this.lock = null;
+            this.status = VehicleStatus.AVAILABLE;
+        }
     }
 
 

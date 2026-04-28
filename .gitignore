@@ -34,3 +34,7 @@ build/
 # Logs
 *.log
 logs/
+
+# claude
+.claude
+docs/
