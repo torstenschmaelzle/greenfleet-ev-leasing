@@ -1,6 +1,7 @@
 package io.carlease.fleet_consulting.domain;
 
-import io.carlease.shared.domain.*;
+import io.carlease.shared.domain.Amount;
+import io.carlease.shared.domain.Currency;
 
 import org.jmolecules.ddd.annotation.ValueObject;
 
@@ -9,37 +10,47 @@ import java.util.Objects;
 @ValueObject
 public class TotalCostOfOwnership {
 
+    private final Amount monthlyInstallmentPerVehicle;
     private final Amount monthlyLeaseCost;
     private final Amount monthlyChargingCost;
     private final Amount monthlyTotal;
     private final Amount annualTotal;
 
-    private TotalCostOfOwnership(Amount monthlyLeaseCost, Amount monthlyChargingCost,
-                                  Amount monthlyTotal, Amount annualTotal) {
+    private TotalCostOfOwnership(Amount monthlyInstallmentPerVehicle, Amount monthlyLeaseCost,
+                                  Amount monthlyChargingCost, Amount monthlyTotal, Amount annualTotal) {
+        this.monthlyInstallmentPerVehicle = monthlyInstallmentPerVehicle;
         this.monthlyLeaseCost = monthlyLeaseCost;
         this.monthlyChargingCost = monthlyChargingCost;
         this.monthlyTotal = monthlyTotal;
         this.annualTotal = annualTotal;
     }
 
-    public static TotalCostOfOwnership calculate(FleetRequirements req, Amount monthlyLeasePrice,
-                                                   double kwhPer100km, Kilometre rangeKm) {
+    public static TotalCostOfOwnership calculate(FleetRequirements req, Installment installment,
+                                                   double kwhPer100km) {
         if (req == null) throw new InvalidFleetAttributeException("req", "must not be null");
-        if (monthlyLeasePrice == null) throw new InvalidFleetAttributeException("monthlyLeasePrice", "must not be null");
+        if (installment == null) throw new InvalidFleetAttributeException("installment", "must not be null");
 
         int dailyKm = req.getDailyRouteKm().getValue();
-        int drivers = req.getNumberOfDrivers().getValue();
+        int vehicles = req.getNumberOfVehicles().getValue();
         long ratePerKwhCents = req.getChargingSetup().getElectricityRate().getRatePerKwh().getAmountInCents();
         Currency rateCurrency = req.getChargingSetup().getElectricityRate().getRatePerKwh().getCurrency();
 
-        double kWhConsumedMonthly = dailyKm * 30.0 * drivers * (kwhPer100km / 100.0);
-        long chargingCostCents = Math.round(kWhConsumedMonthly * ratePerKwhCents);
+        Amount installmentAmount = installment.getMonthlyAmount();
+        long leaseCostCents = installmentAmount.getAmountInCents() * vehicles;
+        Amount monthlyLeaseCost = Amount.ofCents(leaseCostCents, installmentAmount.getCurrency());
 
+        double kWhConsumedMonthly = dailyKm * 30.0 * vehicles * (kwhPer100km / 100.0);
+        long chargingCostCents = Math.round(kWhConsumedMonthly * ratePerKwhCents);
         Amount monthlyChargingCost = Amount.ofCents(chargingCostCents, rateCurrency);
-        Amount monthlyTotal = monthlyLeasePrice.add(monthlyChargingCost);
+
+        Amount monthlyTotal = monthlyLeaseCost.add(monthlyChargingCost);
         Amount annualTotal = Amount.ofCents(monthlyTotal.getAmountInCents() * 12, monthlyTotal.getCurrency());
 
-        return new TotalCostOfOwnership(monthlyLeasePrice, monthlyChargingCost, monthlyTotal, annualTotal);
+        return new TotalCostOfOwnership(installmentAmount, monthlyLeaseCost, monthlyChargingCost, monthlyTotal, annualTotal);
+    }
+
+    public Amount getMonthlyInstallmentPerVehicle() {
+        return monthlyInstallmentPerVehicle;
     }
 
     public Amount getMonthlyLeaseCost() {
@@ -63,7 +74,8 @@ public class TotalCostOfOwnership {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         TotalCostOfOwnership other = (TotalCostOfOwnership) obj;
-        return monthlyLeaseCost.equals(other.monthlyLeaseCost)
+        return monthlyInstallmentPerVehicle.equals(other.monthlyInstallmentPerVehicle)
+                && monthlyLeaseCost.equals(other.monthlyLeaseCost)
                 && monthlyChargingCost.equals(other.monthlyChargingCost)
                 && monthlyTotal.equals(other.monthlyTotal)
                 && annualTotal.equals(other.annualTotal);
@@ -71,6 +83,6 @@ public class TotalCostOfOwnership {
 
     @Override
     public int hashCode() {
-        return Objects.hash(monthlyLeaseCost, monthlyChargingCost, monthlyTotal, annualTotal);
+        return Objects.hash(monthlyInstallmentPerVehicle, monthlyLeaseCost, monthlyChargingCost, monthlyTotal, annualTotal);
     }
 }

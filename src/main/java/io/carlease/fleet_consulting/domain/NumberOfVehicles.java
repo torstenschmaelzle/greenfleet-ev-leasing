@@ -5,17 +5,17 @@ import org.jmolecules.ddd.annotation.ValueObject;
 import java.util.Objects;
 
 @ValueObject
-public class NumberOfDrivers {
+public class NumberOfVehicles {
 
     private final int value;
 
-    private NumberOfDrivers(int value) {
+    private NumberOfVehicles(int value) {
         this.value = value;
     }
 
-    public static NumberOfDrivers of(int value) {
+    public static NumberOfVehicles of(int value) {
         if (value <= 0) throw new InvalidFleetAttributeException("value", "must be greater than 0");
-        return new NumberOfDrivers(value);
+        return new NumberOfVehicles(value);
     }
 
     public int getValue() {
@@ -26,7 +26,7 @@ public class NumberOfDrivers {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        NumberOfDrivers other = (NumberOfDrivers) obj;
+        NumberOfVehicles other = (NumberOfVehicles) obj;
         return value == other.value;
     }
 

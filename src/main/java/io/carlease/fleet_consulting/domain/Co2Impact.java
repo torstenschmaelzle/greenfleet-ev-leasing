@@ -27,13 +27,13 @@ public class Co2Impact {
                 .divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP);
 
         int dailyKm = req.getDailyRouteKm().getValue();
-        int drivers = req.getNumberOfDrivers().getValue();
+        int vehicles = req.getNumberOfVehicles().getValue();
 
         BigDecimal annualSavingsKg = BigDecimal.valueOf(DomainConstants.ICE_GRAMS_PER_KM)
                 .subtract(evGramsPerKm)
                 .multiply(BigDecimal.valueOf(dailyKm))
                 .multiply(BigDecimal.valueOf(365))
-                .multiply(BigDecimal.valueOf(drivers))
+                .multiply(BigDecimal.valueOf(vehicles))
                 .divide(BigDecimal.valueOf(1000), 4, RoundingMode.HALF_UP);
 
         return new Co2Impact(evGramsPerKm, annualSavingsKg);
