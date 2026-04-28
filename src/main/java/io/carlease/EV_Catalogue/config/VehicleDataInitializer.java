@@ -3,6 +3,7 @@ package io.carlease.EV_Catalogue.config;
 import io.carlease.EV_Catalogue.application.port.in.addVehicle;
 import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
 import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.shared.domain.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;

@@ -1,5 +1,7 @@
 package io.carlease.fleet_consulting.domain;
 
+import io.carlease.shared.domain.*;
+
 import org.jmolecules.ddd.annotation.AggregateRoot;
 
 import java.util.ArrayList;
@@ -36,7 +38,8 @@ public class RecommendationRequest {
                     vehicle.getRangeKm(),
                     requirements,
                     scoringStrategy,
-                    vehicle.getModelName(),
+                    vehicle.getBrand(),
+                    vehicle.getModel(),
                     vehicle.getVehicleType()
             );
             recommendations.add(recommendation);

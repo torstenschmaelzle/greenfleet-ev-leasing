@@ -17,8 +17,8 @@ import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.NumberField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
-import io.carlease.EV_Catalogue.domain.Currency;
-import io.carlease.EV_Catalogue.domain.VehicleType;
+import io.carlease.shared.domain.Currency;
+import io.carlease.shared.domain.VehicleType;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Route("add-vehicle")

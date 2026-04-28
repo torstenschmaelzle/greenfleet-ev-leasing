@@ -2,6 +2,7 @@ package io.carlease.EV_Catalogue.application.service;
 
 import io.carlease.EV_Catalogue.application.port.out.ListCataloguePort;
 import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.shared.domain.*;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;

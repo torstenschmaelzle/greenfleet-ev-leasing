@@ -1,5 +1,7 @@
 package io.carlease.fleet_consulting.domain;
 
+import io.carlease.shared.domain.*;
+
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

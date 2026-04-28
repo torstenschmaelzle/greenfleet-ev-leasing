@@ -1,6 +1,7 @@
 package io.carlease.EV_Catalogue.adapter.out.persistence;
 
 import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.shared.domain.*;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

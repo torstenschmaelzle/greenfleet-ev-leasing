@@ -3,6 +3,7 @@ package io.carlease.EV_Catalogue.application.service;
 import io.carlease.EV_Catalogue.application.port.in.updateVehicle;
 import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
 import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.shared.domain.*;
 import org.jmolecules.architecture.layered.ApplicationLayer;
 import org.jmolecules.ddd.annotation.Service;
 import org.slf4j.Logger;

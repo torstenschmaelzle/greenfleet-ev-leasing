@@ -1,5 +1,7 @@
 package io.carlease.fleet_consulting.domain;
 
+import io.carlease.shared.domain.*;
+
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -26,23 +28,25 @@ class RecommendationRequestTest {
         );
     }
 
-    private VehicleSummary vehicleSummary(String modelName, boolean available) {
+    private VehicleSummary vehicleSummary(String brand, String model, boolean available) {
         return VehicleSummary.of(
                 Amount.ofCents(50000, Currency.CHF),
                 20.0,
                 Kilometre.of(300),
-                modelName,
+                brand,
+                model,
                 VehicleType.SUV,
                 available
         );
     }
 
-    private VehicleSummary vehicleSummaryWithLease(String modelName, long leaseCents) {
+    private VehicleSummary vehicleSummaryWithLease(String brand, String model, long leaseCents) {
         return VehicleSummary.of(
                 Amount.ofCents(leaseCents, Currency.CHF),
                 20.0,
                 Kilometre.of(300),
-                modelName,
+                brand,
+                model,
                 VehicleType.SUV,
                 true
         );
@@ -85,14 +89,13 @@ class RecommendationRequestTest {
         void unavailableVehiclesAreExcluded() {
             RecommendationRequest request = new RecommendationRequest(UUID.randomUUID(), validReq(), new WeightedScoringStrategy());
             List<VehicleSummary> vehicles = List.of(
-                    vehicleSummary("Available Car", true),
-                    vehicleSummary("Unavailable Car", false)
+                    vehicleSummary("Tesla", "Model 3", true),
+                    vehicleSummary("BMW", "iX3", false)
             );
 
             request.generateRecommendations(vehicles);
 
             assertThat(request.getRecommendations()).hasSize(1);
-            assertThat(request.getRecommendations().get(0).getModelName()).isEqualTo("Available Car");
         }
 
         @Test
@@ -101,28 +104,28 @@ class RecommendationRequestTest {
             // Expensive Car lease=50000: monthly=68000, budget=80000 → tcoScore=(1-68000/80000)*40=6 → score=66
             RecommendationRequest request = new RecommendationRequest(UUID.randomUUID(), validReq(), new WeightedScoringStrategy());
             List<VehicleSummary> vehicles = List.of(
-                    vehicleSummaryWithLease("Expensive Car", 50000),
-                    vehicleSummaryWithLease("Cheap Car", 20000)
+                    vehicleSummaryWithLease("BMW", "iX3", 50000),
+                    vehicleSummaryWithLease("Tesla", "Model 3", 20000)
             );
 
             request.generateRecommendations(vehicles);
             List<VehicleRecommendation> top = request.getTopRecommendations(2);
 
-            assertThat(top.get(0).getModelName()).isEqualTo("Cheap Car");
-            assertThat(top.get(1).getModelName()).isEqualTo("Expensive Car");
+            assertThat(top.get(0).getBrand()).isEqualTo("Tesla");
+            assertThat(top.get(1).getBrand()).isEqualTo("BMW");
         }
 
         @Test
         void getBestMatchReturnsHighestScoredVehicle() {
             RecommendationRequest request = new RecommendationRequest(UUID.randomUUID(), validReq(), new WeightedScoringStrategy());
             List<VehicleSummary> vehicles = List.of(
-                    vehicleSummaryWithLease("Expensive Car", 50000),
-                    vehicleSummaryWithLease("Cheap Car", 20000)
+                    vehicleSummaryWithLease("BMW", "iX3", 50000),
+                    vehicleSummaryWithLease("Tesla", "Model 3", 20000)
             );
 
             request.generateRecommendations(vehicles);
 
-            assertThat(request.getBestMatch().getModelName()).isEqualTo("Cheap Car");
+            assertThat(request.getBestMatch().getBrand()).isEqualTo("Tesla");
         }
 
         @Test

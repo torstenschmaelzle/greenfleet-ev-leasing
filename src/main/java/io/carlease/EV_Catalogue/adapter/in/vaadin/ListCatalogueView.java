@@ -17,7 +17,7 @@ import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.Route;
 import io.carlease.EV_Catalogue.domain.Vehicle;
 import io.carlease.EV_Catalogue.domain.VehicleStatus;
-import io.carlease.EV_Catalogue.domain.VehicleType;
+import io.carlease.shared.domain.VehicleType;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;

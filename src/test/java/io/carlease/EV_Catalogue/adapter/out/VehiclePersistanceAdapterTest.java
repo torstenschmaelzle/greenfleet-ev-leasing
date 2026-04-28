@@ -2,6 +2,7 @@ package io.carlease.EV_Catalogue.adapter.out;
 
 import io.carlease.EV_Catalogue.adapter.out.persistence.VehicleRepository;
 import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.shared.domain.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
