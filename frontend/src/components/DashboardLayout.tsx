@@ -39,19 +39,21 @@ export default function DashboardLayout() {
           SECTIONS
         </span>
 
-        {/* EV Catalogue */}
-        <NavLink
-          to="/dashboard/catalogue"
-          style={({ isActive }) => ({
-            display: 'flex', alignItems: 'center', gap: 8,
-            padding: '9px 12px', borderRadius: 6, textDecoration: 'none',
-            color: 'white', fontWeight: isActive ? 600 : 400,
-            background: isActive ? 'rgba(255,255,255,0.18)' : 'transparent',
-            marginBottom: 2,
-          })}
-        >
-          🚗 EV Catalogue
-        </NavLink>
+        {/* EV Catalogue — workers only */}
+        {user?.role === 'WORKER' && (
+          <NavLink
+            to="/dashboard/catalogue"
+            style={({ isActive }) => ({
+              display: 'flex', alignItems: 'center', gap: 8,
+              padding: '9px 12px', borderRadius: 6, textDecoration: 'none',
+              color: 'white', fontWeight: isActive ? 600 : 400,
+              background: isActive ? 'rgba(255,255,255,0.18)' : 'transparent',
+              marginBottom: 2,
+            })}
+          >
+            🚗 EV Catalogue
+          </NavLink>
+        )}
 
         <NavLink
           to="/dashboard/fleet-consulting"
