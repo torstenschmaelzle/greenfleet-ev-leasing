@@ -1,7 +1,5 @@
 package io.carlease.fleet_consulting.domain;
 
-import io.carlease.shared.domain.*;
-
 import org.jmolecules.ddd.annotation.ValueObject;
 
 import java.util.Objects;
@@ -10,37 +8,57 @@ import java.util.Objects;
 public class ScoringWeights {
 
     private final int rangeWeight;
-    private final int costWeight;
     private final int co2Weight;
+    private final int costWeight;
 
-    private ScoringWeights(int rangeWeight, int costWeight, int co2Weight) {
+    private ScoringWeights(int rangeWeight, int co2Weight, int costWeight) {
         this.rangeWeight = rangeWeight;
-        this.costWeight = costWeight;
         this.co2Weight = co2Weight;
+        this.costWeight = costWeight;
     }
 
-    public static ScoringWeights of(int range, int cost, int co2) {
-        if (range < 0 || cost < 0 || co2 < 0)
+    public static ScoringWeights of(int rangeWeight, int co2Weight, int costWeight) {
+        if (rangeWeight < 0 || co2Weight < 0 || costWeight < 0)
             throw new InvalidFleetAttributeException("weights", "must not be negative");
-        if (range + cost + co2 != 100)
+        if (rangeWeight + co2Weight + costWeight != 100)
             throw new InvalidFleetAttributeException("weights", "must sum to 100");
-        return new ScoringWeights(range, cost, co2);
+        return new ScoringWeights(rangeWeight, co2Weight, costWeight);
     }
 
-    public static ScoringWeights defaultWeights() {
-        return new ScoringWeights(40, 40, 20);
+    public static ScoringWeights balanced() {
+        return new ScoringWeights(
+                DomainConstants.BALANCED_RANGE_W,
+                DomainConstants.BALANCED_CO2_W,
+                DomainConstants.BALANCED_COST_W
+        );
+    }
+
+    public static ScoringWeights eco() {
+        return new ScoringWeights(
+                DomainConstants.ECO_RANGE_W,
+                DomainConstants.ECO_CO2_W,
+                DomainConstants.ECO_COST_W
+        );
+    }
+
+    public static ScoringWeights economic() {
+        return new ScoringWeights(
+                DomainConstants.ECONOMIC_RANGE_W,
+                DomainConstants.ECONOMIC_CO2_W,
+                DomainConstants.ECONOMIC_COST_W
+        );
     }
 
     public int getRangeWeight() {
         return rangeWeight;
     }
 
-    public int getCostWeight() {
-        return costWeight;
-    }
-
     public int getCo2Weight() {
         return co2Weight;
+    }
+
+    public int getCostWeight() {
+        return costWeight;
     }
 
     @Override
@@ -49,12 +67,12 @@ public class ScoringWeights {
         if (obj == null || getClass() != obj.getClass()) return false;
         ScoringWeights other = (ScoringWeights) obj;
         return rangeWeight == other.rangeWeight
-                && costWeight == other.costWeight
-                && co2Weight == other.co2Weight;
+                && co2Weight == other.co2Weight
+                && costWeight == other.costWeight;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(rangeWeight, costWeight, co2Weight);
+        return Objects.hash(rangeWeight, co2Weight, costWeight);
     }
 }

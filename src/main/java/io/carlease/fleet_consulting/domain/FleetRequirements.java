@@ -1,64 +1,76 @@
 package io.carlease.fleet_consulting.domain;
 
-import io.carlease.shared.domain.*;
+import io.carlease.shared.domain.VehicleType;
 
 import org.jmolecules.ddd.annotation.ValueObject;
 
 import java.util.Objects;
+import java.util.Optional;
 
 @ValueObject
 public class FleetRequirements {
 
     private final Kilometre dailyRouteKm;
-    private final NumberOfDrivers numberOfDrivers;
+    private final NumberOfVehicles numberOfVehicles;
     private final ChargingSetup chargingSetup;
-    private final Budget budget;
-    private final VehicleType sizePreference;
-    private final ScoringWeights scoringWeights;
+    private final Optional<Budget> budget;
+    private final LeaseTerm leaseTerm;
+    private final Optional<String> brand;
+    private final Optional<VehicleType> vehicleType;
 
-    private FleetRequirements(Kilometre dailyRouteKm, NumberOfDrivers numberOfDrivers,
-                               ChargingSetup chargingSetup, Budget budget, VehicleType sizePreference, ScoringWeights scoringWeights) {
+    private FleetRequirements(Kilometre dailyRouteKm, NumberOfVehicles numberOfVehicles,
+                               ChargingSetup chargingSetup, Optional<Budget> budget,
+                               LeaseTerm leaseTerm, Optional<String> brand,
+                               Optional<VehicleType> vehicleType) {
         this.dailyRouteKm = dailyRouteKm;
-        this.numberOfDrivers = numberOfDrivers;
+        this.numberOfVehicles = numberOfVehicles;
         this.chargingSetup = chargingSetup;
         this.budget = budget;
-        this.sizePreference = sizePreference;
-        this.scoringWeights = scoringWeights;
-
+        this.leaseTerm = leaseTerm;
+        this.brand = brand;
+        this.vehicleType = vehicleType;
     }
 
-    public static FleetRequirements of(Kilometre dailyRouteKm, NumberOfDrivers numberOfDrivers,
-                                        ChargingSetup chargingSetup, Budget budget, VehicleType sizePreference, ScoringWeights scoringWeights) {
+    public static FleetRequirements of(Kilometre dailyRouteKm, NumberOfVehicles numberOfVehicles,
+                                        ChargingSetup chargingSetup, Optional<Budget> budget,
+                                        LeaseTerm leaseTerm, Optional<String> brand,
+                                        Optional<VehicleType> vehicleType) {
         if (dailyRouteKm == null) throw new InvalidFleetAttributeException("dailyRouteKm", "must not be null");
-        if (numberOfDrivers == null) throw new InvalidFleetAttributeException("numberOfDrivers", "must not be null");
+        if (numberOfVehicles == null) throw new InvalidFleetAttributeException("numberOfVehicles", "must not be null");
         if (chargingSetup == null) throw new InvalidFleetAttributeException("chargingSetup", "must not be null");
         if (budget == null) throw new InvalidFleetAttributeException("budget", "must not be null");
-        if (scoringWeights == null) throw new InvalidFleetAttributeException("scoringWeights", "must not be null");
-        return new FleetRequirements(dailyRouteKm, numberOfDrivers, chargingSetup, budget, sizePreference, scoringWeights);
+        if (leaseTerm == null) throw new InvalidFleetAttributeException("leaseTerm", "must not be null");
+        return new FleetRequirements(dailyRouteKm, numberOfVehicles, chargingSetup, budget, leaseTerm,
+                brand == null ? Optional.empty() : brand,
+                vehicleType == null ? Optional.empty() : vehicleType);
     }
 
     public Kilometre getDailyRouteKm() {
         return dailyRouteKm;
     }
 
-    public NumberOfDrivers getNumberOfDrivers() {
-        return numberOfDrivers;
+    public NumberOfVehicles getNumberOfVehicles() {
+        return numberOfVehicles;
     }
 
     public ChargingSetup getChargingSetup() {
         return chargingSetup;
     }
 
-    public Budget getBudget() {
+    public Optional<Budget> getBudget() {
         return budget;
     }
 
-    public VehicleType getSizePreference() {
-        return sizePreference;
+    public LeaseTerm getLeaseTerm() {
+        return leaseTerm;
     }
 
-    public ScoringWeights getScoringWeights() {
-        return scoringWeights;
+    public Optional<String> getBrand() {
+        return brand;
+    }
+
+    public Optional<VehicleType> getVehicleType() {
+        return vehicleType;
     }
 
     @Override
@@ -67,15 +79,16 @@ public class FleetRequirements {
         if (obj == null || getClass() != obj.getClass()) return false;
         FleetRequirements other = (FleetRequirements) obj;
         return dailyRouteKm.equals(other.dailyRouteKm)
-                && numberOfDrivers.equals(other.numberOfDrivers)
+                && numberOfVehicles.equals(other.numberOfVehicles)
                 && chargingSetup.equals(other.chargingSetup)
                 && budget.equals(other.budget)
-                && Objects.equals(sizePreference, other.sizePreference)
-                && scoringWeights.equals(other.scoringWeights);
+                && leaseTerm.equals(other.leaseTerm)
+                && brand.equals(other.brand)
+                && vehicleType.equals(other.vehicleType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dailyRouteKm, numberOfDrivers, chargingSetup, budget, sizePreference, scoringWeights);
+        return Objects.hash(dailyRouteKm, numberOfVehicles, chargingSetup, budget, leaseTerm, brand, vehicleType);
     }
 }
