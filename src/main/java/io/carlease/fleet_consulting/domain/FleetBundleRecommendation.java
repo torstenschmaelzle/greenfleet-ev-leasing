@@ -52,6 +52,7 @@ public class FleetBundleRecommendation {
         addPredefinedBundle(BundleType.BALANCED, ScoringWeights.balanced(), filtered, scorer, optimizer, requirements, bundles);
         addPredefinedBundle(BundleType.ECO, ScoringWeights.eco(), filtered, scorer, optimizer, requirements, bundles);
         addPredefinedBundle(BundleType.ECONOMIC, ScoringWeights.economic(), filtered, scorer, optimizer, requirements, bundles);
+        addPredefinedBundle(BundleType.PREMIUM, ScoringWeights.premium(), filtered, scorer, optimizer, requirements, bundles);
 
         List<FleetBundle> deduplicated = deduplicate(bundles);
 

@@ -20,6 +20,10 @@ public class DomainConstants {
     public static final int ECONOMIC_CO2_W = 20;
     public static final int ECONOMIC_COST_W = 60;
 
+    public static final int PREMIUM_RANGE_W = 50;
+    public static final int PREMIUM_CO2_W = 40;
+    public static final int PREMIUM_COST_W = 10;
+
     private DomainConstants() {
     }
 }
