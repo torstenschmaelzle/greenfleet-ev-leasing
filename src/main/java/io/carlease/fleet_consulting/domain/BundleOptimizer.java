@@ -1,7 +1,5 @@
 package io.carlease.fleet_consulting.domain;
 
-import io.carlease.shared.domain.Amount;
-
 import org.jmolecules.ddd.annotation.Service;
 
 import java.util.ArrayList;
@@ -94,12 +92,7 @@ public class BundleOptimizer {
 
         double bundleScore = totalFinalScore / selected.size();
 
-        ScoredVehicle representative = selected.get(0);
-        TotalCostOfOwnership tco = TotalCostOfOwnership.calculate(
-                requirements,
-                representative.getVehicle().getInstallment(),
-                representative.getVehicle().getVehicleSummary().getKwhPer100km()
-        );
+        TotalCostOfOwnership tco = TotalCostOfOwnership.calculateForBundle(requirements, selected);
 
         return FleetBundle.of(bundleType, bundleVehicles, tco, totalCo2, bundleScore);
     }
