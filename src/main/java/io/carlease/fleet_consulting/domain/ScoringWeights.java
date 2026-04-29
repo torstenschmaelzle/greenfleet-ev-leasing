@@ -49,6 +49,14 @@ public class ScoringWeights {
         );
     }
 
+    public static ScoringWeights premium() {
+        return new ScoringWeights(
+                DomainConstants.PREMIUM_RANGE_W,
+                DomainConstants.PREMIUM_CO2_W,
+                DomainConstants.PREMIUM_COST_W
+        );
+    }
+
     public int getRangeWeight() {
         return rangeWeight;
     }
