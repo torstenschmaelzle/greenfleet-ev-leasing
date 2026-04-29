@@ -108,10 +108,20 @@ jobs:
           KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/${{ secrets.SSH_USER }}/
-            mkdir ./letsencrypt/acme.json
+            mkdir -p ./letsencrypt
             touch ./letsencrypt/acme.json
             sudo chmod 0600 ./letsencrypt/acme.json
             sudo docker compose down --remove-orphans
             sudo echo "PUB_IP=${{ secrets.SSH_HOST }}" | sed -e 's/\./-/g' > .env
             sudo echo "PWD=/home/${{ secrets.SSH_USER }}/" >> .env
             sudo docker compose up -d
+            echo "--- Waiting for containers to start ---"
+            sleep 15
+            echo "--- Container status ---"
+            sudo docker compose ps
+            echo "--- Spring Boot logs (app) ---"
+            sudo docker compose logs app --tail=80
+            echo "--- Nginx logs (frontend) ---"
+            sudo docker compose logs frontend --tail=20
+            echo "--- Testing login endpoint from within Docker network ---"
+            sudo docker compose exec -T frontend curl -s -o /dev/null -w "HTTP status: %{http_code}\n" -X POST http://app:8080/api/auth/login -H "Content-Type: application/json" -d '{"username":"worker","password":"12345"}' || echo "curl failed - app not reachable from frontend container"
