@@ -34,13 +34,7 @@ services:
     volumes:
       - ./:/data/
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.app.rule=Host(`app.${PUB_IP}.se.scs.unisg.ch`)"
-      - "traefik.http.routers.app.service=app"
-      - "traefik.http.services.app.loadbalancer.server.port=8080"
-      - "traefik.http.routers.app.tls=true"
-      - "traefik.http.routers.app.entryPoints=web,websecure"
-      - "traefik.http.routers.app.tls.certresolver=le"
+      - "traefik.enable=false"
 
   db:
     image: mysql
@@ -70,7 +64,7 @@ services:
       - app
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.frontend.rule=Host(`ui.${PUB_IP}.se.scs.unisg.ch`)"
+      - "traefik.http.routers.frontend.rule=Host(`app.${PUB_IP}.se.scs.unisg.ch`)"
       - "traefik.http.routers.frontend.service=frontend"
       - "traefik.http.services.frontend.loadbalancer.server.port=80"
       - "traefik.http.routers.frontend.tls=true"
