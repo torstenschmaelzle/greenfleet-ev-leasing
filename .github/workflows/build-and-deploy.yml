@@ -52,8 +52,23 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven and run tests
         run: mvn -Pproduction --batch-mode --update-snapshots verify
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+      - name: Build React frontend
+        run: |
+          cd frontend
+          npm ci
+          npm run build
       - name: Copy docker-compose
         run: cp docker-compose.yml ./target
+      - name: Copy frontend build to target
+        run: cp -r frontend/dist ./target/frontend-dist
+      - name: Copy nginx config
+        run: cp nginx.conf ./target/nginx.conf
       - name: Archive artifacts
         uses: actions/upload-artifact@v4
         with:

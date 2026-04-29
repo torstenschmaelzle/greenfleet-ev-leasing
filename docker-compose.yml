@@ -60,6 +60,23 @@ services:
       #- "traefik.tcp.routers.adminer.tls=true"
       #- "traefik.tcp.routers.adminer.tls.certresolver=le"
 
+  frontend:
+    image: nginx:alpine
+    restart: unless-stopped
+    volumes:
+      - ./frontend-dist:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - app
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.rule=Host(`ui.${PUB_IP}.se.scs.unisg.ch`)"
+      - "traefik.http.routers.frontend.service=frontend"
+      - "traefik.http.services.frontend.loadbalancer.server.port=80"
+      - "traefik.http.routers.frontend.tls=true"
+      - "traefik.http.routers.frontend.entryPoints=web,websecure"
+      - "traefik.http.routers.frontend.tls.certresolver=le"
+
   adminer:
     image: adminer
     restart: always
