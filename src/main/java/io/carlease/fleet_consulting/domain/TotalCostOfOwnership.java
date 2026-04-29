@@ -5,6 +5,7 @@ import io.carlease.shared.domain.Currency;
 
 import org.jmolecules.ddd.annotation.ValueObject;
 
+import java.util.List;
 import java.util.Objects;
 
 @ValueObject
@@ -47,6 +48,33 @@ public class TotalCostOfOwnership {
         Amount annualTotal = Amount.ofCents(monthlyTotal.getAmountInCents() * 12, monthlyTotal.getCurrency());
 
         return new TotalCostOfOwnership(installmentAmount, monthlyLeaseCost, monthlyChargingCost, monthlyTotal, annualTotal);
+    }
+
+    public static TotalCostOfOwnership calculateForBundle(FleetRequirements req, List<ScoredVehicle> selected) {
+        if (req == null) throw new InvalidFleetAttributeException("req", "must not be null");
+        if (selected == null || selected.isEmpty()) throw new InvalidFleetAttributeException("selected", "must not be empty");
+
+        Currency currency = selected.get(0).getVehicle().getInstallment().getMonthlyAmount().getCurrency();
+        long ratePerKwhCents = req.getChargingSetup().getElectricityRate().getRatePerKwh().getAmountInCents();
+        int dailyKm = req.getDailyRouteKm().getValue();
+
+        long leaseCostCents = selected.stream()
+                .mapToLong(v -> v.getVehicle().getInstallment().getMonthlyAmount().getAmountInCents())
+                .sum();
+
+        double kWhMonthlyTotal = selected.stream()
+                .mapToDouble(v -> dailyKm * 30.0 * (v.getVehicle().getVehicleSummary().getKwhPer100km() / 100.0))
+                .sum();
+        long chargingCostCents = Math.round(kWhMonthlyTotal * ratePerKwhCents);
+
+        long avgInstallmentCents = leaseCostCents / selected.size();
+        Amount avgInstallmentPerVehicle = Amount.ofCents(avgInstallmentCents, currency);
+        Amount monthlyLeaseCost = Amount.ofCents(leaseCostCents, currency);
+        Amount monthlyChargingCost = Amount.ofCents(chargingCostCents, currency);
+        Amount monthlyTotal = monthlyLeaseCost.add(monthlyChargingCost);
+        Amount annualTotal = Amount.ofCents(monthlyTotal.getAmountInCents() * 12, currency);
+
+        return new TotalCostOfOwnership(avgInstallmentPerVehicle, monthlyLeaseCost, monthlyChargingCost, monthlyTotal, annualTotal);
     }
 
     public Amount getMonthlyInstallmentPerVehicle() {
