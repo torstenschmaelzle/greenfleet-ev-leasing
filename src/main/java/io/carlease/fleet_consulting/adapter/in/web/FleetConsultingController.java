@@ -6,12 +6,15 @@ import io.carlease.fleet_consulting.domain.*;
 import io.carlease.shared.domain.Amount;
 import io.carlease.shared.domain.Currency;
 import io.carlease.shared.domain.VehicleType;
+import jakarta.validation.constraints.Pattern;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Validated
 @RestController
 @RequestMapping("/api/fleet-consulting")
 public class FleetConsultingController {
@@ -27,11 +30,19 @@ public class FleetConsultingController {
             @RequestParam(name = "daily_route_km") int dailyRouteKm,
             @RequestParam(name = "number_of_vehicles") int numberOfVehicles,
             @RequestParam(name = "lease_term_months") int leaseTermMonths,
+            @Pattern(regexp = "^(COMPANY_CHARGER|PUBLIC_STATION|MIXED)$",
+                     message = "charging_type must be COMPANY_CHARGER, PUBLIC_STATION or MIXED")
             @RequestParam(name = "charging_type") String chargingType,
             @RequestParam(name = "electricity_rate_cents") long electricityRateCents,
+            @Pattern(regexp = "^[A-Z]{3}$",
+                     message = "currency must be a 3-letter ISO 4217 code (e.g. CHF, EUR, USD)")
             @RequestParam(name = "currency") String currency,
             @RequestParam(name = "budget_monthly_max_cents", required = false) Long budgetMonthlyMaxCents,
+            @Pattern(regexp = "^[A-Za-z][A-Za-z0-9 \\-]{0,48}$",
+                     message = "brand may only contain letters, digits, spaces and hyphens, and must start with a letter")
             @RequestParam(name = "brand", required = false) String brand,
+            @Pattern(regexp = "^(SUV|SEDAN|VAN|COMPACT|ESTATE)$",
+                     message = "vehicle_type must be one of: SUV, SEDAN, VAN, COMPACT, ESTATE")
             @RequestParam(name = "vehicle_type", required = false) String vehicleType,
             @RequestParam(name = "range_weight", required = false) Integer rangeWeight,
             @RequestParam(name = "co2_weight", required = false) Integer co2Weight,
