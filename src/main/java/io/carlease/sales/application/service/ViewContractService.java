@@ -2,7 +2,7 @@ package io.carlease.sales.application.service;
 
 import io.carlease.sales.application.port.in.ViewContractUseCase;
 import io.carlease.sales.application.port.out.ContractPersistencePort;
-import io.carlease.sales.domain.Contract;
+import io.carlease.sales.domain.VehicleContract;
 import io.carlease.sales.domain.ContractNumber;
 import org.jmolecules.architecture.layered.ApplicationLayer;
 import org.jmolecules.ddd.annotation.Service;
@@ -23,7 +23,7 @@ public class ViewContractService implements ViewContractUseCase {
 		this.contractPersistencePort = contractPersistencePort;
 	}
 	
-	public Contract with(ContractNumber number) {
+	public VehicleContract with(ContractNumber number) {
 		var contract = this.contractPersistencePort.with(number);
 		logger.debug("Repository returned contract: " + contract);
 		return contract;

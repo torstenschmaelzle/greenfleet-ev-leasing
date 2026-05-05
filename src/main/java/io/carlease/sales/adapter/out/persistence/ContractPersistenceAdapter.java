@@ -1,7 +1,7 @@
 package io.carlease.sales.adapter.out.persistence;
 
 import io.carlease.sales.application.port.out.ContractPersistencePort;
-import io.carlease.sales.domain.Contract;
+import io.carlease.sales.domain.VehicleContract;
 import io.carlease.sales.domain.ContractNumber;
 import org.springframework.stereotype.Component;
 
@@ -15,7 +15,7 @@ public class ContractPersistenceAdapter implements ContractPersistencePort {
 	}
 
 	@Override
-	public void save(Contract contract) {
+	public void save(VehicleContract contract) {
 		repository.save(ContractMapper.mapToJpaEntity(contract));
 	}
 
@@ -25,9 +25,9 @@ public class ContractPersistenceAdapter implements ContractPersistencePort {
 	}
 
 	@Override
-	public Contract with(ContractNumber number) {
+	public VehicleContract with(ContractNumber number) {
 		ContractJpaEntity contractJpaEntity = repository.findById(number.number()).get();
-		return ContractMapper.mapToContract(contractJpaEntity);
+		return ContractMapper.mapToVehicleContract(contractJpaEntity);
 	}
 
 }

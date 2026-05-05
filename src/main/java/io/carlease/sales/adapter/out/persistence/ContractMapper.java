@@ -7,7 +7,7 @@ import java.util.Optional;
 @Component
 public class ContractMapper {
 
-    public static ContractJpaEntity mapToJpaEntity(Contract contract) {
+    public static ContractJpaEntity mapToJpaEntity(VehicleContract contract) {
         return new ContractJpaEntity(
                 contract.number().number(),
                 contract.lessee().customer(),
@@ -22,8 +22,8 @@ public class ContractMapper {
                 contract.isCalculated() ? contract.residualValue().amount() : null);
     }
 
-    public static Contract mapToContract(ContractJpaEntity contractJpaEntity) {
-        return ContractFactory.restoreContract(
+    public static VehicleContract mapToVehicleContract(ContractJpaEntity contractJpaEntity) {
+        return ContractFactory.restoreVehicleContract(
                 ContractNumber.of(contractJpaEntity.getNumber()),
                 Customer.of(contractJpaEntity.getLessee()),
                 Car.of(contractJpaEntity.getCar()),

@@ -104,6 +104,13 @@ public class Vehicle {
         return monthlyLeasePrice;
     }
 
+    public Amount getHealthAdjustedLeasePrice() {
+        double soh = getLatestStateOfHealth().getValue().doubleValue() / 100.0;
+        double factor = 1.0 - Math.max(0.0, 0.95 - soh);
+        long adjustedCents = Math.round(monthlyLeasePrice.getAmountInCents() * factor);
+        return Amount.ofCents(adjustedCents, monthlyLeasePrice.getCurrency());
+    }
+
     public void lockVehicle(LockDuration duration) {
         clearExpiredLockIfPresent();
         if (status != VehicleStatus.AVAILABLE) {

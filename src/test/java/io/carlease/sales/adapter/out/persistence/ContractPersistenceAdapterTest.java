@@ -21,7 +21,7 @@ public class ContractPersistenceAdapterTest {
     @Test
     @Sql("ContractPersistenceAdapterTest.sql")
     void loadsContract() {
-        Contract contract = contractPersistenceAdapter.with(new ContractNumber("1"));
+        VehicleContract contract = contractPersistenceAdapter.with(new ContractNumber("1"));
 
         assertThat(contract.lessee()).isEqualTo(new Customer("John Buyer"));
         assertThat(contract.car()).isEqualTo(new Car("Volkswagen ID.3"));
@@ -30,7 +30,7 @@ public class ContractPersistenceAdapterTest {
 
     @Test
     void savesContract() {
-        Contract contract = new Contract(ContractNumber.of("1"),
+        VehicleContract contract = new VehicleContract(ContractNumber.of("1"),
                 Customer.of("John Buyer"),
                 Car.of("Volkswagen ID.3"),
                 Amount.of(50000, Currency.valueOf("EUR")));
@@ -43,7 +43,7 @@ public class ContractPersistenceAdapterTest {
     @Test
     void savesAndLoadsSignedContract() {
         // given
-        Contract contract = new Contract(
+        VehicleContract contract = new VehicleContract(
                 ContractNumber.of("1"),
                 Customer.of("John Buyer"),
                 Car.of("Volkswagen ID.3"),
@@ -56,7 +56,7 @@ public class ContractPersistenceAdapterTest {
 
         // when
         contractPersistenceAdapter.save(contract);
-        Contract loadedContract = contractPersistenceAdapter.with(ContractNumber.of("1"));
+        VehicleContract loadedContract = contractPersistenceAdapter.with(ContractNumber.of("1"));
 
         // then
         assertThat(loadedContract.isCalculated()).isTrue();

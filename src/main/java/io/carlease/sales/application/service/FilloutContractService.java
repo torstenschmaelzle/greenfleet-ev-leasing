@@ -23,7 +23,7 @@ public class FilloutContractService implements FilloutContractUseCase {
 
 	public void with(ContractNumber number, Customer customer, Car car, Amount price) {
 		if (!contractPersistencePort.exists(number)) {
-			contractPersistencePort.save(new Contract(
+			contractPersistencePort.save(new VehicleContract(
 					number,
 					customer,
 					car,

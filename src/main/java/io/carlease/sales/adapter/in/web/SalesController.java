@@ -36,9 +36,9 @@ public class SalesController {
     }
 
     @GetMapping("/sales/view_contract")
-    public Contract viewContract(
+    public VehicleContract viewContract(
             @RequestParam(name = "number", required = false) String number) {
-        Contract contract = null;
+        VehicleContract contract = null;
         if (number != null) {
             contract = this.viewContractUseCase.with(ContractNumber.of(number));
         }
