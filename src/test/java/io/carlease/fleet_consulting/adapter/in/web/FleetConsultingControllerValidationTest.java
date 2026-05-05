@@ -1,13 +1,22 @@
 package io.carlease.fleet_consulting.adapter.in.web;
 
 import io.carlease.fleet_consulting.application.port.in.GetRecommendationUseCase;
+import io.carlease.fleet_consulting.domain.FleetBundleRecommendation;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.util.List;
+import java.util.UUID;
+
 import static org.hamcrest.Matchers.not;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.RETURNS_DEEP_STUBS;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -28,6 +37,17 @@ class FleetConsultingControllerValidationTest {
 
     @MockBean
     private GetRecommendationUseCase getRecommendationUseCase;
+
+    @BeforeEach
+    void setUp() {
+        FleetBundleRecommendation emptyResult = mock(FleetBundleRecommendation.class, RETURNS_DEEP_STUBS);
+        when(emptyResult.getBundles()).thenReturn(List.of());
+        when(emptyResult.getRequestId()).thenReturn(UUID.randomUUID());
+        when(emptyResult.getRequirements().getNumberOfVehicles().getValue()).thenReturn(3);
+        when(emptyResult.getRequirements().getLeaseTerm().getMonths()).thenReturn(36);
+        when(getRecommendationUseCase.recommend(any(), any())).thenReturn(emptyResult);
+    }
+
 
     @Test
     void currency_valid_CHF_passes_validation() throws Exception {
@@ -51,6 +71,8 @@ class FleetConsultingControllerValidationTest {
                         "currency must be a 3-letter ISO 4217 code (e.g. CHF, EUR, USD)"));
     }
 
+
+
     @Test
     void chargingType_valid_PUBLIC_STATION_passes_validation() throws Exception {
         mockMvc.perform(get(BASE_URL.replace("charging_type=COMPANY_CHARGER", "charging_type=PUBLIC_STATION")))
@@ -72,6 +94,8 @@ class FleetConsultingControllerValidationTest {
                 .andExpect(jsonPath("$.error").value(
                         "charging_type must be COMPANY_CHARGER, PUBLIC_STATION or MIXED"));
     }
+
+
 
     @Test
     void brand_valid_passes_validation() throws Exception {
