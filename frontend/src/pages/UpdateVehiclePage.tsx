@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { vehiclesApi } from '../api/vehicles';
 import type { UpdateVehicleRequest, Vehicle } from '../types';
+import PageHeader from '../components/PageHeader';
 
 const VEHICLE_TYPES = ['SUV', 'KOMBI', 'LIMOUSINE', 'VAN'];
 const CURRENCIES = ['CHF', 'USD', 'EUR', 'GBP'];
@@ -13,6 +14,7 @@ export default function UpdateVehiclePage() {
   const [form, setForm] = useState<UpdateVehicleRequest | null>(null);
   const [error, setError] = useState('');
   const [saving, setSaving] = useState(false);
+  const [submitHov, setSubmitHov] = useState(false);
 
   useEffect(() => {
     if (!vin) return;
@@ -46,104 +48,179 @@ export default function UpdateVehiclePage() {
     }
   };
 
-  if (!form) return <div style={{ padding: 32 }}>Loading…</div>;
+  if (!form) return <div style={{ padding: 32, color: 'var(--color-text-muted)' }}>Loading…</div>;
 
   return (
-    <div style={{ padding: 24 }}>
-      {/* Header */}
-      <div style={{
-        background: 'linear-gradient(135deg, #1a237e, #3949ab)',
-        borderRadius: 12, padding: '20px 28px',
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        marginBottom: 20,
-      }}>
-        <div>
-          <div style={{ color: 'white', fontWeight: 700, fontSize: 18 }}>Update Vehicle</div>
-          <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: 12 }}>
-            Editing: {vehicle?.brand} {vehicle?.model} · {vin}
+    <div style={{ padding: 'var(--space-6)' }}>
+      <PageHeader
+        kicker="EV Catalogue"
+        title="Update Vehicle"
+        subtitle={`Editing: ${vehicle?.brand ?? ''} ${vehicle?.model ?? ''} · ${vin}`}
+        action={
+          <button
+            onClick={() => navigate('/dashboard/catalogue')}
+            style={{
+              background: 'transparent', color: 'var(--color-text-secondary)',
+              border: '1px solid var(--color-border)', borderRadius: 'var(--radius-md)',
+              padding: '7px 14px', fontWeight: 500, fontSize: 'var(--text-sm)', cursor: 'pointer',
+              transition: 'border-color var(--transition-fast)',
+            }}
+            onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--color-brand)')}
+            onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--color-border)')}
+          >
+            ← Back
+          </button>
+        }
+      />
+
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+        {error && (
+          <div style={{
+            background: 'var(--color-error-bg)', color: 'var(--color-error)',
+            borderRadius: 'var(--radius-md)', padding: '10px 14px',
+            fontSize: 'var(--text-sm)', fontWeight: 500,
+            border: '1px solid rgba(185,28,28,0.2)',
+          }}>
+            {error}
           </div>
-        </div>
-        <button
-          onClick={() => navigate('/dashboard/catalogue')}
-          style={{
-            background: 'rgba(255,255,255,0.15)', color: 'white',
-            border: '1px solid rgba(255,255,255,0.3)', borderRadius: 6,
-            padding: '8px 16px', fontWeight: 600, fontSize: 13,
-          }}
-        >
-          ← Back
-        </button>
-      </div>
+        )}
 
-      <form onSubmit={handleSubmit} style={{ maxWidth: 840, display: 'flex', flexDirection: 'column', gap: 16 }}>
-        {error && <div style={{ background: '#fef2f2', color: '#b91c1c', borderRadius: 8, padding: '10px 14px' }}>{error}</div>}
-
-        <Card title="Vehicle Identity">
-          <Row label="VIN (read-only)">
-            <input style={{ ...input, background: '#f5f5f5', color: '#888' }} value={vin} readOnly />
+        <FormCard title="Vehicle Identity">
+          <Row label="VIN">
+            <input
+              style={inputReadOnly}
+              value={vin}
+              readOnly
+            />
+            <span style={{
+              fontSize: 10, color: 'var(--color-text-faint)', marginTop: 3,
+              fontWeight: 500, letterSpacing: 0.3,
+            }}>
+              The VIN cannot be changed after registration.
+            </span>
           </Row>
-        </Card>
+        </FormCard>
 
-        <Card title="Vehicle Specification">
+        <FormCard title="Vehicle Specification">
           <Grid2>
-            <Row label="Brand"><input style={input} value={form.brand} onChange={e => set('brand', e.target.value)} required /></Row>
-            <Row label="Model"><input style={input} value={form.model} onChange={e => set('model', e.target.value)} required /></Row>
+            <Row label="Brand">
+              <input style={input} value={form.brand} onChange={e => set('brand', e.target.value)} required />
+            </Row>
+            <Row label="Model">
+              <input style={input} value={form.model} onChange={e => set('model', e.target.value)} required />
+            </Row>
             <Row label="Vehicle Type">
               <select style={input} value={form.vehicleType} onChange={e => set('vehicleType', e.target.value)}>
                 {VEHICLE_TYPES.map(t => <option key={t}>{t}</option>)}
               </select>
             </Row>
-            <Row label="Range (km)"><input style={input} type="number" value={form.rangeKm} onChange={e => set('rangeKm', +e.target.value)} required min={1} /></Row>
-            <Row label="Consumption (kWh/100km)"><input style={input} type="number" step="0.1" value={form.consumptionKwhPer100km} onChange={e => set('consumptionKwhPer100km', +e.target.value)} required min={0.1} /></Row>
+            <Row label="Range (km)">
+              <input style={input} type="number" value={form.rangeKm}
+                onChange={e => set('rangeKm', +e.target.value)} required min={1} />
+            </Row>
+            <Row label="Consumption (kWh / 100 km)">
+              <input style={input} type="number" step="0.1" value={form.consumptionKwhPer100km}
+                onChange={e => set('consumptionKwhPer100km', +e.target.value)} required min={0.1} />
+            </Row>
           </Grid2>
-        </Card>
+        </FormCard>
 
-        <Card title="Battery Specification">
+        <FormCard title="Battery Specification">
           <Grid2>
-            <Row label="Capacity (kWh)"><input style={input} type="number" step="0.1" value={form.capacityKwh} onChange={e => set('capacityKwh', +e.target.value)} required min={0.1} /></Row>
-            <Row label="Voltage (V)"><input style={input} type="number" step="0.1" value={form.voltageV} onChange={e => set('voltageV', +e.target.value)} required min={0.1} /></Row>
-            <Row label="Max Charge Speed (kW)"><input style={input} type="number" step="0.1" value={form.maxChargeSpeedKw} onChange={e => set('maxChargeSpeedKw', +e.target.value)} required min={0.1} /></Row>
+            <Row label="Capacity (kWh)">
+              <input style={input} type="number" step="0.1" value={form.capacityKwh}
+                onChange={e => set('capacityKwh', +e.target.value)} required min={0.1} />
+            </Row>
+            <Row label="Voltage (V)">
+              <input style={input} type="number" step="0.1" value={form.voltageV}
+                onChange={e => set('voltageV', +e.target.value)} required min={0.1} />
+            </Row>
+            <Row label="Max Charge Speed (kW)">
+              <input style={input} type="number" step="0.1" value={form.maxChargeSpeedKw}
+                onChange={e => set('maxChargeSpeedKw', +e.target.value)} required min={0.1} />
+            </Row>
           </Grid2>
-        </Card>
+        </FormCard>
 
-        <Card title="Pricing">
+        <FormCard title="Pricing">
           <Grid2>
-            <Row label="Monthly Lease (cents)"><input style={input} type="number" value={form.monthlyLeasePriceCents} onChange={e => set('monthlyLeasePriceCents', +e.target.value)} required min={1} /></Row>
+            <Row label="Purchase Price (cents)">
+              <input style={input} type="number" value={form.monthlyLeasePriceCents}
+                onChange={e => set('monthlyLeasePriceCents', +e.target.value)} required min={1} />
+            </Row>
             <Row label="Currency">
               <select style={input} value={form.currency} onChange={e => set('currency', e.target.value)}>
                 {CURRENCIES.map(c => <option key={c}>{c}</option>)}
               </select>
             </Row>
           </Grid2>
-        </Card>
+        </FormCard>
 
-        <Card title="Battery Health (new measurement)">
+        <FormCard title="Battery Health — New Measurement">
           <Grid2>
-            <Row label="State of Health (%)"><input style={input} type="number" step="0.1" value={form.newStateOfHealth} onChange={e => set('newStateOfHealth', +e.target.value)} required min={0} max={100} /></Row>
-            <Row label="Measured Range (km)"><input style={input} type="number" value={form.newMeasuredRangeKm} onChange={e => set('newMeasuredRangeKm', +e.target.value)} required min={1} /></Row>
+            <Row label="State of Health (%)">
+              <input style={input} type="number" step="0.1" value={form.newStateOfHealth}
+                onChange={e => set('newStateOfHealth', +e.target.value)} required min={0} max={100} />
+            </Row>
+            <Row label="Measured Range (km)">
+              <input style={input} type="number" value={form.newMeasuredRangeKm}
+                onChange={e => set('newMeasuredRangeKm', +e.target.value)} required min={1} />
+            </Row>
           </Grid2>
-        </Card>
+        </FormCard>
 
-        <button
-          type="submit"
-          disabled={saving}
-          style={{
-            background: '#1a237e', color: 'white', border: 'none',
-            borderRadius: 8, padding: '14px', fontSize: 15,
-            fontWeight: 600, opacity: saving ? 0.7 : 1,
-          }}
-        >
-          {saving ? 'Saving…' : '✓ Save Changes'}
-        </button>
+        <div>
+          <button
+            type="submit"
+            disabled={saving}
+            onMouseEnter={() => setSubmitHov(true)}
+            onMouseLeave={() => setSubmitHov(false)}
+            style={{
+              background: submitHov && !saving ? 'var(--color-brand-dark)' : 'var(--color-brand)',
+              color: 'white',
+              border: 'none',
+              borderRadius: 'var(--radius-md)',
+              padding: '12px 32px',
+              fontSize: 'var(--text-base)',
+              fontWeight: 700,
+              cursor: saving ? 'not-allowed' : 'pointer',
+              opacity: saving ? 0.75 : 1,
+              transition: 'background var(--transition-fast)',
+              boxShadow: 'var(--shadow-brand)',
+            }}
+          >
+            {saving ? 'Saving…' : 'Save Changes'}
+          </button>
+        </div>
       </form>
     </div>
   );
 }
 
-function Card({ title, children }: { title: string; children: React.ReactNode }) {
+// ─── Shared form helpers ──────────────────────────────────────────────────────
+
+function FormCard({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div style={{ background: 'white', borderRadius: 10, padding: '18px 20px', boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
-      <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 14, color: '#1a237e' }}>{title}</div>
+    <div style={{
+      background: 'var(--color-surface)',
+      borderRadius: 'var(--radius-lg)',
+      border: '1px solid var(--color-border)',
+      borderTop: '2px solid rgba(22,163,74,0.25)',
+      padding: '20px 24px',
+      boxShadow: 'var(--shadow-sm)',
+    }}>
+      <div style={{
+        fontWeight: 700,
+        fontSize: 'var(--text-sm)',
+        letterSpacing: 0.6,
+        textTransform: 'uppercase' as const,
+        color: 'var(--color-text-muted)',
+        marginBottom: 16,
+        paddingBottom: 10,
+        borderBottom: '1px solid var(--color-border-light)',
+      }}>
+        {title}
+      </div>
       {children}
     </div>
   );
@@ -151,7 +228,7 @@ function Card({ title, children }: { title: string; children: React.ReactNode })
 
 function Grid2({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px 20px' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px 24px' }}>
       {children}
     </div>
   );
@@ -159,14 +236,39 @@ function Grid2({ children }: { children: React.ReactNode }) {
 
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-      <label style={{ fontSize: 12, fontWeight: 500, color: '#555' }}>{label}</label>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
+      <label style={{
+        fontSize: 'var(--text-sm)',
+        fontWeight: 600,
+        color: 'var(--color-text-secondary)',
+      }}>
+        {label}
+      </label>
       {children}
     </div>
   );
 }
 
+const inputBase: React.CSSProperties = {
+  padding: '9px 12px',
+  borderRadius: 'var(--radius-md)',
+  border: '1px solid var(--color-border)',
+  fontSize: 'var(--text-base)',
+  width: '100%',
+  transition: 'border-color 0.12s ease, box-shadow 0.12s ease',
+};
+
 const input: React.CSSProperties = {
-  padding: '8px 10px', borderRadius: 6, border: '1px solid #d0d5dd',
-  fontSize: 13, outline: 'none', width: '100%',
+  ...inputBase,
+  color: 'var(--color-text)',
+  background: 'var(--color-surface)',
+};
+
+const inputReadOnly: React.CSSProperties = {
+  ...inputBase,
+  color: 'var(--color-text-faint)',
+  background: 'var(--color-border-light)',
+  fontFamily: 'ui-monospace, SFMono-Regular, monospace',
+  letterSpacing: 0.5,
+  cursor: 'default',
 };
