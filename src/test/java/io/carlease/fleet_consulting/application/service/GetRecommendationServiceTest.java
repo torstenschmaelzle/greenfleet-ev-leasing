@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
@@ -134,14 +135,13 @@ class GetRecommendationServiceTest {
         }
 
         @Test
-        void recommend_returnsEmptyBundlesWhenAllVehiclesUnavailable() {
+        void recommend_throwsWhenAllVehiclesUnavailable() {
             given(getVehiclesPort.getVehicles()).willReturn(List.of(unavailableVehicle()));
             given(calculateInstallmentPort.calculateInstallment(any(), any()))
                     .willReturn(Installment.of(Amount.ofCents(70000L, Currency.CHF)));
 
-            FleetBundleRecommendation result = service.recommend(defaultRequirements(), Optional.empty());
-
-            assertThat(result.getBundles()).isEmpty();
+            assertThatThrownBy(() -> service.recommend(defaultRequirements(), Optional.empty()))
+                    .isInstanceOf(NoVehiclesMatchingRequirementsException.class);
         }
     }
 
@@ -149,12 +149,11 @@ class GetRecommendationServiceTest {
     class whenNoCatalogueVehiclesExist {
 
         @Test
-        void recommend_returnsEmptyBundles() {
+        void recommend_throwsWhenCatalogueIsEmpty() {
             given(getVehiclesPort.getVehicles()).willReturn(List.of());
 
-            FleetBundleRecommendation result = service.recommend(defaultRequirements(), Optional.empty());
-
-            assertThat(result.getBundles()).isEmpty();
+            assertThatThrownBy(() -> service.recommend(defaultRequirements(), Optional.empty()))
+                    .isInstanceOf(NoVehiclesMatchingRequirementsException.class);
         }
     }
 }
