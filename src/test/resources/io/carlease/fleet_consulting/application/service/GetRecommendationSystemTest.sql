@@ -1,3 +1,6 @@
+DELETE FROM battery_health_records;
+DELETE FROM vehicles;
+
 INSERT INTO vehicles (vin, brand, model, range_km, vehicle_type, consumption_kwh_per100km,
                       battery_capacity_kwh, battery_voltagev, battery_max_charge_speed_kw,
                       horse_power_hp, acceleration_sec, top_speed_kmh,
