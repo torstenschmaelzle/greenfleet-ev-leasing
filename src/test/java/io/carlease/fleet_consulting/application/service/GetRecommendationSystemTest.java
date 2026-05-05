@@ -23,13 +23,13 @@ class GetRecommendationSystemTest {
 
     @Test
     @Sql("GetRecommendationSystemTest.sql")
-    void getRecommendations_returnsAvailableVehiclesRankedByScoreAndExcludesRemovedOnes() {
-        // daily_route_km=100, 2 drivers, COMPANY_CHARGER at 0.30 CHF/kWh, budget=2000 CHF/month
-        // BMW i3 (600 CHF lease) scores higher than Tesla Model 3 (1500 CHF lease) under default weights
-        // VW ID.4 has status REMOVED and must be filtered out
+    void getRecommendations_returnsAvailableVehiclesInBundlesAndExcludesRemovedOnes() {
+        // 2 vehicles fleet, 36-month lease, BMW i3 (AVAILABLE) and Tesla Model 3 (AVAILABLE) should appear in bundles,
+        // VW ID.4 has status REMOVED and must not appear anywhere in the response
         URI uri = UriComponentsBuilder.fromPath("/api/fleet-consulting/recommendations")
                 .queryParam("daily_route_km",          100)
-                .queryParam("number_of_drivers",        2)
+                .queryParam("number_of_vehicles",       2)
+                .queryParam("lease_term_months",        36)
                 .queryParam("charging_type",            "COMPANY_CHARGER")
                 .queryParam("electricity_rate_cents",   30)
                 .queryParam("currency",                 "CHF")
@@ -41,6 +41,5 @@ class GetRecommendationSystemTest {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(response.getBody()).contains("BMW", "Tesla");
         assertThat(response.getBody()).doesNotContain("VW");
-        assertThat(response.getBody().indexOf("BMW")).isLessThan(response.getBody().indexOf("Tesla"));
     }
 }

@@ -42,13 +42,24 @@ class EVCatalogueVehicleAdapterTest {
     class whenCatalogueContainsVehicles {
 
         @Test
-        void getVehicles_mapsMonthlyLeasePriceToSummary() {
+        void getVehicles_mapsVinFromVehicleId() {
             Vehicle vehicle = availableVehicle("BMW", "iX3", VehicleType.SUV, 460, new BigDecimal("17.0"), 75000L);
             given(listCatalogueUseCase.listAll()).willReturn(List.of(vehicle));
 
             VehicleSummary summary = adapter.getVehicles().get(0);
 
-            assertThat(summary.getMonthlyLeasePrice()).isEqualTo(Amount.ofCents(75000L, Currency.CHF));
+            assertThat(summary.getVin()).isEqualTo("WBA12345678901234");
+        }
+
+        @Test
+        void getVehicles_mapsBasePriceWithHealthDiscount() {
+            // At 95% SOH: factor = 1 - max(0, 0.95 - 0.95) = 1.0 → no discount
+            Vehicle vehicle = availableVehicle("BMW", "iX3", VehicleType.SUV, 460, new BigDecimal("17.0"), 75000L);
+            given(listCatalogueUseCase.listAll()).willReturn(List.of(vehicle));
+
+            VehicleSummary summary = adapter.getVehicles().get(0);
+
+            assertThat(summary.getBasePrice()).isEqualTo(Amount.ofCents(75000L, Currency.CHF));
         }
 
         @Test
@@ -62,13 +73,14 @@ class EVCatalogueVehicleAdapterTest {
         }
 
         @Test
-        void getVehicles_mapsRangeKmToKilometre() {
+        void getVehicles_mapsMeasuredRangeKmToKilometre() {
+            // adapter uses latestMeasuredRangeKm (rangeKm - 20), not spec rangeKm
             Vehicle vehicle = availableVehicle("BMW", "iX3", VehicleType.SUV, 460, new BigDecimal("17.0"), 75000L);
             given(listCatalogueUseCase.listAll()).willReturn(List.of(vehicle));
 
             VehicleSummary summary = adapter.getVehicles().get(0);
 
-            assertThat(summary.getRangeKm()).isEqualTo(Kilometre.of(460));
+            assertThat(summary.getRangeKm()).isEqualTo(Kilometre.of(440));
         }
 
         @Test
