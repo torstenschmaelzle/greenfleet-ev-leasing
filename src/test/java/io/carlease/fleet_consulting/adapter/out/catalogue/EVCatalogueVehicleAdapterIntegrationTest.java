@@ -1,8 +1,6 @@
 package io.carlease.fleet_consulting.adapter.out.catalogue;
 
 import io.carlease.fleet_consulting.domain.VehicleSummary;
-import io.carlease.shared.domain.Amount;
-import io.carlease.shared.domain.Currency;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -37,7 +35,7 @@ class EVCatalogueVehicleAdapterIntegrationTest {
                 .findFirst().orElseThrow();
 
         assertThat(bmw.getModel()).isEqualTo("i3");
-        assertThat(bmw.getMonthlyLeasePrice()).isEqualTo(Amount.ofCents(60000L, Currency.CHF));
+        assertThat(bmw.getVin()).isEqualTo("WBA00000000000301");
         assertThat(bmw.isAvailable()).isTrue();
     }
 
