@@ -5,6 +5,7 @@ import io.carlease.shared.domain.VehicleType;
 import org.jmolecules.ddd.annotation.AggregateRoot;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -38,6 +39,10 @@ public class FleetBundleRecommendation {
 
         List<VehicleSummaryWithInstallment> filtered = applyHardFilters(vehicles, requirements);
 
+        if (filtered.isEmpty()) {
+            throw new NoVehiclesMatchingRequirementsException(describeReason(vehicles, requirements));
+        }
+
         VehicleScorer scorer = new VehicleScorer();
         BundleOptimizer optimizer = new BundleOptimizer();
 
@@ -56,6 +61,10 @@ public class FleetBundleRecommendation {
 
         List<FleetBundle> deduplicated = deduplicate(bundles);
 
+        if (deduplicated.isEmpty()) {
+            throw new NoVehiclesMatchingRequirementsException(describeBudgetOrCountReason(filtered, requirements));
+        }
+
         return new FleetBundleRecommendation(UUID.randomUUID(), requirements, deduplicated);
     }
 
@@ -65,6 +74,74 @@ public class FleetBundleRecommendation {
                                              FleetRequirements requirements, List<FleetBundle> bundles) {
         List<ScoredVehicle> scored = scorer.score(vehicles, weights, requirements);
         optimizer.optimize(type, scored, requirements).ifPresent(bundles::add);
+    }
+
+    private static String describeReason(List<VehicleSummaryWithInstallment> vehicles,
+                                          FleetRequirements requirements) {
+        int requiredRange = (int) Math.ceil(
+                requirements.getDailyRouteKm().getValue() * DomainConstants.RANGE_SAFETY_FACTOR);
+        int maxAvailableRange = vehicles.stream()
+                .mapToInt(v -> v.getVehicleSummary().getRangeKm().getValue())
+                .max().orElse(0);
+
+        if (maxAvailableRange < requiredRange) {
+            return "daily route of " + requirements.getDailyRouteKm().getValue()
+                    + " km requires a vehicle range of at least " + requiredRange
+                    + " km, but the best available is " + maxAvailableRange + " km.";
+        }
+
+        if (requirements.getBrand().isPresent()) {
+            String brand = requirements.getBrand().get();
+            boolean brandExists = vehicles.stream()
+                    .anyMatch(v -> v.getVehicleSummary().getBrand().equalsIgnoreCase(brand));
+            if (!brandExists) {
+                return "no vehicles of brand \"" + brand + "\" are available in the catalogue.";
+            }
+        }
+
+        if (requirements.getVehicleType().isPresent()) {
+            VehicleType type = requirements.getVehicleType().get();
+            boolean typeExists = vehicles.stream()
+                    .anyMatch(v -> v.getVehicleSummary().getVehicleType() == type);
+            if (!typeExists) {
+                return "no vehicles of type \"" + type + "\" are available in the catalogue.";
+            }
+        }
+
+        return "the combination of your filters produced no results. Try adjusting the daily route, brand, or vehicle type.";
+    }
+
+    private static String describeBudgetOrCountReason(List<VehicleSummaryWithInstallment> filtered,
+                                                       FleetRequirements requirements) {
+        int requested = requirements.getNumberOfVehicles().getValue();
+
+        if (filtered.size() < requested) {
+            return "only " + filtered.size() + " vehicle(s) are available matching your criteria, but "
+                    + requested + " were requested. Try reducing the number of vehicles.";
+        }
+
+        if (requirements.getBudget().isPresent()) {
+            long budgetCents = requirements.getBudget().get().getMonthlyMax().getAmountInCents();
+            int dailyKm = requirements.getDailyRouteKm().getValue();
+            long ratePerKwhCents = requirements.getChargingSetup().getElectricityRate()
+                    .getRatePerKwh().getAmountInCents();
+
+            VehicleSummaryWithInstallment cheapest = filtered.stream()
+                    .min(Comparator.comparingLong(v -> v.getInstallment().getMonthlyAmount().getAmountInCents()))
+                    .orElseThrow();
+
+            long cheapestInstallment = cheapest.getInstallment().getMonthlyAmount().getAmountInCents();
+            double kwhPerMonth = dailyKm * 30.0 * (cheapest.getVehicleSummary().getKwhPer100km() / 100.0);
+            long chargingCostCents = Math.round(kwhPerMonth * ratePerKwhCents);
+            long cheapestTotalPerVehicle = cheapestInstallment + chargingCostCents;
+            long cheapestTotalForFleet = cheapestTotalPerVehicle * requested;
+
+            return "monthly budget of CHF " + String.format("%.0f", budgetCents / 100.0)
+                    + " is too low. The cheapest fleet of " + requested + " vehicle(s) costs at least CHF "
+                    + String.format("%.0f", cheapestTotalForFleet / 100.0) + "/month.";
+        }
+
+        return "the combination of your filters produced no results. Try adjusting your requirements.";
     }
 
     private static List<VehicleSummaryWithInstallment> applyHardFilters(

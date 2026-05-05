@@ -8,7 +8,7 @@ import java.util.Set;
 @ValueObject
 public class LeaseTerm {
 
-    private static final Set<Integer> ALLOWED_MONTHS = Set.of(24, 36, 48, 60);
+    private static final Set<Integer> ALLOWED_MONTHS = Set.of(12, 24, 36, 48, 60);
 
     private final int months;
 

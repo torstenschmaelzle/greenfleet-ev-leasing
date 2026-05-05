@@ -35,7 +35,7 @@ public class AddVehicleService implements addVehicle {
 
         if (persistVehiclePort.existsById(vehicleId)) {
             logger.warn("Vehicle already exists in catalogue: {}", vehicleId.getVin());
-            throw new IllegalStateException("Vehicle already exists in catalogue: " + vehicleId.getVin());
+            throw new DuplicateVehicleVinException(vehicleId.getVin());
         }
 
         // NOTE: BatteryHealthRecord is package-private in the domain.

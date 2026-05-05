@@ -74,7 +74,7 @@ class AddVehicleServiceTest {
     class whenVehicleAlreadyExists {
 
         @Test
-        void throwsIllegalStateExceptionForDuplicateVin() {
+        void throwsDuplicateVehicleVinExceptionForDuplicateVin() {
             // given
             given(persistancePort.existsById(validVehicleId())).willReturn(true);
 
@@ -83,7 +83,7 @@ class AddVehicleServiceTest {
                     validVehicleId(), validSpecification(), validBatterySpecification(),
                     validPerformance(), validMonthlyLeasePrice(),
                     validInitialStateOfHealth(), validInitialMeasuredRange()))
-                    .isInstanceOf(IllegalStateException.class);
+                    .isInstanceOf(DuplicateVehicleVinException.class);
         }
 
         @Test
@@ -96,7 +96,7 @@ class AddVehicleServiceTest {
                     validVehicleId(), validSpecification(), validBatterySpecification(),
                     validPerformance(), validMonthlyLeasePrice(),
                     validInitialStateOfHealth(), validInitialMeasuredRange()))
-                    .isInstanceOf(IllegalStateException.class);
+                    .isInstanceOf(DuplicateVehicleVinException.class);
 
             // then
             then(persistancePort).should(never()).save(any());
