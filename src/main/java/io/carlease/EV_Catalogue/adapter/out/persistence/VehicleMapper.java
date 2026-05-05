@@ -85,6 +85,11 @@ public class VehicleMapper {
             );
         }
 
+        VehicleStatus persistedStatus = VehicleStatus.valueOf(entity.getStatus());
+        if (persistedStatus == VehicleStatus.REMOVED) {
+            vehicle.remove();
+        }
+
         return vehicle;
     }
 }
