@@ -12,15 +12,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class IndividualVehicleScorePropertyTest {
 
-    // Component scores are clamped to [0, 1] by VehicleScorer before reaching this method.
-    // The property tests verify that IndividualVehicleScore independently preserves these bounds,
-    // so the invariant holds even if called outside the normal VehicleScorer pipeline.
+    //Component scores are clamped to [0, 1] by VehicleScorer before reaching this method.
+    //The property tests verify that IndividualVehicleScore independently preserves these bounds so the invariant holds even if called outside the normal VehicleScorer pipeline.
     private static final double MIN_SCORE = 0.0;
     private static final double MAX_SCORE = 1.0;
 
-    // Minimum meaningful difference between two range scores for the monotonicity property.
-    // With the smallest possible weight (1/100 = 0.01), a delta of 0.01 produces a
-    // finalScore difference of at least 0.0001 — safely above IEEE 754 double rounding error.
+    //Minimum meaningful difference between two range scores for the monotonicity property.
+    //With the smallest possible weight (1/100 = 0.01), a delta of 0.01 produces a finalScore difference of at least 0.0001
     private static final double MIN_RANGE_DELTA = 0.01;
 
     /**
@@ -30,8 +28,7 @@ class IndividualVehicleScorePropertyTest {
      */
     @Provide
     Arbitrary<ScoringWeights> validWeights() {
-        return Arbitraries.integers().between(0, 100).flatMap(rangeW ->
-                Arbitraries.integers().between(0, 100 - rangeW).map(co2W -> {
+        return Arbitraries.integers().between(0, 100).flatMap(rangeW -> Arbitraries.integers().between(0, 100 - rangeW).map(co2W -> {
                     int costW = 100 - rangeW - co2W;
                     return ScoringWeights.of(rangeW, co2W, costW);
                 })
@@ -43,8 +40,7 @@ class IndividualVehicleScorePropertyTest {
      */
     @Provide
     Arbitrary<ScoringWeights> validWeightsWithPositiveRange() {
-        return Arbitraries.integers().between(1, 100).flatMap(rangeW ->
-                Arbitraries.integers().between(0, 100 - rangeW).map(co2W -> {
+        return Arbitraries.integers().between(1, 100).flatMap(rangeW -> Arbitraries.integers().between(0, 100 - rangeW).map(co2W -> {
                     int costW = 100 - rangeW - co2W;
                     return ScoringWeights.of(rangeW, co2W, costW);
                 })
@@ -58,12 +54,11 @@ class IndividualVehicleScorePropertyTest {
      * Why this property matters: scores are shown to consultants as a ranking signal and
      * implicitly interpreted as percentages. A score above 1.0 would misrepresent a vehicle
      * as "more than 100% good", while a negative score is nonsensical. The invariant must hold
-     * for every possible weight configuration, not just the four named presets. This is the
-     * mathematical guarantee that IndividualVehicleScore is a proper convex combination.
+     * for every possible weight configuration.
      *
      * Constraint choices:
-     * - Component scores in [0.0, 1.0]: matches the clamping applied by VehicleScorer.
-     * - Any valid weight triple (not just presets): because future presets may be added.
+     * Component scores in [0.0, 1.0]: matches the clamping applied by VehicleScorer.
+     * Any valid weight triple
      */
     @Property
     void finalScoreIsWithinUnitInterval(
@@ -74,9 +69,7 @@ class IndividualVehicleScorePropertyTest {
     ) {
         IndividualVehicleScore score = IndividualVehicleScore.of(rangeScore, co2Score, costScore, weights);
 
-        assertThat(score.getFinalScore())
-                .as("Final score must lie within [0.0, 1.0] for any valid inputs and weights")
-                .isBetween(MIN_SCORE, MAX_SCORE);
+        assertThat(score.getFinalScore()).as("Final score must lie within [0.0, 1.0] for any valid inputs and weights").isBetween(MIN_SCORE, MAX_SCORE);
     }
 
     /**
@@ -84,16 +77,15 @@ class IndividualVehicleScorePropertyTest {
      *
      * Why this property matters: the whole purpose of IndividualVehicleScore is to produce
      * a ranking that reflects how well each dimension contributes. If a vehicle's range score
-     * increases but its final score does not follow, the ranking is broken — a consultant
-     * requesting range-heavy weighting would see incorrect results. A sign error in the
-     * formula (e.g. using subtraction instead of addition) would violate this property.
+     * increases but its final score does not follow, the ranking is broken, meaning that a consultant
+     * requesting range-heavy weighting would see incorrect results.
      *
      * Constraint choices:
-     * - rangeLow and rangeHigh both in [0, 1], with a gap of at least MIN_RANGE_DELTA (0.01).
+     *   rangeLow and rangeHigh both in [0, 1], with a gap of at least MIN_RANGE_DELTA (0.01).
      *   The gap is required because with the smallest weight (1 out of 100) the induced
      *   finalScore difference is (rangeHigh - rangeLow) * 0.01; a gap < 0.001 could be
      *   swallowed by IEEE 754 double rounding.
-     * - rangeWeight ≥ 1: the property is vacuously false for rangeWeight = 0, so we exclude it.
+     *   rangeWeight ≥ 1: the property is vacuously false for rangeWeight = 0, so we exclude it.
      */
     @Property
     void finalScoreIsMonotoneInRangeScore(
@@ -108,8 +100,6 @@ class IndividualVehicleScorePropertyTest {
         double scoreLow  = IndividualVehicleScore.of(rangeLow,  co2Score, costScore, weights).getFinalScore();
         double scoreHigh = IndividualVehicleScore.of(rangeHigh, co2Score, costScore, weights).getFinalScore();
 
-        assertThat(scoreHigh)
-                .as("A higher range score must produce a strictly higher final score when rangeWeight > 0")
-                .isGreaterThan(scoreLow);
+        assertThat(scoreHigh).as("A higher range score must produce a strictly higher final score when rangeWeight > 0").isGreaterThan(scoreLow);
     }
 }
