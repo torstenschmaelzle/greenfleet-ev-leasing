@@ -72,6 +72,10 @@ export async function getRecommendations(params: RecommendationParams): Promise<
   if (params.cost_weight != null) query.set('cost_weight', String(params.cost_weight));
 
   const res = await fetch(`/api/fleet-consulting/recommendations?${query}`, { credentials: 'include' });
-  if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+  if (!res.ok) {
+    const body = await res.text();
+    const parsed = body ? JSON.parse(body) : {};
+    throw new Error(parsed?.error ?? `${res.status} ${res.statusText}`);
+  }
   return res.json();
 }

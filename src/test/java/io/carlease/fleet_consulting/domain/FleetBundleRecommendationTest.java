@@ -100,10 +100,8 @@ class FleetBundleRecommendationTest {
                     vehicle("TSTMODEL300000001", INSUFFICIENT_RANGE, true)
             );
 
-            FleetBundleRecommendation result = FleetBundleRecommendation.generate(
-                    req(1), vehicles, Optional.empty());
-
-            assertThat(result.getBundles()).isEmpty();
+            assertThatThrownBy(() -> FleetBundleRecommendation.generate(req(1), vehicles, Optional.empty()))
+                    .isInstanceOf(NoVehiclesMatchingRequirementsException.class);
         }
 
         @Test
@@ -127,10 +125,8 @@ class FleetBundleRecommendationTest {
                     Installment.of(Amount.ofCents(50000, Currency.CHF))
             );
 
-            FleetBundleRecommendation result = FleetBundleRecommendation.generate(
-                    bmwReq, List.of(tesla), Optional.empty());
-
-            assertThat(result.getBundles()).isEmpty();
+            assertThatThrownBy(() -> FleetBundleRecommendation.generate(bmwReq, List.of(tesla), Optional.empty()))
+                    .isInstanceOf(NoVehiclesMatchingRequirementsException.class);
         }
     }
 
@@ -210,8 +206,12 @@ class FleetBundleRecommendationTest {
 
         @Test
         void requestIdIsNotNull() {
+            List<VehicleSummaryWithInstallment> vehicles = List.of(
+                    vehicle("TSTMODEL300000001", SUFFICIENT_RANGE, true)
+            );
+
             FleetBundleRecommendation result = FleetBundleRecommendation.generate(
-                    req(1), List.of(), Optional.empty());
+                    req(1), vehicles, Optional.empty());
 
             assertThat(result.getRequestId()).isNotNull();
         }
