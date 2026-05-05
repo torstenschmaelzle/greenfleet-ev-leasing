@@ -40,6 +40,7 @@ class GetRecommendationSystemTest {
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(response.getBody()).contains("BMW", "Tesla");
-        assertThat(response.getBody()).doesNotContain("VW");
+        // WBA00000000000203 is the VIN of the REMOVED VW ID.4 — must not appear in any bundle
+        assertThat(response.getBody()).doesNotContain("WBA00000000000203");
     }
 }
