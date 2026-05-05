@@ -1,0 +1,124 @@
+/* ============================================================
+   GreenFleet Design Tokens
+   Premium EV Fleet Consulting SaaS — Green Brand System
+   ============================================================ */
+
+:root {
+
+  /* ------------------------------------------------------------------
+     BRAND / PRIMARY — forest green
+  ------------------------------------------------------------------ */
+  --color-brand:          #16a34a;   /* green-600 — primary CTA, badges */
+  --color-brand-dark:     #15803d;   /* green-700 — hover state         */
+  --color-brand-darker:   #14532d;   /* green-900 — active / pressed    */
+  --color-brand-light:    #dcfce7;   /* green-100 — tinted backgrounds  */
+  --color-brand-muted:    #bbf7d0;   /* green-200 — subtle accents      */
+
+  /* ------------------------------------------------------------------
+     SIDEBAR
+  ------------------------------------------------------------------ */
+  --color-sidebar-bg:     #0f1e14;   /* very dark forest — professional  */
+  --color-sidebar-text:   rgba(255, 255, 255, 0.90);
+  --color-sidebar-muted:  rgba(255, 255, 255, 0.50);
+  --color-sidebar-faint:  rgba(255, 255, 255, 0.12);
+  --color-sidebar-active: rgba(255, 255, 255, 0.14);
+  --color-sidebar-divider:rgba(255, 255, 255, 0.10);
+
+  /* ------------------------------------------------------------------
+     SURFACES & BACKGROUNDS
+  ------------------------------------------------------------------ */
+  --color-bg:             #f8fafc;   /* slate-50 — page background      */
+  --color-surface:        #ffffff;   /* pure white — cards / panels     */
+  --color-surface-raised: #ffffff;   /* alias for elevated surfaces     */
+
+  /* ------------------------------------------------------------------
+     TEXT
+  ------------------------------------------------------------------ */
+  --color-text:           #0f172a;   /* slate-900 — headings            */
+  --color-text-secondary: #374151;   /* gray-700 — body                 */
+  --color-text-muted:     #64748b;   /* slate-500 — secondary info      */
+  --color-text-faint:     #94a3b8;   /* slate-400 — placeholders / meta */
+  --color-text-disabled:  #cbd5e1;   /* slate-300                       */
+
+  /* ------------------------------------------------------------------
+     BORDERS
+  ------------------------------------------------------------------ */
+  --color-border:         #e2e8f0;   /* slate-200                       */
+  --color-border-light:   #f1f5f9;   /* slate-100                       */
+  --color-border-focus:   #16a34a;   /* brand on focus rings            */
+
+  /* ------------------------------------------------------------------
+     STATUS / SEMANTIC
+  ------------------------------------------------------------------ */
+  --color-success-bg:     #dcfce7;
+  --color-success:        #15803d;
+  --color-warning-bg:     #fef3c7;
+  --color-warning:        #b45309;
+  --color-error-bg:       #fef2f2;
+  --color-error:          #b91c1c;
+  --color-info-bg:        #e0f2fe;
+  --color-info:           #0369a1;
+
+  /* ------------------------------------------------------------------
+     SPACING
+  ------------------------------------------------------------------ */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+
+  /* ------------------------------------------------------------------
+     TYPOGRAPHY — SIZES
+  ------------------------------------------------------------------ */
+  --text-xs:   11px;
+  --text-sm:   12px;
+  --text-base: 14px;
+  --text-md:   16px;
+  --text-lg:   18px;
+  --text-xl:   20px;
+  --text-2xl:  24px;
+  --text-3xl:  28px;
+
+  /* ------------------------------------------------------------------
+     TYPOGRAPHY — WEIGHTS
+  ------------------------------------------------------------------ */
+  --font-normal:    400;
+  --font-medium:    500;
+  --font-semibold:  600;
+  --font-bold:      700;
+  --font-extrabold: 800;
+
+  /* ------------------------------------------------------------------
+     BORDER RADIUS
+  ------------------------------------------------------------------ */
+  --radius-sm:   6px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  20px;
+  --radius-full: 9999px;
+
+  /* ------------------------------------------------------------------
+     SHADOWS
+  ------------------------------------------------------------------ */
+  --shadow-xs:    0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm:    0 1px 4px rgba(0, 0, 0, 0.07);
+  --shadow-md:    0 2px 10px rgba(0, 0, 0, 0.08);
+  --shadow-lg:    0 4px 20px rgba(0, 0, 0, 0.12);
+  --shadow-xl:    0 8px 32px rgba(0, 0, 0, 0.14);
+  --shadow-brand: 0 4px 20px rgba(22, 163, 74, 0.28);
+  --shadow-card-hover: 0 12px 32px rgba(22, 163, 74, 0.15);
+
+  /* ------------------------------------------------------------------
+     TRANSITIONS
+  ------------------------------------------------------------------ */
+  --transition-fast:   0.12s ease;
+  --transition-normal: 0.20s ease;
+  --transition-slow:   0.30s ease;
+
+}
