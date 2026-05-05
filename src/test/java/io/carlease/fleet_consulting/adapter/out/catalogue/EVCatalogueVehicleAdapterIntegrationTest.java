@@ -31,18 +31,18 @@ class EVCatalogueVehicleAdapterIntegrationTest {
     @Test
     void getVehicles_mapsAvailableVehicleCorrectly() {
         VehicleSummary bmw = adapter.getVehicles().stream()
-                .filter(s -> s.getBrand().equals("BMW"))
+                .filter(s -> s.getVin().equals("WBA00000000000301"))
                 .findFirst().orElseThrow();
 
+        assertThat(bmw.getBrand()).isEqualTo("BMW");
         assertThat(bmw.getModel()).isEqualTo("i3");
-        assertThat(bmw.getVin()).isEqualTo("WBA00000000000301");
         assertThat(bmw.isAvailable()).isTrue();
     }
 
     @Test
     void getVehicles_setsAvailableFalseForRemovedVehicle() {
         VehicleSummary vw = adapter.getVehicles().stream()
-                .filter(s -> s.getBrand().equals("VW"))
+                .filter(s -> s.getVin().equals("WBA00000000000302"))
                 .findFirst().orElseThrow();
 
         assertThat(vw.isAvailable()).isFalse();
