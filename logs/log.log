@@ -2915,3 +2915,1036 @@ Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
 29-04-2026 12:58:03.829 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
 29-04-2026 12:58:03.829 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
 29-04-2026 12:58:03.829 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 0 ms
+05-05-2026 09:58:17.588 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 19436 (C:\Users\nevio\BSC_FS26_SE_GROUP04\target\classes started by nevio in C:\Users\nevio\BSC_FS26_SE_GROUP04)
+05-05-2026 09:58:17.591 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+05-05-2026 09:58:17.660 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+05-05-2026 09:58:17.660 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+05-05-2026 09:58:18.761 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+05-05-2026 09:58:18.843 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 71 ms. Found 2 JPA repository interfaces.
+05-05-2026 09:58:19.578 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+05-05-2026 09:58:19.585 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+05-05-2026 09:58:19.585 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+05-05-2026 09:58:19.667 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+05-05-2026 09:58:19.667 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2007 ms
+05-05-2026 09:58:19.717 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+05-05-2026 09:58:19.968 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+05-05-2026 09:58:19.968 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+05-05-2026 09:58:19.979 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+05-05-2026 09:58:27.800 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 7606 ms
+05-05-2026 09:58:28.600 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\nevio\BSC_FS26_SE_GROUP04 folder.
+05-05-2026 09:58:28.666 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 94 classes. Took 29 ms.
+05-05-2026 09:58:28.672 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+05-05-2026 09:58:29.087 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+05-05-2026 09:58:29.135 [ForkJoinPool.commonPool-worker-2] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+05-05-2026 09:58:29.342 [ForkJoinPool.commonPool-worker-2] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 205 ms.
+05-05-2026 09:58:29.863 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+05-05-2026 09:58:30.003 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.4.1.Final
+05-05-2026 09:58:30.086 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+05-05-2026 09:58:30.539 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+05-05-2026 09:58:32.353 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+05-05-2026 09:58:32.478 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+05-05-2026 09:58:33.036 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+05-05-2026 09:58:33.631 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+05-05-2026 09:58:33.701 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+05-05-2026 09:58:33.701 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+05-05-2026 09:58:33.759 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+05-05-2026 09:58:33.768 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+05-05-2026 09:58:33.776 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+05-05-2026 09:58:33.784 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+05-05-2026 09:58:33.801 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+05-05-2026 09:58:33.801 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+05-05-2026 09:58:33.801 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+05-05-2026 09:58:33.801 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+05-05-2026 09:58:33.809 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+05-05-2026 09:58:33.809 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+05-05-2026 09:58:33.809 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+05-05-2026 09:58:33.809 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+05-05-2026 09:58:33.809 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+05-05-2026 09:58:33.809 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+05-05-2026 09:58:33.809 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+05-05-2026 09:58:33.809 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+05-05-2026 09:58:33.809 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+05-05-2026 09:58:33.809 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+05-05-2026 09:58:33.817 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+05-05-2026 09:58:33.818 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+05-05-2026 09:58:33.826 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+05-05-2026 09:58:33.826 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+05-05-2026 09:58:33.826 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+05-05-2026 09:58:33.826 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+05-05-2026 09:58:33.826 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+05-05-2026 09:58:33.834 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+05-05-2026 09:58:33.892 [restartedMain] INFO  c.v.f.s.DefaultDeploymentConfiguration.logMessages - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+05-05-2026 09:58:33.958 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+05-05-2026 09:58:33.974 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 16.889 seconds (process running for 19.332)
+05-05-2026 09:58:34.707 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000001
+05-05-2026 09:58:34.714 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 09:58:34.714 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000001
+05-05-2026 09:58:34.714 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 09:58:34.729 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLSPLAID0001
+05-05-2026 09:58:34.729 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model S Plaid
+05-05-2026 09:58:34.736 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLXLNG000001
+05-05-2026 09:58:34.736 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model X Long Range
+05-05-2026 09:58:34.739 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400001
+05-05-2026 09:58:34.739 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 09:58:34.747 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00001
+05-05-2026 09:58:34.754 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 09:58:34.764 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIXXDRIVE500001
+05-05-2026 09:58:34.764 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX xDrive50
+05-05-2026 09:58:34.771 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION01
+05-05-2026 09:58:34.771 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 09:58:34.779 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID3PRO58KWH0001
+05-05-2026 09:58:34.779 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.3 Pro
+05-05-2026 09:58:34.787 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIETRON55QUA001
+05-05-2026 09:58:34.787 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi e-tron 55 quattro
+05-05-2026 09:58:34.800 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIQ4ETRON400001
+05-05-2026 09:58:34.800 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi Q4 e-tron 40
+05-05-2026 09:58:34.811 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQC400001
+05-05-2026 09:58:34.811 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQC 400 4MATIC
+05-05-2026 09:58:34.818 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQS450001
+05-05-2026 09:58:34.819 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQS 450+
+05-05-2026 09:58:34.820 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: PORSCHETAYCAN4S01
+05-05-2026 09:58:34.820 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Porsche Taycan 4S
+05-05-2026 09:58:34.831 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD01
+05-05-2026 09:58:34.831 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+05-05-2026 09:58:34.846 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ6RWD01
+05-05-2026 09:58:34.846 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 6 RWD
+05-05-2026 09:58:34.851 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: KIAEV6GTLAWD00001
+05-05-2026 09:58:34.851 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Kia EV6 GT-Line AWD
+05-05-2026 09:58:34.857 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VOLVOXC40RCHG0001
+05-05-2026 09:58:34.859 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volvo XC40 Recharge AWD
+05-05-2026 09:58:34.861 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: POLESTAR2LNGRNG01
+05-05-2026 09:58:34.861 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Polestar 2 Long Range AWD
+05-05-2026 09:58:34.869 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: RENAULTZOE50KWH01
+05-05-2026 09:58:34.869 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Renault Zoe R135 Z.E.50
+05-05-2026 09:58:34.877 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000002
+05-05-2026 09:58:34.878 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 09:58:34.886 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000002
+05-05-2026 09:58:34.886 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 09:58:34.891 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400002
+05-05-2026 09:58:34.893 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 09:58:34.897 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00002
+05-05-2026 09:58:34.900 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 09:58:34.907 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION02
+05-05-2026 09:58:34.907 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 09:58:34.917 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD02
+05-05-2026 09:58:34.917 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+05-05-2026 09:58:34.923 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000003
+05-05-2026 09:58:34.923 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 09:58:34.927 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000004
+05-05-2026 09:58:34.927 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 09:58:34.935 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000005
+05-05-2026 09:58:34.935 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 09:58:34.937 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000006
+05-05-2026 09:58:34.937 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 09:58:34.944 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000003
+05-05-2026 09:58:34.944 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 09:58:34.953 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000004
+05-05-2026 09:58:34.953 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 09:58:34.963 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000005
+05-05-2026 09:58:34.964 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 09:58:34.968 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000006
+05-05-2026 09:58:34.968 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 09:58:34.976 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLSPLAID0002
+05-05-2026 09:58:34.977 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model S Plaid
+05-05-2026 09:58:34.982 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLSPLAID0003
+05-05-2026 09:58:34.982 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model S Plaid
+05-05-2026 09:58:34.990 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLXLNG000002
+05-05-2026 09:58:34.991 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model X Long Range
+05-05-2026 09:58:34.998 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLXLNG000003
+05-05-2026 09:58:34.998 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model X Long Range
+05-05-2026 09:58:35.005 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400003
+05-05-2026 09:58:35.005 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 09:58:35.011 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400004
+05-05-2026 09:58:35.012 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 09:58:35.020 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400005
+05-05-2026 09:58:35.021 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 09:58:35.024 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400006
+05-05-2026 09:58:35.024 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 09:58:35.031 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00003
+05-05-2026 09:58:35.031 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 09:58:35.044 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00004
+05-05-2026 09:58:35.044 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 09:58:35.047 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00005
+05-05-2026 09:58:35.047 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 09:58:35.057 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00006
+05-05-2026 09:58:35.057 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 09:58:35.063 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIXXDRIVE500002
+05-05-2026 09:58:35.064 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX xDrive50
+05-05-2026 09:58:35.068 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIXXDRIVE500003
+05-05-2026 09:58:35.068 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX xDrive50
+05-05-2026 09:58:35.080 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION03
+05-05-2026 09:58:35.081 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 09:58:35.088 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION04
+05-05-2026 09:58:35.089 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 09:58:35.096 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION05
+05-05-2026 09:58:35.096 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 09:58:35.105 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION06
+05-05-2026 09:58:35.105 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 09:58:35.113 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID3PRO58KWH0002
+05-05-2026 09:58:35.113 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.3 Pro
+05-05-2026 09:58:35.113 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID3PRO58KWH0003
+05-05-2026 09:58:35.113 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.3 Pro
+05-05-2026 09:58:35.121 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIETRON55QUA002
+05-05-2026 09:58:35.121 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi e-tron 55 quattro
+05-05-2026 09:58:35.121 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIETRON55QUA003
+05-05-2026 09:58:35.121 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi e-tron 55 quattro
+05-05-2026 09:58:35.133 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIQ4ETRON400002
+05-05-2026 09:58:35.133 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi Q4 e-tron 40
+05-05-2026 09:58:35.139 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIQ4ETRON400003
+05-05-2026 09:58:35.139 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi Q4 e-tron 40
+05-05-2026 09:58:35.142 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQC400002
+05-05-2026 09:58:35.146 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQC 400 4MATIC
+05-05-2026 09:58:35.146 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQC400003
+05-05-2026 09:58:35.150 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQC 400 4MATIC
+05-05-2026 09:58:35.153 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQS450002
+05-05-2026 09:58:35.155 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQS 450+
+05-05-2026 09:58:35.162 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQS450003
+05-05-2026 09:58:35.164 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQS 450+
+05-05-2026 09:58:35.170 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: PORSCHETAYCAN4S02
+05-05-2026 09:58:35.170 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Porsche Taycan 4S
+05-05-2026 09:58:35.170 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: PORSCHETAYCAN4S03
+05-05-2026 09:58:35.179 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Porsche Taycan 4S
+05-05-2026 09:58:35.186 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD03
+05-05-2026 09:58:35.187 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+05-05-2026 09:58:35.197 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD04
+05-05-2026 09:58:35.197 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+05-05-2026 09:58:35.203 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ6RWD02
+05-05-2026 09:58:35.203 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 6 RWD
+05-05-2026 09:58:35.210 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ6RWD03
+05-05-2026 09:58:35.210 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 6 RWD
+05-05-2026 09:58:35.216 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: KIAEV6GTLAWD00002
+05-05-2026 09:58:35.216 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Kia EV6 GT-Line AWD
+05-05-2026 09:58:35.219 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: KIAEV6GTLAWD00003
+05-05-2026 09:58:35.219 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Kia EV6 GT-Line AWD
+05-05-2026 09:58:35.221 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VOLVOXC40RCHG0002
+05-05-2026 09:58:35.221 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volvo XC40 Recharge AWD
+05-05-2026 09:58:35.227 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VOLVOXC40RCHG0003
+05-05-2026 09:58:35.227 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volvo XC40 Recharge AWD
+05-05-2026 09:58:35.234 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: POLESTAR2LNGRNG02
+05-05-2026 09:58:35.234 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Polestar 2 Long Range AWD
+05-05-2026 09:58:35.234 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: POLESTAR2LNGRNG03
+05-05-2026 09:58:35.234 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Polestar 2 Long Range AWD
+05-05-2026 09:58:35.242 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: RENAULTZOE50KWH02
+05-05-2026 09:58:35.242 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Renault Zoe R135 Z.E.50
+05-05-2026 09:58:35.247 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: RENAULTZOE50KWH03
+05-05-2026 09:58:35.247 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Renault Zoe R135 Z.E.50
+05-05-2026 10:00:00.104 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+05-05-2026 10:00:00.104 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+05-05-2026 10:00:00.112 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 0 ms
+05-05-2026 10:01:04.143 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+05-05-2026 10:01:04.155 [SpringApplicationShutdownHook] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Die Datenbank wurde bereits geschlossen (um das automatische Schliessen beim Stopp der VM zu deaktivieren, die Datenbank URL mit ";DB_CLOSE_ON_EXIT=FALSE" ergänzen)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+05-05-2026 10:01:04.155 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+05-05-2026 10:01:04.158 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+05-05-2026 10:38:31.468 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 17076 (C:\Users\nevio\BSC_FS26_SE_GROUP04\target\classes started by nevio in C:\Users\nevio\BSC_FS26_SE_GROUP04)
+05-05-2026 10:38:31.469 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+05-05-2026 10:38:31.509 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+05-05-2026 10:38:31.509 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+05-05-2026 10:38:32.087 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+05-05-2026 10:38:32.151 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 57 ms. Found 2 JPA repository interfaces.
+05-05-2026 10:38:32.606 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+05-05-2026 10:38:32.617 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+05-05-2026 10:38:32.617 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+05-05-2026 10:38:32.670 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+05-05-2026 10:38:32.670 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1161 ms
+05-05-2026 10:38:32.699 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+05-05-2026 10:38:32.847 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+05-05-2026 10:38:32.849 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+05-05-2026 10:38:32.862 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+05-05-2026 10:38:37.696 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 4665 ms
+05-05-2026 10:38:38.080 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\nevio\BSC_FS26_SE_GROUP04 folder.
+05-05-2026 10:38:38.109 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 94 classes. Took 14 ms.
+05-05-2026 10:38:38.111 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+05-05-2026 10:38:38.264 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+05-05-2026 10:38:38.283 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+05-05-2026 10:38:38.323 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 40 ms.
+05-05-2026 10:38:38.483 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+05-05-2026 10:38:38.525 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.4.1.Final
+05-05-2026 10:38:38.551 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+05-05-2026 10:38:38.719 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+05-05-2026 10:38:39.494 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+05-05-2026 10:38:39.542 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+05-05-2026 10:38:39.810 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+05-05-2026 10:38:40.106 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+05-05-2026 10:38:40.134 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+05-05-2026 10:38:40.134 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+05-05-2026 10:38:40.171 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+05-05-2026 10:38:40.179 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+05-05-2026 10:38:40.184 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+05-05-2026 10:38:40.188 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+05-05-2026 10:38:40.197 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+05-05-2026 10:38:40.198 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+05-05-2026 10:38:40.198 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+05-05-2026 10:38:40.199 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+05-05-2026 10:38:40.199 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+05-05-2026 10:38:40.199 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+05-05-2026 10:38:40.200 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+05-05-2026 10:38:40.201 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+05-05-2026 10:38:40.203 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+05-05-2026 10:38:40.203 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+05-05-2026 10:38:40.203 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+05-05-2026 10:38:40.203 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+05-05-2026 10:38:40.203 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+05-05-2026 10:38:40.204 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+05-05-2026 10:38:40.204 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+05-05-2026 10:38:40.204 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 10:38:40.204 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 10:38:40.205 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+05-05-2026 10:38:40.205 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 10:38:40.205 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 10:38:40.205 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 10:38:40.205 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+05-05-2026 10:38:40.205 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+05-05-2026 10:38:40.205 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+05-05-2026 10:38:40.205 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+05-05-2026 10:38:40.205 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+05-05-2026 10:38:40.205 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+05-05-2026 10:38:40.206 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+05-05-2026 10:38:40.206 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+05-05-2026 10:38:40.206 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+05-05-2026 10:38:40.206 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+05-05-2026 10:38:40.206 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+05-05-2026 10:38:40.206 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+05-05-2026 10:38:40.206 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+05-05-2026 10:38:40.206 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+05-05-2026 10:38:40.206 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+05-05-2026 10:38:40.208 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+05-05-2026 10:38:40.208 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+05-05-2026 10:38:40.208 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+05-05-2026 10:38:40.208 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+05-05-2026 10:38:40.208 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+05-05-2026 10:38:40.211 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+05-05-2026 10:38:40.249 [restartedMain] INFO  c.v.f.s.DefaultDeploymentConfiguration.logMessages - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+05-05-2026 10:38:40.284 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+05-05-2026 10:38:40.292 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 9.141 seconds (process running for 9.743)
+05-05-2026 10:38:40.673 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000001
+05-05-2026 10:38:40.673 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 10:38:40.677 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000001
+05-05-2026 10:38:40.677 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 10:38:40.681 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLSPLAID0001
+05-05-2026 10:38:40.681 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model S Plaid
+05-05-2026 10:38:40.683 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLXLNG000001
+05-05-2026 10:38:40.683 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model X Long Range
+05-05-2026 10:38:40.688 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400001
+05-05-2026 10:38:40.688 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 10:38:40.694 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00001
+05-05-2026 10:38:40.695 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 10:38:40.700 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIXXDRIVE500001
+05-05-2026 10:38:40.700 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX xDrive50
+05-05-2026 10:38:40.705 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION01
+05-05-2026 10:38:40.705 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 10:38:40.707 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID3PRO58KWH0001
+05-05-2026 10:38:40.708 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.3 Pro
+05-05-2026 10:38:40.712 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIETRON55QUA001
+05-05-2026 10:38:40.712 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi e-tron 55 quattro
+05-05-2026 10:38:40.714 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIQ4ETRON400001
+05-05-2026 10:38:40.714 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi Q4 e-tron 40
+05-05-2026 10:38:40.718 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQC400001
+05-05-2026 10:38:40.718 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQC 400 4MATIC
+05-05-2026 10:38:40.721 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQS450001
+05-05-2026 10:38:40.722 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQS 450+
+05-05-2026 10:38:40.724 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: PORSCHETAYCAN4S01
+05-05-2026 10:38:40.724 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Porsche Taycan 4S
+05-05-2026 10:38:40.727 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD01
+05-05-2026 10:38:40.727 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+05-05-2026 10:38:40.730 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ6RWD01
+05-05-2026 10:38:40.730 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 6 RWD
+05-05-2026 10:38:40.733 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: KIAEV6GTLAWD00001
+05-05-2026 10:38:40.733 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Kia EV6 GT-Line AWD
+05-05-2026 10:38:40.741 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VOLVOXC40RCHG0001
+05-05-2026 10:38:40.741 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volvo XC40 Recharge AWD
+05-05-2026 10:38:40.746 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: POLESTAR2LNGRNG01
+05-05-2026 10:38:40.746 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Polestar 2 Long Range AWD
+05-05-2026 10:38:40.747 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: RENAULTZOE50KWH01
+05-05-2026 10:38:40.747 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Renault Zoe R135 Z.E.50
+05-05-2026 10:38:40.749 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000002
+05-05-2026 10:38:40.749 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 10:38:40.751 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000002
+05-05-2026 10:38:40.753 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 10:38:40.754 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400002
+05-05-2026 10:38:40.754 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 10:38:40.757 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00002
+05-05-2026 10:38:40.757 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 10:38:40.759 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION02
+05-05-2026 10:38:40.759 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 10:38:40.762 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD02
+05-05-2026 10:38:40.762 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+05-05-2026 10:38:40.764 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000003
+05-05-2026 10:38:40.764 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 10:38:40.765 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000004
+05-05-2026 10:38:40.765 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 10:38:40.768 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000005
+05-05-2026 10:38:40.769 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 10:38:40.770 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000006
+05-05-2026 10:38:40.770 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 10:38:40.772 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000003
+05-05-2026 10:38:40.773 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 10:38:40.774 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000004
+05-05-2026 10:38:40.775 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 10:38:40.777 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000005
+05-05-2026 10:38:40.778 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 10:38:40.780 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000006
+05-05-2026 10:38:40.780 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 10:38:40.782 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLSPLAID0002
+05-05-2026 10:38:40.782 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model S Plaid
+05-05-2026 10:38:40.784 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLSPLAID0003
+05-05-2026 10:38:40.784 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model S Plaid
+05-05-2026 10:38:40.786 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLXLNG000002
+05-05-2026 10:38:40.786 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model X Long Range
+05-05-2026 10:38:40.788 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLXLNG000003
+05-05-2026 10:38:40.788 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model X Long Range
+05-05-2026 10:38:40.789 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400003
+05-05-2026 10:38:40.789 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 10:38:40.791 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400004
+05-05-2026 10:38:40.791 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 10:38:40.795 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400005
+05-05-2026 10:38:40.795 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 10:38:40.798 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400006
+05-05-2026 10:38:40.798 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 10:38:40.802 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00003
+05-05-2026 10:38:40.802 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 10:38:40.804 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00004
+05-05-2026 10:38:40.804 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 10:38:40.805 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00005
+05-05-2026 10:38:40.805 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 10:38:40.807 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00006
+05-05-2026 10:38:40.807 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 10:38:40.809 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIXXDRIVE500002
+05-05-2026 10:38:40.809 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX xDrive50
+05-05-2026 10:38:40.812 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIXXDRIVE500003
+05-05-2026 10:38:40.812 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX xDrive50
+05-05-2026 10:38:40.817 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION03
+05-05-2026 10:38:40.818 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 10:38:40.821 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION04
+05-05-2026 10:38:40.822 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 10:38:40.827 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION05
+05-05-2026 10:38:40.828 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 10:38:40.836 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION06
+05-05-2026 10:38:40.836 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 10:38:40.841 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID3PRO58KWH0002
+05-05-2026 10:38:40.842 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.3 Pro
+05-05-2026 10:38:40.847 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID3PRO58KWH0003
+05-05-2026 10:38:40.847 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.3 Pro
+05-05-2026 10:38:40.851 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIETRON55QUA002
+05-05-2026 10:38:40.851 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi e-tron 55 quattro
+05-05-2026 10:38:40.854 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIETRON55QUA003
+05-05-2026 10:38:40.855 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi e-tron 55 quattro
+05-05-2026 10:38:40.859 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIQ4ETRON400002
+05-05-2026 10:38:40.859 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi Q4 e-tron 40
+05-05-2026 10:38:40.863 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIQ4ETRON400003
+05-05-2026 10:38:40.863 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi Q4 e-tron 40
+05-05-2026 10:38:40.867 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQC400002
+05-05-2026 10:38:40.867 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQC 400 4MATIC
+05-05-2026 10:38:40.870 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQC400003
+05-05-2026 10:38:40.870 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQC 400 4MATIC
+05-05-2026 10:38:40.874 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQS450002
+05-05-2026 10:38:40.874 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQS 450+
+05-05-2026 10:38:40.877 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQS450003
+05-05-2026 10:38:40.877 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQS 450+
+05-05-2026 10:38:40.881 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: PORSCHETAYCAN4S02
+05-05-2026 10:38:40.882 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Porsche Taycan 4S
+05-05-2026 10:38:40.887 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: PORSCHETAYCAN4S03
+05-05-2026 10:38:40.889 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Porsche Taycan 4S
+05-05-2026 10:38:40.894 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD03
+05-05-2026 10:38:40.894 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+05-05-2026 10:38:40.897 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD04
+05-05-2026 10:38:40.898 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+05-05-2026 10:38:40.901 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ6RWD02
+05-05-2026 10:38:40.901 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 6 RWD
+05-05-2026 10:38:40.903 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ6RWD03
+05-05-2026 10:38:40.904 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 6 RWD
+05-05-2026 10:38:40.905 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: KIAEV6GTLAWD00002
+05-05-2026 10:38:40.906 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Kia EV6 GT-Line AWD
+05-05-2026 10:38:40.909 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: KIAEV6GTLAWD00003
+05-05-2026 10:38:40.909 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Kia EV6 GT-Line AWD
+05-05-2026 10:38:40.911 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VOLVOXC40RCHG0002
+05-05-2026 10:38:40.911 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volvo XC40 Recharge AWD
+05-05-2026 10:38:40.914 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VOLVOXC40RCHG0003
+05-05-2026 10:38:40.914 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volvo XC40 Recharge AWD
+05-05-2026 10:38:40.918 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: POLESTAR2LNGRNG02
+05-05-2026 10:38:40.918 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Polestar 2 Long Range AWD
+05-05-2026 10:38:40.921 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: POLESTAR2LNGRNG03
+05-05-2026 10:38:40.922 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Polestar 2 Long Range AWD
+05-05-2026 10:38:40.925 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: RENAULTZOE50KWH02
+05-05-2026 10:38:40.925 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Renault Zoe R135 Z.E.50
+05-05-2026 10:38:40.929 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: RENAULTZOE50KWH03
+05-05-2026 10:38:40.929 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Renault Zoe R135 Z.E.50
+05-05-2026 10:39:07.472 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+05-05-2026 10:39:07.472 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+05-05-2026 10:39:07.472 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 0 ms
+05-05-2026 10:39:08.626 [http-nio-8080-exec-2] WARN  o.a.c.util.SessionIdGeneratorBase.log - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [111] milliseconds.
+05-05-2026 10:39:08.641 [http-nio-8080-exec-2] INFO  c.v.flow.spring.SpringInstantiator.getI18NProvider - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+05-05-2026 10:49:29.630 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+05-05-2026 10:49:29.636 [SpringApplicationShutdownHook] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Die Datenbank wurde bereits geschlossen (um das automatische Schliessen beim Stopp der VM zu deaktivieren, die Datenbank URL mit ";DB_CLOSE_ON_EXIT=FALSE" ergänzen)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+05-05-2026 10:49:29.636 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+05-05-2026 10:49:29.636 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+05-05-2026 12:15:52.334 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 11236 (C:\Users\nevio\BSC_FS26_SE_GROUP04\target\classes started by nevio in C:\Users\nevio\BSC_FS26_SE_GROUP04)
+05-05-2026 12:15:52.336 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+05-05-2026 12:15:52.376 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+05-05-2026 12:15:52.376 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+05-05-2026 12:15:53.039 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+05-05-2026 12:15:53.097 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 54 ms. Found 2 JPA repository interfaces.
+05-05-2026 12:15:53.565 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+05-05-2026 12:15:53.573 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+05-05-2026 12:15:53.573 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+05-05-2026 12:15:53.632 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+05-05-2026 12:15:53.632 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1254 ms
+05-05-2026 12:15:53.660 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+05-05-2026 12:15:53.829 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+05-05-2026 12:15:53.832 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+05-05-2026 12:15:53.841 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+05-05-2026 12:15:59.160 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 5131 ms
+05-05-2026 12:15:59.557 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\nevio\BSC_FS26_SE_GROUP04 folder.
+05-05-2026 12:15:59.590 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 94 classes. Took 16 ms.
+05-05-2026 12:15:59.592 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+05-05-2026 12:15:59.762 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+05-05-2026 12:15:59.789 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+05-05-2026 12:15:59.857 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 66 ms.
+05-05-2026 12:16:00.069 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+05-05-2026 12:16:00.111 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.4.1.Final
+05-05-2026 12:16:00.143 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+05-05-2026 12:16:00.325 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+05-05-2026 12:16:01.141 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+05-05-2026 12:16:01.206 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+05-05-2026 12:16:01.534 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+05-05-2026 12:16:01.904 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+05-05-2026 12:16:01.937 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+05-05-2026 12:16:01.937 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+05-05-2026 12:16:01.970 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+05-05-2026 12:16:01.979 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+05-05-2026 12:16:01.986 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+05-05-2026 12:16:01.990 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+05-05-2026 12:16:01.996 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+05-05-2026 12:16:01.996 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+05-05-2026 12:16:01.996 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+05-05-2026 12:16:01.996 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+05-05-2026 12:16:01.996 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+05-05-2026 12:16:01.996 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+05-05-2026 12:16:01.996 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+05-05-2026 12:16:01.996 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+05-05-2026 12:16:02.003 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+05-05-2026 12:16:02.003 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+05-05-2026 12:16:02.004 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+05-05-2026 12:16:02.012 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+05-05-2026 12:16:02.049 [restartedMain] INFO  c.v.f.s.DefaultDeploymentConfiguration.logMessages - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+05-05-2026 12:16:02.084 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+05-05-2026 12:16:02.093 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 10.085 seconds (process running for 11.591)
+05-05-2026 12:16:02.423 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000001
+05-05-2026 12:16:02.423 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 12:16:02.432 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000001
+05-05-2026 12:16:02.432 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 12:16:02.432 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLSPLAID0001
+05-05-2026 12:16:02.439 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model S Plaid
+05-05-2026 12:16:02.442 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLXLNG000001
+05-05-2026 12:16:02.442 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model X Long Range
+05-05-2026 12:16:02.442 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400001
+05-05-2026 12:16:02.442 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 12:16:02.448 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00001
+05-05-2026 12:16:02.448 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 12:16:02.448 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIXXDRIVE500001
+05-05-2026 12:16:02.448 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX xDrive50
+05-05-2026 12:16:02.456 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION01
+05-05-2026 12:16:02.456 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 12:16:02.460 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID3PRO58KWH0001
+05-05-2026 12:16:02.460 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.3 Pro
+05-05-2026 12:16:02.462 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIETRON55QUA001
+05-05-2026 12:16:02.464 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi e-tron 55 quattro
+05-05-2026 12:16:02.464 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIQ4ETRON400001
+05-05-2026 12:16:02.464 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi Q4 e-tron 40
+05-05-2026 12:16:02.464 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQC400001
+05-05-2026 12:16:02.464 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQC 400 4MATIC
+05-05-2026 12:16:02.473 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQS450001
+05-05-2026 12:16:02.475 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQS 450+
+05-05-2026 12:16:02.477 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: PORSCHETAYCAN4S01
+05-05-2026 12:16:02.477 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Porsche Taycan 4S
+05-05-2026 12:16:02.477 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD01
+05-05-2026 12:16:02.477 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+05-05-2026 12:16:02.481 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ6RWD01
+05-05-2026 12:16:02.481 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 6 RWD
+05-05-2026 12:16:02.481 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: KIAEV6GTLAWD00001
+05-05-2026 12:16:02.481 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Kia EV6 GT-Line AWD
+05-05-2026 12:16:02.481 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VOLVOXC40RCHG0001
+05-05-2026 12:16:02.481 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volvo XC40 Recharge AWD
+05-05-2026 12:16:02.489 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: POLESTAR2LNGRNG01
+05-05-2026 12:16:02.489 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Polestar 2 Long Range AWD
+05-05-2026 12:16:02.489 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: RENAULTZOE50KWH01
+05-05-2026 12:16:02.489 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Renault Zoe R135 Z.E.50
+05-05-2026 12:16:02.489 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000002
+05-05-2026 12:16:02.489 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 12:16:02.489 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000002
+05-05-2026 12:16:02.489 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 12:16:02.498 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400002
+05-05-2026 12:16:02.498 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 12:16:02.500 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00002
+05-05-2026 12:16:02.500 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 12:16:02.500 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION02
+05-05-2026 12:16:02.500 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 12:16:02.507 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD02
+05-05-2026 12:16:02.507 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+05-05-2026 12:16:02.508 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000003
+05-05-2026 12:16:02.510 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 12:16:02.513 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000004
+05-05-2026 12:16:02.513 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 12:16:02.516 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000005
+05-05-2026 12:16:02.517 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 12:16:02.520 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000006
+05-05-2026 12:16:02.520 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 12:16:02.520 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000003
+05-05-2026 12:16:02.524 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 12:16:02.527 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000004
+05-05-2026 12:16:02.528 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 12:16:02.530 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000005
+05-05-2026 12:16:02.530 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 12:16:02.532 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000006
+05-05-2026 12:16:02.532 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 12:16:02.532 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLSPLAID0002
+05-05-2026 12:16:02.532 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model S Plaid
+05-05-2026 12:16:02.532 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLSPLAID0003
+05-05-2026 12:16:02.532 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model S Plaid
+05-05-2026 12:16:02.532 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLXLNG000002
+05-05-2026 12:16:02.532 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model X Long Range
+05-05-2026 12:16:02.542 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLXLNG000003
+05-05-2026 12:16:02.542 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model X Long Range
+05-05-2026 12:16:02.542 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400003
+05-05-2026 12:16:02.542 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 12:16:02.542 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400004
+05-05-2026 12:16:02.542 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 12:16:02.549 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400005
+05-05-2026 12:16:02.549 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 12:16:02.549 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400006
+05-05-2026 12:16:02.549 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 12:16:02.556 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00003
+05-05-2026 12:16:02.556 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 12:16:02.558 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00004
+05-05-2026 12:16:02.558 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 12:16:02.558 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00005
+05-05-2026 12:16:02.558 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 12:16:02.558 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00006
+05-05-2026 12:16:02.558 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 12:16:02.565 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIXXDRIVE500002
+05-05-2026 12:16:02.565 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX xDrive50
+05-05-2026 12:16:02.566 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIXXDRIVE500003
+05-05-2026 12:16:02.566 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX xDrive50
+05-05-2026 12:16:02.573 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION03
+05-05-2026 12:16:02.573 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 12:16:02.577 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION04
+05-05-2026 12:16:02.577 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 12:16:02.581 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION05
+05-05-2026 12:16:02.581 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 12:16:02.589 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION06
+05-05-2026 12:16:02.589 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 12:16:02.594 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID3PRO58KWH0002
+05-05-2026 12:16:02.594 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.3 Pro
+05-05-2026 12:16:02.598 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID3PRO58KWH0003
+05-05-2026 12:16:02.598 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.3 Pro
+05-05-2026 12:16:02.598 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIETRON55QUA002
+05-05-2026 12:16:02.598 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi e-tron 55 quattro
+05-05-2026 12:16:02.598 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIETRON55QUA003
+05-05-2026 12:16:02.598 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi e-tron 55 quattro
+05-05-2026 12:16:02.606 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIQ4ETRON400002
+05-05-2026 12:16:02.606 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi Q4 e-tron 40
+05-05-2026 12:16:02.606 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIQ4ETRON400003
+05-05-2026 12:16:02.606 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi Q4 e-tron 40
+05-05-2026 12:16:02.614 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQC400002
+05-05-2026 12:16:02.614 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQC 400 4MATIC
+05-05-2026 12:16:02.614 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQC400003
+05-05-2026 12:16:02.614 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQC 400 4MATIC
+05-05-2026 12:16:02.623 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQS450002
+05-05-2026 12:16:02.623 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQS 450+
+05-05-2026 12:16:02.623 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQS450003
+05-05-2026 12:16:02.623 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQS 450+
+05-05-2026 12:16:02.632 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: PORSCHETAYCAN4S02
+05-05-2026 12:16:02.632 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Porsche Taycan 4S
+05-05-2026 12:16:02.640 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: PORSCHETAYCAN4S03
+05-05-2026 12:16:02.640 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Porsche Taycan 4S
+05-05-2026 12:16:02.642 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD03
+05-05-2026 12:16:02.646 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+05-05-2026 12:16:02.648 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD04
+05-05-2026 12:16:02.648 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+05-05-2026 12:16:02.650 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ6RWD02
+05-05-2026 12:16:02.650 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 6 RWD
+05-05-2026 12:16:02.654 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ6RWD03
+05-05-2026 12:16:02.654 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 6 RWD
+05-05-2026 12:16:02.654 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: KIAEV6GTLAWD00002
+05-05-2026 12:16:02.654 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Kia EV6 GT-Line AWD
+05-05-2026 12:16:02.661 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: KIAEV6GTLAWD00003
+05-05-2026 12:16:02.661 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Kia EV6 GT-Line AWD
+05-05-2026 12:16:02.663 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VOLVOXC40RCHG0002
+05-05-2026 12:16:02.663 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volvo XC40 Recharge AWD
+05-05-2026 12:16:02.663 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VOLVOXC40RCHG0003
+05-05-2026 12:16:02.663 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volvo XC40 Recharge AWD
+05-05-2026 12:16:02.663 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: POLESTAR2LNGRNG02
+05-05-2026 12:16:02.663 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Polestar 2 Long Range AWD
+05-05-2026 12:16:02.675 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: POLESTAR2LNGRNG03
+05-05-2026 12:16:02.675 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Polestar 2 Long Range AWD
+05-05-2026 12:16:02.679 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: RENAULTZOE50KWH02
+05-05-2026 12:16:02.679 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Renault Zoe R135 Z.E.50
+05-05-2026 12:16:02.681 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: RENAULTZOE50KWH03
+05-05-2026 12:16:02.681 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Renault Zoe R135 Z.E.50
+05-05-2026 12:20:52.411 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+05-05-2026 12:20:52.411 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+05-05-2026 12:20:52.411 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 0 ms
+05-05-2026 12:53:35.770 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+05-05-2026 12:53:35.778 [SpringApplicationShutdownHook] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Die Datenbank wurde bereits geschlossen (um das automatische Schliessen beim Stopp der VM zu deaktivieren, die Datenbank URL mit ";DB_CLOSE_ON_EXIT=FALSE" ergänzen)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+05-05-2026 12:53:35.778 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+05-05-2026 12:53:35.778 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+05-05-2026 12:56:33.970 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarting - Starting CarLeaseApplication using Java 17.0.16 with PID 21864 (C:\Users\nevio\BSC_FS26_SE_GROUP04\target\classes started by nevio in C:\Users\nevio\BSC_FS26_SE_GROUP04)
+05-05-2026 12:56:33.970 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+05-05-2026 12:56:34.012 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+05-05-2026 12:56:34.012 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+05-05-2026 12:56:34.639 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+05-05-2026 12:56:34.702 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 57 ms. Found 2 JPA repository interfaces.
+05-05-2026 12:56:35.160 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+05-05-2026 12:56:35.171 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+05-05-2026 12:56:35.172 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.18]
+05-05-2026 12:56:35.223 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+05-05-2026 12:56:35.223 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1211 ms
+05-05-2026 12:56:35.261 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+05-05-2026 12:56:35.422 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+05-05-2026 12:56:35.422 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+05-05-2026 12:56:35.437 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+05-05-2026 12:56:43.830 [restartedMain] INFO  c.v.f.s.VaadinServletContextInitializer.failFastContextInitialized - Search for subclasses and classes with annotations took 8196 ms
+05-05-2026 12:56:44.398 [restartedMain] INFO  c.v.b.d.s.DevModeStartupListener.initDevModeHandler - Starting dev-mode updaters in C:\Users\nevio\BSC_FS26_SE_GROUP04 folder.
+05-05-2026 12:56:44.449 [restartedMain] INFO  c.v.f.s.f.s.FullDependenciesScanner.<init> - Visited 94 classes. Took 24 ms.
+05-05-2026 12:56:44.449 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - Checking if a development mode bundle build is needed
+05-05-2026 12:56:44.704 [restartedMain] INFO  c.v.f.s.f.BundleValidationUtil.needsBuild - A development mode bundle build is not needed
+05-05-2026 12:56:44.737 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Copying frontend resources from jar files ...
+05-05-2026 12:56:44.787 [ForkJoinPool.commonPool-worker-1] INFO  c.v.f.s.f.TaskCopyFrontendFiles.execute - Visited 17 resources. Took 54 ms.
+05-05-2026 12:56:45.108 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+05-05-2026 12:56:45.179 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.4.1.Final
+05-05-2026 12:56:45.220 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+05-05-2026 12:56:45.491 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+05-05-2026 12:56:46.844 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+05-05-2026 12:56:46.926 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+05-05-2026 12:56:47.343 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+05-05-2026 12:56:47.711 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+05-05-2026 12:56:47.740 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+05-05-2026 12:56:47.740 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addAtmosphereHandler - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+05-05-2026 12:56:47.772 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.autoConfigureService - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+05-05-2026 12:56:47.779 [restartedMain] INFO  org.atmosphere.util.ForkJoinPool.<init> - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+05-05-2026 12:56:47.784 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.initWebSocket - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+05-05-2026 12:56:47.788 [restartedMain] INFO  o.a.container.JSR356AsyncSupport.<init> - JSR 356 Mapping path /VAADIN/push
+05-05-2026 12:56:47.796 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Installing Default AtmosphereInterceptors
+05-05-2026 12:56:47.797 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+05-05-2026 12:56:47.797 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+05-05-2026 12:56:47.798 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+05-05-2026 12:56:47.798 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+05-05-2026 12:56:47.798 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+05-05-2026 12:56:47.798 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+05-05-2026 12:56:47.799 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+05-05-2026 12:56:47.799 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+05-05-2026 12:56:47.800 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+05-05-2026 12:56:47.800 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+05-05-2026 12:56:47.800 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.newAInterceptor - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+05-05-2026 12:56:47.800 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.configureAtmosphereInterceptor - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+05-05-2026 12:56:47.800 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+05-05-2026 12:56:47.801 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+05-05-2026 12:56:47.801 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 12:56:47.801 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 12:56:47.801 [restartedMain] INFO  o.a.interceptor.HeartbeatInterceptor.configure - HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+05-05-2026 12:56:47.801 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 12:56:47.801 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 12:56:47.802 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+05-05-2026 12:56:47.802 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+05-05-2026 12:56:47.802 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+05-05-2026 12:56:47.802 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+05-05-2026 12:56:47.802 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+05-05-2026 12:56:47.803 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+05-05-2026 12:56:47.803 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+05-05-2026 12:56:47.803 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+05-05-2026 12:56:47.803 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Shared List Resources: false
+05-05-2026 12:56:47.803 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Broadcaster Polling Wait Time 100
+05-05-2026 12:56:47.804 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Shared ExecutorService supported: true
+05-05-2026 12:56:47.804 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+05-05-2026 12:56:47.804 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Async I/O Thread Pool Size: 200
+05-05-2026 12:56:47.804 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+05-05-2026 12:56:47.804 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+05-05-2026 12:56:47.804 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+05-05-2026 12:56:47.806 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Invoke AtmosphereInterceptor on WebSocket message true
+05-05-2026 12:56:47.806 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - HttpSession supported: true
+05-05-2026 12:56:47.806 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+05-05-2026 12:56:47.806 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.18 using jakarta.servlet/3.0 and jsr356/WebSocket API
+05-05-2026 12:56:47.806 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.info - Atmosphere Framework 3.0.3.slf4jvaadin1 started.
+05-05-2026 12:56:47.809 [restartedMain] INFO  o.atmosphere.cpr.AtmosphereFramework.addInterceptorToAllWrappers - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+05-05-2026 12:56:47.845 [restartedMain] INFO  c.v.f.s.DefaultDeploymentConfiguration.logMessages - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+05-05-2026 12:56:47.881 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path ''
+05-05-2026 12:56:47.889 [restartedMain] INFO  io.carlease.CarLeaseApplication.logStarted - Started CarLeaseApplication in 14.262 seconds (process running for 14.917)
+05-05-2026 12:56:48.227 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000001
+05-05-2026 12:56:48.228 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 12:56:48.232 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000001
+05-05-2026 12:56:48.232 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 12:56:48.235 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLSPLAID0001
+05-05-2026 12:56:48.235 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model S Plaid
+05-05-2026 12:56:48.238 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLXLNG000001
+05-05-2026 12:56:48.239 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model X Long Range
+05-05-2026 12:56:48.243 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400001
+05-05-2026 12:56:48.243 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 12:56:48.246 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00001
+05-05-2026 12:56:48.248 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 12:56:48.251 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIXXDRIVE500001
+05-05-2026 12:56:48.251 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX xDrive50
+05-05-2026 12:56:48.254 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION01
+05-05-2026 12:56:48.254 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 12:56:48.258 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID3PRO58KWH0001
+05-05-2026 12:56:48.258 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.3 Pro
+05-05-2026 12:56:48.261 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIETRON55QUA001
+05-05-2026 12:56:48.261 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi e-tron 55 quattro
+05-05-2026 12:56:48.265 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIQ4ETRON400001
+05-05-2026 12:56:48.266 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi Q4 e-tron 40
+05-05-2026 12:56:48.268 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQC400001
+05-05-2026 12:56:48.269 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQC 400 4MATIC
+05-05-2026 12:56:48.273 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQS450001
+05-05-2026 12:56:48.273 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQS 450+
+05-05-2026 12:56:48.275 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: PORSCHETAYCAN4S01
+05-05-2026 12:56:48.276 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Porsche Taycan 4S
+05-05-2026 12:56:48.279 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD01
+05-05-2026 12:56:48.279 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+05-05-2026 12:56:48.283 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ6RWD01
+05-05-2026 12:56:48.283 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 6 RWD
+05-05-2026 12:56:48.285 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: KIAEV6GTLAWD00001
+05-05-2026 12:56:48.285 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Kia EV6 GT-Line AWD
+05-05-2026 12:56:48.288 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VOLVOXC40RCHG0001
+05-05-2026 12:56:48.288 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volvo XC40 Recharge AWD
+05-05-2026 12:56:48.291 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: POLESTAR2LNGRNG01
+05-05-2026 12:56:48.291 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Polestar 2 Long Range AWD
+05-05-2026 12:56:48.294 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: RENAULTZOE50KWH01
+05-05-2026 12:56:48.294 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Renault Zoe R135 Z.E.50
+05-05-2026 12:56:48.296 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000002
+05-05-2026 12:56:48.297 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 12:56:48.300 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000002
+05-05-2026 12:56:48.300 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 12:56:48.303 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400002
+05-05-2026 12:56:48.303 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 12:56:48.306 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00002
+05-05-2026 12:56:48.306 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 12:56:48.308 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION02
+05-05-2026 12:56:48.308 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 12:56:48.312 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD02
+05-05-2026 12:56:48.312 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+05-05-2026 12:56:48.314 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000003
+05-05-2026 12:56:48.314 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 12:56:48.318 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000004
+05-05-2026 12:56:48.319 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 12:56:48.321 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000005
+05-05-2026 12:56:48.323 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 12:56:48.325 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDL3LR0000006
+05-05-2026 12:56:48.325 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model 3 Long Range
+05-05-2026 12:56:48.328 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000003
+05-05-2026 12:56:48.328 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 12:56:48.331 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000004
+05-05-2026 12:56:48.332 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 12:56:48.335 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000005
+05-05-2026 12:56:48.335 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 12:56:48.339 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLYAWD000006
+05-05-2026 12:56:48.339 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model Y AWD
+05-05-2026 12:56:48.340 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLSPLAID0002
+05-05-2026 12:56:48.340 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model S Plaid
+05-05-2026 12:56:48.342 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLSPLAID0003
+05-05-2026 12:56:48.342 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model S Plaid
+05-05-2026 12:56:48.344 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLXLNG000002
+05-05-2026 12:56:48.345 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model X Long Range
+05-05-2026 12:56:48.348 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: TSLAMDLXLNG000003
+05-05-2026 12:56:48.349 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Tesla Model X Long Range
+05-05-2026 12:56:48.351 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400003
+05-05-2026 12:56:48.351 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 12:56:48.353 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400004
+05-05-2026 12:56:48.354 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 12:56:48.357 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400005
+05-05-2026 12:56:48.357 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 12:56:48.360 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWI4EDRIVE400006
+05-05-2026 12:56:48.360 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW i4 eDrive40
+05-05-2026 12:56:48.367 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00003
+05-05-2026 12:56:48.368 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 12:56:48.372 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00004
+05-05-2026 12:56:48.372 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 12:56:48.376 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00005
+05-05-2026 12:56:48.376 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 12:56:48.381 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIX3XDRIVE00006
+05-05-2026 12:56:48.382 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX3 xDrive
+05-05-2026 12:56:48.384 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIXXDRIVE500002
+05-05-2026 12:56:48.385 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX xDrive50
+05-05-2026 12:56:48.388 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: BMWIXXDRIVE500003
+05-05-2026 12:56:48.388 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: BMW iX xDrive50
+05-05-2026 12:56:48.396 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION03
+05-05-2026 12:56:48.396 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 12:56:48.402 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION04
+05-05-2026 12:56:48.402 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 12:56:48.406 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION05
+05-05-2026 12:56:48.406 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 12:56:48.413 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID4PRO4MOTION06
+05-05-2026 12:56:48.413 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.4 Pro 4Motion
+05-05-2026 12:56:48.417 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID3PRO58KWH0002
+05-05-2026 12:56:48.417 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.3 Pro
+05-05-2026 12:56:48.420 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VWID3PRO58KWH0003
+05-05-2026 12:56:48.420 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volkswagen ID.3 Pro
+05-05-2026 12:56:48.423 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIETRON55QUA002
+05-05-2026 12:56:48.423 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi e-tron 55 quattro
+05-05-2026 12:56:48.427 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIETRON55QUA003
+05-05-2026 12:56:48.427 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi e-tron 55 quattro
+05-05-2026 12:56:48.432 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIQ4ETRON400002
+05-05-2026 12:56:48.432 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi Q4 e-tron 40
+05-05-2026 12:56:48.435 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: AUDIQ4ETRON400003
+05-05-2026 12:56:48.435 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Audi Q4 e-tron 40
+05-05-2026 12:56:48.439 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQC400002
+05-05-2026 12:56:48.439 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQC 400 4MATIC
+05-05-2026 12:56:48.441 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQC400003
+05-05-2026 12:56:48.441 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQC 400 4MATIC
+05-05-2026 12:56:48.443 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQS450002
+05-05-2026 12:56:48.443 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQS 450+
+05-05-2026 12:56:48.449 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: MERCEDESEQS450003
+05-05-2026 12:56:48.449 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Mercedes EQS 450+
+05-05-2026 12:56:48.453 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: PORSCHETAYCAN4S02
+05-05-2026 12:56:48.453 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Porsche Taycan 4S
+05-05-2026 12:56:48.459 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: PORSCHETAYCAN4S03
+05-05-2026 12:56:48.459 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Porsche Taycan 4S
+05-05-2026 12:56:48.464 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD03
+05-05-2026 12:56:48.464 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+05-05-2026 12:56:48.467 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ5RWD04
+05-05-2026 12:56:48.467 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 5 RWD
+05-05-2026 12:56:48.469 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ6RWD02
+05-05-2026 12:56:48.469 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 6 RWD
+05-05-2026 12:56:48.471 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: HYUNDAIONIQ6RWD03
+05-05-2026 12:56:48.471 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Hyundai IONIQ 6 RWD
+05-05-2026 12:56:48.474 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: KIAEV6GTLAWD00002
+05-05-2026 12:56:48.475 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Kia EV6 GT-Line AWD
+05-05-2026 12:56:48.477 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: KIAEV6GTLAWD00003
+05-05-2026 12:56:48.477 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Kia EV6 GT-Line AWD
+05-05-2026 12:56:48.480 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VOLVOXC40RCHG0002
+05-05-2026 12:56:48.480 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volvo XC40 Recharge AWD
+05-05-2026 12:56:48.481 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: VOLVOXC40RCHG0003
+05-05-2026 12:56:48.482 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Volvo XC40 Recharge AWD
+05-05-2026 12:56:48.484 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: POLESTAR2LNGRNG02
+05-05-2026 12:56:48.484 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Polestar 2 Long Range AWD
+05-05-2026 12:56:48.486 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: POLESTAR2LNGRNG03
+05-05-2026 12:56:48.486 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Polestar 2 Long Range AWD
+05-05-2026 12:56:48.487 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: RENAULTZOE50KWH02
+05-05-2026 12:56:48.487 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Renault Zoe R135 Z.E.50
+05-05-2026 12:56:48.489 [restartedMain] INFO  i.c.E.a.service.AddVehicleService.add - Vehicle added to EV catalogue: RENAULTZOE50KWH03
+05-05-2026 12:56:48.489 [restartedMain] INFO  i.c.E.config.VehicleDataInitializer.addIfNotExists - Seeded vehicle: Renault Zoe R135 Z.E.50
+05-05-2026 12:56:57.450 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+05-05-2026 12:56:57.450 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+05-05-2026 12:56:57.459 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 9 ms
+05-05-2026 13:22:27.644 [http-nio-8080-exec-9] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet].log - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: io.carlease.fleet_consulting.domain.InvalidFleetAttributeException: Invalid value for months: must be 24, 36, 48, or 60] with root cause
+io.carlease.fleet_consulting.domain.InvalidFleetAttributeException: Invalid value for months: must be 24, 36, 48, or 60
+	at io.carlease.fleet_consulting.domain.LeaseTerm.of(LeaseTerm.java:21)
+	at io.carlease.fleet_consulting.adapter.in.web.FleetConsultingController.getRecommendations(FleetConsultingController.java:71)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:351)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:174)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at io.carlease.fleet_consulting.adapter.in.web.FleetConsultingController$$SpringCGLIB$$0.getRecommendations(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:261)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:189)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+05-05-2026 14:03:20.316 [http-nio-8080-exec-5] INFO  c.v.flow.spring.SpringInstantiator.getI18NProvider - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
