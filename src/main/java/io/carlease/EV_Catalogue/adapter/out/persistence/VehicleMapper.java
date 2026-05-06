@@ -4,6 +4,8 @@ import io.carlease.EV_Catalogue.domain.*;
 import io.carlease.shared.domain.*;
 import org.springframework.stereotype.Component;
 
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,7 +43,7 @@ public class VehicleMapper {
                 lock != null ? lock.getLockId().toString() : null,
                 lock != null ? lock.getLockedAt() : null,
                 lock != null ? lock.getExpiresAt() : null,
-                lock != null ? lock.getDuration().getHours() : null,
+                lock != null ? lock.getDuration().getMinutes() : null,
                 healthRecords
         );
     }
@@ -88,10 +90,12 @@ public class VehicleMapper {
         VehicleStatus persistedStatus = VehicleStatus.valueOf(entity.getStatus());
         switch (persistedStatus) {
             case RESERVED -> {
-                LockDuration duration = entity.getLockDurationHours() != null
-                        ? LockDuration.ofHours(entity.getLockDurationHours())
-                        : LockDuration.defaultDuration();
-                vehicle.lockVehicle(duration);
+                Instant expiresAt = entity.getExpiresAt();
+                if (expiresAt != null && Instant.now().isBefore(expiresAt)) {
+                    long remainingMinutes = ChronoUnit.MINUTES.between(Instant.now(), expiresAt);
+                    vehicle.lockVehicle(LockDuration.ofMinutes((int) Math.max(1, remainingMinutes)));
+                }
+                // if expiresAt is null or already past, leave vehicle as AVAILABLE
             }
             case UNDER_CONTRACT -> {
                 vehicle.lockVehicle(LockDuration.defaultDuration());

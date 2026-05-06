@@ -66,7 +66,7 @@ class VehicleTest {
         @Test
         void availableVehicleIsLocked() {
             var vehicle = freshVehicle();
-            var duration = LockDuration.ofHours(2);
+            var duration = LockDuration.ofMinutes(120);
 
             vehicle.lockVehicle(duration);
 
@@ -74,15 +74,15 @@ class VehicleTest {
             var lock = vehicle.getLock();
             assertThat(lock).isPresent();
             assertThat(lock.get().getLockId()).isNotNull();
-            assertThat(lock.get().getExpiresAt()).isEqualTo(lock.get().getLockedAt().plus(duration.getHours(), java.time.temporal.ChronoUnit.HOURS));
+            assertThat(lock.get().getExpiresAt()).isEqualTo(lock.get().getLockedAt().plus(duration.getMinutes(), java.time.temporal.ChronoUnit.MINUTES));
         }
 
         @Test
         void lockRejectedOnNonAvailableVehicle() {
             var vehicle = freshVehicle();
-            vehicle.lockVehicle(LockDuration.ofHours(2));
+            vehicle.lockVehicle(LockDuration.ofMinutes(120));
 
-            assertThatThrownBy(() -> vehicle.lockVehicle(LockDuration.ofHours(2))).isInstanceOf(VehicleNotAvailableException.class);
+            assertThatThrownBy(() -> vehicle.lockVehicle(LockDuration.ofMinutes(120))).isInstanceOf(VehicleNotAvailableException.class);
             assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.RESERVED);
         }
 
@@ -91,13 +91,13 @@ class VehicleTest {
             var vehicle = freshVehicle();
             vehicle.remove();
 
-            assertThatThrownBy(() -> vehicle.lockVehicle(LockDuration.ofHours(2))).isInstanceOf(VehicleNotAvailableException.class);
+            assertThatThrownBy(() -> vehicle.lockVehicle(LockDuration.ofMinutes(120))).isInstanceOf(VehicleNotAvailableException.class);
         }
 
         @Test
         void lockIsReleased() {
             var vehicle = freshVehicle();
-            vehicle.lockVehicle(LockDuration.ofHours(2));
+            vehicle.lockVehicle(LockDuration.ofMinutes(120));
 
             vehicle.releaseLock();
 
@@ -115,13 +115,13 @@ class VehicleTest {
         @Test
         void expiredLockIsAutoClearedAndVehicleCanBeLockedAgain() throws Exception {
             var vehicle = freshVehicle();
-            vehicle.lockVehicle(LockDuration.ofHours(2));
+            vehicle.lockVehicle(LockDuration.ofMinutes(120));
             var lock = vehicle.getLock().get();
             Field lockedAt = ReservationLock.class.getDeclaredField("lockedAt");
             lockedAt.setAccessible(true);
             lockedAt.set(lock, Instant.now().minus(3, ChronoUnit.HOURS));
 
-            vehicle.lockVehicle(LockDuration.ofHours(2));
+            vehicle.lockVehicle(LockDuration.ofMinutes(120));
 
             assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.RESERVED);
             assertThat(vehicle.getLock()).isPresent();
@@ -130,10 +130,10 @@ class VehicleTest {
         @Test
         void lockVehicleRejectedWhenUnderContract() {
             var vehicle = freshVehicle();
-            vehicle.lockVehicle(LockDuration.ofHours(2));
+            vehicle.lockVehicle(LockDuration.ofMinutes(120));
             vehicle.assignToContract();
 
-            assertThatThrownBy(() -> vehicle.lockVehicle(LockDuration.ofHours(2)))
+            assertThatThrownBy(() -> vehicle.lockVehicle(LockDuration.ofMinutes(120)))
                     .isInstanceOf(VehicleNotAvailableException.class);
             assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.UNDER_CONTRACT);
         }
@@ -145,7 +145,7 @@ class VehicleTest {
         @Test
         void contractConfirmedOnReservedVehicle() {
             var vehicle = freshVehicle();
-            vehicle.lockVehicle(LockDuration.ofHours(2));
+            vehicle.lockVehicle(LockDuration.ofMinutes(120));
 
             vehicle.assignToContract();
 
@@ -164,7 +164,7 @@ class VehicleTest {
         @Test
         void contractConfirmationRejectedWhenAlreadyUnderContract() {
             var vehicle = freshVehicle();
-            vehicle.lockVehicle(LockDuration.ofHours(2));
+            vehicle.lockVehicle(LockDuration.ofMinutes(120));
             vehicle.assignToContract();
 
             assertThatThrownBy(vehicle::assignToContract).isInstanceOf(VehicleContractViolationException.class);
@@ -184,7 +184,7 @@ class VehicleTest {
         @Test
         void removalRejectedOnReservedVehicle() {
             var vehicle = freshVehicle();
-            vehicle.lockVehicle(LockDuration.ofHours(2));
+            vehicle.lockVehicle(LockDuration.ofMinutes(120));
 
             assertThatThrownBy(vehicle::remove).isInstanceOf(VehicleRemovalException.class);
             assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.RESERVED);
@@ -201,7 +201,7 @@ class VehicleTest {
         @Test
         void removeRejectedWhenUnderContract() {
             var vehicle = freshVehicle();
-            vehicle.lockVehicle(LockDuration.ofHours(2));
+            vehicle.lockVehicle(LockDuration.ofMinutes(120));
             vehicle.assignToContract();
 
             assertThatThrownBy(vehicle::remove).isInstanceOf(VehicleRemovalException.class);
@@ -341,7 +341,7 @@ class VehicleTest {
 
         @Test
         void lockDurationHoursMustBeGreaterThanZero() {
-            assertThatThrownBy(() -> LockDuration.ofHours(0)).isInstanceOf(InvalidVehicleAttributeException.class);
+            assertThatThrownBy(() -> LockDuration.ofMinutes(0)).isInstanceOf(InvalidVehicleAttributeException.class);
         }
 
         @Test

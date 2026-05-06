@@ -12,8 +12,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 class ReservationLockTest {
 
     //helper methods
-    private ReservationLock lockWithHours(int hours) {
-        return new ReservationLock(LockDuration.ofHours(hours));
+    private ReservationLock lockWithMinutes(int minutes) {
+        return new ReservationLock(LockDuration.ofMinutes(minutes));
     }
 
     //Sets the lockedAt field of a ReservationLock instance to a specific Instant using reflection
@@ -30,7 +30,7 @@ class ReservationLockTest {
 
         @Test
         void expiredLockIsDetected() throws Exception {
-            var lock = lockWithHours(2);
+            var lock = lockWithMinutes(120);
             // Set lockedAt to 3 hours ago so that lockedAt + 2h is 1 hour in the past
             setLockedAt(lock, Instant.now().minus(3, ChronoUnit.HOURS));
             assertThat(lock.isExpired()).isTrue();
@@ -38,7 +38,7 @@ class ReservationLockTest {
 
         @Test
         void activeLockIsNotExpired() {
-            var lock = lockWithHours(2);
+            var lock = lockWithMinutes(120);
             assertThat(lock.isExpired()).isFalse();
         }
     }

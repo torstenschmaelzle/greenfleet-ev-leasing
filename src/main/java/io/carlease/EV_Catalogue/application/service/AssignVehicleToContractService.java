@@ -10,9 +10,11 @@ import org.springframework.stereotype.Service;
 public class AssignVehicleToContractService implements assignVehicleToContract {
 
     private final VehiclePersistancePort vehiclePersistancePort;
+    private final VehicleStatusBroadcaster broadcaster;
 
-    public AssignVehicleToContractService(VehiclePersistancePort vehiclePersistancePort) {
+    public AssignVehicleToContractService(VehiclePersistancePort vehiclePersistancePort, VehicleStatusBroadcaster broadcaster) {
         this.vehiclePersistancePort = vehiclePersistancePort;
+        this.broadcaster = broadcaster;
     }
 
     @Override
@@ -21,5 +23,6 @@ public class AssignVehicleToContractService implements assignVehicleToContract {
                 .orElseThrow(() -> new IllegalArgumentException("Vehicle not found: " + vehicleId.getVin()));
         vehicle.assignToContract();
         vehiclePersistancePort.save(vehicle);
+        broadcaster.broadcast(vehicleId.getVin(), "UNDER_CONTRACT");
     }
 }
