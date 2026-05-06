@@ -7,46 +7,55 @@ import java.util.Optional;
 @Component
 public class ContractMapper {
 
-    public static ContractJpaEntity mapToJpaEntity(Contract contract) {
+    public static ContractJpaEntity mapToJpaEntity(VehicleContract contract) {
+        // leaseTerm/interest are null for fleet vehicle contracts (pre-calculated installment)
         return new ContractJpaEntity(
                 contract.number().number(),
-                contract.lessee().customer(),
+                contract.lessee().name(),
+                contract.lessee().company(),
+                contract.lessee().email(),
                 contract.car().car(),
                 contract.price().amountInCents(),
                 contract.price().currency().name(),
-                contract.isCalculated() ? contract.leaseTerm().noOfMonths() : null,
-                contract.isCalculated() ? contract.interest().perYear() : null,
+                contract.isCalculated() && contract.leaseTerm() != null ? contract.leaseTerm().noOfMonths() : null,
+                contract.isCalculated() && contract.interest() != null ? contract.interest().perYear() : null,
                 contract.isApproved() ? contract.approvalDate().date() : null,
                 contract.isSigned() ? contract.signatureDate().date() : null,
                 contract.isCalculated() ? contract.downPayment().amount() : null,
-                contract.isCalculated() ? contract.residualValue().amount() : null);
+                contract.isCalculated() ? contract.residualValue().amount() : null,
+                contract.isCalculated() ? contract.installment().amountInCents() : null);
     }
 
-    public static Contract mapToContract(ContractJpaEntity contractJpaEntity) {
-        return ContractFactory.restoreContract(
-                ContractNumber.of(contractJpaEntity.getNumber()),
-                Customer.of(contractJpaEntity.getLessee()),
-                Car.of(contractJpaEntity.getCar()),
-                Amount.ofCents(contractJpaEntity.getPriceAmount(), Currency.valueOf(contractJpaEntity.getPriceCurrency())),
-                contractJpaEntity.getLeaseTermInMonths() != null
-                        ? Optional.of(LeaseTerm.ofMonths(contractJpaEntity.getLeaseTermInMonths()))
-                        : Optional.empty(),
-                contractJpaEntity.getInterestPerYear() != null
-                        ? Optional.of(Interest.of(contractJpaEntity.getInterestPerYear()))
-                        : Optional.empty(),
-                contractJpaEntity.getApprovalDate() != null
-                        ? Optional.of(SignDate.of(contractJpaEntity.getApprovalDate()))
-                        : Optional.empty(),
-                contractJpaEntity.getSignatureDate() != null
-                        ? Optional.of(SignDate.of(contractJpaEntity.getSignatureDate()))
-                        : Optional.empty(),
-                contractJpaEntity.getDownPayment() != null
-                        ? Amount.of(contractJpaEntity.getDownPayment(), Currency.valueOf(contractJpaEntity.getPriceCurrency()))
-                        : Amount.ofCents(0, Currency.valueOf(contractJpaEntity.getPriceCurrency())),
-                contractJpaEntity.getResidualValue() != null
-                        ? Amount.of(contractJpaEntity.getResidualValue(), Currency.valueOf(contractJpaEntity.getPriceCurrency()))
-                        : Amount.ofCents(0, Currency.valueOf(contractJpaEntity.getPriceCurrency()))
-        );
-    }
+    public static VehicleContract mapToVehicleContract(ContractJpaEntity e) {
+        Currency currency = Currency.valueOf(e.getPriceCurrency());
+        Customer lessee = Customer.of(
+                e.getLessee(),
+                e.getLesseeCompany() != null ? e.getLesseeCompany() : "",
+                e.getLesseeEmail()   != null ? e.getLesseeEmail()   : "");
 
+        // Fleet vehicle contract: has pre-calculated installment but no leaseTerm/interest
+        if (e.getMonthlyInstallmentCents() != null && e.getLeaseTermInMonths() == null) {
+            return ContractFactory.restoreFleetVehicleContract(
+                    ContractNumber.of(e.getNumber()),
+                    lessee,
+                    Car.of(e.getCar()),
+                    Amount.ofCents(e.getPriceAmount(), currency),
+                    Amount.ofCents(e.getMonthlyInstallmentCents(), currency),
+                    e.getApprovalDate() != null ? Optional.of(SignDate.of(e.getApprovalDate())) : Optional.empty(),
+                    e.getSignatureDate() != null ? Optional.of(SignDate.of(e.getSignatureDate())) : Optional.empty());
+        }
+
+        // Regular contract: recalculate installment from leaseTerm + interest
+        return ContractFactory.restoreVehicleContract(
+                ContractNumber.of(e.getNumber()),
+                lessee,
+                Car.of(e.getCar()),
+                Amount.ofCents(e.getPriceAmount(), currency),
+                e.getLeaseTermInMonths() != null ? Optional.of(LeaseTerm.ofMonths(e.getLeaseTermInMonths())) : Optional.empty(),
+                e.getInterestPerYear()   != null ? Optional.of(Interest.of(e.getInterestPerYear()))           : Optional.empty(),
+                e.getApprovalDate()      != null ? Optional.of(SignDate.of(e.getApprovalDate()))              : Optional.empty(),
+                e.getSignatureDate()     != null ? Optional.of(SignDate.of(e.getSignatureDate()))             : Optional.empty(),
+                e.getDownPayment()       != null ? Amount.of(e.getDownPayment(), currency)                    : Amount.ofCents(0, currency),
+                e.getResidualValue()     != null ? Amount.of(e.getResidualValue(), currency)                  : Amount.ofCents(0, currency));
+    }
 }

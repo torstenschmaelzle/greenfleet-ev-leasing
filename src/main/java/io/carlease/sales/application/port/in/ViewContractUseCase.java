@@ -4,5 +4,5 @@ import io.carlease.sales.domain.*;
 
 public interface ViewContractUseCase {
 
-    Contract with(ContractNumber number);
+    VehicleContract with(ContractNumber number);
 }

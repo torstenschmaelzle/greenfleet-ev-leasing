@@ -13,7 +13,7 @@ public class ContractFactoryTest {
 		// given
 
 		// when
-		Contract contract = ContractFactory.restoreContract(
+		VehicleContract contract = ContractFactory.restoreVehicleContract(
 				ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Mercedes Benz C-Class"),

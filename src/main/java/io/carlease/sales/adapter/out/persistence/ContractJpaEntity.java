@@ -21,6 +21,10 @@ public class ContractJpaEntity {
 
 	private String lessee;
 
+	private String lesseeCompany;
+
+	private String lesseeEmail;
+
 	private String car;
 
 	@Column(name = "price_amount")
@@ -40,5 +44,7 @@ public class ContractJpaEntity {
     private Double downPayment;
 
     private Double residualValue;
+
+    private Long monthlyInstallmentCents;
 
 }

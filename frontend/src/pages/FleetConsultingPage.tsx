@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { getRecommendations } from '../api/fleetConsulting';
 import type { FleetBundleRecommendation, FleetBundle, BundleVehicle } from '../api/fleetConsulting';
+import { reserveFleetBundle } from '../api/sales';
 import PageHeader from '../components/PageHeader';
 
 // ─── Unsplash image logic (unchanged) ───────────────────────────────────────
@@ -163,10 +165,13 @@ function VehicleImageCard({ v }: { v: BundleVehicle }) {
   );
 }
 
-function BundleCard({ bundle, expanded, onToggle }: {
+function BundleCard({ bundle, expanded, onToggle, onReserve, reserving, reserveError }: {
   bundle: FleetBundle;
   expanded: boolean;
   onToggle: () => void;
+  onReserve: () => void;
+  reserving: boolean;
+  reserveError: string;
 }) {
   const meta = BUNDLE_META[bundle.bundleType] ?? {
     label: bundle.bundleType, accent: 'var(--color-text-muted)', lightBg: 'var(--color-bg)',
@@ -252,6 +257,29 @@ function BundleCard({ bundle, expanded, onToggle }: {
             <div style={{ fontSize: 10, color: 'var(--color-text-disabled)', marginTop: 3 }}>{sub}</div>
           </div>
         ))}
+      </div>
+
+      {/* Reserve button */}
+      <div style={{ padding: '14px 22px', borderBottom: '1px solid var(--color-border-light)', display: 'flex', alignItems: 'center', gap: 14 }}>
+        <button
+          onClick={onReserve}
+          disabled={reserving}
+          style={{
+            padding: '10px 24px', fontSize: 14, fontWeight: 600,
+            cursor: reserving ? 'default' : 'pointer',
+            background: reserving ? 'var(--color-brand-muted)' : meta.accent,
+            color: 'white', border: 'none', borderRadius: 6,
+            opacity: reserving ? 0.7 : 1,
+            transition: 'opacity var(--transition-fast)',
+          }}
+        >
+          {reserving ? 'Reserving vehicles…' : 'Reserve this bundle'}
+        </button>
+        {reserveError && (
+          <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-error)', fontWeight: 500 }}>
+            {reserveError}
+          </span>
+        )}
       </div>
 
       {/* Expand toggle */}
@@ -462,6 +490,8 @@ const inputStyle: React.CSSProperties = {
 
 // ─── Main page ───────────────────────────────────────────────────────────────
 export default function FleetConsultingPage() {
+  const navigate = useNavigate();
+
   // Form state — unchanged
   const [dailyKm,      setDailyKm]      = useState(100);
   const [vehicles,     setVehicles]     = useState(3);
@@ -479,6 +509,8 @@ export default function FleetConsultingPage() {
   const [loading,  setLoading]  = useState(false);
   const [error,    setError]    = useState('');
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+  const [reservingBundle, setReservingBundle] = useState<string | null>(null);
+  const [reserveErrors, setReserveErrors] = useState<Record<string, string>>({});
   const [submitHov, setSubmitHov] = useState(false);
 
   // API call — unchanged
@@ -779,6 +811,38 @@ export default function FleetConsultingPage() {
               bundle={bundle}
               expanded={!!expanded[bundle.bundleType]}
               onToggle={() => toggleBundle(bundle.bundleType)}
+              reserving={reservingBundle === bundle.bundleType}
+              reserveError={reserveErrors[bundle.bundleType] ?? ''}
+              onReserve={async () => {
+                setReservingBundle(bundle.bundleType);
+                setReserveErrors(prev => ({ ...prev, [bundle.bundleType]: '' }));
+                try {
+                  await reserveFleetBundle(bundle.vehicles.map(v => v.vin));
+                  navigate('/dashboard/sales', {
+                    state: {
+                      bundleType: bundle.bundleType,
+                      leaseTermMonths: result!.leaseTermMonths,
+                      vehicles: bundle.vehicles.map(v => ({
+                        vin: v.vin,
+                        brand: v.brand,
+                        model: v.model,
+                        vehicleType: v.vehicleType,
+                        rangeKm: v.rangeKm,
+                        co2SavingsKgPerYear: v.co2SavingsKgPerYear,
+                        monthlyInstallmentCents: v.monthlyInstallmentCents,
+                        currency: v.currency,
+                      })),
+                    },
+                  });
+                } catch (err) {
+                  setReserveErrors(prev => ({
+                    ...prev,
+                    [bundle.bundleType]: err instanceof Error ? err.message : 'Reservation failed',
+                  }));
+                } finally {
+                  setReservingBundle(null);
+                }
+              }}
             />
           ))}
         </div>

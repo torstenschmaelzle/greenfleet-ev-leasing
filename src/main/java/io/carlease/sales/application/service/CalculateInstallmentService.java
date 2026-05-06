@@ -29,7 +29,7 @@ public class CalculateInstallmentService implements CalculateInstallmentUseCase 
             throw new IllegalArgumentException("Contract does not exist: " + contractNumber);
         }
 
-        Contract contract = contractPersistencePort.with(number);
+        VehicleContract contract = contractPersistencePort.with(number);
 
         contract.calculateInstallmentFor(
                 new LeaseTerm(leaseTerm),

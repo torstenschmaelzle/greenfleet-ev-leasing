@@ -10,7 +10,7 @@ class ContractTest {
 	@Test
 	void givenAFilledOutContract_whenCalculate_thenInstallmentIsX() {
 		// given
-		var contract = new Contract(ContractNumber.of("4711"),
+		var contract = new VehicleContract(ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Volkswagen ID.3"),
 				Amount.of(40_000, Currency.EUR));
@@ -28,7 +28,7 @@ class ContractTest {
 	@Test
 	void givenAFilledOutContractWith0Interest_whenCalculate_thenInstallmentIsX() {
 		// given
-		var contract = new Contract(ContractNumber.of("4711"),
+		var contract = new VehicleContract(ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Volkswagen ID.3"),
 				Amount.of(40_000, Currency.EUR));
@@ -44,7 +44,7 @@ class ContractTest {
 	@Test
 	void givenACalculatedContract_whenApprove_thenContractIsApproved() {
 		// given
-		var contract = new Contract(ContractNumber.of("4711"),
+		var contract = new VehicleContract(ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Mercedes Benz C-Class"),
 				Amount.of(20_000, Currency.EUR));
@@ -61,11 +61,11 @@ class ContractTest {
 	@Test
 	void givenTwoContractsWithSameIdButDifferentFields_whenEquals_thenShouldReturnTrue() {
 		// given
-		var contract1 = new Contract(ContractNumber.of("4711"),
+		var contract1 = new VehicleContract(ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Mercedes Benz C-Class"),
 				Amount.of(40_000, Currency.EUR));
-        var contract2 = new Contract(ContractNumber.of("4711"),
+        var contract2 = new VehicleContract(ContractNumber.of("4711"),
 				Customer.of("Bob Myers"),
 				Car.of("Volkswagen ID.3"),
 				Amount.of(30_000, Currency.EUR));
@@ -80,11 +80,11 @@ class ContractTest {
 	@Test
 	void givenTwoContractsWithDifferentIdButSameFields_whenEquals_thenShouldReturnFalse() {
 		// given
-		var contract1 = new Contract(ContractNumber.of("4711"),
+		var contract1 = new VehicleContract(ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Mercedes Benz C-Class"),
 				Amount.of(40_000, Currency.EUR));
-        var contract2 = new Contract(ContractNumber.of("4712"),
+        var contract2 = new VehicleContract(ContractNumber.of("4712"),
 				Customer.of("John Buyer"),
 				Car.of("Mercedes Benz C-Class"),
 				Amount.of(40_000, Currency.EUR));
@@ -99,11 +99,11 @@ class ContractTest {
 	@Test
 	void givenTwoContractsWithSameId_whenHashcode_thenShouldBeEqual() {
 		// given
-		var contract1 = new Contract(ContractNumber.of("4711"),
+		var contract1 = new VehicleContract(ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Mercedes Benz C-Class"),
 				Amount.of(40_000, Currency.EUR));
-        var contract2 = new Contract(ContractNumber.of("4711"),
+        var contract2 = new VehicleContract(ContractNumber.of("4711"),
 				Customer.of("Bob Myers"),
 				Car.of("Volkswagen ID.3"),
 				Amount.of(30_000, Currency.EUR));
@@ -115,12 +115,11 @@ class ContractTest {
 		// then
 		assertThat(hashcode1).isEqualTo(hashcode2);
 	}
-	// Given BDD Scenario
+
 	@Test
 	void givenAContractWithDownPaymentAndResidualValue_whenCalculate_thenInstallmentMatchesScenario() {
-
 		// given
-		var contract = new Contract(ContractNumber.of("4711"),
+		var contract = new VehicleContract(ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Volkswagen ID.3"),
 				Amount.of(40_000, Currency.EUR));
@@ -135,15 +134,16 @@ class ContractTest {
 		assertThat(contract.isCalculated()).isTrue();
 		assertThat(contract.installment()).isEqualTo(Amount.of(42.89, Currency.EUR));
 	}
+
 	@Test
 	void whenCalculatedWithOldMethod_thenSameAsNewMethodWithZeroDownPaymentAndResidualValue() {
 		// given
-		var c1 = new Contract(ContractNumber.of("4711"),
+		var c1 = new VehicleContract(ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Volkswagen ID.3"),
 				Amount.of(40_000, Currency.EUR));
 
-		var c2 = new Contract(ContractNumber.of("4711"),
+		var c2 = new VehicleContract(ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Volkswagen ID.3"),
 				Amount.of(40_000, Currency.EUR));
@@ -163,7 +163,7 @@ class ContractTest {
 	@Test
 	void givenNegativeDownPayment_whenCalculate_thenThrowsIllegalArgumentException() {
 		// given
-		var contract = new Contract(ContractNumber.of("4711"),
+		var contract = new VehicleContract(ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Volkswagen ID.3"),
 				Amount.of(40_000, Currency.EUR));
@@ -174,11 +174,10 @@ class ContractTest {
 		).isInstanceOf(IllegalArgumentException.class);
 	}
 
-
 	@Test
 	void givenNegativeResidualValue_whenCalculate_thenThrowsIllegalArgumentException() {
 		// given
-		var contract = new Contract(ContractNumber.of("4711"),
+		var contract = new VehicleContract(ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Volkswagen ID.3"),
 				Amount.of(40_000, Currency.EUR));
@@ -188,15 +187,16 @@ class ContractTest {
 				contract.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7), Amount.of(0, Currency.EUR), Amount.of(-1, Currency.EUR))
 		).isInstanceOf(IllegalArgumentException.class);
 	}
+
 	@Test
 	void whenDownPaymentIncreases_thenInstallmentDecreases() {
 		// given
-		var noDp = new Contract(ContractNumber.of("4711"),
+		var noDp = new VehicleContract(ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Volkswagen ID.3"),
 				Amount.of(40_000, Currency.EUR));
 
-		var withDp = new Contract(ContractNumber.of("4711"),
+		var withDp = new VehicleContract(ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Volkswagen ID.3"),
 				Amount.of(40_000, Currency.EUR));
@@ -209,16 +209,15 @@ class ContractTest {
 		assertThat(withDp.installment().amount()).isLessThan(noDp.installment().amount());
 	}
 
-
 	@Test
 	void whenResidualValueIncreases_thenInstallmentDecreases() {
 		// given
-		var noRv = new Contract(ContractNumber.of("4711"),
+		var noRv = new VehicleContract(ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Volkswagen ID.3"),
 				Amount.of(40_000, Currency.EUR));
 
-		var withRv = new Contract(ContractNumber.of("4711"),
+		var withRv = new VehicleContract(ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Volkswagen ID.3"),
 				Amount.of(40_000, Currency.EUR));
@@ -234,7 +233,7 @@ class ContractTest {
 	@Test
 	void givenAnApprovedContract_whenSign_thenContractIsSigned() {
 		// given
-		var contract = new Contract(
+		var contract = new VehicleContract(
 				ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Mercedes Benz C-Class"),
@@ -254,7 +253,7 @@ class ContractTest {
 	@Test
 	void givenAnApprovedContract_whenSign_thenApprovalDateIsStillPresent() {
 		// given
-		var contract = new Contract(
+		var contract = new VehicleContract(
 				ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Mercedes Benz C-Class"),
@@ -275,7 +274,7 @@ class ContractTest {
 	@Test
 	void givenASignedContractData_whenRestoreContract_thenContractIsSigned() {
 		// when
-		var contract = ContractFactory.restoreContract(
+		var contract = ContractFactory.restoreVehicleContract(
 				ContractNumber.of("4711"),
 				Customer.of("John Buyer"),
 				Car.of("Mercedes Benz C-Class"),
@@ -294,6 +293,5 @@ class ContractTest {
 		assertThat(contract.isSigned()).isTrue();
 		assertThat(contract.signatureDate()).isEqualTo(SignDate.of(2018, 12, 25));
 	}
-
 
 }

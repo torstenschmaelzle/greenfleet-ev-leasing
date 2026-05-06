@@ -86,8 +86,19 @@ public class VehicleMapper {
         }
 
         VehicleStatus persistedStatus = VehicleStatus.valueOf(entity.getStatus());
-        if (persistedStatus == VehicleStatus.REMOVED) {
-            vehicle.remove();
+        switch (persistedStatus) {
+            case RESERVED -> {
+                LockDuration duration = entity.getLockDurationHours() != null
+                        ? LockDuration.ofHours(entity.getLockDurationHours())
+                        : LockDuration.defaultDuration();
+                vehicle.lockVehicle(duration);
+            }
+            case UNDER_CONTRACT -> {
+                vehicle.lockVehicle(LockDuration.defaultDuration());
+                vehicle.assignToContract();
+            }
+            case REMOVED -> vehicle.remove();
+            default -> { /* AVAILABLE — already the initial state */ }
         }
 
         return vehicle;
