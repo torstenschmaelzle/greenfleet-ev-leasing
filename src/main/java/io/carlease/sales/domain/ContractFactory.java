@@ -30,6 +30,23 @@ public class ContractFactory {
         return contract;
     }
 
+    public static VehicleContract restoreFleetVehicleContract(
+            ContractNumber number, Customer lessee, Car car, Amount price,
+            Amount monthlyInstallment,
+            Optional<SignDate> approvalDate, Optional<SignDate> signatureDate) {
+        requireNonNull(number);
+        requireNonNull(lessee);
+        requireNonNull(car);
+        requireNonNull(price);
+        requireNonNull(monthlyInstallment);
+
+        var contract = new VehicleContract(number, lessee, car, price);
+        contract.acceptInstallment(monthlyInstallment);
+        approvalDate.ifPresent(contract::approve);
+        signatureDate.ifPresent(contract::sign);
+        return contract;
+    }
+
     public static FleetContract restoreFleetContract(
             FleetContractNumber number, Customer customer, LeaseTerm leaseTerm,
             String bundleType, List<VehicleContract> vehicleContracts,

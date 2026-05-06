@@ -18,7 +18,11 @@ public class FleetContractJpaEntity {
     @Id
     private String number;
 
-    private String customer;
+    private String customerName;
+
+    private String customerCompany;
+
+    private String customerEmail;
 
     private int leaseTermMonths;
 

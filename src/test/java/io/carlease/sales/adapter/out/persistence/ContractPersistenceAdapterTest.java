@@ -23,7 +23,7 @@ public class ContractPersistenceAdapterTest {
     void loadsContract() {
         VehicleContract contract = contractPersistenceAdapter.with(new ContractNumber("1"));
 
-        assertThat(contract.lessee()).isEqualTo(new Customer("John Buyer"));
+        assertThat(contract.lessee()).isEqualTo(Customer.of("John Buyer"));
         assertThat(contract.car()).isEqualTo(new Car("Volkswagen ID.3"));
         assertThat(contract.price()).isEqualTo(Amount.of(50000, Currency.EUR));
     }

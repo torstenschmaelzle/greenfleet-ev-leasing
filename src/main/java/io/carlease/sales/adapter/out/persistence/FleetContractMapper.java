@@ -14,11 +14,13 @@ public class FleetContractMapper {
 
         return new FleetContractJpaEntity(
                 fleetContract.number().number(),
-                fleetContract.customer().customer(),
+                fleetContract.customer().name(),
+                fleetContract.customer().company(),
+                fleetContract.customer().email(),
                 fleetContract.leaseTerm().noOfMonths(),
                 fleetContract.bundleType(),
                 fleetContract.isApproved() ? fleetContract.approvalDate().date() : null,
-                fleetContract.isSigned() ? fleetContract.signatureDate().date() : null,
+                fleetContract.isSigned()   ? fleetContract.signatureDate().date() : null,
                 vehicleContractNumbers
         );
     }
@@ -27,7 +29,7 @@ public class FleetContractMapper {
                                             List<VehicleContract> vehicleContracts) {
         return ContractFactory.restoreFleetContract(
                 FleetContractNumber.of(entity.getNumber()),
-                Customer.of(entity.getCustomer()),
+                Customer.of(entity.getCustomerName(), entity.getCustomerCompany(), entity.getCustomerEmail()),
                 LeaseTerm.ofMonths(entity.getLeaseTermMonths()),
                 entity.getBundleType(),
                 vehicleContracts,

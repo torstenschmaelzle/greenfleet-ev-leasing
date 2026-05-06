@@ -151,27 +151,19 @@ export default function DashboardLayout() {
           Fleet Consulting
         </NavLink>
 
-        {/* Sales — coming soon */}
-        <div style={{
-          ...navLinkBase,
-          color: 'var(--color-sidebar-muted)',
-          cursor: 'default',
-          opacity: 0.6,
-        }}>
+        <NavLink
+          to="/dashboard/sales"
+          style={({ isActive }) => ({
+            ...navLinkBase,
+            color: isActive ? '#ffffff' : 'var(--color-sidebar-text)',
+            fontWeight: isActive ? 600 : 400,
+            background: isActive ? 'rgba(22,163,74,0.30)' : 'transparent',
+            boxShadow: isActive ? 'inset 2px 0 0 #4ade80' : 'none',
+          })}
+        >
           <IconBriefcase />
           Sales
-          <span style={{
-            marginLeft: 'auto',
-            fontSize: 10,
-            fontWeight: 600,
-            background: 'var(--color-sidebar-faint)',
-            color: 'var(--color-sidebar-muted)',
-            padding: '2px 7px', borderRadius: 100,
-            letterSpacing: 0.3,
-          }}>
-            Soon
-          </span>
-        </div>
+        </NavLink>
 
         {/* Spacer */}
         <div style={{ flex: 1 }} />

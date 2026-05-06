@@ -62,6 +62,14 @@ public class VehicleContract {
         calculateInstallmentFor(leaseTerm, interest, downPayment, residualValue);
     }
 
+    public void acceptInstallment(Amount installment) {
+        requireNonNull(installment);
+        assert !isApproved();
+        Amount zero = Amount.ofCents(0, installment.currency());
+        this.calculation = Optional.of(new Calculation(null, null, installment, zero, zero));
+        assert isCalculated();
+    }
+
     public void calculateInstallmentFor(LeaseTerm leaseTerm, Interest interest, Amount downPayment, Amount residualValue) {
         requireNonNull(leaseTerm);
         requireNonNull(interest);
