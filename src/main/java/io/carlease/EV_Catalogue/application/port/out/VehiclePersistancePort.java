@@ -4,6 +4,7 @@ import io.carlease.EV_Catalogue.domain.Vehicle;
 import io.carlease.EV_Catalogue.domain.VehicleId;
 import org.jmolecules.ddd.annotation.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -16,4 +17,6 @@ public interface VehiclePersistancePort {
     Optional<Vehicle> findById(VehicleId vehicleId);
 
     void deleteById(VehicleId vehicleId);
+
+    List<Vehicle> findAllReserved();
 }

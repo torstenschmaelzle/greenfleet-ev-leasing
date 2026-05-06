@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { vehiclesApi } from '../api/vehicles';
 import { useAuth } from '../context/AuthContext';
@@ -7,12 +7,14 @@ import PageHeader from '../components/PageHeader';
 
 const UNSPLASH_KEY = 'YOUR_UNSPLASH_ACCESS_KEY';
 
-const STATUS_STYLE: Record<string, { bg: string; color: string; label: string }> = {
-  AVAILABLE:      { bg: '#dcfce7', color: '#15803d', label: 'Available' },
-  RESERVED:       { bg: '#fff7ed', color: '#c2410c', label: 'Reserved' },
-  UNDER_CONTRACT: { bg: '#e0f2fe', color: '#0369a1', label: 'Under Contract' },
-  REMOVED:        { bg: '#f1f5f9', color: '#64748b', label: 'Removed' },
+const STATUS_STYLE: Record<string, { bg: string; color: string; label: string; sectionAccent: string }> = {
+  AVAILABLE:      { bg: '#dcfce7', color: '#15803d', label: 'Available',      sectionAccent: '#16a34a' },
+  RESERVED:       { bg: '#fff7ed', color: '#c2410c', label: 'Reserved',       sectionAccent: '#ea580c' },
+  UNDER_CONTRACT: { bg: '#e0f2fe', color: '#0369a1', label: 'Under Contract', sectionAccent: '#0284c7' },
+  REMOVED:        { bg: '#f1f5f9', color: '#64748b', label: 'Removed',        sectionAccent: '#94a3b8' },
 };
+
+const STATUS_ORDER = ['AVAILABLE', 'RESERVED', 'UNDER_CONTRACT', 'REMOVED'];
 
 const imageCache: Record<string, string | null> = {};
 
@@ -409,31 +411,37 @@ export default function CataloguePage() {
   const isWorker = user?.role === 'WORKER';
 
   const [vehicles, setVehicles]     = useState<Vehicle[]>([]);
-  const [filtered, setFiltered]     = useState<Vehicle[]>([]);
   const [search, setSearch]         = useState('');
   const [error, setError]           = useState('');
   const [searchFocused, setSearchFocused] = useState(false);
+  const loadRef = useRef<() => void>(() => {});
 
   const load = async () => {
     try {
       const data = await vehiclesApi.list();
       setVehicles(data);
-      setFiltered(data);
     } catch (_e) {
       setError('Failed to load vehicles');
     }
   };
 
+  loadRef.current = load;
+
   useEffect(() => { load(); }, []);
 
+  // SSE: auto-refresh when any vehicle status changes
   useEffect(() => {
-    const q = search.toLowerCase();
-    setFiltered(vehicles.filter(v =>
-      v.vin.toLowerCase().includes(q) ||
-      v.brand.toLowerCase().includes(q) ||
-      v.model.toLowerCase().includes(q),
-    ));
-  }, [search, vehicles]);
+    const es = new EventSource('/api/catalogue/vehicles/events');
+    es.addEventListener('vehicle-status-changed', () => { loadRef.current(); });
+    return () => es.close();
+  }, []);
+
+  const q = search.toLowerCase();
+  const filtered = vehicles.filter(v =>
+    v.vin.toLowerCase().includes(q) ||
+    v.brand.toLowerCase().includes(q) ||
+    v.model.toLowerCase().includes(q),
+  );
 
   const handleDelete = async (vin: string, label: string) => {
     if (!window.confirm(`Remove ${label}? This cannot be undone.`)) return;
@@ -522,24 +530,61 @@ export default function CataloguePage() {
         </div>
       )}
 
-      {/* Card grid or empty state */}
+      {/* Grouped sections or empty state */}
       {filtered.length === 0 ? (
         <EmptyState hasSearch={search.length > 0} />
       ) : (
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(272px, 1fr))',
-          gap: 22,
-        }}>
-          {filtered.map(v => (
-            <VehicleCard
-              key={v.vin}
-              v={v}
-              isWorker={isWorker}
-              onEdit={vin => navigate(`/dashboard/update-vehicle/${vin}`)}
-              onDelete={handleDelete}
-            />
-          ))}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 36 }}>
+          {STATUS_ORDER.map(status => {
+            const group = filtered.filter(v => v.status === status);
+            if (group.length === 0) return null;
+            const style = STATUS_STYLE[status] ?? { bg: '#f1f5f9', color: '#64748b', label: status, sectionAccent: '#94a3b8' };
+            return (
+              <section key={status}>
+                {/* Section header */}
+                <div style={{
+                  display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16,
+                  paddingBottom: 10, borderBottom: `2px solid ${style.sectionAccent}22`,
+                }}>
+                  <span style={{
+                    display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                    width: 10, height: 10, borderRadius: '50%',
+                    background: style.sectionAccent, flexShrink: 0,
+                  }} />
+                  <span style={{
+                    fontWeight: 700, fontSize: 'var(--text-base)',
+                    color: style.sectionAccent, letterSpacing: 0.2,
+                  }}>
+                    {style.label}
+                  </span>
+                  <span style={{
+                    background: `${style.sectionAccent}18`,
+                    color: style.sectionAccent,
+                    borderRadius: 20, padding: '1px 9px',
+                    fontSize: 'var(--text-sm)', fontWeight: 600,
+                  }}>
+                    {group.length}
+                  </span>
+                </div>
+                {/* Cards */}
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fill, minmax(272px, 1fr))',
+                  gap: 22,
+                }}>
+                  {group.map(v => (
+                    <VehicleCard
+                      key={v.vin}
+                      v={v}
+                      isWorker={isWorker}
+                      onEdit={vin => navigate(`/dashboard/update-vehicle/${vin}`)}
+                      onDelete={handleDelete}
+                    />
+                  ))}
+                </div>
+              </section>
+            );
+          })}
         </div>
       )}
     </div>

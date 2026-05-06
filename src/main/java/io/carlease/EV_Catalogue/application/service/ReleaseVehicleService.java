@@ -10,9 +10,11 @@ import org.springframework.stereotype.Service;
 public class ReleaseVehicleService implements releaseVehicle {
 
     private final VehiclePersistancePort vehiclePersistancePort;
+    private final VehicleStatusBroadcaster broadcaster;
 
-    public ReleaseVehicleService(VehiclePersistancePort vehiclePersistancePort) {
+    public ReleaseVehicleService(VehiclePersistancePort vehiclePersistancePort, VehicleStatusBroadcaster broadcaster) {
         this.vehiclePersistancePort = vehiclePersistancePort;
+        this.broadcaster = broadcaster;
     }
 
     @Override
@@ -21,5 +23,6 @@ public class ReleaseVehicleService implements releaseVehicle {
                 .orElseThrow(() -> new IllegalArgumentException("Vehicle not found: " + vehicleId.getVin()));
         vehicle.releaseLock();
         vehiclePersistancePort.save(vehicle);
+        broadcaster.broadcast(vehicleId.getVin(), "AVAILABLE");
     }
 }

@@ -7,28 +7,28 @@ import java.util.Objects;
 @ValueObject
 public class LockDuration {
 
-    private final Integer hours;
+    private final Integer minutes;
 
-    private LockDuration(Integer hours) {
-        this.hours = hours;
+    private LockDuration(Integer minutes) {
+        this.minutes = minutes;
     }
 
-    public static LockDuration ofHours(Integer hours) {
-        if (hours == null) {
-            throw new InvalidVehicleAttributeException("hours", "must not be null");
+    public static LockDuration ofMinutes(Integer minutes) {
+        if (minutes == null) {
+            throw new InvalidVehicleAttributeException("minutes", "must not be null");
         }
-        if (hours <= 0) {
-            throw new InvalidVehicleAttributeException("hours", "must be greater than 0");
+        if (minutes <= 0) {
+            throw new InvalidVehicleAttributeException("minutes", "must be greater than 0");
         }
-        return new LockDuration(hours);
+        return new LockDuration(minutes);
     }
 
     public static LockDuration defaultDuration() {
-        return ofHours(2);
+        return ofMinutes(15);
     }
 
-    public Integer getHours() {
-        return hours;
+    public Integer getMinutes() {
+        return minutes;
     }
 
     @Override
@@ -36,11 +36,11 @@ public class LockDuration {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         LockDuration other = (LockDuration) obj;
-        return hours.equals(other.hours);
+        return minutes.equals(other.minutes);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(hours);
+        return Objects.hash(minutes);
     }
 
 }

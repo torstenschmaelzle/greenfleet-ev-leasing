@@ -47,7 +47,7 @@ public class VehicleJpaEntity {
     private String lockId;
     private Instant lockedAt;
     private Instant expiresAt;
-    private Integer lockDurationHours;
+    private Integer lockDurationMinutes;
 
     // BatteryHealthRecords
     @ElementCollection(fetch = FetchType.EAGER)

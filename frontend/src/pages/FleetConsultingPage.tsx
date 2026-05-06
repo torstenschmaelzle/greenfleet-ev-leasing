@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getRecommendations } from '../api/fleetConsulting';
 import type { FleetBundleRecommendation, FleetBundle, BundleVehicle } from '../api/fleetConsulting';
@@ -513,26 +513,41 @@ export default function FleetConsultingPage() {
   const [reserveErrors, setReserveErrors] = useState<Record<string, string>>({});
   const [submitHov, setSubmitHov] = useState(false);
 
+  const lastParams = useRef<Parameters<typeof getRecommendations>[0] | null>(null);
+
+  // SSE: re-fetch recommendations when any vehicle status changes
+  useEffect(() => {
+    const es = new EventSource('/api/catalogue/vehicles/events');
+    es.addEventListener('vehicle-status-changed', () => {
+      if (lastParams.current) {
+        getRecommendations(lastParams.current).then(setResult).catch(() => {});
+      }
+    });
+    return () => es.close();
+  }, []);
+
   // API call — unchanged
   const handleGenerate = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError('');
+    const params = {
+      daily_route_km:           dailyKm,
+      number_of_vehicles:       vehicles,
+      lease_term_months:        leaseTerm,
+      charging_type:            chargingType,
+      electricity_rate_cents:   Math.round(rateChf * 100),
+      currency:                 'CHF',
+      budget_monthly_max_cents: budget ? Math.round(Number(budget) * 100) : undefined,
+      brand:                    brand || undefined,
+      vehicle_type:             vehicleType || undefined,
+      range_weight:             weights[0],
+      co2_weight:               weights[1],
+      cost_weight:              weights[2],
+    };
     try {
-      const data = await getRecommendations({
-        daily_route_km:           dailyKm,
-        number_of_vehicles:       vehicles,
-        lease_term_months:        leaseTerm,
-        charging_type:            chargingType,
-        electricity_rate_cents:   Math.round(rateChf * 100),
-        currency:                 'CHF',
-        budget_monthly_max_cents: budget ? Math.round(Number(budget) * 100) : undefined,
-        brand:                    brand || undefined,
-        vehicle_type:             vehicleType || undefined,
-        range_weight:             weights[0],
-        co2_weight:               weights[1],
-        cost_weight:              weights[2],
-      });
+      const data = await getRecommendations(params);
+      lastParams.current = params;
       setResult(data);
       setExpanded({});
       setStep(1);

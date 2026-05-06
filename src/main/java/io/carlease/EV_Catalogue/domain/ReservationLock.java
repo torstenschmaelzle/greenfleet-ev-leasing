@@ -22,6 +22,7 @@ public class ReservationLock {
         this.duration = duration;
     }
 
+
     public boolean isExpired() {
         return Instant.now().isAfter(getExpiresAt());
     }
@@ -35,7 +36,7 @@ public class ReservationLock {
     }
 
     public Instant getExpiresAt() {
-        return lockedAt.plus(duration.getHours(), ChronoUnit.HOURS);
+        return lockedAt.plus(duration.getMinutes(), ChronoUnit.MINUTES);
     }
 
     public LockDuration getDuration() {

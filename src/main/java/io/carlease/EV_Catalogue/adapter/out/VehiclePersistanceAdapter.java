@@ -7,6 +7,7 @@ import io.carlease.EV_Catalogue.domain.Vehicle;
 import io.carlease.EV_Catalogue.domain.VehicleId;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -37,5 +38,12 @@ public class VehiclePersistanceAdapter implements VehiclePersistancePort {
     @Override
     public void deleteById(VehicleId vehicleId) {
         vehicleRepository.deleteById(vehicleId.getVin());
+    }
+
+    @Override
+    public List<Vehicle> findAllReserved() {
+        return vehicleRepository.findByStatus("RESERVED").stream()
+                .map(VehicleMapper::mapToDomain)
+                .toList();
     }
 }
