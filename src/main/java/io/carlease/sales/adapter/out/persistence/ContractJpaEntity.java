@@ -37,8 +37,6 @@ public class ContractJpaEntity {
 
     private Double interestPerYear;
 
-	private LocalDate approvalDate;
-
 	private LocalDate signatureDate;
 
     private Double downPayment;

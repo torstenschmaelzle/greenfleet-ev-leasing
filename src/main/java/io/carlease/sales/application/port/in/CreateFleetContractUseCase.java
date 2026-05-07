@@ -1,6 +1,9 @@
 package io.carlease.sales.application.port.in;
 
-import io.carlease.sales.domain.FleetContractNumber;
+import io.carlease.sales.domain.ContractNumber;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 
 import java.util.List;
 
@@ -8,19 +11,24 @@ public interface CreateFleetContractUseCase {
 
     /**
      * One entry per vehicle in the selected bundle.
-     * basePriceCents is the health-adjusted lease price from the EV catalogue —
-     * Sales uses it to recalculate the installment via its own domain logic.
+     * monthlyInstallmentCents is the health-adjusted lease price from the EV catalogue.
      */
-    record VehicleEntry(String vin, long monthlyInstallmentCents, String currency) {}
+    record VehicleEntry(
+            @NotBlank(message = "vin must not be blank")
+            String vin,
+
+            @Min(value = 0, message = "monthlyInstallmentCents must not be negative")
+            long monthlyInstallmentCents,
+
+            @NotBlank(message = "currency must not be blank")
+            @Pattern(regexp = "^[A-Z]{3}$", message = "currency must be a 3-letter ISO code (e.g. CHF, EUR)")
+            String currency
+    ) {}
 
     /**
-     * Creates a FleetContract, auto-approves it (notifies Risk Management),
-     * locks all vehicles in EV Catalogue, and returns the generated contract number.
-     *
-     * TODO: remove auto-approve once the Risk Management feedback loop is implemented
-     * and RM vote can actually block signing.
+     * Creates a FleetContract, notifies Risk Management, and returns the generated contract number.
      */
-    FleetContractNumber create(
+    ContractNumber create(
             String customerName,
             String customerCompany,
             String customerEmail,

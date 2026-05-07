@@ -1,6 +1,8 @@
 package io.carlease.sales.adapter.out.persistence;
 
 import io.carlease.sales.domain.*;
+import io.carlease.shared.domain.Amount;
+import io.carlease.shared.domain.Currency;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -11,6 +13,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 @DataJpaTest
 @Import(ContractPersistenceAdapter.class)
 public class ContractPersistenceAdapterTest {
+
+    private static final Customer CUSTOMER = Customer.of("John Buyer", "ACME AG", "john@example.com");
 
     @Autowired
     private ContractPersistenceAdapter contractPersistenceAdapter;
@@ -23,17 +27,18 @@ public class ContractPersistenceAdapterTest {
     void loadsContract() {
         VehicleContract contract = contractPersistenceAdapter.with(new ContractNumber("1"));
 
-        assertThat(contract.lessee()).isEqualTo(Customer.of("John Buyer"));
-        assertThat(contract.car()).isEqualTo(new Car("Volkswagen ID.3"));
-        assertThat(contract.price()).isEqualTo(Amount.of(50000, Currency.EUR));
+        assertThat(contract.lessee()).isEqualTo(CUSTOMER);
+        assertThat(contract.vehicle()).isEqualTo(new Vehicle("Volkswagen ID.3"));
+        assertThat(contract.installment()).isEqualTo(Amount.ofCents(89780, Currency.EUR));
     }
 
     @Test
     void savesContract() {
-        VehicleContract contract = new VehicleContract(ContractNumber.of("1"),
-                Customer.of("John Buyer"),
-                Car.of("Volkswagen ID.3"),
-                Amount.of(50000, Currency.valueOf("EUR")));
+        VehicleContract contract = ContractFactory.createFleetVehicleContract(
+                ContractNumber.of("1"),
+                CUSTOMER,
+                Vehicle.of("Volkswagen ID.3"),
+                Amount.ofCents(89780, Currency.EUR));
 
         contractPersistenceAdapter.save(contract);
 
@@ -42,27 +47,19 @@ public class ContractPersistenceAdapterTest {
 
     @Test
     void savesAndLoadsSignedContract() {
-        // given
-        VehicleContract contract = new VehicleContract(
+        VehicleContract contract = ContractFactory.createFleetVehicleContract(
                 ContractNumber.of("1"),
-                Customer.of("John Buyer"),
-                Car.of("Volkswagen ID.3"),
-                Amount.of(50000, Currency.valueOf("EUR"))
-        );
-
-        contract.calculateInstallmentFor(LeaseTerm.ofMonths(48), Interest.of(3.7));
-        contract.approve(SignDate.of(2026, 3, 15));
+                CUSTOMER,
+                Vehicle.of("Volkswagen ID.3"),
+                Amount.ofCents(89780, Currency.EUR));
         contract.sign(SignDate.of(2026, 3, 16));
 
-        // when
         contractPersistenceAdapter.save(contract);
-        VehicleContract loadedContract = contractPersistenceAdapter.with(ContractNumber.of("1"));
+        VehicleContract loaded = contractPersistenceAdapter.with(ContractNumber.of("1"));
 
-        // then
-        assertThat(loadedContract.isCalculated()).isTrue();
-        assertThat(loadedContract.isApproved()).isTrue();
-        assertThat(loadedContract.isSigned()).isTrue();
-        assertThat(loadedContract.signatureDate()).isEqualTo(SignDate.of(2026, 3, 16));
+        assertThat(loaded.isSigned()).isTrue();
+        assertThat(loaded.signatureDate()).isEqualTo(SignDate.of(2026, 3, 16));
+        assertThat(loaded.lessee()).isEqualTo(CUSTOMER);
     }
 
 }

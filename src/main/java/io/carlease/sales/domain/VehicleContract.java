@@ -1,5 +1,6 @@
 package io.carlease.sales.domain;
 
+import io.carlease.shared.domain.Amount;
 import org.jmolecules.ddd.annotation.Entity;
 import org.jmolecules.ddd.annotation.Identity;
 
@@ -13,26 +14,25 @@ public class VehicleContract {
     @Identity
     private final ContractNumber number;
     private final Customer lessee;
-    private final Car car;
+    private final Vehicle vehicle;
     private final Amount price;
-    private record Calculation(LeaseTerm leaseTerm, Interest interest, Amount installment, Amount downPayment, Amount residualValue) {}
-    private Optional<Calculation> calculation;
-    private Optional<SignDate> approvalDate;
+    private final Amount installment;
     private Optional<SignDate> signatureDate;
 
-    public VehicleContract(ContractNumber number, Customer lessee, Car car, Amount price) {
+    VehicleContract(ContractNumber number, Customer lessee, Vehicle vehicle, Amount price,
+                    Amount installment, Optional<SignDate> signatureDate) {
         requireNonNull(number);
         requireNonNull(lessee);
-        requireNonNull(car);
+        requireNonNull(vehicle);
         requireNonNull(price);
+        requireNonNull(installment);
 
         this.number = number;
         this.lessee = lessee;
-        this.car = car;
+        this.vehicle = vehicle;
         this.price = price;
-        this.calculation = Optional.empty();
-        this.approvalDate = Optional.empty();
-        this.signatureDate = Optional.empty();
+        this.installment = installment;
+        this.signatureDate = signatureDate != null ? signatureDate : Optional.empty();
     }
 
     @Identity
@@ -44,83 +44,22 @@ public class VehicleContract {
         return this.lessee;
     }
 
-    public Car car() {
-        return this.car;
+    public Vehicle vehicle() {
+        return this.vehicle;
     }
 
     public Amount price() {
         return this.price;
     }
 
-    public boolean isCalculated() {
-        return this.calculation.isPresent();
-    }
-
-    public void calculateInstallmentFor(LeaseTerm leaseTerm, Interest interest) {
-        Amount downPayment = Amount.ofCents(0, price.currency());
-        Amount residualValue = Amount.ofCents(0, price.currency());
-        calculateInstallmentFor(leaseTerm, interest, downPayment, residualValue);
-    }
-
-    public void acceptInstallment(Amount installment) {
-        requireNonNull(installment);
-        assert !isApproved();
-        Amount zero = Amount.ofCents(0, installment.currency());
-        this.calculation = Optional.of(new Calculation(null, null, installment, zero, zero));
-        assert isCalculated();
-    }
-
-    public void calculateInstallmentFor(LeaseTerm leaseTerm, Interest interest, Amount downPayment, Amount residualValue) {
-        requireNonNull(leaseTerm);
-        requireNonNull(interest);
-        if (downPayment.amountInCents() < 0) {
-            throw new IllegalArgumentException("Down payment must not be negative");
-        }
-        if (residualValue.amountInCents() < 0) {
-            throw new IllegalArgumentException("Residual value must not be negative");
-        }
-        assert !isApproved();
-
-        double pmt = FinancialCalculator.pmt(
-                leaseTerm.noOfMonths(),
-                interest.perMonth(),
-                -1 * price().amount(),
-                residualValue.amount(),
-                downPayment.amount());
-
-        this.calculation = Optional.of(new Calculation(leaseTerm, interest, Amount.of(pmt, price.currency()), downPayment, residualValue));
-
-        assert isCalculated();
-    }
-
-    public void approve(SignDate date) {
-        requireNonNull(date);
-        assert isCalculated();
-        assert !isApproved();
-
-        this.approvalDate = Optional.of(date);
-
-        assert isApproved();
-    }
-
-    public boolean isApproved() {
-        return this.approvalDate.isPresent();
-    }
-
-    public SignDate approvalDate() {
-        assert isApproved();
-        return this.approvalDate.get();
+    public Amount installment() {
+        return this.installment;
     }
 
     public void sign(SignDate date) {
         requireNonNull(date);
-        assert isCalculated();
-        assert isApproved();
-        assert !isSigned();
-
+        if (isSigned()) throw new ContractAlreadySignedException(number.number());
         this.signatureDate = Optional.of(date);
-
-        assert isSigned();
     }
 
     public boolean isSigned() {
@@ -128,39 +67,15 @@ public class VehicleContract {
     }
 
     public SignDate signatureDate() {
-        assert isSigned();
+        if (!isSigned()) throw new IllegalStateException("Contract " + number.number() + " is not yet signed");
         return this.signatureDate.get();
-    }
-
-    public LeaseTerm leaseTerm() {
-        assert isCalculated();
-        return this.calculation.get().leaseTerm();
-    }
-
-    public Interest interest() {
-        assert isCalculated();
-        return this.calculation.get().interest();
-    }
-
-    public Amount installment() {
-        assert isCalculated();
-        return this.calculation.get().installment();
-    }
-
-    public Amount downPayment() {
-        assert isCalculated();
-        return this.calculation.get().downPayment();
-    }
-
-    public Amount residualValue() {
-        assert isCalculated();
-        return this.calculation.get().residualValue();
     }
 
     @Override
     public String toString() {
-        return "VehicleContract [number=" + number() + ", lessee=" + this.lessee + ", car=" + this.car
-                + ", price=" + this.price + ", approvalDate=" + this.approvalDate + ", signatureDate=" + this.signatureDate + "]";
+        return "VehicleContract [number=" + number() + ", lessee=" + this.lessee + ", vehicle=" + this.vehicle
+                + ", price=" + this.price + ", installment=" + this.installment
+                + ", signatureDate=" + this.signatureDate + "]";
     }
 
     @Override

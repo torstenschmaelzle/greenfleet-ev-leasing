@@ -1,5 +1,7 @@
 package io.carlease.sales.domain;
 
+import io.carlease.shared.domain.Amount;
+import io.carlease.shared.domain.LeaseTerm;
 import org.jmolecules.ddd.annotation.AggregateRoot;
 import org.jmolecules.ddd.annotation.Identity;
 
@@ -13,33 +15,32 @@ import static java.util.Objects.requireNonNull;
 public class FleetContract {
 
     @Identity
-    private final FleetContractNumber number;
+    private final ContractNumber number;
     private final Customer customer;
     private final LeaseTerm leaseTerm;
     private final String bundleType;
     private final List<VehicleContract> vehicleContracts;
-    private Optional<SignDate> approvalDate;
     private Optional<SignDate> signatureDate;
 
-    public FleetContract(FleetContractNumber number, Customer customer, LeaseTerm leaseTerm,
-                         String bundleType, List<VehicleContract> vehicleContracts) {
+    FleetContract(ContractNumber number, Customer customer, LeaseTerm leaseTerm,
+                  String bundleType, List<VehicleContract> vehicleContracts,
+                  Optional<SignDate> signatureDate) {
         requireNonNull(number);
         requireNonNull(customer);
         requireNonNull(leaseTerm);
         requireNonNull(bundleType);
         requireNonNull(vehicleContracts);
-        assert !vehicleContracts.isEmpty();
+        if (vehicleContracts.isEmpty()) throw new EmptyFleetException();
 
         this.number = number;
         this.customer = customer;
         this.leaseTerm = leaseTerm;
         this.bundleType = bundleType;
         this.vehicleContracts = new ArrayList<>(vehicleContracts);
-        this.approvalDate = Optional.empty();
-        this.signatureDate = Optional.empty();
+        this.signatureDate = signatureDate != null ? signatureDate : Optional.empty();
     }
 
-    public FleetContractNumber number() {
+    public ContractNumber number() {
         return number;
     }
 
@@ -60,36 +61,18 @@ public class FleetContract {
     }
 
     public Amount totalMonthlyInstallment() {
-        assert vehicleContracts.stream().allMatch(VehicleContract::isCalculated);
-        Amount total = Amount.ofCents(0, vehicleContracts.get(0).installment().currency());
+        Amount total = Amount.ofCents(0, vehicleContracts.get(0).installment().getCurrency());
         for (VehicleContract vc : vehicleContracts) {
             total = total.add(vc.installment());
         }
         return total;
     }
 
-    public void approve(SignDate date) {
-        requireNonNull(date);
-        assert !isApproved();
-        this.approvalDate = Optional.of(date);
-        assert isApproved();
-    }
-
-    public boolean isApproved() {
-        return this.approvalDate.isPresent();
-    }
-
-    public SignDate approvalDate() {
-        assert isApproved();
-        return this.approvalDate.get();
-    }
-
     public void sign(SignDate date) {
         requireNonNull(date);
-        assert isApproved();
-        assert !isSigned();
+        if (isSigned()) throw new ContractAlreadySignedException(number.number());
         this.signatureDate = Optional.of(date);
-        assert isSigned();
+        vehicleContracts.forEach(vc -> vc.sign(date));
     }
 
     public boolean isSigned() {
@@ -97,7 +80,7 @@ public class FleetContract {
     }
 
     public SignDate signatureDate() {
-        assert isSigned();
+        if (!isSigned()) throw new IllegalStateException("Fleet contract " + number.number() + " is not yet signed");
         return this.signatureDate.get();
     }
 
@@ -106,7 +89,7 @@ public class FleetContract {
         return "FleetContract [number=" + number + ", customer=" + customer
                 + ", leaseTerm=" + leaseTerm + ", bundleType=" + bundleType
                 + ", vehicles=" + vehicleContracts.size()
-                + ", approvalDate=" + approvalDate + ", signatureDate=" + signatureDate + "]";
+                + ", signatureDate=" + signatureDate + "]";
     }
 
     @Override

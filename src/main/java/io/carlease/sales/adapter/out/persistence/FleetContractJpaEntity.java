@@ -28,8 +28,6 @@ public class FleetContractJpaEntity {
 
     private String bundleType;
 
-    private LocalDate approvalDate;
-
     private LocalDate signatureDate;
 
     @ElementCollection(fetch = FetchType.EAGER)
