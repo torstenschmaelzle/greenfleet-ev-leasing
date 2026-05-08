@@ -7,6 +7,7 @@ import UpdateVehiclePage from './pages/UpdateVehiclePage';
 import DashboardLayout from './components/DashboardLayout';
 import FleetConsultingPage from './pages/FleetConsultingPage';
 import SalesPage from './pages/SalesPage';
+import ContractsPage from './pages/ContractsPage';
 
 function RequireAuth({ children }: { children: JSX.Element }) {
   const { user, loading } = useAuth();
@@ -52,6 +53,14 @@ export default function App() {
             />
             <Route path="fleet-consulting" element={<FleetConsultingPage />} />
             <Route path="sales" element={<SalesPage />} />
+            <Route
+              path="contracts"
+              element={
+                <RequireWorker>
+                  <ContractsPage />
+                </RequireWorker>
+              }
+            />
             <Route
               path="add-vehicle"
               element={
