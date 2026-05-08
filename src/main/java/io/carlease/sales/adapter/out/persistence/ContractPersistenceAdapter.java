@@ -1,6 +1,7 @@
 package io.carlease.sales.adapter.out.persistence;
 
 import io.carlease.sales.application.port.out.ContractPersistencePort;
+import io.carlease.sales.domain.ContractNotFoundException;
 import io.carlease.sales.domain.VehicleContract;
 import io.carlease.sales.domain.ContractNumber;
 import org.springframework.stereotype.Component;
@@ -20,13 +21,9 @@ public class ContractPersistenceAdapter implements ContractPersistencePort {
 	}
 
 	@Override
-	public boolean exists(ContractNumber number) {
-		return repository.findById(number.number()).isPresent();
-	}
-
-	@Override
 	public VehicleContract with(ContractNumber number) {
-		ContractJpaEntity contractJpaEntity = repository.findById(number.number()).get();
+		ContractJpaEntity contractJpaEntity = repository.findById(number.number())
+				.orElseThrow(() -> new ContractNotFoundException(number.number()));
 		return ContractMapper.mapToVehicleContract(contractJpaEntity);
 	}
 

@@ -4,7 +4,7 @@ import io.carlease.sales.application.port.in.SignFleetContractUseCase;
 import io.carlease.sales.application.port.out.FleetContractPersistencePort;
 import io.carlease.sales.application.port.out.PlaceVehicleUnderContractPort;
 import io.carlease.sales.domain.FleetContract;
-import io.carlease.sales.domain.FleetContractNumber;
+import io.carlease.sales.domain.ContractNumber;
 import io.carlease.sales.domain.SignDate;
 import org.springframework.stereotype.Service;
 
@@ -21,13 +21,13 @@ public class SignFleetContractService implements SignFleetContractUseCase {
     }
 
     @Override
-    public void sign(FleetContractNumber number, SignDate date) {
+    public void sign(ContractNumber number, SignDate date) {
         FleetContract contract = fleetContractPersistencePort.with(number);
         contract.sign(date);
         fleetContractPersistencePort.save(contract);
 
         // Transition each vehicle from RESERVED → UNDER_CONTRACT in the EV Catalogue
         contract.vehicleContracts().forEach(vc ->
-                placeVehicleUnderContractPort.placeUnderContract(vc.car().car()));
+                placeVehicleUnderContractPort.placeUnderContract(vc.vehicle().vin()));
     }
 }

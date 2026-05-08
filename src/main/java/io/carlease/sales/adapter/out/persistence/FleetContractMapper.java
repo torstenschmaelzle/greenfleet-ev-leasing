@@ -1,6 +1,7 @@
 package io.carlease.sales.adapter.out.persistence;
 
 import io.carlease.sales.domain.*;
+import io.carlease.shared.domain.LeaseTerm;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,10 +18,9 @@ public class FleetContractMapper {
                 fleetContract.customer().name(),
                 fleetContract.customer().company(),
                 fleetContract.customer().email(),
-                fleetContract.leaseTerm().noOfMonths(),
+                fleetContract.leaseTerm().getMonths(),
                 fleetContract.bundleType(),
-                fleetContract.isApproved() ? fleetContract.approvalDate().date() : null,
-                fleetContract.isSigned()   ? fleetContract.signatureDate().date() : null,
+                fleetContract.isSigned() ? fleetContract.signatureDate().date() : null,
                 vehicleContractNumbers
         );
     }
@@ -28,14 +28,11 @@ public class FleetContractMapper {
     public static FleetContract mapToDomain(FleetContractJpaEntity entity,
                                             List<VehicleContract> vehicleContracts) {
         return ContractFactory.restoreFleetContract(
-                FleetContractNumber.of(entity.getNumber()),
+                ContractNumber.of(entity.getNumber()),
                 Customer.of(entity.getCustomerName(), entity.getCustomerCompany(), entity.getCustomerEmail()),
                 LeaseTerm.ofMonths(entity.getLeaseTermMonths()),
                 entity.getBundleType(),
                 vehicleContracts,
-                entity.getApprovalDate() != null
-                        ? Optional.of(SignDate.of(entity.getApprovalDate()))
-                        : Optional.empty(),
                 entity.getSignatureDate() != null
                         ? Optional.of(SignDate.of(entity.getSignatureDate()))
                         : Optional.empty()

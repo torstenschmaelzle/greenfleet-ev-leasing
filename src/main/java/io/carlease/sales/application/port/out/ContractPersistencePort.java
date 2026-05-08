@@ -11,6 +11,4 @@ public interface ContractPersistencePort {
 
 	void save(VehicleContract contract);
 
-	boolean exists(ContractNumber number);
-
 }

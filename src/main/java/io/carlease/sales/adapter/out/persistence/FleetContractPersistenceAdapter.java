@@ -3,9 +3,9 @@ package io.carlease.sales.adapter.out.persistence;
 import io.carlease.sales.application.port.out.ContractPersistencePort;
 import io.carlease.sales.application.port.out.FleetContractPersistencePort;
 import io.carlease.sales.domain.FleetContract;
-import io.carlease.sales.domain.FleetContractNumber;
-import io.carlease.sales.domain.VehicleContract;
+import io.carlease.sales.domain.ContractNotFoundException;
 import io.carlease.sales.domain.ContractNumber;
+import io.carlease.sales.domain.VehicleContract;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -29,9 +29,9 @@ public class FleetContractPersistenceAdapter implements FleetContractPersistence
     }
 
     @Override
-    public FleetContract with(FleetContractNumber number) {
+    public FleetContract with(ContractNumber number) {
         FleetContractJpaEntity entity = fleetContractRepository.findById(number.number())
-                .orElseThrow(() -> new IllegalArgumentException("FleetContract not found: " + number.number()));
+                .orElseThrow(() -> new ContractNotFoundException(number.number()));
 
         List<VehicleContract> vehicleContracts = entity.getVehicleContractNumbers().stream()
                 .map(n -> contractPersistencePort.with(ContractNumber.of(n)))
@@ -40,8 +40,4 @@ public class FleetContractPersistenceAdapter implements FleetContractPersistence
         return FleetContractMapper.mapToDomain(entity, vehicleContracts);
     }
 
-    @Override
-    public boolean exists(FleetContractNumber number) {
-        return fleetContractRepository.existsById(number.number());
-    }
 }
