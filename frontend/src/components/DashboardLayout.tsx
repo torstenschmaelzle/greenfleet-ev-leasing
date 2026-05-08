@@ -27,16 +27,6 @@ function IconChart() {
   );
 }
 
-function IconBriefcase() {
-  return (
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="2" y="7" width="20" height="14" rx="2" />
-      <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
-      <line x1="12" y1="12" x2="12" y2="12" strokeWidth="3" />
-    </svg>
-  );
-}
 
 function IconContracts() {
   return (
@@ -78,6 +68,14 @@ const navLinkBase: React.CSSProperties = {
   fontSize: 'var(--text-base)', marginBottom: 2,
   transition: 'background var(--transition-fast)',
 };
+
+const navStyle = ({ isActive }: { isActive: boolean }): React.CSSProperties => ({
+  ...navLinkBase,
+  color: isActive ? '#ffffff' : 'var(--color-sidebar-text)',
+  fontWeight: isActive ? 600 : 400,
+  background: isActive ? 'rgba(22,163,74,0.30)' : 'transparent',
+  boxShadow: isActive ? 'inset 2px 0 0 #4ade80' : 'none',
+});
 
 export default function DashboardLayout() {
   const { user, logout } = useAuth();
@@ -133,67 +131,26 @@ export default function DashboardLayout() {
           Navigation
         </span>
 
-        {/* EV Catalogue — workers only */}
-        {user?.role === 'WORKER' && (
-          <NavLink
-            to="/dashboard/catalogue"
-            style={({ isActive }) => ({
-              ...navLinkBase,
-              color: isActive ? '#ffffff' : 'var(--color-sidebar-text)',
-              fontWeight: isActive ? 600 : 400,
-              background: isActive ? 'rgba(22,163,74,0.30)' : 'transparent',
-              boxShadow: isActive ? 'inset 2px 0 0 #4ade80' : 'none',
-            })}
-          >
-            <IconCar />
-            EV Catalogue
+        {user?.role === 'WORKER' && (<>
+          <NavLink to="/dashboard/catalogue" style={navStyle}>
+            <IconCar />EV Catalogue
           </NavLink>
-        )}
-
-        <NavLink
-          to="/dashboard/fleet-consulting"
-          style={({ isActive }) => ({
-            ...navLinkBase,
-            color: isActive ? '#ffffff' : 'var(--color-sidebar-text)',
-            fontWeight: isActive ? 600 : 400,
-            background: isActive ? 'rgba(22,163,74,0.30)' : 'transparent',
-            boxShadow: isActive ? 'inset 2px 0 0 #4ade80' : 'none',
-          })}
-        >
-          <IconChart />
-          Fleet Consulting
-        </NavLink>
-
-        <NavLink
-          to="/dashboard/sales"
-          style={({ isActive }) => ({
-            ...navLinkBase,
-            color: isActive ? '#ffffff' : 'var(--color-sidebar-text)',
-            fontWeight: isActive ? 600 : 400,
-            background: isActive ? 'rgba(22,163,74,0.30)' : 'transparent',
-            boxShadow: isActive ? 'inset 2px 0 0 #4ade80' : 'none',
-          })}
-        >
-          <IconBriefcase />
-          Sales
-        </NavLink>
-
-        {/* Contracts overview — workers only */}
-        {user?.role === 'WORKER' && (
-          <NavLink
-            to="/dashboard/contracts"
-            style={({ isActive }) => ({
-              ...navLinkBase,
-              color: isActive ? '#ffffff' : 'var(--color-sidebar-text)',
-              fontWeight: isActive ? 600 : 400,
-              background: isActive ? 'rgba(22,163,74,0.30)' : 'transparent',
-              boxShadow: isActive ? 'inset 2px 0 0 #4ade80' : 'none',
-            })}
-          >
-            <IconContracts />
-            Contracts
+          <NavLink to="/dashboard/fleet-consulting" style={navStyle}>
+            <IconChart />Find Your Fleet
           </NavLink>
-        )}
+          <NavLink to="/dashboard/contracts" style={navStyle}>
+            <IconContracts />Contracts
+          </NavLink>
+        </>)}
+
+        {user?.role === 'CUSTOMER' && (<>
+          <NavLink to="/dashboard/fleet-consulting" style={navStyle}>
+            <IconChart />Find Your Fleet
+          </NavLink>
+          <NavLink to="/dashboard/my-contracts" style={navStyle}>
+            <IconContracts />My Contracts
+          </NavLink>
+        </>)}
 
         {/* Spacer */}
         <div style={{ flex: 1 }} />
@@ -214,7 +171,7 @@ export default function DashboardLayout() {
               <IconUser />
             </span>
             <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-              {user?.username}
+              {user?.role === 'CUSTOMER' ? (user.name ?? user.username) : user?.username}
             </span>
           </div>
           <button

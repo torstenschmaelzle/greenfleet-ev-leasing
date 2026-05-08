@@ -9,4 +9,7 @@ public interface FleetContractPersistencePort {
     void save(FleetContract fleetContract);
     FleetContract with(ContractNumber number);
     List<FleetContract> listAll();
+    List<FleetContract> findByCustomerEmail(String email);
+
+    void delete(ContractNumber number);
 }

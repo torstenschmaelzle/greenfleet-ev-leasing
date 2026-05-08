@@ -8,6 +8,7 @@ import DashboardLayout from './components/DashboardLayout';
 import FleetConsultingPage from './pages/FleetConsultingPage';
 import SalesPage from './pages/SalesPage';
 import ContractsPage from './pages/ContractsPage';
+import MyContractsPage from './pages/MyContractsPage';
 
 function RequireAuth({ children }: { children: JSX.Element }) {
   const { user, loading } = useAuth();
@@ -19,6 +20,12 @@ function RequireAuth({ children }: { children: JSX.Element }) {
 function RequireWorker({ children }: { children: JSX.Element }) {
   const { user } = useAuth();
   if (user?.role !== 'WORKER') return <Navigate to="/dashboard/fleet-consulting" replace />;
+  return children;
+}
+
+function RequireCustomer({ children }: { children: JSX.Element }) {
+  const { user } = useAuth();
+  if (user?.role !== 'CUSTOMER') return <Navigate to="/dashboard/catalogue" replace />;
   return children;
 }
 
@@ -53,6 +60,7 @@ export default function App() {
             />
             <Route path="fleet-consulting" element={<FleetConsultingPage />} />
             <Route path="sales" element={<SalesPage />} />
+            <Route path="my-contracts" element={<RequireCustomer><MyContractsPage /></RequireCustomer>} />
             <Route
               path="contracts"
               element={

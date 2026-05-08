@@ -27,4 +27,9 @@ public class ContractPersistenceAdapter implements ContractPersistencePort {
 		return ContractMapper.mapToVehicleContract(contractJpaEntity);
 	}
 
+	@Override
+	public void delete(ContractNumber number) {
+		repository.deleteById(number.number());
+	}
+
 }

@@ -11,4 +11,6 @@ public interface ContractPersistencePort {
 
 	void save(VehicleContract contract);
 
+	void delete(ContractNumber number);
+
 }

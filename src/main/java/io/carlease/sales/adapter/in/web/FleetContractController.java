@@ -3,6 +3,8 @@ package io.carlease.sales.adapter.in.web;
 import io.carlease.sales.application.port.in.CreateFleetContractUseCase;
 import io.carlease.sales.application.port.in.CreateFleetContractUseCase.VehicleEntry;
 import io.carlease.sales.application.port.in.ListFleetContractsUseCase;
+import io.carlease.sales.application.port.in.DeleteFleetContractUseCase;
+import io.carlease.sales.application.port.in.ListMyContractsUseCase;
 import io.carlease.sales.application.port.in.ReleaseVehiclesUseCase;
 import io.carlease.sales.application.port.in.ReserveVehiclesUseCase;
 import io.carlease.sales.application.port.in.SignFleetContractUseCase;
@@ -10,8 +12,7 @@ import io.carlease.sales.application.port.in.ViewFleetContractUseCase;
 import io.carlease.sales.domain.FleetContract;
 import io.carlease.sales.domain.ContractNumber;
 import io.carlease.sales.domain.SignDate;
-
-import java.util.List;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
@@ -31,21 +32,27 @@ public class FleetContractController {
 
     private final CreateFleetContractUseCase createFleetContractUseCase;
     private final ListFleetContractsUseCase listFleetContractsUseCase;
+    private final ListMyContractsUseCase listMyContractsUseCase;
     private final ViewFleetContractUseCase viewFleetContractUseCase;
     private final SignFleetContractUseCase signFleetContractUseCase;
+    private final DeleteFleetContractUseCase deleteFleetContractUseCase;
     private final ReserveVehiclesUseCase reserveVehiclesUseCase;
     private final ReleaseVehiclesUseCase releaseVehiclesUseCase;
 
     public FleetContractController(CreateFleetContractUseCase createFleetContractUseCase,
                                    ListFleetContractsUseCase listFleetContractsUseCase,
+                                   ListMyContractsUseCase listMyContractsUseCase,
                                    ViewFleetContractUseCase viewFleetContractUseCase,
                                    SignFleetContractUseCase signFleetContractUseCase,
+                                   DeleteFleetContractUseCase deleteFleetContractUseCase,
                                    ReserveVehiclesUseCase reserveVehiclesUseCase,
                                    ReleaseVehiclesUseCase releaseVehiclesUseCase) {
         this.createFleetContractUseCase = createFleetContractUseCase;
         this.listFleetContractsUseCase = listFleetContractsUseCase;
+        this.listMyContractsUseCase = listMyContractsUseCase;
         this.viewFleetContractUseCase = viewFleetContractUseCase;
         this.signFleetContractUseCase = signFleetContractUseCase;
+        this.deleteFleetContractUseCase = deleteFleetContractUseCase;
         this.reserveVehiclesUseCase = reserveVehiclesUseCase;
         this.releaseVehiclesUseCase = releaseVehiclesUseCase;
     }
@@ -53,6 +60,15 @@ public class FleetContractController {
     @GetMapping
     public List<FleetContractResponse> listAll() {
         return listFleetContractsUseCase.listAll().stream()
+                .map(this::toResponse)
+                .toList();
+    }
+
+    @GetMapping("/mine")
+    public List<FleetContractResponse> listMine(HttpSession session) {
+        String email = (String) session.getAttribute("email");
+        if (email == null) return List.of();
+        return listMyContractsUseCase.listByEmail(email).stream()
                 .map(this::toResponse)
                 .toList();
     }
@@ -84,6 +100,11 @@ public class FleetContractController {
     @DeleteMapping("/reserve")
     public void release(@Valid @RequestBody ReserveRequest request) {
         releaseVehiclesUseCase.release(request.vins());
+    }
+
+    @DeleteMapping("/{number}")
+    public void delete(@PathVariable String number) {
+        deleteFleetContractUseCase.delete(ContractNumber.of(number));
     }
 
     @PostMapping("/{number}/sign")
