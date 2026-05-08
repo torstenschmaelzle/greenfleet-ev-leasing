@@ -8,6 +8,7 @@ import io.carlease.sales.domain.ContractNumber;
 import io.carlease.sales.domain.VehicleContract;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -38,6 +39,21 @@ public class FleetContractPersistenceAdapter implements FleetContractPersistence
                 .toList();
 
         return FleetContractMapper.mapToDomain(entity, vehicleContracts);
+    }
+
+    @Override
+    public List<FleetContract> listAll() {
+        List<FleetContractJpaEntity> entities = new ArrayList<>();
+        fleetContractRepository.findAll().forEach(entities::add);
+
+        return entities.stream()
+                .map(entity -> {
+                    List<VehicleContract> vehicleContracts = entity.getVehicleContractNumbers().stream()
+                            .map(n -> contractPersistencePort.with(ContractNumber.of(n)))
+                            .toList();
+                    return FleetContractMapper.mapToDomain(entity, vehicleContracts);
+                })
+                .toList();
     }
 
 }

@@ -43,6 +43,11 @@ async function request(path: string, options?: RequestInit): Promise<Response> {
   return res;
 }
 
+export async function listFleetContracts(): Promise<FleetContractResponse[]> {
+  const res = await request('/api/sales/fleet-contracts');
+  return res.json();
+}
+
 export async function createFleetContract(req: CreateFleetContractRequest): Promise<string> {
   const res = await request('/api/sales/fleet-contracts', {
     method: 'POST',
