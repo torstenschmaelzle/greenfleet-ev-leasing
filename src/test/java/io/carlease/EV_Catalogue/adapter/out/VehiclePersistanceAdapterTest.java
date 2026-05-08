@@ -42,6 +42,35 @@ class VehiclePersistanceAdapterTest {
     }
 
     @Test
+    void restoreVehicle() {
+        Vehicle vehicle = VehicleFactory.createVehicle(
+                VehicleId.of("WBA12345678901234"),
+                VehicleSpecification.of("BMW", "iX3", Range.ofKm(460), VehicleType.SUV,
+                        EnergyConsumption.of(new BigDecimal("17"))),
+                BatterySpecification.of(new BigDecimal("80"), new BigDecimal("400"), new BigDecimal("11")),
+                Performance.of(286, new BigDecimal("6.8"), 180),
+                Amount.ofCents(75000L, Currency.CHF),
+                Percentage.of(new BigDecimal("95")),
+                Range.ofKm(440)
+        );
+        adapter.save(vehicle);
+
+        Vehicle restored = adapter.findById(VehicleId.of("WBA12345678901234")).orElseThrow();
+
+        assertThat(restored.getVehicleId()).isEqualTo(VehicleId.of("WBA12345678901234"));
+        assertThat(restored.getVehicleSpecification().getBrand()).isEqualTo("BMW");
+        assertThat(restored.getMonthlyLeasePrice()).isEqualTo(Amount.ofCents(75000L, Currency.CHF));
+        assertThat(restored.getLatestStateOfHealth()).isEqualTo(Percentage.of(new BigDecimal("95")));
+        assertThat(restored.getLatestMeasuredRangeKm()).isEqualTo(Range.ofKm(440));
+
+
+
+    }
+
+
+
+
+    @Test
     @Sql("VehiclePersistanceAdapterTest.sql")
     void loadsVehicleById() {
         Vehicle vehicle = adapter.findById(VehicleId.of("WBA12345678901234")).orElseThrow();
