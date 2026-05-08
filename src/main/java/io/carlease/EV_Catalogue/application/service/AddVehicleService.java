@@ -38,16 +38,7 @@ public class AddVehicleService implements addVehicle {
             throw new DuplicateVehicleVinException(vehicleId.getVin());
         }
 
-        // NOTE: BatteryHealthRecord is package-private in the domain.
-        // A VehicleFactory in the domain package is needed to resolve this.
-        // e.g. VehicleFactory.create(vehicleId, specification, batterySpecification,
-        //          performance, monthlyLeasePrice, initialStateOfHealth, initialMeasuredRangeKm)
-
-        // TEMP: BatteryHealthRecord wurde temporär public gemacht.
-        // Sobald VehicleFactory im Domain-Package existiert, rückgängig machen.
-
-        //BatteryHealthRecord initialRecord = new BatteryHealthRecord(initialStateOfHealth, initialMeasuredRangeKm);
-        Vehicle vehicle =  Vehicle.create(vehicleId, specification, batterySpecification,
+        Vehicle vehicle = VehicleFactory.createVehicle(vehicleId, specification, batterySpecification,
                 performance, monthlyLeasePrice, initialStateOfHealth, initialMeasuredRangeKm);
 
         persistVehiclePort.save(vehicle);

@@ -26,7 +26,7 @@ class RemoveVehicleServiceTest {
     }
 
     private Vehicle existingVehicle() {
-        return Vehicle.create(
+        return VehicleFactory.createVehicle(
                 validVehicleId(),
                 VehicleSpecification.of("BMW", "iX3", Range.ofKm(460), VehicleType.SUV,
                         EnergyConsumption.of(new BigDecimal("17"))),

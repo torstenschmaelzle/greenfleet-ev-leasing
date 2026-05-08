@@ -42,7 +42,7 @@ class VehicleTest {
     }
 
     private Vehicle freshVehicle() {
-        return Vehicle.create(vehicleId(), specification(), batterySpec(), performance(), monthlyPrice(),Percentage.of(new BigDecimal("95")), Range.ofKm(440) );
+        return VehicleFactory.createVehicle(vehicleId(), specification(), batterySpec(), performance(), monthlyPrice(), Percentage.of(new BigDecimal("95")), Range.ofKm(440));
     }
 
     //tests
@@ -279,7 +279,7 @@ class VehicleTest {
             var perf = Performance.of(286, new BigDecimal("6.8"), 180);
             var price = Amount.ofCents(75000L, Currency.CHF);
 
-            var vehicle = Vehicle.create(vin, spec, battery, perf, price, Percentage.of(new BigDecimal("100")), Range.ofKm(460));
+            var vehicle = VehicleFactory.createVehicle(vin, spec, battery, perf, price, Percentage.of(new BigDecimal("100")), Range.ofKm(460));
 
             assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.AVAILABLE);
             assertThat(vehicle.getVehicleSpecification().getBrand()).isEqualTo("BMW");

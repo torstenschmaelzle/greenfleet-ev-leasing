@@ -54,9 +54,15 @@ public class VehicleMapper {
             throw new InvalidVehicleAttributeException("healthMeasurements",
                     "no battery health records found for vehicle: " + entity.getVin());
         }
-        BatteryHealthRecordEmbeddable first = records.get(0);
 
-        Vehicle vehicle = Vehicle.create(
+        List<Percentage> statesOfHealth = records.stream()
+                .map(r -> Percentage.of(r.getStateOfHealth()))
+                .collect(Collectors.toList());
+        List<Range> measuredRanges = records.stream()
+                .map(r -> Range.ofKm(r.getMeasuredRangeKm()))
+                .collect(Collectors.toList());
+
+        Vehicle vehicle = VehicleFactory.restoreVehicle(
                 VehicleId.of(entity.getVin()),
                 VehicleSpecification.of(
                         entity.getBrand(),
@@ -76,16 +82,9 @@ public class VehicleMapper {
                         entity.getTopSpeedKmh()
                 ),
                 Amount.ofCents(entity.getMonthlyLeasePriceCents(), Currency.valueOf(entity.getMonthlyLeasePriceCurrency())),
-                Percentage.of(first.getStateOfHealth()),
-                Range.ofKm(first.getMeasuredRangeKm())
+                statesOfHealth,
+                measuredRanges
         );
-
-        for (int i = 1; i < records.size(); i++) {
-            vehicle.updateBatteryHealthMeasurement(
-                    Percentage.of(records.get(i).getStateOfHealth()),
-                    Range.ofKm(records.get(i).getMeasuredRangeKm())
-            );
-        }
 
         VehicleStatus persistedStatus = VehicleStatus.valueOf(entity.getStatus());
         switch (persistedStatus) {

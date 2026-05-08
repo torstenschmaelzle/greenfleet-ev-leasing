@@ -21,7 +21,7 @@ class ListCatalogueServiceTest {
     @Test
     void returnsAllVehiclesFromPort() {
         List<Vehicle> catalogue = List.of(
-                Vehicle.create(
+                VehicleFactory.createVehicle(
                         VehicleId.of("WBA12345678654231"),
                         VehicleSpecification.of("BMW", "iX3", Range.ofKm(460), VehicleType.SUV,
                                 EnergyConsumption.of(new BigDecimal("17"))),
@@ -31,7 +31,7 @@ class ListCatalogueServiceTest {
                         Percentage.of(new BigDecimal("95")),
                         Range.ofKm(440)
                 ),
-                Vehicle.create(
+                VehicleFactory.createVehicle(
                         VehicleId.of("WBA12345678654232"),
                         VehicleSpecification.of("Tesla", "Model 3", Range.ofKm(500), VehicleType.SEDAN,
                                 EnergyConsumption.of(new BigDecimal("15"))),
