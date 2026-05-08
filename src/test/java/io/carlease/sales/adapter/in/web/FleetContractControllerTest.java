@@ -30,8 +30,10 @@ class FleetContractControllerTest {
 
     @MockBean private CreateFleetContractUseCase createUseCase;
     @MockBean private ListFleetContractsUseCase listUseCase;
+    @MockBean private ListMyContractsUseCase listMyContractsUseCase;
     @MockBean private ViewFleetContractUseCase viewUseCase;
     @MockBean private SignFleetContractUseCase signUseCase;
+    @MockBean private DeleteFleetContractUseCase deleteUseCase;
     @MockBean private ReserveVehiclesUseCase reserveUseCase;
     @MockBean private ReleaseVehiclesUseCase releaseUseCase;
 
