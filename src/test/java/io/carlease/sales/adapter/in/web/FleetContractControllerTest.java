@@ -29,6 +29,7 @@ class FleetContractControllerTest {
     private MockMvc mockMvc;
 
     @MockBean private CreateFleetContractUseCase createUseCase;
+    @MockBean private ListFleetContractsUseCase listUseCase;
     @MockBean private ViewFleetContractUseCase viewUseCase;
     @MockBean private SignFleetContractUseCase signUseCase;
     @MockBean private ReserveVehiclesUseCase reserveUseCase;
