@@ -12,7 +12,7 @@ const BUNDLE_COLORS: Record<string, { bg: string; color: string }> = {
   CUSTOM:   { bg: 'rgba(100,116,139,0.10)', color: '#475569' },
 };
 
-function fmt(cents: number, currency = 'CHF') {
+function fmt(cents: number) {
   return (cents / 100).toLocaleString('de-CH', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
@@ -93,12 +93,12 @@ export default function ContractCard({ contract, showCustomer = false, onView }:
               {contract.currency}
             </span>
             <span style={{ fontSize: 28, fontWeight: 800, color: 'var(--color-text)', letterSpacing: -1, lineHeight: 1 }}>
-              {fmt(contract.totalMonthlyInstallmentCents, contract.currency)}
+              {fmt(contract.totalMonthlyInstallmentCents)}
             </span>
             <span style={{ fontSize: 13, color: 'var(--color-text-muted)', fontWeight: 400 }}>/mo</span>
           </div>
           <div style={{ fontSize: 12, color: 'var(--color-text-faint)', marginTop: 3 }}>
-            {contract.currency} {fmt(contract.totalMonthlyInstallmentCents * contract.leaseTermMonths, contract.currency)} total over {contract.leaseTermMonths} months
+            {contract.currency} {fmt(contract.totalMonthlyInstallmentCents * contract.leaseTermMonths)} total over {contract.leaseTermMonths} months
           </div>
         </div>
 
