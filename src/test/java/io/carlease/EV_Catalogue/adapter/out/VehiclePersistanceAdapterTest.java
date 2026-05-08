@@ -25,7 +25,7 @@ class VehiclePersistanceAdapterTest {
 
     @Test
     void savesVehicle() {
-        Vehicle vehicle = Vehicle.create(
+        Vehicle vehicle = VehicleFactory.createVehicle(
                 VehicleId.of("WBA12345678901234"),
                 VehicleSpecification.of("BMW", "iX3", Range.ofKm(460), VehicleType.SUV,
                         EnergyConsumption.of(new BigDecimal("17"))),

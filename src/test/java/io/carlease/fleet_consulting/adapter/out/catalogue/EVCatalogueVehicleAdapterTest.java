@@ -24,7 +24,7 @@ class EVCatalogueVehicleAdapterTest {
 
     private Vehicle availableVehicle(String brand, String model, VehicleType type,
                                       int rangeKm, BigDecimal kwhPer100km, long leasePriceCents) {
-        return Vehicle.create(
+        return VehicleFactory.createVehicle(
                 VehicleId.of("WBA12345678901234"),
                 VehicleSpecification.of(brand, model, Range.ofKm(rangeKm), type,
                         EnergyConsumption.of(kwhPer100km)),

@@ -49,7 +49,7 @@ class UpdateVehicleServiceTest {
     }
 
     private Vehicle existingVehicle() {
-        return Vehicle.create(
+        return VehicleFactory.createVehicle(
                 validVehicleId(),
                 VehicleSpecification.of("Audi", "e-tron", Range.ofKm(300), VehicleType.SUV,
                         EnergyConsumption.of(new BigDecimal("22"))),
