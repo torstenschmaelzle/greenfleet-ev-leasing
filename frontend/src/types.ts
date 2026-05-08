@@ -26,6 +26,9 @@ export interface Vehicle {
 export interface AuthUser {
   username: string;
   role: UserRole;
+  name?: string;
+  email?: string;
+  company?: string;
 }
 
 export interface AddVehicleRequest {

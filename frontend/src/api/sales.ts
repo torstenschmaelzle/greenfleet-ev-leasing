@@ -48,6 +48,11 @@ export async function listFleetContracts(): Promise<FleetContractResponse[]> {
   return res.json();
 }
 
+export async function listMyContracts(): Promise<FleetContractResponse[]> {
+  const res = await request('/api/sales/fleet-contracts/mine');
+  return res.json();
+}
+
 export async function createFleetContract(req: CreateFleetContractRequest): Promise<string> {
   const res = await request('/api/sales/fleet-contracts', {
     method: 'POST',
@@ -80,4 +85,8 @@ export async function releaseFleetBundle(vins: string[]): Promise<void> {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ vins }),
   });
+}
+
+export async function deleteFleetContract(number: string): Promise<void> {
+  await request(`/api/sales/fleet-contracts/${encodeURIComponent(number)}`, { method: 'DELETE' });
 }

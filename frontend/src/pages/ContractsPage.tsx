@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import PageHeader from '../components/PageHeader';
+import ContractCard from '../components/ContractCard';
 import { listFleetContracts, getFleetContract } from '../api/sales';
 import { vehiclesApi } from '../api/vehicles';
 import type { FleetContractResponse } from '../api/sales';
@@ -516,88 +517,10 @@ export default function ContractsPage() {
           </div>
         </div>
       ) : (
-        <div style={{
-          background: 'var(--color-surface)', borderRadius: 'var(--radius-lg)',
-          border: '1px solid var(--color-border)', boxShadow: 'var(--shadow-sm)', overflow: 'hidden',
-        }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
-            <thead>
-              <tr style={{ background: 'var(--color-bg)', borderBottom: '1px solid var(--color-border)' }}>
-                {['Contract #', 'Customer', 'Bundle', 'Lease', 'Vehicles', 'Total /mo', 'Status', ''].map(h => (
-                  <th key={h} style={{
-                    padding: '10px 16px', textAlign: 'left', fontWeight: 700,
-                    fontSize: 11, color: 'var(--color-text-faint)',
-                    textTransform: 'uppercase', letterSpacing: 0.5,
-                  }}>{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {filtered.map((c, i) => (
-                <tr key={c.number} style={{
-                  borderBottom: i < filtered.length - 1 ? '1px solid var(--color-border-light)' : 'none',
-                  transition: 'background var(--transition-fast)',
-                }}
-                  onMouseEnter={e => (e.currentTarget.style.background = 'var(--color-bg)')}
-                  onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
-                >
-                  <td style={{ padding: '14px 16px' }}>
-                    <span style={{ fontFamily: 'ui-monospace, SFMono-Regular, monospace',
-                      fontSize: 12, color: 'var(--color-text)', fontWeight: 600 }}>
-                      {c.number}
-                    </span>
-                  </td>
-                  <td style={{ padding: '14px 16px' }}>
-                    <div style={{ fontWeight: 600, color: 'var(--color-text)' }}>{c.customerName}</div>
-                    <div style={{ fontSize: 11, color: 'var(--color-text-muted)', marginTop: 1 }}>{c.customerCompany}</div>
-                  </td>
-                  <td style={{ padding: '14px 16px' }}>
-                    <span style={{ background: 'rgba(124,58,237,0.08)', color: '#7c3aed',
-                      border: '1px solid rgba(124,58,237,0.18)', borderRadius: 4,
-                      padding: '2px 8px', fontSize: 11, fontWeight: 600 }}>
-                      {BUNDLE_LABELS[c.bundleType] ?? c.bundleType}
-                    </span>
-                  </td>
-                  <td style={{ padding: '14px 16px', color: 'var(--color-text-muted)' }}>
-                    {c.leaseTermMonths} mo
-                  </td>
-                  <td style={{ padding: '14px 16px', color: 'var(--color-text-muted)', textAlign: 'center' }}>
-                    {c.vehicles.length}
-                  </td>
-                  <td style={{ padding: '14px 16px' }}>
-                    <span style={{ fontWeight: 700, color: '#0891b2' }}>
-                      {fmt(c.totalMonthlyInstallmentCents, c.currency)}
-                    </span>
-                  </td>
-                  <td style={{ padding: '14px 16px' }}>
-                    <span style={{
-                      padding: '3px 10px', borderRadius: 20, fontSize: 11, fontWeight: 700,
-                      ...(c.signed
-                        ? { background: '#f0fdf4', color: '#15803d', border: '1px solid #86efac' }
-                        : { background: '#fefce8', color: '#a16207', border: '1px solid #fde68a' }),
-                    }}>
-                      {c.signed ? 'Signed' : 'Pending'}
-                    </span>
-                  </td>
-                  <td style={{ padding: '14px 16px' }}>
-                    <button
-                      onClick={() => setViewingNumber(c.number)}
-                      style={{
-                        padding: '5px 12px', fontSize: 12, fontWeight: 600, cursor: 'pointer',
-                        background: 'none', color: 'var(--color-text-muted)',
-                        border: '1px solid var(--color-border)', borderRadius: 6,
-                        transition: 'all var(--transition-fast)', whiteSpace: 'nowrap',
-                      }}
-                      onMouseEnter={e => { e.currentTarget.style.color = '#0f172a'; e.currentTarget.style.borderColor = '#0f172a'; }}
-                      onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-text-muted)'; e.currentTarget.style.borderColor = 'var(--color-border)'; }}
-                    >
-                      View
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: 16 }}>
+          {filtered.map(c => (
+            <ContractCard key={c.number} contract={c} showCustomer onView={() => setViewingNumber(c.number)} />
+          ))}
         </div>
       )}
     </div>

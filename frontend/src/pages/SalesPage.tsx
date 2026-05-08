@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
-import { createFleetContract, getFleetContract, signFleetContract, releaseFleetBundle } from '../api/sales';
+import { createFleetContract, getFleetContract, signFleetContract, releaseFleetBundle, deleteFleetContract } from '../api/sales';
+import { useAuth } from '../context/AuthContext';
 import type { FleetContractResponse } from '../api/sales';
 
 // ─── Unsplash image resolution ────────────────────────────────────────────────
@@ -226,11 +227,13 @@ function SignatureModal({ onConfirm, onCancel }: {
 
 // ─── Main page ────────────────────────────────────────────────────────────────
 export default function SalesPage() {
+  const { user } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
   const state = location.state as SalesState | null;
+  const isCustomer = user?.role === 'CUSTOMER';
 
-  // Form state
+  // Form state (used only for workers)
   const [name,    setName]    = useState('');
   const [company, setCompany] = useState('');
   const [email,   setEmail]   = useState('');
@@ -244,13 +247,57 @@ export default function SalesPage() {
   const [signatureImg,  setSignatureImg]  = useState<string | null>(null);
   const [signed,        setSigned]        = useState(false);
 
+  // Refs to track latest contract/signed state for cleanup on unmount
+  const contractRef = useRef<FleetContractResponse | null>(null);
+  const signedRef   = useRef(false);
+
+  useEffect(() => { contractRef.current = contract; }, [contract]);
+  useEffect(() => { signedRef.current   = signed;   }, [signed]);
+
+  // Cleanup: delete unsigned contract + release vehicles when customer leaves
+  useEffect(() => {
+    if (!isCustomer || !state) return;
+    return () => {
+      if (contractRef.current && !signedRef.current) {
+        const vins = state.vehicles.map(v => v.vin);
+        releaseFleetBundle(vins).catch(() => {});
+        deleteFleetContract(contractRef.current.number).catch(() => {});
+      }
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Ref guard prevents double-creation in React StrictMode (double-mount in dev)
+  const createCalledRef = useRef(false);
+
+  // Auto-create contract for customers (skip the form)
+  useEffect(() => {
+    if (!isCustomer || !state || createCalledRef.current) return;
+    createCalledRef.current = true;
+    setLoading(true);
+    setError('');
+    createFleetContract({
+      customerName: user!.name!,
+      customerCompany: user!.company!,
+      customerEmail: user!.email!,
+      leaseTermMonths: state.leaseTermMonths,
+      bundleType: state.bundleType,
+      vehicles: state.vehicles.map(v => ({ vin: v.vin, monthlyInstallmentCents: v.monthlyInstallmentCents, currency: v.currency })),
+    })
+      .then(number => getFleetContract(number))
+      .then(setContract)
+      .catch(e => setError(e instanceof Error ? e.message : 'Failed to create contract'))
+      .finally(() => setLoading(false));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isCustomer, state]);
+
   if (!state) {
     return (
       <div style={{ padding: 40 }}>
-        <p style={{ color: 'var(--color-text-muted)' }}>No bundle selected. Go to Fleet Consulting first.</p>
+        <p style={{ color: 'var(--color-text-muted)' }}>No bundle selected. Go to Find Your Fleet first.</p>
         <button onClick={() => navigate('/dashboard/fleet-consulting')}
           style={{ marginTop: 16, padding: '8px 16px', cursor: 'pointer' }}>
-          Back to Fleet Consulting
+          Back to Find Your Fleet
         </button>
       </div>
     );
@@ -348,6 +395,32 @@ export default function SalesPage() {
             </span>
           </div>
         </div>
+      </div>
+    );
+  }
+
+  // ── Customer auto-create loading ──────────────────────────────────────────
+  if (isCustomer && loading) {
+    return (
+      <div style={{ padding: '24px 28px', background: 'var(--color-bg)', minHeight: '100%' }}>
+        <PageHeader kicker="Sales" title="Preparing Your Contract" subtitle="Setting up your fleet leasing agreement…" />
+        <div style={{ padding: '64px 0', textAlign: 'center', color: 'var(--color-text-muted)', fontSize: 14 }}>
+          Creating contract…
+        </div>
+      </div>
+    );
+  }
+
+  if (isCustomer && error) {
+    return (
+      <div style={{ padding: '24px 28px', background: 'var(--color-bg)', minHeight: '100%' }}>
+        <PageHeader kicker="Sales" title="Something went wrong" subtitle="" />
+        <div style={{ padding: '12px 16px', background: '#fef2f2', border: '1px solid #fca5a5',
+          borderRadius: 6, color: '#dc2626', fontSize: 14, maxWidth: 500 }}>{error}</div>
+        <button onClick={() => navigate('/dashboard/fleet-consulting')}
+          style={{ marginTop: 16, padding: '8px 16px', cursor: 'pointer', borderRadius: 6 }}>
+          Back to Find Your Fleet
+        </button>
       </div>
     );
   }

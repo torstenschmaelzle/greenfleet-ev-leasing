@@ -45,7 +45,24 @@ public class FleetContractPersistenceAdapter implements FleetContractPersistence
     public List<FleetContract> listAll() {
         List<FleetContractJpaEntity> entities = new ArrayList<>();
         fleetContractRepository.findAll().forEach(entities::add);
+        return toFleetContracts(entities);
+    }
 
+    @Override
+    public List<FleetContract> findByCustomerEmail(String email) {
+        return toFleetContracts(fleetContractRepository.findByCustomerEmail(email));
+    }
+
+    @Override
+    public void delete(ContractNumber number) {
+        FleetContractJpaEntity entity = fleetContractRepository.findById(number.number())
+                .orElseThrow(() -> new ContractNotFoundException(number.number()));
+        entity.getVehicleContractNumbers()
+                .forEach(n -> contractPersistencePort.delete(ContractNumber.of(n)));
+        fleetContractRepository.deleteById(number.number());
+    }
+
+    private List<FleetContract> toFleetContracts(List<FleetContractJpaEntity> entities) {
         return entities.stream()
                 .map(entity -> {
                     List<VehicleContract> vehicleContracts = entity.getVehicleContractNumbers().stream()
