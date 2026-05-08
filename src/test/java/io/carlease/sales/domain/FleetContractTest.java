@@ -30,7 +30,7 @@ class FleetContractTest {
     void givenEmptyVehicleList_whenConstructed_thenThrowsEmptyFleetException() {
         assertThatThrownBy(() -> ContractFactory.createFleetContract(
                 ContractNumber.of("FC-001"), CUSTOMER, LEASE_TERM, "ECO_FOCUSED", List.of()))
-                .isInstanceOf(EmptyFleetException.class);
+                .isInstanceOf(InvalidFleetAttributeException.class);
     }
 
     // --- totalMonthlyInstallment ---

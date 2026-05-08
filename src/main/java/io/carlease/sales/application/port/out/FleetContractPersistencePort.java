@@ -6,5 +6,4 @@ import io.carlease.sales.domain.FleetContract;
 public interface FleetContractPersistencePort {
     void save(FleetContract fleetContract);
     FleetContract with(ContractNumber number);
-    boolean exists(ContractNumber number);
 }

@@ -6,14 +6,23 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class SignDateTest {
 
-	@Test
-	void test() {
-		// when
-		SignDate signDate1 = SignDate.of(2018, 8, 4);
-		SignDate signDate2 = SignDate.of(2018, 8, 4);
-		
-		// then
-		assertThat(signDate1).isEqualTo(signDate2);
-	}
+    @Test
+    void twoSignDatesWithSameValue_areEqual() {
+        assertThat(SignDate.of(2018, 8, 4)).isEqualTo(SignDate.of(2018, 8, 4));
+    }
 
+    @Test
+    void year_returnsCorrectValue() {
+        assertThat(SignDate.of(2026, 3, 15).year()).isEqualTo(2026);
+    }
+
+    @Test
+    void month_returnsCorrectValue() {
+        assertThat(SignDate.of(2026, 3, 15).month()).isEqualTo(3);
+    }
+
+    @Test
+    void day_returnsCorrectValue() {
+        assertThat(SignDate.of(2026, 3, 15).day()).isEqualTo(15);
+    }
 }

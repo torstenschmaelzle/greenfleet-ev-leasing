@@ -21,11 +21,6 @@ public class ContractPersistenceAdapter implements ContractPersistencePort {
 	}
 
 	@Override
-	public boolean exists(ContractNumber number) {
-		return repository.findById(number.number()).isPresent();
-	}
-
-	@Override
 	public VehicleContract with(ContractNumber number) {
 		ContractJpaEntity contractJpaEntity = repository.findById(number.number())
 				.orElseThrow(() -> new ContractNotFoundException(number.number()));

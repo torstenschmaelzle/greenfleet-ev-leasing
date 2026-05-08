@@ -40,8 +40,4 @@ public class FleetContractPersistenceAdapter implements FleetContractPersistence
         return FleetContractMapper.mapToDomain(entity, vehicleContracts);
     }
 
-    @Override
-    public boolean exists(ContractNumber number) {
-        return fleetContractRepository.existsById(number.number());
-    }
 }

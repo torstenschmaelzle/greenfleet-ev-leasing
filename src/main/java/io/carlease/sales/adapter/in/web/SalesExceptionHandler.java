@@ -1,7 +1,6 @@
 package io.carlease.sales.adapter.in.web;
 
 import io.carlease.sales.domain.*;
-import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -30,17 +29,9 @@ public class SalesExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.badRequest().body(Map.of("error", message));
     }
 
-    // --- Bean Validation failures (@Validated on query/path params) ---
-
-    @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity<Map<String, String>> handleConstraintViolation(ConstraintViolationException ex) {
-        String message = ex.getConstraintViolations().iterator().next().getMessage();
-        return ResponseEntity.badRequest().body(Map.of("error", message));
-    }
-
     // --- Domain: invalid input (400) ---
 
-    @ExceptionHandler({InvalidCustomerAttributeException.class, EmptyFleetException.class})
+    @ExceptionHandler({InvalidCustomerAttributeException.class, InvalidFleetAttributeException.class})
     public ResponseEntity<Map<String, String>> handleBadRequest(ContractDomainException ex) {
         return ResponseEntity.badRequest().body(Map.of("error", ex.getMessage()));
     }

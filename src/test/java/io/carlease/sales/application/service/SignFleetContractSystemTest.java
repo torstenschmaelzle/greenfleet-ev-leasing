@@ -1,5 +1,7 @@
 package io.carlease.sales.application.service;
 
+import io.carlease.EV_Catalogue.adapter.out.persistence.VehicleRepository;
+import io.carlease.sales.adapter.out.persistence.ContractRepository;
 import io.carlease.sales.adapter.out.persistence.FleetContractJpaEntity;
 import io.carlease.sales.adapter.out.persistence.FleetContractRepository;
 import org.junit.jupiter.api.Test;
@@ -15,11 +17,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class SignFleetContractSystemTest {
 
-    @Autowired
-    private TestRestTemplate restTemplate;
-
-    @Autowired
-    private FleetContractRepository fleetContractRepository;
+    @Autowired private TestRestTemplate restTemplate;
+    @Autowired private FleetContractRepository fleetContractRepository;
+    @Autowired private ContractRepository contractRepository;
+    @Autowired private VehicleRepository vehicleRepository;
 
     @Test
     @Sql("SignFleetContractSystemTest.sql")
@@ -32,5 +33,8 @@ class SignFleetContractSystemTest {
         FleetContractJpaEntity fleet = fleetContractRepository
                 .findById("fc-sign-test-001").orElseThrow();
         assertThat(fleet.getSignatureDate()).isNotNull();
+
+        assertThat(contractRepository.findById("vc-sign-001").orElseThrow().getSignatureDate()).isNotNull();
+        assertThat(vehicleRepository.findById("WBA00000000000121").orElseThrow().getStatus()).isEqualTo("UNDER_CONTRACT");
     }
 }

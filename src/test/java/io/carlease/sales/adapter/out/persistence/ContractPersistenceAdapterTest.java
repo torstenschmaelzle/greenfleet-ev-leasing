@@ -9,6 +9,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.jdbc.Sql;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @DataJpaTest
 @Import(ContractPersistenceAdapter.class)
@@ -43,6 +44,12 @@ public class ContractPersistenceAdapterTest {
         contractPersistenceAdapter.save(contract);
 
         assertThat(contractRepository.count()).isEqualTo(1);
+    }
+
+    @Test
+    void with_throwsContractNotFoundExceptionForUnknownNumber() {
+        assertThatThrownBy(() -> contractPersistenceAdapter.with(ContractNumber.of("UNKNOWN")))
+                .isInstanceOf(ContractNotFoundException.class);
     }
 
     @Test

@@ -30,7 +30,7 @@ public class FleetContract {
         requireNonNull(leaseTerm);
         requireNonNull(bundleType);
         requireNonNull(vehicleContracts);
-        if (vehicleContracts.isEmpty()) throw new EmptyFleetException();
+        if (vehicleContracts.isEmpty()) throw new InvalidFleetAttributeException("vehicleContracts", "fleet must contain at least one vehicle");
 
         this.number = number;
         this.customer = customer;
