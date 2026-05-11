@@ -269,6 +269,64 @@ class VehicleTest {
     }
 
     @Nested
+    class healthAdjustedLeasePrice {
+
+        private Vehicle vehicleWithSoh(int sohPercent) {
+            return VehicleFactory.createVehicle(
+                    vehicleId(),
+                    specification(),
+                    batterySpec(),
+                    performance(),
+                    monthlyPrice(),
+                    Percentage.of(new BigDecimal(sohPercent)),
+                    Range.ofKm(440)
+            );
+        }
+
+        @Test
+        void fullPriceWhenSohIs100Percent() {
+            var vehicle = vehicleWithSoh(100);
+
+            assertThat(vehicle.getHealthAdjustedLeasePrice()).isEqualTo(Amount.ofCents(75000L, Currency.CHF));
+        }
+
+        @Test
+        void fullPriceAtExactly95PercentSoh() {
+            var vehicle = vehicleWithSoh(95);
+
+            assertThat(vehicle.getHealthAdjustedLeasePrice()).isEqualTo(Amount.ofCents(75000L, Currency.CHF));
+        }
+
+        @Test
+        void fivePercentDiscountAt90PercentSoh() {
+            var vehicle = vehicleWithSoh(90);
+
+            assertThat(vehicle.getHealthAdjustedLeasePrice()).isEqualTo(Amount.ofCents(71250L, Currency.CHF));
+        }
+
+        @Test
+        void fifteenPercentDiscountAt80PercentSoh() {
+            var vehicle = vehicleWithSoh(80);
+
+            assertThat(vehicle.getHealthAdjustedLeasePrice()).isEqualTo(Amount.ofCents(63750L, Currency.CHF));
+        }
+
+        @Test
+        void maximumDiscountAt0PercentSoh() {
+            var vehicle = vehicleWithSoh(0);
+
+            assertThat(vehicle.getHealthAdjustedLeasePrice()).isEqualTo(Amount.ofCents(3750L, Currency.CHF));
+        }
+
+        @Test
+        void adjustedPriceRetainsCurrency() {
+            var vehicle = vehicleWithSoh(80);
+
+            assertThat(vehicle.getHealthAdjustedLeasePrice().getCurrency()).isEqualTo(Currency.CHF);
+        }
+    }
+
+    @Nested
     class concreteBddScenarios {
 
         @Test

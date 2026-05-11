@@ -3,6 +3,7 @@ package io.carlease.EV_Catalogue.domain;
 import io.carlease.shared.domain.Amount;
 import io.carlease.shared.domain.Currency;
 import io.carlease.shared.domain.VehicleType;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -37,6 +38,102 @@ public class VehicleFactoryTest {
 
     private Vehicle freshVehicle() {
         return VehicleFactory.createVehicle(vehicleId(), specification(), batterySpec(), performance(), monthlyPrice(), Percentage.of(new BigDecimal("95")), Range.ofKm(440));
+    }
+
+    @Nested
+    class createVehicleNullGuards {
+
+        @Test
+        void nullVehicleIdThrowsNullPointerException() {
+            assertThatThrownBy(() -> VehicleFactory.createVehicle(
+                    null, specification(), batterySpec(), performance(), monthlyPrice(),
+                    Percentage.of(new BigDecimal("95")), Range.ofKm(440)))
+                    .isInstanceOf(NullPointerException.class);
+        }
+
+        @Test
+        void nullSpecificationThrowsNullPointerException() {
+            assertThatThrownBy(() -> VehicleFactory.createVehicle(
+                    vehicleId(), null, batterySpec(), performance(), monthlyPrice(),
+                    Percentage.of(new BigDecimal("95")), Range.ofKm(440)))
+                    .isInstanceOf(NullPointerException.class);
+        }
+
+        @Test
+        void nullBatterySpecThrowsNullPointerException() {
+            assertThatThrownBy(() -> VehicleFactory.createVehicle(
+                    vehicleId(), specification(), null, performance(), monthlyPrice(),
+                    Percentage.of(new BigDecimal("95")), Range.ofKm(440)))
+                    .isInstanceOf(NullPointerException.class);
+        }
+
+        @Test
+        void nullPerformanceThrowsNullPointerException() {
+            assertThatThrownBy(() -> VehicleFactory.createVehicle(
+                    vehicleId(), specification(), batterySpec(), null, monthlyPrice(),
+                    Percentage.of(new BigDecimal("95")), Range.ofKm(440)))
+                    .isInstanceOf(NullPointerException.class);
+        }
+
+        @Test
+        void nullMonthlyLeasePriceThrowsNullPointerException() {
+            assertThatThrownBy(() -> VehicleFactory.createVehicle(
+                    vehicleId(), specification(), batterySpec(), performance(), null,
+                    Percentage.of(new BigDecimal("95")), Range.ofKm(440)))
+                    .isInstanceOf(NullPointerException.class);
+        }
+
+        @Test
+        void nullInitialStateOfHealthThrowsNullPointerException() {
+            assertThatThrownBy(() -> VehicleFactory.createVehicle(
+                    vehicleId(), specification(), batterySpec(), performance(), monthlyPrice(),
+                    null, Range.ofKm(440)))
+                    .isInstanceOf(NullPointerException.class);
+        }
+
+        @Test
+        void nullInitialMeasuredRangeThrowsNullPointerException() {
+            assertThatThrownBy(() -> VehicleFactory.createVehicle(
+                    vehicleId(), specification(), batterySpec(), performance(), monthlyPrice(),
+                    Percentage.of(new BigDecimal("95")), null))
+                    .isInstanceOf(NullPointerException.class);
+        }
+    }
+
+    @Nested
+    class restoreVehicleNullGuards {
+
+        @Test
+        void nullVehicleIdThrowsNullPointerException() {
+            assertThatThrownBy(() -> VehicleFactory.restoreVehicle(
+                    null, specification(), batterySpec(), performance(), monthlyPrice(),
+                    List.of(Percentage.of(new BigDecimal("95"))), List.of(Range.ofKm(440))))
+                    .isInstanceOf(NullPointerException.class);
+        }
+
+        @Test
+        void nullSpecificationThrowsNullPointerException() {
+            assertThatThrownBy(() -> VehicleFactory.restoreVehicle(
+                    vehicleId(), null, batterySpec(), performance(), monthlyPrice(),
+                    List.of(Percentage.of(new BigDecimal("95"))), List.of(Range.ofKm(440))))
+                    .isInstanceOf(NullPointerException.class);
+        }
+
+        @Test
+        void nullStatesOfHealthThrowsNullPointerException() {
+            assertThatThrownBy(() -> VehicleFactory.restoreVehicle(
+                    vehicleId(), specification(), batterySpec(), performance(), monthlyPrice(),
+                    null, List.of(Range.ofKm(440))))
+                    .isInstanceOf(NullPointerException.class);
+        }
+
+        @Test
+        void nullMeasuredRangesThrowsNullPointerException() {
+            assertThatThrownBy(() -> VehicleFactory.restoreVehicle(
+                    vehicleId(), specification(), batterySpec(), performance(), monthlyPrice(),
+                    List.of(Percentage.of(new BigDecimal("95"))), null))
+                    .isInstanceOf(NullPointerException.class);
+        }
     }
 
     @Test

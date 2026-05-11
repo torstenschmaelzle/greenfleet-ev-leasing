@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.jdbc.Sql;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -102,6 +103,87 @@ class VehiclePersistanceAdapterTest {
         adapter.deleteById(VehicleId.of("WBA12345678901234"));
 
         assertThat(vehicleRepository.count()).isEqualTo(0);
+    }
+
+    @Test
+    @Sql("VehiclePersistanceAdapterFindAllReservedTest.sql")
+    void findAllReserved_returnsOnlyReservedVehicles() {
+        List<Vehicle> reserved = adapter.findAllReserved();
+
+        assertThat(reserved).hasSize(1);
+        assertThat(reserved.get(0).getVehicleId()).isEqualTo(VehicleId.of("WBA11111111111111"));
+        assertThat(reserved.get(0).getStatus()).isEqualTo(VehicleStatus.RESERVED);
+    }
+
+    @Test
+    @Sql("VehiclePersistanceAdapterFindAllReservedTest.sql")
+    void findAllReserved_doesNotReturnAvailableVehicles() {
+        List<Vehicle> reserved = adapter.findAllReserved();
+
+        assertThat(reserved).noneMatch(v -> v.getVehicleId().equals(VehicleId.of("WBA22222222222222")));
+    }
+
+    @Test
+    void statusIsPersistedAndRestoredForReservedVehicle() {
+        Vehicle vehicle = VehicleFactory.createVehicle(
+                VehicleId.of("WBA12345678901234"),
+                VehicleSpecification.of("BMW", "iX3", Range.ofKm(460), VehicleType.SUV,
+                        EnergyConsumption.of(new BigDecimal("17"))),
+                BatterySpecification.of(new BigDecimal("80"), new BigDecimal("400"), new BigDecimal("11")),
+                Performance.of(286, new BigDecimal("6.8"), 180),
+                Amount.ofCents(75000L, Currency.CHF),
+                Percentage.of(new BigDecimal("95")),
+                Range.ofKm(440)
+        );
+        vehicle.lockVehicle(LockDuration.ofMinutes(120));
+        adapter.save(vehicle);
+
+        Vehicle restored = adapter.findById(VehicleId.of("WBA12345678901234")).orElseThrow();
+
+        assertThat(restored.getStatus()).isEqualTo(VehicleStatus.RESERVED);
+        assertThat(restored.getLock()).isPresent();
+    }
+
+    @Test
+    void statusIsPersistedAndRestoredForVehicleUnderContract() {
+        Vehicle vehicle = VehicleFactory.createVehicle(
+                VehicleId.of("WBA12345678901234"),
+                VehicleSpecification.of("BMW", "iX3", Range.ofKm(460), VehicleType.SUV,
+                        EnergyConsumption.of(new BigDecimal("17"))),
+                BatterySpecification.of(new BigDecimal("80"), new BigDecimal("400"), new BigDecimal("11")),
+                Performance.of(286, new BigDecimal("6.8"), 180),
+                Amount.ofCents(75000L, Currency.CHF),
+                Percentage.of(new BigDecimal("95")),
+                Range.ofKm(440)
+        );
+        vehicle.lockVehicle(LockDuration.ofMinutes(120));
+        vehicle.assignToContract();
+        adapter.save(vehicle);
+
+        Vehicle restored = adapter.findById(VehicleId.of("WBA12345678901234")).orElseThrow();
+
+        assertThat(restored.getStatus()).isEqualTo(VehicleStatus.UNDER_CONTRACT);
+        assertThat(restored.getLock()).isEmpty();
+    }
+
+    @Test
+    void statusIsPersistedAndRestoredForRemovedVehicle() {
+        Vehicle vehicle = VehicleFactory.createVehicle(
+                VehicleId.of("WBA12345678901234"),
+                VehicleSpecification.of("BMW", "iX3", Range.ofKm(460), VehicleType.SUV,
+                        EnergyConsumption.of(new BigDecimal("17"))),
+                BatterySpecification.of(new BigDecimal("80"), new BigDecimal("400"), new BigDecimal("11")),
+                Performance.of(286, new BigDecimal("6.8"), 180),
+                Amount.ofCents(75000L, Currency.CHF),
+                Percentage.of(new BigDecimal("95")),
+                Range.ofKm(440)
+        );
+        vehicle.remove();
+        adapter.save(vehicle);
+
+        Vehicle restored = adapter.findById(VehicleId.of("WBA12345678901234")).orElseThrow();
+
+        assertThat(restored.getStatus()).isEqualTo(VehicleStatus.REMOVED);
     }
 
     @Test
