@@ -1,7 +1,7 @@
-package io.carlease.EV_Catalogue.application.service;
+package io.carlease.ev_catalogue.application.service;
 
-import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
-import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.ev_catalogue.application.port.out.VehiclePersistencePort;
+import io.carlease.ev_catalogue.domain.*;
 import io.carlease.shared.domain.*;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -18,8 +18,8 @@ import static org.mockito.Mockito.never;
 
 class RemoveVehicleServiceTest {
 
-    private final VehiclePersistancePort persistancePort = mock(VehiclePersistancePort.class);
-    private final RemoveVehicleService service = new RemoveVehicleService(persistancePort);
+    private final VehiclePersistencePort persistencePort = mock(VehiclePersistencePort.class);
+    private final RemoveVehicleService service = new RemoveVehicleService(persistencePort);
 
     private VehicleId validVehicleId() {
         return VehicleId.of("WBA12345678654234");
@@ -49,12 +49,12 @@ class RemoveVehicleServiceTest {
 
         @Test
         void deletesVehicle() {
-            given(persistancePort.findById(validVehicleId()))
+            given(persistencePort.findById(validVehicleId()))
                     .willReturn(Optional.of(existingVehicle()));
 
             service.remove(validVehicleId());
 
-            then(persistancePort).should().deleteById(validVehicleId());
+            then(persistencePort).should().deleteById(validVehicleId());
         }
     }
 
@@ -63,7 +63,7 @@ class RemoveVehicleServiceTest {
 
         @Test
         void throwsIllegalArgumentException() {
-            given(persistancePort.findById(validVehicleId())).willReturn(Optional.empty());
+            given(persistencePort.findById(validVehicleId())).willReturn(Optional.empty());
 
             assertThatThrownBy(() -> service.remove(validVehicleId()))
                     .isInstanceOf(VehicleNotFoundException.class);
@@ -71,12 +71,12 @@ class RemoveVehicleServiceTest {
 
         @Test
         void doesNotDeleteWhenVehicleNotFound() {
-            given(persistancePort.findById(validVehicleId())).willReturn(Optional.empty());
+            given(persistencePort.findById(validVehicleId())).willReturn(Optional.empty());
 
             assertThatThrownBy(() -> service.remove(validVehicleId()))
                     .isInstanceOf(VehicleNotFoundException.class);
 
-            then(persistancePort).should(never()).deleteById(any());
+            then(persistencePort).should(never()).deleteById(any());
         }
     }
 
@@ -85,7 +85,7 @@ class RemoveVehicleServiceTest {
 
         @Test
         void throwsVehicleRemovalException() {
-            given(persistancePort.findById(validVehicleId()))
+            given(persistencePort.findById(validVehicleId()))
                     .willReturn(Optional.of(reservedVehicle()));
 
             assertThatThrownBy(() -> service.remove(validVehicleId()))
@@ -94,13 +94,13 @@ class RemoveVehicleServiceTest {
 
         @Test
         void doesNotDeleteWhenVehicleIsNotAvailable() {
-            given(persistancePort.findById(validVehicleId()))
+            given(persistencePort.findById(validVehicleId()))
                     .willReturn(Optional.of(reservedVehicle()));
 
             assertThatThrownBy(() -> service.remove(validVehicleId()))
                     .isInstanceOf(VehicleRemovalException.class);
 
-            then(persistancePort).should(never()).deleteById(any());
+            then(persistencePort).should(never()).deleteById(any());
         }
     }
 }

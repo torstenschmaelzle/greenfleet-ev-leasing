@@ -26,7 +26,7 @@ class ViewFleetContractServiceTest {
             number,
             Customer.of("John Buyer", "ACME AG", "john@example.com"),
             LeaseTerm.of(36),
-            "ECO_FOCUSED",
+            "BALANCED",
             List.of(
                 ContractFactory.restoreFleetVehicleContract(
                     ContractNumber.generate(),

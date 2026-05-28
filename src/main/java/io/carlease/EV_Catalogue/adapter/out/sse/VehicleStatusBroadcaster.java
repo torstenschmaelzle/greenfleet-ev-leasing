@@ -1,7 +1,7 @@
-package io.carlease.EV_Catalogue.adapter.out.sse;
+package io.carlease.ev_catalogue.adapter.out.sse;
 
-import io.carlease.EV_Catalogue.application.port.out.VehicleBroadcastPort;
-import io.carlease.EV_Catalogue.domain.VehicleStatus;
+import io.carlease.ev_catalogue.application.port.out.VehicleBroadcastPort;
+import io.carlease.ev_catalogue.domain.VehicleStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;

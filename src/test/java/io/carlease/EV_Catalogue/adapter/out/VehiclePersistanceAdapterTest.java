@@ -1,7 +1,7 @@
-package io.carlease.EV_Catalogue.adapter.out;
+package io.carlease.ev_catalogue.adapter.out;
 
-import io.carlease.EV_Catalogue.adapter.out.persistence.VehicleRepository;
-import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.ev_catalogue.adapter.out.persistence.VehicleRepository;
+import io.carlease.ev_catalogue.domain.*;
 import io.carlease.shared.domain.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +15,11 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
-@Import(VehiclePersistanceAdapter.class)
-class VehiclePersistanceAdapterTest {
+@Import(VehiclePersistenceAdapter.class)
+class VehiclePersistenceAdapterTest {
 
     @Autowired
-    private VehiclePersistanceAdapter adapter;
+    private VehiclePersistenceAdapter adapter;
 
     @Autowired
     private VehicleRepository vehicleRepository;
@@ -72,7 +72,7 @@ class VehiclePersistanceAdapterTest {
 
 
     @Test
-    @Sql("VehiclePersistanceAdapterTest.sql")
+    @Sql("VehiclePersistenceAdapterTest.sql")
     void loadsVehicleById() {
         Vehicle vehicle = adapter.findById(VehicleId.of("WBA12345678901234")).orElseThrow();
 
@@ -87,7 +87,7 @@ class VehiclePersistanceAdapterTest {
     }
 
     @Test
-    @Sql("VehiclePersistanceAdapterTest.sql")
+    @Sql("VehiclePersistenceAdapterTest.sql")
     void existsByIdReturnsTrueForPersistedVehicle() {
         assertThat(adapter.existsById(VehicleId.of("WBA12345678901234"))).isTrue();
     }
@@ -98,7 +98,7 @@ class VehiclePersistanceAdapterTest {
     }
 
     @Test
-    @Sql("VehiclePersistanceAdapterTest.sql")
+    @Sql("VehiclePersistenceAdapterTest.sql")
     void deletesVehicleById() {
         adapter.deleteById(VehicleId.of("WBA12345678901234"));
 
@@ -106,7 +106,7 @@ class VehiclePersistanceAdapterTest {
     }
 
     @Test
-    @Sql("VehiclePersistanceAdapterFindAllReservedTest.sql")
+    @Sql("VehiclePersistenceAdapterFindAllReservedTest.sql")
     void findAllReserved_returnsOnlyReservedVehicles() {
         List<Vehicle> reserved = adapter.findAllReserved();
 
@@ -116,7 +116,7 @@ class VehiclePersistanceAdapterTest {
     }
 
     @Test
-    @Sql("VehiclePersistanceAdapterFindAllReservedTest.sql")
+    @Sql("VehiclePersistenceAdapterFindAllReservedTest.sql")
     void findAllReserved_doesNotReturnAvailableVehicles() {
         List<Vehicle> reserved = adapter.findAllReserved();
 
@@ -187,7 +187,7 @@ class VehiclePersistanceAdapterTest {
     }
 
     @Test
-    @Sql("VehiclePersistanceAdapterTest.sql")
+    @Sql("VehiclePersistenceAdapterTest.sql")
     void savesUpdatedVehicleState() {
         Vehicle vehicle = adapter.findById(VehicleId.of("WBA12345678901234")).orElseThrow();
 

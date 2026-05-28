@@ -149,6 +149,8 @@ public class FleetContractController {
             int leaseTermMonths,
 
             @NotBlank(message = "bundleType must not be blank")
+            @Pattern(regexp = "^(CUSTOM|BALANCED|ECO|ECONOMIC|PREMIUM)$",
+                     message = "bundleType must be one of: CUSTOM, BALANCED, ECO, ECONOMIC, PREMIUM")
             String bundleType,
 
             @NotEmpty(message = "vehicles must not be empty")

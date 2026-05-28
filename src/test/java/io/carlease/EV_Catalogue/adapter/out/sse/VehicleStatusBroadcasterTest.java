@@ -1,6 +1,6 @@
-package io.carlease.EV_Catalogue.adapter.out.sse;
+package io.carlease.ev_catalogue.adapter.out.sse;
 
-import io.carlease.EV_Catalogue.domain.VehicleStatus;
+import io.carlease.ev_catalogue.domain.VehicleStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;

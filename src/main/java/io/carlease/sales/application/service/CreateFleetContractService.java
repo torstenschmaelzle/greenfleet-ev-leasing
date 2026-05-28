@@ -38,7 +38,7 @@ public class CreateFleetContractService implements CreateFleetContractUseCase {
     }
 
     private VehicleContract buildVehicleContract(VehicleEntry entry, Customer customer) {
-        Currency currency = Currency.valueOf(entry.currency());
+        Currency currency = Currency.from(entry.currency());
         Amount installment = Amount.ofCents(entry.monthlyInstallmentCents(), currency);
         return ContractFactory.createFleetVehicleContract(
                 ContractNumber.generate(),

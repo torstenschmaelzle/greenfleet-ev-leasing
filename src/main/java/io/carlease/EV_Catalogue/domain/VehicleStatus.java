@@ -1,6 +1,7 @@
-package io.carlease.EV_Catalogue.domain;
+package io.carlease.ev_catalogue.domain;
 
-public enum VehicleStatus {
+public enum
+VehicleStatus {
     AVAILABLE,
     RESERVED,
     UNDER_CONTRACT,

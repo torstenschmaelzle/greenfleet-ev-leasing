@@ -76,7 +76,7 @@ public class FleetContractSteps {
                   "customerCompany": "Test AG",
                   "customerEmail": "cucumber@test.com",
                   "leaseTermMonths": 36,
-                  "bundleType": "ECO_FOCUSED",
+                  "bundleType": "BALANCED",
                   "vehicles": [
                     { "vin": "%s", "monthlyInstallmentCents": 75000, "currency": "CHF" }
                   ]
@@ -146,7 +146,7 @@ public class FleetContractSteps {
     @Then("the signing is rejected with an error")
     public void theSigningIsRejectedWithAnError() {
         assertThat(lastSignResponse.getStatusCode())
-                .as("Expected 409 CONFLICT — EVCatalogueExceptionHandler maps VehicleContractViolationException to 409")
+                .as("Expected 409 CONFLICT — EVCatalogueExceptionHandler maps VehicleUnderContractViolationException to 409")
                 .isEqualTo(HttpStatus.CONFLICT);
     }
 

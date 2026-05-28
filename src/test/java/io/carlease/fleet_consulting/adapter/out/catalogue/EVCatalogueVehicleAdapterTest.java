@@ -1,7 +1,7 @@
 package io.carlease.fleet_consulting.adapter.out.catalogue;
 
-import io.carlease.EV_Catalogue.application.port.in.ListCatalogueUseCase;
-import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.ev_catalogue.application.port.in.ListCatalogueUseCase;
+import io.carlease.ev_catalogue.domain.*;
 import io.carlease.fleet_consulting.domain.Kilometre;
 import io.carlease.fleet_consulting.domain.VehicleSummary;
 import io.carlease.shared.domain.*;

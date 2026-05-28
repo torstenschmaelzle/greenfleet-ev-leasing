@@ -1,9 +1,9 @@
-package io.carlease.EV_Catalogue.adapter.out;
+package io.carlease.ev_catalogue.adapter.out;
 
-import io.carlease.EV_Catalogue.adapter.out.persistence.VehicleMapper;
-import io.carlease.EV_Catalogue.adapter.out.persistence.VehicleRepository;
-import io.carlease.EV_Catalogue.application.port.out.ListCataloguePort;
-import io.carlease.EV_Catalogue.domain.Vehicle;
+import io.carlease.ev_catalogue.adapter.out.persistence.VehicleMapper;
+import io.carlease.ev_catalogue.adapter.out.persistence.VehicleRepository;
+import io.carlease.ev_catalogue.application.port.out.ListCataloguePort;
+import io.carlease.ev_catalogue.domain.Vehicle;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

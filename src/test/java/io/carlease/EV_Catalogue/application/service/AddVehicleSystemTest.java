@@ -1,17 +1,16 @@
-package io.carlease.EV_Catalogue.application.service;
+package io.carlease.ev_catalogue.application.service;
 
-import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
-import io.carlease.EV_Catalogue.domain.VehicleId;
+import io.carlease.ev_catalogue.application.port.out.VehiclePersistencePort;
+import io.carlease.ev_catalogue.domain.VehicleId;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.util.UriComponentsBuilder;
-
-import java.net.URI;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -22,34 +21,37 @@ class AddVehicleSystemTest {
     private TestRestTemplate restTemplate;
 
     @Autowired
-    private VehiclePersistancePort vehiclePersistancePort;
+    private VehiclePersistencePort vehiclePersistencePort;
 
     @Test
-    void addVehicle_persistsVehicleAndReturnsRedirect() {
-        URI url = UriComponentsBuilder.fromPath("/ev-catalogue/add_vehicle")
-                .queryParam("vin",                         "WBA12345678901234")
-                .queryParam("brand",                       "BMW")
-                .queryParam("model",                       "iX3")
-                .queryParam("range_km",                    460)
-                .queryParam("vehicle_type",                "SUV")
-                .queryParam("consumption_kwh_per_100km",   17.0)
-                .queryParam("battery_capacity_kwh",        80.0)
-                .queryParam("battery_voltage_v",           400.0)
-                .queryParam("battery_max_charge_speed_kw", 11.0)
-                .queryParam("horse_power_hp",              286)
-                .queryParam("acceleration_sec",            6.8)
-                .queryParam("top_speed_kmh",               180)
-                .queryParam("monthly_lease_price_cents",   75000)
-                .queryParam("currency",                    "CHF")
-                .queryParam("initial_state_of_health",     95.0)
-                .queryParam("initial_measured_range_km",   440)
-                .build().encode().toUri();
+    void addVehicle_persistsVehicleAndReturns201() {
+        String body = """
+                {
+                  "vin": "WBA12345678901234",
+                  "brand": "BMW",
+                  "model": "iX3",
+                  "rangeKm": 460,
+                  "vehicleType": "SUV",
+                  "consumptionKwhPer100km": 17.0,
+                  "capacityKwh": 80.0,
+                  "voltageV": 400.0,
+                  "maxChargeSpeedKw": 11.0,
+                  "horsePowerHp": 286,
+                  "accelerationSec": 6.8,
+                  "topSpeedKmh": 180,
+                  "monthlyLeasePriceCents": 75000,
+                  "currency": "CHF",
+                  "initialStateOfHealth": 95.0,
+                  "initialMeasuredRangeKm": 440
+                }
+                """;
 
-        ResponseEntity<Object> response = restTemplate.exchange(
-                url, HttpMethod.POST, null, Object.class);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        ResponseEntity<Void> response = restTemplate.postForEntity(
+                "/api/vehicles", new HttpEntity<>(body, headers), Void.class);
 
-        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.FOUND);
-        assertThat(vehiclePersistancePort.existsById(
-                VehicleId.of("WBA12345678901234"))).isTrue();
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);
+        assertThat(vehiclePersistencePort.existsById(VehicleId.of("WBA12345678901234"))).isTrue();
     }
 }

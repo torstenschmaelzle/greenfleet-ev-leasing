@@ -20,7 +20,7 @@ VALUES ('vc-sign-001', 'Jane Lessee', 'Fleet Corp AG', 'jane@fleetcorp.com', 'WB
 
 -- Sales: fleet contract
 INSERT INTO fleet_contracts (number, customer_name, customer_company, customer_email, lease_term_months, bundle_type, signature_date)
-VALUES ('fc-sign-test-001', 'Jane Lessee', 'Fleet Corp AG', 'jane@fleetcorp.com', 36, 'ECO_FOCUSED', null);
+VALUES ('fc-sign-test-001', 'Jane Lessee', 'Fleet Corp AG', 'jane@fleetcorp.com', 36, 'BALANCED', null);
 
 -- Sales: mapping
 INSERT INTO fleet_contract_vehicle_numbers (fleet_contract_number, vehicle_contract_number)

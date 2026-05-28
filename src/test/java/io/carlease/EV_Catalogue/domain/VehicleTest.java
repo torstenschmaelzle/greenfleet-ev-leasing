@@ -1,4 +1,4 @@
-package io.carlease.EV_Catalogue.domain;
+package io.carlease.ev_catalogue.domain;
 
 import io.carlease.shared.domain.*;
 import io.carlease.shared.domain.InvalidAmountException;
@@ -157,7 +157,7 @@ class VehicleTest {
         void contractConfirmationRejectedWhenNotReserved() {
             var vehicle = freshVehicle();
 
-            assertThatThrownBy(vehicle::assignToContract).isInstanceOf(VehicleContractViolationException.class);
+            assertThatThrownBy(vehicle::assignToContract).isInstanceOf(VehicleUnderContractViolationException.class);
             assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.AVAILABLE);
         }
 
@@ -167,7 +167,7 @@ class VehicleTest {
             vehicle.lockVehicle(LockDuration.ofMinutes(120));
             vehicle.assignToContract();
 
-            assertThatThrownBy(vehicle::assignToContract).isInstanceOf(VehicleContractViolationException.class);
+            assertThatThrownBy(vehicle::assignToContract).isInstanceOf(VehicleUnderContractViolationException.class);
         }
     }
 

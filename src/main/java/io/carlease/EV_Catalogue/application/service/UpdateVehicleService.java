@@ -1,8 +1,8 @@
-package io.carlease.EV_Catalogue.application.service;
+package io.carlease.ev_catalogue.application.service;
 
-import io.carlease.EV_Catalogue.application.port.in.updateVehicle;
-import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
-import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.ev_catalogue.application.port.in.UpdateVehicleUseCase;
+import io.carlease.ev_catalogue.application.port.out.VehiclePersistencePort;
+import io.carlease.ev_catalogue.domain.*;
 import io.carlease.shared.domain.*;
 import org.jmolecules.architecture.layered.ApplicationLayer;
 import org.jmolecules.ddd.annotation.Service;
@@ -13,12 +13,12 @@ import org.springframework.stereotype.Component;
 @Component
 @ApplicationLayer
 @Service
-public class UpdateVehicleService implements updateVehicle {
+public class UpdateVehicleService implements UpdateVehicleUseCase {
 
-    private final VehiclePersistancePort persistVehiclePort;
+    private final VehiclePersistencePort persistVehiclePort;
     private final Logger logger = LoggerFactory.getLogger(UpdateVehicleService.class);
 
-    public UpdateVehicleService(VehiclePersistancePort persistVehiclePort) {
+    public UpdateVehicleService(VehiclePersistencePort persistVehiclePort) {
         this.persistVehiclePort = persistVehiclePort;
     }
 

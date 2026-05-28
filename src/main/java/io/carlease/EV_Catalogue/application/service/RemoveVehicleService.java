@@ -1,10 +1,10 @@
-package io.carlease.EV_Catalogue.application.service;
+package io.carlease.ev_catalogue.application.service;
 
-import io.carlease.EV_Catalogue.application.port.in.removeVehicle;
-import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
-import io.carlease.EV_Catalogue.domain.Vehicle;
-import io.carlease.EV_Catalogue.domain.VehicleId;
-import io.carlease.EV_Catalogue.domain.VehicleNotFoundException;
+import io.carlease.ev_catalogue.application.port.in.RemoveVehicleUseCase;
+import io.carlease.ev_catalogue.application.port.out.VehiclePersistencePort;
+import io.carlease.ev_catalogue.domain.Vehicle;
+import io.carlease.ev_catalogue.domain.VehicleId;
+import io.carlease.ev_catalogue.domain.VehicleNotFoundException;
 import org.jmolecules.architecture.layered.ApplicationLayer;
 import org.jmolecules.ddd.annotation.Service;
 import org.slf4j.Logger;
@@ -14,12 +14,12 @@ import org.springframework.stereotype.Component;
 @Component
 @ApplicationLayer
 @Service
-public class RemoveVehicleService implements removeVehicle {
+public class RemoveVehicleService implements RemoveVehicleUseCase {
 
-    private final VehiclePersistancePort persistVehiclePort;
+    private final VehiclePersistencePort persistVehiclePort;
     private final Logger logger = LoggerFactory.getLogger(RemoveVehicleService.class);
 
-    public RemoveVehicleService(VehiclePersistancePort persistVehiclePort) {
+    public RemoveVehicleService(VehiclePersistencePort persistVehiclePort) {
         this.persistVehiclePort = persistVehiclePort;
     }
 

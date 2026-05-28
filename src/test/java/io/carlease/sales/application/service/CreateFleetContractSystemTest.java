@@ -34,7 +34,7 @@ class CreateFleetContractSystemTest {
                   "customerCompany": "ACME AG",
                   "customerEmail": "john@example.com",
                   "leaseTermMonths": 36,
-                  "bundleType": "ECO_FOCUSED",
+                  "bundleType": "BALANCED",
                   "vehicles": [
                     { "vin": "WBA00000000000101", "monthlyInstallmentCents": 60000, "currency": "CHF" },
                     { "vin": "WBA00000000000102", "monthlyInstallmentCents": 45000, "currency": "CHF" }

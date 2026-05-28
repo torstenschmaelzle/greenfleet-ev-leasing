@@ -1,11 +1,11 @@
-package io.carlease.EV_Catalogue.application.service;
+package io.carlease.ev_catalogue.application.service;
 
-import io.carlease.EV_Catalogue.application.port.in.lockVehicle;
-import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
-import io.carlease.EV_Catalogue.domain.LockDuration;
-import io.carlease.EV_Catalogue.domain.Vehicle;
-import io.carlease.EV_Catalogue.domain.VehicleId;
-import io.carlease.EV_Catalogue.domain.VehicleStatus;
+import io.carlease.ev_catalogue.application.port.in.LockVehicleUseCase;
+import io.carlease.ev_catalogue.application.port.out.VehiclePersistencePort;
+import io.carlease.ev_catalogue.domain.LockDuration;
+import io.carlease.ev_catalogue.domain.Vehicle;
+import io.carlease.ev_catalogue.domain.VehicleId;
+import io.carlease.ev_catalogue.domain.VehicleStatus;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,10 +17,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 class LockVehicleSystemTest {
 
     @Autowired
-    private lockVehicle lockVehicleUseCase;
+    private LockVehicleUseCase lockVehicleUseCase;
 
     @Autowired
-    private VehiclePersistancePort vehiclePersistancePort;
+    private VehiclePersistencePort vehiclePersistancePort;
 
     @Test
     @Sql("LockVehicleSystemTest.sql")

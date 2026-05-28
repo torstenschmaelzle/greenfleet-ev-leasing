@@ -48,7 +48,7 @@ class FleetContractControllerTest {
           "customerCompany": "ACME AG",
           "customerEmail": "john@example.com",
           "leaseTermMonths": 36,
-          "bundleType": "ECO_FOCUSED",
+          "bundleType": "BALANCED",
           "vehicles": [
             { "vin": "WBA00000000000101", "monthlyInstallmentCents": 60000, "currency": "CHF" }
           ]
@@ -72,7 +72,7 @@ class FleetContractControllerTest {
             ContractNumber.of(number),
             Customer.of("John Buyer", "ACME AG", "john@example.com"),
             LeaseTerm.of(36),
-            "ECO_FOCUSED",
+            "BALANCED",
             List.of(vc),
             Optional.empty()
         );
@@ -106,7 +106,7 @@ class FleetContractControllerTest {
                           "customerCompany": "ACME AG",
                           "customerEmail": "john@example.com",
                           "leaseTermMonths": 36,
-                          "bundleType": "ECO_FOCUSED",
+                          "bundleType": "BALANCED",
                           "vehicles": [
                             { "vin": "WBA00000000000101", "monthlyInstallmentCents": 60000, "currency": "CHF" }
                           ]
@@ -125,7 +125,7 @@ class FleetContractControllerTest {
                           "customerCompany": "ACME AG",
                           "customerEmail": "not-an-email",
                           "leaseTermMonths": 36,
-                          "bundleType": "ECO_FOCUSED",
+                          "bundleType": "BALANCED",
                           "vehicles": [
                             { "vin": "WBA00000000000101", "monthlyInstallmentCents": 60000, "currency": "CHF" }
                           ]
@@ -144,7 +144,7 @@ class FleetContractControllerTest {
                           "customerCompany": "ACME AG",
                           "customerEmail": "john@example.com",
                           "leaseTermMonths": 0,
-                          "bundleType": "ECO_FOCUSED",
+                          "bundleType": "BALANCED",
                           "vehicles": [
                             { "vin": "WBA00000000000101", "monthlyInstallmentCents": 60000, "currency": "CHF" }
                           ]
@@ -163,7 +163,7 @@ class FleetContractControllerTest {
                           "customerCompany": "ACME AG",
                           "customerEmail": "john@example.com",
                           "leaseTermMonths": 36,
-                          "bundleType": "ECO_FOCUSED",
+                          "bundleType": "BALANCED",
                           "vehicles": []
                         }
                         """))
@@ -180,7 +180,7 @@ class FleetContractControllerTest {
                           "customerCompany": "ACME AG",
                           "customerEmail": "john@example.com",
                           "leaseTermMonths": 36,
-                          "bundleType": "ECO_FOCUSED",
+                          "bundleType": "BALANCED",
                           "vehicles": [
                             { "vin": "WBA00000000000101", "monthlyInstallmentCents": 60000, "currency": "chf" }
                           ]

@@ -1,7 +1,7 @@
-package io.carlease.EV_Catalogue.application.service;
+package io.carlease.ev_catalogue.application.service;
 
-import io.carlease.EV_Catalogue.application.port.out.ListCataloguePort;
-import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.ev_catalogue.application.port.out.ListCataloguePort;
+import io.carlease.ev_catalogue.domain.*;
 import io.carlease.shared.domain.*;
 import org.junit.jupiter.api.Test;
 

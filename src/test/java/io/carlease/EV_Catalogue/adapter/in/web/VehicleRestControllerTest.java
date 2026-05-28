@@ -1,11 +1,11 @@
-package io.carlease.EV_Catalogue.adapter.in.web;
+package io.carlease.ev_catalogue.adapter.in.web;
 
-import io.carlease.EV_Catalogue.application.port.in.GetVehicleUseCase;
-import io.carlease.EV_Catalogue.application.port.in.ListCatalogueUseCase;
-import io.carlease.EV_Catalogue.application.port.in.addVehicle;
-import io.carlease.EV_Catalogue.application.port.in.removeVehicle;
-import io.carlease.EV_Catalogue.application.port.in.updateVehicle;
-import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.ev_catalogue.application.port.in.GetVehicleUseCase;
+import io.carlease.ev_catalogue.application.port.in.ListCatalogueUseCase;
+import io.carlease.ev_catalogue.application.port.in.AddVehicleUseCase;
+import io.carlease.ev_catalogue.application.port.in.RemoveVehicleUseCase;
+import io.carlease.ev_catalogue.application.port.in.UpdateVehicleUseCase;
+import io.carlease.ev_catalogue.domain.*;
 import io.carlease.shared.domain.*;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -39,13 +39,13 @@ class VehicleRestControllerTest {
     private GetVehicleUseCase getVehicleUseCase;
 
     @MockBean
-    private addVehicle addVehicleUseCase;
+    private AddVehicleUseCase addVehicleUseCase;
 
     @MockBean
-    private updateVehicle updateVehicleUseCase;
+    private UpdateVehicleUseCase updateVehicleUseCase;
 
     @MockBean
-    private removeVehicle removeVehicleUseCase;
+    private RemoveVehicleUseCase removeVehicleUseCase;
 
     private static final String VALID_VIN = "WBA12345678901234";
 

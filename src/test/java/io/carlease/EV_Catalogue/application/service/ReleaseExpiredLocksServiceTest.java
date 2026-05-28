@@ -1,8 +1,9 @@
-package io.carlease.EV_Catalogue.application.service;
+package io.carlease.ev_catalogue.application.service;
 
-import io.carlease.EV_Catalogue.application.port.out.VehicleBroadcastPort;
-import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
-import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.ev_catalogue.application.port.out.VehicleBroadcastPort;
+import io.carlease.ev_catalogue.application.port.out.VehicleEventPort;
+import io.carlease.ev_catalogue.application.port.out.VehiclePersistencePort;
+import io.carlease.ev_catalogue.domain.*;
 import io.carlease.shared.domain.*;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -22,9 +23,10 @@ import static org.mockito.Mockito.never;
 
 class ReleaseExpiredLocksServiceTest {
 
-    private final VehiclePersistancePort persistancePort = mock(VehiclePersistancePort.class);
+    private final VehiclePersistencePort persistencePort = mock(VehiclePersistencePort.class);
     private final VehicleBroadcastPort broadcaster = mock(VehicleBroadcastPort.class);
-    private final ReleaseExpiredLocksService service = new ReleaseExpiredLocksService(persistancePort, broadcaster);
+    private final VehicleEventPort vehicleEventPort = mock(VehicleEventPort.class);
+    private final ReleaseExpiredLocksService service = new ReleaseExpiredLocksService(persistencePort, broadcaster, vehicleEventPort);
 
     private Vehicle reservedVehicle() {
         Vehicle vehicle = VehicleFactory.createVehicle(
@@ -55,11 +57,11 @@ class ReleaseExpiredLocksServiceTest {
         void releasesLockAndSavesVehicle() throws Exception {
             Vehicle vehicle = reservedVehicle();
             expireLock(vehicle);
-            given(persistancePort.findAllReserved()).willReturn(List.of(vehicle));
+            given(persistencePort.findAllReserved()).willReturn(List.of(vehicle));
 
             service.releaseExpiredLocks();
 
-            then(persistancePort).should().save(vehicle);
+            then(persistencePort).should().save(vehicle);
             assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.AVAILABLE);
             assertThat(vehicle.getLock()).isEmpty();
         }
@@ -68,11 +70,22 @@ class ReleaseExpiredLocksServiceTest {
         void broadcastsAvailableStatus() throws Exception {
             Vehicle vehicle = reservedVehicle();
             expireLock(vehicle);
-            given(persistancePort.findAllReserved()).willReturn(List.of(vehicle));
+            given(persistencePort.findAllReserved()).willReturn(List.of(vehicle));
 
             service.releaseExpiredLocks();
 
             then(broadcaster).should().broadcast(vehicle.getVehicleId().getVin(), VehicleStatus.AVAILABLE);
+        }
+
+        @Test
+        void publishesEventWithExpiredVins() throws Exception {
+            Vehicle vehicle = reservedVehicle();
+            expireLock(vehicle);
+            given(persistencePort.findAllReserved()).willReturn(List.of(vehicle));
+
+            service.releaseExpiredLocks();
+
+            then(vehicleEventPort).should().publishLocksExpired(List.of(vehicle.getVehicleId().getVin()));
         }
     }
 
@@ -82,21 +95,31 @@ class ReleaseExpiredLocksServiceTest {
         @Test
         void doesNotSaveVehicleWithActiveLock() {
             Vehicle vehicle = reservedVehicle();
-            given(persistancePort.findAllReserved()).willReturn(List.of(vehicle));
+            given(persistencePort.findAllReserved()).willReturn(List.of(vehicle));
 
             service.releaseExpiredLocks();
 
-            then(persistancePort).should(never()).save(any());
+            then(persistencePort).should(never()).save(any());
         }
 
         @Test
         void doesNotBroadcastForVehicleWithActiveLock() {
             Vehicle vehicle = reservedVehicle();
-            given(persistancePort.findAllReserved()).willReturn(List.of(vehicle));
+            given(persistencePort.findAllReserved()).willReturn(List.of(vehicle));
 
             service.releaseExpiredLocks();
 
             then(broadcaster).should(never()).broadcast(any(), any());
+        }
+
+        @Test
+        void doesNotPublishEventForVehicleWithActiveLock() {
+            Vehicle vehicle = reservedVehicle();
+            given(persistencePort.findAllReserved()).willReturn(List.of(vehicle));
+
+            service.releaseExpiredLocks();
+
+            then(vehicleEventPort).should(never()).publishLocksExpired(any());
         }
     }
 
@@ -105,12 +128,21 @@ class ReleaseExpiredLocksServiceTest {
 
         @Test
         void doesNotSaveOrBroadcast() {
-            given(persistancePort.findAllReserved()).willReturn(List.of());
+            given(persistencePort.findAllReserved()).willReturn(List.of());
 
             service.releaseExpiredLocks();
 
-            then(persistancePort).should(never()).save(any());
+            then(persistencePort).should(never()).save(any());
             then(broadcaster).should(never()).broadcast(any(), any());
+        }
+
+        @Test
+        void doesNotPublishEvent() {
+            given(persistencePort.findAllReserved()).willReturn(List.of());
+
+            service.releaseExpiredLocks();
+
+            then(vehicleEventPort).should(never()).publishLocksExpired(any());
         }
     }
 }

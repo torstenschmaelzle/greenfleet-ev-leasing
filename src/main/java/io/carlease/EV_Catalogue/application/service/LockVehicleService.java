@@ -1,22 +1,22 @@
-package io.carlease.EV_Catalogue.application.service;
+package io.carlease.ev_catalogue.application.service;
 
-import io.carlease.EV_Catalogue.application.port.in.lockVehicle;
-import io.carlease.EV_Catalogue.application.port.out.VehicleBroadcastPort;
-import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
-import io.carlease.EV_Catalogue.domain.LockDuration;
-import io.carlease.EV_Catalogue.domain.Vehicle;
-import io.carlease.EV_Catalogue.domain.VehicleId;
-import io.carlease.EV_Catalogue.domain.VehicleNotFoundException;
-import io.carlease.EV_Catalogue.domain.VehicleStatus;
+import io.carlease.ev_catalogue.application.port.in.LockVehicleUseCase;
+import io.carlease.ev_catalogue.application.port.out.VehicleBroadcastPort;
+import io.carlease.ev_catalogue.application.port.out.VehiclePersistencePort;
+import io.carlease.ev_catalogue.domain.LockDuration;
+import io.carlease.ev_catalogue.domain.Vehicle;
+import io.carlease.ev_catalogue.domain.VehicleId;
+import io.carlease.ev_catalogue.domain.VehicleNotFoundException;
+import io.carlease.ev_catalogue.domain.VehicleStatus;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LockVehicleService implements lockVehicle {
+public class LockVehicleService implements LockVehicleUseCase {
 
-    private final VehiclePersistancePort vehiclePersistancePort;
+    private final VehiclePersistencePort vehiclePersistancePort;
     private final VehicleBroadcastPort broadcaster;
 
-    public LockVehicleService(VehiclePersistancePort vehiclePersistancePort, VehicleBroadcastPort broadcaster) {
+    public LockVehicleService(VehiclePersistencePort vehiclePersistancePort, VehicleBroadcastPort broadcaster) {
         this.vehiclePersistancePort = vehiclePersistancePort;
         this.broadcaster = broadcaster;
     }

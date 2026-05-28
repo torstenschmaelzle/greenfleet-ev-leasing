@@ -29,7 +29,7 @@ class FleetContractTest {
     @Test
     void givenEmptyVehicleList_whenConstructed_thenThrowsEmptyFleetException() {
         assertThatThrownBy(() -> ContractFactory.createFleetContract(
-                ContractNumber.of("FC-001"), CUSTOMER, LEASE_TERM, "ECO_FOCUSED", List.of()))
+                ContractNumber.of("FC-001"), CUSTOMER, LEASE_TERM, "BALANCED", List.of()))
                 .isInstanceOf(InvalidFleetAttributeException.class);
     }
 
@@ -38,7 +38,7 @@ class FleetContractTest {
     @Test
     void givenOneVehicle_whenTotalMonthlyInstallment_thenReturnsItsInstallment() {
         FleetContract fleet = ContractFactory.createFleetContract(
-                ContractNumber.of("FC-001"), CUSTOMER, LEASE_TERM, "ECO_FOCUSED",
+                ContractNumber.of("FC-001"), CUSTOMER, LEASE_TERM, "BALANCED",
                 List.of(vehicle("FC-001-V1", 60000)));
 
         assertThat(fleet.totalMonthlyInstallment()).isEqualTo(Amount.ofCents(60000, Currency.CHF));
@@ -47,7 +47,7 @@ class FleetContractTest {
     @Test
     void givenTwoVehicles_whenTotalMonthlyInstallment_thenReturnsSumOfInstallments() {
         FleetContract fleet = ContractFactory.createFleetContract(
-                ContractNumber.of("FC-001"), CUSTOMER, LEASE_TERM, "ECO_FOCUSED",
+                ContractNumber.of("FC-001"), CUSTOMER, LEASE_TERM, "BALANCED",
                 List.of(
                         vehicle("FC-001-V1", 60000),
                         vehicle("FC-001-V2", 45000)
@@ -61,7 +61,7 @@ class FleetContractTest {
     @Test
     void givenFleet_whenSign_thenFleetIsSigned() {
         FleetContract fleet = ContractFactory.createFleetContract(
-                ContractNumber.of("FC-001"), CUSTOMER, LEASE_TERM, "ECO_FOCUSED",
+                ContractNumber.of("FC-001"), CUSTOMER, LEASE_TERM, "BALANCED",
                 List.of(vehicle("FC-001-V1", 60000)));
 
         fleet.sign(SignDate.of(2025, 6, 1));
@@ -73,7 +73,7 @@ class FleetContractTest {
     @Test
     void givenFleet_whenSign_thenAllVehicleContractsAreSigned() {
         FleetContract fleet = ContractFactory.createFleetContract(
-                ContractNumber.of("FC-001"), CUSTOMER, LEASE_TERM, "ECO_FOCUSED",
+                ContractNumber.of("FC-001"), CUSTOMER, LEASE_TERM, "BALANCED",
                 List.of(
                         vehicle("FC-001-V1", 60000),
                         vehicle("FC-001-V2", 45000)
@@ -87,7 +87,7 @@ class FleetContractTest {
     @Test
     void givenSignedFleet_whenSignAgain_thenThrowsContractAlreadySignedException() {
         FleetContract fleet = ContractFactory.createFleetContract(
-                ContractNumber.of("FC-001"), CUSTOMER, LEASE_TERM, "ECO_FOCUSED",
+                ContractNumber.of("FC-001"), CUSTOMER, LEASE_TERM, "BALANCED",
                 List.of(vehicle("FC-001-V1", 60000)));
         fleet.sign(SignDate.of(2025, 6, 1));
 
@@ -100,7 +100,7 @@ class FleetContractTest {
     @Test
     void givenTwoFleetsWithSameNumber_whenEquals_thenTrue() {
         FleetContract fleet1 = ContractFactory.createFleetContract(
-                ContractNumber.of("FC-001"), CUSTOMER, LEASE_TERM, "ECO_FOCUSED",
+                ContractNumber.of("FC-001"), CUSTOMER, LEASE_TERM, "BALANCED",
                 List.of(vehicle("FC-001-V1", 60000)));
         FleetContract fleet2 = ContractFactory.createFleetContract(
                 ContractNumber.of("FC-001"),
@@ -114,10 +114,10 @@ class FleetContractTest {
     @Test
     void givenTwoFleetsWithDifferentNumber_whenEquals_thenFalse() {
         FleetContract fleet1 = ContractFactory.createFleetContract(
-                ContractNumber.of("FC-001"), CUSTOMER, LEASE_TERM, "ECO_FOCUSED",
+                ContractNumber.of("FC-001"), CUSTOMER, LEASE_TERM, "BALANCED",
                 List.of(vehicle("FC-001-V1", 60000)));
         FleetContract fleet2 = ContractFactory.createFleetContract(
-                ContractNumber.of("FC-002"), CUSTOMER, LEASE_TERM, "ECO_FOCUSED",
+                ContractNumber.of("FC-002"), CUSTOMER, LEASE_TERM, "BALANCED",
                 List.of(vehicle("FC-002-V1", 60000)));
 
         assertThat(fleet1).isNotEqualTo(fleet2);

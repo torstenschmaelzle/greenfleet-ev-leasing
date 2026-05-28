@@ -1,7 +1,7 @@
-package io.carlease.EV_Catalogue.application.service;
+package io.carlease.ev_catalogue.application.service;
 
-import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
-import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.ev_catalogue.application.port.out.VehiclePersistencePort;
+import io.carlease.ev_catalogue.domain.*;
 import io.carlease.shared.domain.*;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -20,8 +20,8 @@ import static org.mockito.Mockito.never;
 
 class UpdateVehicleServiceTest {
 
-    private final VehiclePersistancePort persistancePort = mock(VehiclePersistancePort.class);
-    private final UpdateVehicleService service = new UpdateVehicleService(persistancePort);
+    private final VehiclePersistencePort persistencePort = mock(VehiclePersistencePort.class);
+    private final UpdateVehicleService service = new UpdateVehicleService(persistencePort);
 
     private VehicleId validVehicleId() {
         return VehicleId.of("WBA12345678654234");
@@ -66,14 +66,14 @@ class UpdateVehicleServiceTest {
 
         @Test
         void savesVehicleWithUpdatedValues() {
-            given(persistancePort.findById(validVehicleId()))
+            given(persistencePort.findById(validVehicleId()))
                     .willReturn(Optional.of(existingVehicle()));
 
             service.update(validVehicleId(), validSpecification(), validBatterySpecification(),
                     validMonthlyLeasePrice(), validNewStateOfHealth(), validNewMeasuredRange());
 
             ArgumentCaptor<Vehicle> captor = ArgumentCaptor.forClass(Vehicle.class);
-            then(persistancePort).should().save(captor.capture());
+            then(persistencePort).should().save(captor.capture());
             Vehicle saved = captor.getValue();
             assertThat(saved.getVehicleSpecification()).isEqualTo(validSpecification());
             assertThat(saved.getBatterySpecification()).isEqualTo(validBatterySpecification());
@@ -88,7 +88,7 @@ class UpdateVehicleServiceTest {
 
         @Test
         void throwsIllegalArgumentException() {
-            given(persistancePort.findById(validVehicleId())).willReturn(Optional.empty());
+            given(persistencePort.findById(validVehicleId())).willReturn(Optional.empty());
 
             assertThatThrownBy(() -> service.update(
                     validVehicleId(), validSpecification(), validBatterySpecification(),
@@ -98,14 +98,14 @@ class UpdateVehicleServiceTest {
 
         @Test
         void doesNotSaveWhenVehicleNotFound() {
-            given(persistancePort.findById(validVehicleId())).willReturn(Optional.empty());
+            given(persistencePort.findById(validVehicleId())).willReturn(Optional.empty());
 
             assertThatThrownBy(() -> service.update(
                     validVehicleId(), validSpecification(), validBatterySpecification(),
                     validMonthlyLeasePrice(), validNewStateOfHealth(), validNewMeasuredRange()))
                     .isInstanceOf(VehicleNotFoundException.class);
 
-            then(persistancePort).should(never()).save(any());
+            then(persistencePort).should(never()).save(any());
         }
     }
 }

@@ -1,8 +1,8 @@
-package io.carlease.EV_Catalogue.config;
+package io.carlease.ev_catalogue.config;
 
-import io.carlease.EV_Catalogue.application.port.in.addVehicle;
-import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
-import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.ev_catalogue.application.port.in.AddVehicleUseCase;
+import io.carlease.ev_catalogue.application.port.out.VehiclePersistencePort;
+import io.carlease.ev_catalogue.domain.*;
 import io.carlease.shared.domain.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,11 +18,11 @@ public class VehicleDataInitializer implements CommandLineRunner {
 
     private static final Logger logger = LoggerFactory.getLogger(VehicleDataInitializer.class);
 
-    private final addVehicle addVehicleUseCase;
-    private final VehiclePersistancePort vehiclePersistancePort;
+    private final AddVehicleUseCase addVehicleUseCase;
+    private final VehiclePersistencePort vehiclePersistancePort;
 
-    public VehicleDataInitializer(addVehicle addVehicleUseCase,
-                                  VehiclePersistancePort vehiclePersistancePort) {
+    public VehicleDataInitializer(AddVehicleUseCase addVehicleUseCase,
+                                  VehiclePersistencePort vehiclePersistancePort) {
         this.addVehicleUseCase = addVehicleUseCase;
         this.vehiclePersistancePort = vehiclePersistancePort;
     }

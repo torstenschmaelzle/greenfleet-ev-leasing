@@ -1,4 +1,4 @@
-package io.carlease.EV_Catalogue.domain;
+package io.carlease.ev_catalogue.domain;
 
 import io.carlease.shared.domain.*;
 
@@ -127,7 +127,7 @@ public class Vehicle {
 
     public void assignToContract() {
         if (status != VehicleStatus.RESERVED) {
-            throw new VehicleContractViolationException(vehicleId, status);
+            throw new VehicleUnderContractViolationException(vehicleId, status);
         }
         this.lock = null;
         this.status = VehicleStatus.UNDER_CONTRACT;
