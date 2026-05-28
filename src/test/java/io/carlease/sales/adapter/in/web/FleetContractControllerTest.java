@@ -1,6 +1,12 @@
 package io.carlease.sales.adapter.in.web;
 
-import io.carlease.sales.application.port.in.*;
+import io.carlease.sales.application.port.in.CreateFleetContractUseCase;
+import io.carlease.sales.application.port.in.DeleteFleetContractUseCase;
+import io.carlease.sales.application.port.in.ListFleetContractsUseCase;
+import io.carlease.sales.application.port.in.ListMyContractsUseCase;
+import io.carlease.sales.application.port.in.ReserveVehiclesUseCase;
+import io.carlease.sales.application.port.in.SignFleetContractUseCase;
+import io.carlease.sales.application.port.in.ViewFleetContractUseCase;
 import io.carlease.sales.domain.*;
 import io.carlease.shared.domain.Amount;
 import io.carlease.shared.domain.Currency;
@@ -35,7 +41,6 @@ class FleetContractControllerTest {
     @MockBean private SignFleetContractUseCase signUseCase;
     @MockBean private DeleteFleetContractUseCase deleteUseCase;
     @MockBean private ReserveVehiclesUseCase reserveUseCase;
-    @MockBean private ReleaseVehiclesUseCase releaseUseCase;
 
     private static final String VALID_CREATE_BODY = """
         {
@@ -279,17 +284,4 @@ class FleetContractControllerTest {
         }
     }
 
-    @Nested
-    class releaseEndpoint {
-
-        @Test
-        void validRequest_returns200() throws Exception {
-            willDoNothing().given(releaseUseCase).release(any());
-
-            mockMvc.perform(delete("/api/sales/fleet-contracts/reserve")
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .content(VALID_VINS_BODY))
-                .andExpect(status().isOk());
-        }
-    }
 }

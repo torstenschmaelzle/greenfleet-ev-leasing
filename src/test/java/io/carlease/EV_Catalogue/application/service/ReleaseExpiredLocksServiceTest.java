@@ -1,5 +1,6 @@
 package io.carlease.EV_Catalogue.application.service;
 
+import io.carlease.EV_Catalogue.application.port.out.VehicleBroadcastPort;
 import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
 import io.carlease.EV_Catalogue.domain.*;
 import io.carlease.shared.domain.*;
@@ -19,11 +20,11 @@ import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 
-class ExpiredLockReleaseJobTest {
+class ReleaseExpiredLocksServiceTest {
 
     private final VehiclePersistancePort persistancePort = mock(VehiclePersistancePort.class);
-    private final VehicleStatusBroadcaster broadcaster = mock(VehicleStatusBroadcaster.class);
-    private final ExpiredLockReleaseJob job = new ExpiredLockReleaseJob(persistancePort, broadcaster);
+    private final VehicleBroadcastPort broadcaster = mock(VehicleBroadcastPort.class);
+    private final ReleaseExpiredLocksService service = new ReleaseExpiredLocksService(persistancePort, broadcaster);
 
     private Vehicle reservedVehicle() {
         Vehicle vehicle = VehicleFactory.createVehicle(
@@ -56,7 +57,7 @@ class ExpiredLockReleaseJobTest {
             expireLock(vehicle);
             given(persistancePort.findAllReserved()).willReturn(List.of(vehicle));
 
-            job.releaseExpiredLocks();
+            service.releaseExpiredLocks();
 
             then(persistancePort).should().save(vehicle);
             assertThat(vehicle.getStatus()).isEqualTo(VehicleStatus.AVAILABLE);
@@ -69,9 +70,9 @@ class ExpiredLockReleaseJobTest {
             expireLock(vehicle);
             given(persistancePort.findAllReserved()).willReturn(List.of(vehicle));
 
-            job.releaseExpiredLocks();
+            service.releaseExpiredLocks();
 
-            then(broadcaster).should().broadcast(vehicle.getVehicleId().getVin(), "AVAILABLE");
+            then(broadcaster).should().broadcast(vehicle.getVehicleId().getVin(), VehicleStatus.AVAILABLE);
         }
     }
 
@@ -83,7 +84,7 @@ class ExpiredLockReleaseJobTest {
             Vehicle vehicle = reservedVehicle();
             given(persistancePort.findAllReserved()).willReturn(List.of(vehicle));
 
-            job.releaseExpiredLocks();
+            service.releaseExpiredLocks();
 
             then(persistancePort).should(never()).save(any());
         }
@@ -93,7 +94,7 @@ class ExpiredLockReleaseJobTest {
             Vehicle vehicle = reservedVehicle();
             given(persistancePort.findAllReserved()).willReturn(List.of(vehicle));
 
-            job.releaseExpiredLocks();
+            service.releaseExpiredLocks();
 
             then(broadcaster).should(never()).broadcast(any(), any());
         }
@@ -106,7 +107,7 @@ class ExpiredLockReleaseJobTest {
         void doesNotSaveOrBroadcast() {
             given(persistancePort.findAllReserved()).willReturn(List.of());
 
-            job.releaseExpiredLocks();
+            service.releaseExpiredLocks();
 
             then(persistancePort).should(never()).save(any());
             then(broadcaster).should(never()).broadcast(any(), any());

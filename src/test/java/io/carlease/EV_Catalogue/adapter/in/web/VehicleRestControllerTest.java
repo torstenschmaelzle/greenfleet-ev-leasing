@@ -1,10 +1,10 @@
 package io.carlease.EV_Catalogue.adapter.in.web;
 
+import io.carlease.EV_Catalogue.application.port.in.GetVehicleUseCase;
 import io.carlease.EV_Catalogue.application.port.in.ListCatalogueUseCase;
 import io.carlease.EV_Catalogue.application.port.in.addVehicle;
 import io.carlease.EV_Catalogue.application.port.in.removeVehicle;
 import io.carlease.EV_Catalogue.application.port.in.updateVehicle;
-import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
 import io.carlease.EV_Catalogue.domain.*;
 import io.carlease.shared.domain.*;
 import org.junit.jupiter.api.Nested;
@@ -17,8 +17,8 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Optional;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 import static org.mockito.BDDMockito.willDoNothing;
@@ -36,6 +36,9 @@ class VehicleRestControllerTest {
     private ListCatalogueUseCase listCatalogueUseCase;
 
     @MockBean
+    private GetVehicleUseCase getVehicleUseCase;
+
+    @MockBean
     private addVehicle addVehicleUseCase;
 
     @MockBean
@@ -43,9 +46,6 @@ class VehicleRestControllerTest {
 
     @MockBean
     private removeVehicle removeVehicleUseCase;
-
-    @MockBean
-    private VehiclePersistancePort vehiclePersistancePort;
 
     private static final String VALID_VIN = "WBA12345678901234";
 
@@ -131,8 +131,8 @@ class VehicleRestControllerTest {
 
         @Test
         void returns200WithVehicleDtoWhenFound() throws Exception {
-            given(vehiclePersistancePort.findById(VehicleId.of(VALID_VIN)))
-                    .willReturn(Optional.of(sampleVehicle()));
+            given(getVehicleUseCase.getByVin(VehicleId.of(VALID_VIN)))
+                    .willReturn(sampleVehicle());
 
             mockMvc.perform(get("/api/vehicles/{vin}", VALID_VIN))
                     .andExpect(status().isOk())
@@ -143,11 +143,12 @@ class VehicleRestControllerTest {
 
         @Test
         void returns404WhenVehicleNotFound() throws Exception {
-            given(vehiclePersistancePort.findById(VehicleId.of(VALID_VIN)))
-                    .willReturn(Optional.empty());
+            willThrow(new VehicleNotFoundException(VehicleId.of(VALID_VIN)))
+                    .given(getVehicleUseCase).getByVin(VehicleId.of(VALID_VIN));
 
             mockMvc.perform(get("/api/vehicles/{vin}", VALID_VIN))
-                    .andExpect(status().isNotFound());
+                    .andExpect(status().isNotFound())
+                    .andExpect(jsonPath("$.error").exists());
         }
     }
 
@@ -236,6 +237,18 @@ class VehicleRestControllerTest {
                     Range.ofKm(420)
             );
         }
+
+        @Test
+        void returns400WhenVehicleAttributeIsInvalid() throws Exception {
+            willThrow(new InvalidVehicleAttributeException("rangeKm", "must be positive"))
+                    .given(updateVehicleUseCase).update(any(), any(), any(), any(), any(), any());
+
+            mockMvc.perform(put("/api/vehicles/{vin}", VALID_VIN)
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(UPDATE_REQUEST_BODY))
+                    .andExpect(status().isBadRequest())
+                    .andExpect(jsonPath("$.error").exists());
+        }
     }
 
     @Nested
@@ -249,6 +262,16 @@ class VehicleRestControllerTest {
                     .andExpect(status().isNoContent());
 
             then(removeVehicleUseCase).should().remove(VehicleId.of(VALID_VIN));
+        }
+
+        @Test
+        void returns404WhenVehicleNotFound() throws Exception {
+            willThrow(new VehicleNotFoundException(VehicleId.of(VALID_VIN)))
+                    .given(removeVehicleUseCase).remove(VehicleId.of(VALID_VIN));
+
+            mockMvc.perform(delete("/api/vehicles/{vin}", VALID_VIN))
+                    .andExpect(status().isNotFound())
+                    .andExpect(jsonPath("$.error").exists());
         }
     }
 }

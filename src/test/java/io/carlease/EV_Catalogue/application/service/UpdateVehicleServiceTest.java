@@ -93,7 +93,7 @@ class UpdateVehicleServiceTest {
             assertThatThrownBy(() -> service.update(
                     validVehicleId(), validSpecification(), validBatterySpecification(),
                     validMonthlyLeasePrice(), validNewStateOfHealth(), validNewMeasuredRange()))
-                    .isInstanceOf(IllegalArgumentException.class);
+                    .isInstanceOf(VehicleNotFoundException.class);
         }
 
         @Test
@@ -103,7 +103,7 @@ class UpdateVehicleServiceTest {
             assertThatThrownBy(() -> service.update(
                     validVehicleId(), validSpecification(), validBatterySpecification(),
                     validMonthlyLeasePrice(), validNewStateOfHealth(), validNewMeasuredRange()))
-                    .isInstanceOf(IllegalArgumentException.class);
+                    .isInstanceOf(VehicleNotFoundException.class);
 
             then(persistancePort).should(never()).save(any());
         }

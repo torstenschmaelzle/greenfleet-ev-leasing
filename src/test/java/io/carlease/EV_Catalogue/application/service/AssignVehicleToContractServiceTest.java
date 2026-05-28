@@ -1,5 +1,6 @@
 package io.carlease.EV_Catalogue.application.service;
 
+import io.carlease.EV_Catalogue.application.port.out.VehicleBroadcastPort;
 import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
 import io.carlease.EV_Catalogue.domain.*;
 import io.carlease.shared.domain.*;
@@ -21,7 +22,7 @@ import static org.mockito.Mockito.never;
 class AssignVehicleToContractServiceTest {
 
     private final VehiclePersistancePort persistancePort = mock(VehiclePersistancePort.class);
-    private final VehicleStatusBroadcaster broadcaster = mock(VehicleStatusBroadcaster.class);
+    private final VehicleBroadcastPort broadcaster = mock(VehicleBroadcastPort.class);
     private final AssignVehicleToContractService service =
             new AssignVehicleToContractService(persistancePort, broadcaster);
 
@@ -68,7 +69,7 @@ class AssignVehicleToContractServiceTest {
 
             service.assign(validVehicleId());
 
-            then(broadcaster).should().broadcast(validVehicleId().getVin(), "UNDER_CONTRACT");
+            then(broadcaster).should().broadcast(validVehicleId().getVin(), VehicleStatus.UNDER_CONTRACT);
         }
     }
 
@@ -80,7 +81,7 @@ class AssignVehicleToContractServiceTest {
             given(persistancePort.findById(validVehicleId())).willReturn(Optional.empty());
 
             assertThatThrownBy(() -> service.assign(validVehicleId()))
-                    .isInstanceOf(IllegalArgumentException.class);
+                    .isInstanceOf(VehicleNotFoundException.class);
         }
 
         @Test
@@ -88,7 +89,7 @@ class AssignVehicleToContractServiceTest {
             given(persistancePort.findById(validVehicleId())).willReturn(Optional.empty());
 
             assertThatThrownBy(() -> service.assign(validVehicleId()))
-                    .isInstanceOf(IllegalArgumentException.class);
+                    .isInstanceOf(VehicleNotFoundException.class);
 
             then(persistancePort).should(never()).save(any());
         }

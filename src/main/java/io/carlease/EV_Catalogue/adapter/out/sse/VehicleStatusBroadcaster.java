@@ -1,5 +1,8 @@
-package io.carlease.EV_Catalogue.application.service;
+package io.carlease.EV_Catalogue.adapter.out.sse;
 
+import io.carlease.EV_Catalogue.application.port.out.VehicleBroadcastPort;
+import io.carlease.EV_Catalogue.domain.VehicleStatus;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
@@ -8,7 +11,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 @Component
-public class VehicleStatusBroadcaster {
+public class VehicleStatusBroadcaster implements VehicleBroadcastPort {
 
     private final List<SseEmitter> emitters = new CopyOnWriteArrayList<>();
 
@@ -21,14 +24,19 @@ public class VehicleStatusBroadcaster {
         return emitter;
     }
 
-    public void broadcast(String vin, String status) {
-        String data = "{\"vin\":\"" + vin + "\",\"status\":\"" + status + "\"}";
+    @Override
+    public void broadcast(String vin, VehicleStatus status) {
+        VehicleStatusEvent event = new VehicleStatusEvent(vin, status.name());
         for (SseEmitter emitter : emitters) {
             try {
-                emitter.send(SseEmitter.event().name("vehicle-status-changed").data(data));
+                emitter.send(SseEmitter.event()
+                        .name("vehicle-status-changed")
+                        .data(event, MediaType.APPLICATION_JSON));
             } catch (IOException e) {
                 emitters.remove(emitter);
             }
         }
     }
+
+    private record VehicleStatusEvent(String vin, String status) {}
 }
