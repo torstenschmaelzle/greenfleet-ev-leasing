@@ -7,6 +7,7 @@ import io.carlease.sales.domain.FleetContract;
 import io.carlease.sales.domain.ContractNumber;
 import io.carlease.sales.domain.SignDate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class SignFleetContractService implements SignFleetContractUseCase {
@@ -21,6 +22,7 @@ public class SignFleetContractService implements SignFleetContractUseCase {
     }
 
     @Override
+    @Transactional
     public void sign(ContractNumber number, SignDate date) {
         FleetContract contract = fleetContractPersistencePort.with(number);
         contract.sign(date);
