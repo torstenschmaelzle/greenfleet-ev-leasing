@@ -41,7 +41,7 @@ class SignFleetContractServiceTest {
             ContractNumber.generate(),
             Customer.of("John Buyer", "ACME AG", "john@example.com"),
             LeaseTerm.of(36),
-            "ECO_FOCUSED",
+            "BALANCED",
             vehicleContracts
         );
     }

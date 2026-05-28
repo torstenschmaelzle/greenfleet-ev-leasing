@@ -1,6 +1,6 @@
 package io.carlease.sales.application.service;
 
-import io.carlease.EV_Catalogue.adapter.out.persistence.VehicleRepository;
+import io.carlease.ev_catalogue.adapter.out.persistence.VehicleRepository;
 import io.carlease.sales.adapter.out.persistence.ContractRepository;
 import io.carlease.sales.adapter.out.persistence.FleetContractJpaEntity;
 import io.carlease.sales.adapter.out.persistence.FleetContractRepository;

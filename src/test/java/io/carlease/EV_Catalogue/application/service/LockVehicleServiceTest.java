@@ -1,8 +1,8 @@
-package io.carlease.EV_Catalogue.application.service;
+package io.carlease.ev_catalogue.application.service;
 
-import io.carlease.EV_Catalogue.application.port.out.VehicleBroadcastPort;
-import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
-import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.ev_catalogue.application.port.out.VehicleBroadcastPort;
+import io.carlease.ev_catalogue.application.port.out.VehiclePersistencePort;
+import io.carlease.ev_catalogue.domain.*;
 import io.carlease.shared.domain.*;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -21,9 +21,9 @@ import static org.mockito.Mockito.never;
 
 class LockVehicleServiceTest {
 
-    private final VehiclePersistancePort persistancePort = mock(VehiclePersistancePort.class);
+    private final VehiclePersistencePort persistencePort = mock(VehiclePersistencePort.class);
     private final VehicleBroadcastPort broadcaster = mock(VehicleBroadcastPort.class);
-    private final LockVehicleService service = new LockVehicleService(persistancePort, broadcaster);
+    private final LockVehicleService service = new LockVehicleService(persistencePort, broadcaster);
 
     private VehicleId validVehicleId() {
         return VehicleId.of("WBA12345678654234");
@@ -57,18 +57,18 @@ class LockVehicleServiceTest {
 
         @Test
         void savesVehicleWithStatusReserved() {
-            given(persistancePort.findById(validVehicleId())).willReturn(Optional.of(availableVehicle()));
+            given(persistencePort.findById(validVehicleId())).willReturn(Optional.of(availableVehicle()));
 
             service.lock(validVehicleId(), validDuration());
 
             ArgumentCaptor<Vehicle> captor = ArgumentCaptor.forClass(Vehicle.class);
-            then(persistancePort).should().save(captor.capture());
+            then(persistencePort).should().save(captor.capture());
             assertThat(captor.getValue().getStatus()).isEqualTo(VehicleStatus.RESERVED);
         }
 
         @Test
         void broadcastsReservedStatus() {
-            given(persistancePort.findById(validVehicleId())).willReturn(Optional.of(availableVehicle()));
+            given(persistencePort.findById(validVehicleId())).willReturn(Optional.of(availableVehicle()));
 
             service.lock(validVehicleId(), validDuration());
 
@@ -81,7 +81,7 @@ class LockVehicleServiceTest {
 
         @Test
         void throwsIllegalArgumentException() {
-            given(persistancePort.findById(validVehicleId())).willReturn(Optional.empty());
+            given(persistencePort.findById(validVehicleId())).willReturn(Optional.empty());
 
             assertThatThrownBy(() -> service.lock(validVehicleId(), validDuration()))
                     .isInstanceOf(VehicleNotFoundException.class);
@@ -89,12 +89,12 @@ class LockVehicleServiceTest {
 
         @Test
         void doesNotSaveWhenVehicleNotFound() {
-            given(persistancePort.findById(validVehicleId())).willReturn(Optional.empty());
+            given(persistencePort.findById(validVehicleId())).willReturn(Optional.empty());
 
             assertThatThrownBy(() -> service.lock(validVehicleId(), validDuration()))
                     .isInstanceOf(VehicleNotFoundException.class);
 
-            then(persistancePort).should(never()).save(any());
+            then(persistencePort).should(never()).save(any());
         }
     }
 
@@ -103,7 +103,7 @@ class LockVehicleServiceTest {
 
         @Test
         void throwsVehicleNotAvailableExceptionForReservedVehicle() {
-            given(persistancePort.findById(validVehicleId())).willReturn(Optional.of(reservedVehicle()));
+            given(persistencePort.findById(validVehicleId())).willReturn(Optional.of(reservedVehicle()));
 
             assertThatThrownBy(() -> service.lock(validVehicleId(), validDuration()))
                     .isInstanceOf(VehicleNotAvailableException.class);
@@ -111,12 +111,12 @@ class LockVehicleServiceTest {
 
         @Test
         void doesNotSaveWhenVehicleIsNotAvailable() {
-            given(persistancePort.findById(validVehicleId())).willReturn(Optional.of(reservedVehicle()));
+            given(persistencePort.findById(validVehicleId())).willReturn(Optional.of(reservedVehicle()));
 
             assertThatThrownBy(() -> service.lock(validVehicleId(), validDuration()))
                     .isInstanceOf(VehicleNotAvailableException.class);
 
-            then(persistancePort).should(never()).save(any());
+            then(persistencePort).should(never()).save(any());
         }
     }
 }

@@ -1,5 +1,6 @@
 package io.carlease.fleet_consulting.adapter.in.web;
 
+import io.carlease.fleet_consulting.domain.InvalidFleetAttributeException;
 import io.carlease.fleet_consulting.domain.NoVehiclesMatchingRequirementsException;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,11 @@ public class FleetConsultingExceptionHandler extends ResponseEntityExceptionHand
     public ResponseEntity<Map<String, String>> handleValidationError(ConstraintViolationException ex) {
         String message = ex.getConstraintViolations().iterator().next().getMessage();
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", message));
+    }
+
+    @ExceptionHandler(InvalidFleetAttributeException.class)
+    public ResponseEntity<Map<String, String>> handleInvalidFleetAttribute(InvalidFleetAttributeException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", ex.getMessage()));
     }
 
     @ExceptionHandler(NoVehiclesMatchingRequirementsException.class)

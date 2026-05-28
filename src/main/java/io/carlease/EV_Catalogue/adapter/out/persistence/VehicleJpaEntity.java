@@ -1,4 +1,4 @@
-package io.carlease.EV_Catalogue.adapter.out.persistence;
+package io.carlease.ev_catalogue.adapter.out.persistence;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

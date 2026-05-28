@@ -1,6 +1,6 @@
-package io.carlease.EV_Catalogue.adapter.in.scheduler;
+package io.carlease.ev_catalogue.adapter.in.scheduler;
 
-import io.carlease.EV_Catalogue.application.port.in.ReleaseExpiredLocksUseCase;
+import io.carlease.ev_catalogue.application.port.in.ReleaseExpiredLocksUseCase;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.BDDMockito.then;

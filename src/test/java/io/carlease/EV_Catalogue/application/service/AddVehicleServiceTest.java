@@ -1,7 +1,7 @@
-package io.carlease.EV_Catalogue.application.service;
+package io.carlease.ev_catalogue.application.service;
 
-import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
-import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.ev_catalogue.application.port.out.VehiclePersistencePort;
+import io.carlease.ev_catalogue.domain.*;
 import io.carlease.shared.domain.*;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -17,8 +17,8 @@ import static org.mockito.Mockito.never;
 
 class AddVehicleServiceTest {
 
-    private final VehiclePersistancePort persistancePort = mock(VehiclePersistancePort.class);
-    private final AddVehicleService service = new AddVehicleService(persistancePort);
+    private final VehiclePersistencePort persistencePort = mock(VehiclePersistencePort.class);
+    private final AddVehicleService service = new AddVehicleService(persistencePort);
 
     // -- domain object helpers --
 
@@ -58,7 +58,7 @@ class AddVehicleServiceTest {
         @Test
         void savesVehicleSuccessfullyWhenVinIsNotPresent() {
             // given
-            given(persistancePort.existsById(validVehicleId())).willReturn(false);
+            given(persistencePort.existsById(validVehicleId())).willReturn(false);
 
             // when
             service.add(validVehicleId(), validSpecification(), validBatterySpecification(),
@@ -66,7 +66,7 @@ class AddVehicleServiceTest {
                     validInitialStateOfHealth(), validInitialMeasuredRange());
 
             // then
-            then(persistancePort).should().save(any(Vehicle.class));
+            then(persistencePort).should().save(any(Vehicle.class));
         }
     }
 
@@ -76,7 +76,7 @@ class AddVehicleServiceTest {
         @Test
         void throwsDuplicateVehicleVinExceptionForDuplicateVin() {
             // given
-            given(persistancePort.existsById(validVehicleId())).willReturn(true);
+            given(persistencePort.existsById(validVehicleId())).willReturn(true);
 
             // then
             assertThatThrownBy(() -> service.add(
@@ -89,7 +89,7 @@ class AddVehicleServiceTest {
         @Test
         void doesNotPersistVehicleForDuplicateVin() {
             // given
-            given(persistancePort.existsById(validVehicleId())).willReturn(true);
+            given(persistencePort.existsById(validVehicleId())).willReturn(true);
 
             // when
             assertThatThrownBy(() -> service.add(
@@ -99,7 +99,7 @@ class AddVehicleServiceTest {
                     .isInstanceOf(DuplicateVehicleVinException.class);
 
             // then
-            then(persistancePort).should(never()).save(any());
+            then(persistencePort).should(never()).save(any());
         }
     }
 

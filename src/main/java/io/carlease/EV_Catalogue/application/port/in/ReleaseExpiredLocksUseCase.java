@@ -1,4 +1,4 @@
-package io.carlease.EV_Catalogue.application.port.in;
+package io.carlease.ev_catalogue.application.port.in;
 
 public interface ReleaseExpiredLocksUseCase {
     void releaseExpiredLocks();

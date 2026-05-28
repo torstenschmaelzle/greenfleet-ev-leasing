@@ -1,4 +1,4 @@
-package io.carlease.EV_Catalogue.domain;
+package io.carlease.ev_catalogue.domain;
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;

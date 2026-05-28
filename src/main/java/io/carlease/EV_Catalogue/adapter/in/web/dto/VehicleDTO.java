@@ -1,6 +1,6 @@
-package io.carlease.EV_Catalogue.adapter.in.web.dto;
+package io.carlease.ev_catalogue.adapter.in.web.dto;
 
-import io.carlease.EV_Catalogue.domain.Vehicle;
+import io.carlease.ev_catalogue.domain.Vehicle;
 
 public record VehicleDTO(
         String vin,

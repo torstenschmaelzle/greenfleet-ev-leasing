@@ -1,6 +1,6 @@
-package io.carlease.EV_Catalogue.application.port.in;
+package io.carlease.ev_catalogue.application.port.in;
 
-import io.carlease.EV_Catalogue.domain.Vehicle;
+import io.carlease.ev_catalogue.domain.Vehicle;
 
 import java.util.List;
 

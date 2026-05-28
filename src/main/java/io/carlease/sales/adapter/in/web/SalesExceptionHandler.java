@@ -50,6 +50,11 @@ public class SalesExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(Map.of("error", ex.getMessage()));
     }
 
-    // --- Domain: contract not calculated (422 Unprocessable Entity) ---
+    // --- Domain: reservation expired (409 Conflict) ---
+
+    @ExceptionHandler(ReservationExpiredException.class)
+    public ResponseEntity<Map<String, String>> handleReservationExpired(ReservationExpiredException ex) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(Map.of("error", ex.getMessage()));
+    }
 
 }

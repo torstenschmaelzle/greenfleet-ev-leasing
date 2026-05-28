@@ -1,11 +1,14 @@
 package io.carlease.auth;
 
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
+@Validated
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -14,7 +17,7 @@ public class AuthController {
     private static final Map<String, String> ROLES = Map.of("worker", "WORKER");
 
     @PostMapping("/login")
-    public ResponseEntity<AuthUser> login(@RequestBody LoginRequest req, HttpSession session) {
+    public ResponseEntity<AuthUser> login(@Valid @RequestBody LoginRequest req, HttpSession session) {
         String storedPassword = CREDENTIALS.get(req.username());
         if (storedPassword == null || !storedPassword.equals(req.password())) {
             return ResponseEntity.status(401).build();
@@ -28,11 +31,7 @@ public class AuthController {
     }
 
     @PostMapping("/customer-login")
-    public ResponseEntity<AuthUser> customerLogin(@RequestBody CustomerLoginRequest req, HttpSession session) {
-        if (req.name() == null || req.name().isBlank()) return ResponseEntity.badRequest().build();
-        if (req.email() == null || !req.email().contains("@")) return ResponseEntity.badRequest().build();
-        if (req.company() == null || req.company().isBlank()) return ResponseEntity.badRequest().build();
-
+    public ResponseEntity<AuthUser> customerLogin(@Valid @RequestBody CustomerLoginRequest req, HttpSession session) {
         session.setAttribute("username", req.email());
         session.setAttribute("role", "CUSTOMER");
         session.setAttribute("name", req.name());

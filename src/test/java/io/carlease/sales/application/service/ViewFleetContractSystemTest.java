@@ -27,7 +27,7 @@ class ViewFleetContractSystemTest {
                 .contains("fc-view-test-001")
                 .contains("John Buyer")
                 .contains("ACME AG")
-                .contains("ECO_FOCUSED")
+                .contains("BALANCED")
                 .contains("WBA00000000000111")
                 .contains("WBA00000000000112");
     }

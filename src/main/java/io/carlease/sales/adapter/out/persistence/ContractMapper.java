@@ -27,7 +27,7 @@ public class ContractMapper {
     }
 
     public static VehicleContract mapToVehicleContract(ContractJpaEntity e) {
-        Currency currency = Currency.valueOf(e.getPriceCurrency());
+        Currency currency = Currency.from(e.getPriceCurrency());
         Customer customer = Customer.of(e.getLessee(), e.getLesseeCompany(), e.getLesseeEmail());
         return ContractFactory.restoreFleetVehicleContract(
                 ContractNumber.of(e.getNumber()),

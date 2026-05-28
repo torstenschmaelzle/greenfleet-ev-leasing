@@ -1,19 +1,19 @@
-package io.carlease.EV_Catalogue.application.service;
+package io.carlease.ev_catalogue.application.service;
 
-import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
-import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.ev_catalogue.application.port.out.VehiclePersistencePort;
+import io.carlease.ev_catalogue.domain.*;
 import io.carlease.shared.domain.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.jdbc.Sql;
-import org.springframework.web.util.UriComponentsBuilder;
-
-import java.net.URI;
 
 import java.math.BigDecimal;
 
@@ -26,35 +26,39 @@ class UpdateVehicleSystemTest {
     private TestRestTemplate restTemplate;
 
     @Autowired
-    private VehiclePersistancePort vehiclePersistancePort;
+    private VehiclePersistencePort vehiclePersistencePort;
 
     @Test
     @Sql("UpdateVehicleSystemTest.sql")
-    void updateVehicle_persistsUpdatedStateAndReturnsRedirect() {
-        URI url = UriComponentsBuilder.fromPath("/ev-catalogue/update_vehicle")
-                .queryParam("vin",                         "WBA00000000000001")
-                .queryParam("brand",                       "Tesla")
-                .queryParam("model",                       "Model Y")
-                .queryParam("range_km",                    500)
-                .queryParam("vehicle_type",                "SEDAN")
-                .queryParam("consumption_kwh_per_100km",   15.0)
-                .queryParam("battery_capacity_kwh",        100.0)
-                .queryParam("battery_voltage_v",           450.0)
-                .queryParam("battery_max_charge_speed_kw", 15.0)
-                .queryParam("monthly_lease_price_cents",   80000)
-                .queryParam("currency",                    "CHF")
-                .queryParam("new_state_of_health",         90.0)
-                .queryParam("new_measured_range_km",       420)
-                .build()
-                .encode()
-                .toUri();
+    void updateVehicle_persistsUpdatedStateAndReturns200() {
+        String body = """
+                {
+                  "brand": "Tesla",
+                  "model": "Model Y",
+                  "rangeKm": 500,
+                  "vehicleType": "SEDAN",
+                  "consumptionKwhPer100km": 15.0,
+                  "capacityKwh": 100.0,
+                  "voltageV": 450.0,
+                  "maxChargeSpeedKw": 15.0,
+                  "monthlyLeasePriceCents": 80000,
+                  "currency": "CHF",
+                  "newStateOfHealth": 90.0,
+                  "newMeasuredRangeKm": 420
+                }
+                """;
 
-        ResponseEntity<Object> response = restTemplate.exchange(
-                url, HttpMethod.POST, null, Object.class);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        ResponseEntity<Void> response = restTemplate.exchange(
+                "/api/vehicles/WBA00000000000001",
+                HttpMethod.PUT,
+                new HttpEntity<>(body, headers),
+                Void.class);
 
-        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.FOUND);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 
-        Vehicle updated = vehiclePersistancePort.findById(
+        Vehicle updated = vehiclePersistencePort.findById(
                 VehicleId.of("WBA00000000000001")).orElseThrow();
         assertThat(updated.getVehicleSpecification().getBrand()).isEqualTo("Tesla");
         assertThat(updated.getVehicleSpecification().getModel()).isEqualTo("Model Y");

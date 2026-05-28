@@ -1,4 +1,4 @@
-package io.carlease.EV_Catalogue.domain;
+package io.carlease.ev_catalogue.domain;
 
 public abstract class VehicleDomainException extends RuntimeException {
 

@@ -1,7 +1,7 @@
-package io.carlease.EV_Catalogue.application.service;
+package io.carlease.ev_catalogue.application.service;
 
-import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
-import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.ev_catalogue.application.port.out.VehiclePersistencePort;
+import io.carlease.ev_catalogue.domain.*;
 import io.carlease.shared.domain.*;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -16,8 +16,8 @@ import static org.mockito.Mockito.mock;
 
 class GetVehicleServiceTest {
 
-    private final VehiclePersistancePort persistancePort = mock(VehiclePersistancePort.class);
-    private final GetVehicleService service = new GetVehicleService(persistancePort);
+    private final VehiclePersistencePort persistencePort = mock(VehiclePersistencePort.class);
+    private final GetVehicleService service = new GetVehicleService(persistencePort);
 
     private VehicleId validVehicleId() {
         return VehicleId.of("WBA12345678654234");
@@ -41,7 +41,7 @@ class GetVehicleServiceTest {
 
         @Test
         void returnsVehicle() {
-            given(persistancePort.findById(validVehicleId())).willReturn(Optional.of(existingVehicle()));
+            given(persistencePort.findById(validVehicleId())).willReturn(Optional.of(existingVehicle()));
 
             Vehicle result = service.getByVin(validVehicleId());
 
@@ -54,7 +54,7 @@ class GetVehicleServiceTest {
 
         @Test
         void throwsVehicleNotFoundException() {
-            given(persistancePort.findById(validVehicleId())).willReturn(Optional.empty());
+            given(persistencePort.findById(validVehicleId())).willReturn(Optional.empty());
 
             assertThatThrownBy(() -> service.getByVin(validVehicleId()))
                     .isInstanceOf(VehicleNotFoundException.class);

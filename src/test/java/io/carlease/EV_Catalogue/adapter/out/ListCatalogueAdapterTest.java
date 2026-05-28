@@ -1,6 +1,6 @@
-package io.carlease.EV_Catalogue.adapter.out;
+package io.carlease.ev_catalogue.adapter.out;
 
-import io.carlease.EV_Catalogue.domain.Vehicle;
+import io.carlease.ev_catalogue.domain.Vehicle;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;

@@ -1,7 +1,7 @@
 package io.carlease.sales.adapter.out.catalogue;
 
-import io.carlease.EV_Catalogue.application.port.in.assignVehicleToContract;
-import io.carlease.EV_Catalogue.domain.VehicleId;
+import io.carlease.ev_catalogue.application.port.in.PlaceVehicleUnderContractUseCase;
+import io.carlease.ev_catalogue.domain.VehicleId;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.BDDMockito.then;
@@ -10,7 +10,7 @@ import static org.mockito.Mockito.mock;
 
 class EVCataloguePlaceVehicleUnderContractAdapterTest {
 
-    private final assignVehicleToContract assignUseCase = mock(assignVehicleToContract.class);
+    private final PlaceVehicleUnderContractUseCase assignUseCase = mock(PlaceVehicleUnderContractUseCase.class);
     private final EVCataloguePlaceVehicleUnderContractAdapter adapter = new EVCataloguePlaceVehicleUnderContractAdapter(assignUseCase);
 
     @Test

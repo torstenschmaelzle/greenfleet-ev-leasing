@@ -1,6 +1,6 @@
-package io.carlease.EV_Catalogue.adapter.out.persistence;
+package io.carlease.ev_catalogue.adapter.out.persistence;
 
-import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.ev_catalogue.domain.*;
 import io.carlease.shared.domain.*;
 import org.springframework.stereotype.Component;
 
@@ -81,7 +81,7 @@ public class VehicleMapper {
                         entity.getAccelerationSec(),
                         entity.getTopSpeedKmh()
                 ),
-                Amount.ofCents(entity.getMonthlyLeasePriceCents(), Currency.valueOf(entity.getMonthlyLeasePriceCurrency())),
+                Amount.ofCents(entity.getMonthlyLeasePriceCents(), Currency.from(entity.getMonthlyLeasePriceCurrency())),
                 statesOfHealth,
                 measuredRanges
         );

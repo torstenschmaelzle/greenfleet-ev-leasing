@@ -1,8 +1,8 @@
-package io.carlease.EV_Catalogue.application.service;
+package io.carlease.ev_catalogue.application.service;
 
-import io.carlease.EV_Catalogue.application.port.in.ListCatalogueUseCase;
-import io.carlease.EV_Catalogue.application.port.out.ListCataloguePort;
-import io.carlease.EV_Catalogue.domain.Vehicle;
+import io.carlease.ev_catalogue.application.port.in.ListCatalogueUseCase;
+import io.carlease.ev_catalogue.application.port.out.ListCataloguePort;
+import io.carlease.ev_catalogue.domain.Vehicle;
 import org.jmolecules.architecture.layered.ApplicationLayer;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;

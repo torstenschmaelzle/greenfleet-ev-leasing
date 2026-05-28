@@ -1,18 +1,18 @@
-package io.carlease.EV_Catalogue.application.service;
+package io.carlease.ev_catalogue.application.service;
 
-import io.carlease.EV_Catalogue.application.port.in.GetVehicleUseCase;
-import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
-import io.carlease.EV_Catalogue.domain.Vehicle;
-import io.carlease.EV_Catalogue.domain.VehicleId;
-import io.carlease.EV_Catalogue.domain.VehicleNotFoundException;
+import io.carlease.ev_catalogue.application.port.in.GetVehicleUseCase;
+import io.carlease.ev_catalogue.application.port.out.VehiclePersistencePort;
+import io.carlease.ev_catalogue.domain.Vehicle;
+import io.carlease.ev_catalogue.domain.VehicleId;
+import io.carlease.ev_catalogue.domain.VehicleNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
 public class GetVehicleService implements GetVehicleUseCase {
 
-    private final VehiclePersistancePort vehiclePersistancePort;
+    private final VehiclePersistencePort vehiclePersistancePort;
 
-    public GetVehicleService(VehiclePersistancePort vehiclePersistancePort) {
+    public GetVehicleService(VehiclePersistencePort vehiclePersistancePort) {
         this.vehiclePersistancePort = vehiclePersistancePort;
     }
 

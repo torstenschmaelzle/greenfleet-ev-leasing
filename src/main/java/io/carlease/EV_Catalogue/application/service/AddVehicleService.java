@@ -1,8 +1,8 @@
-package io.carlease.EV_Catalogue.application.service;
+package io.carlease.ev_catalogue.application.service;
 
-import io.carlease.EV_Catalogue.application.port.in.addVehicle;
-import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
-import io.carlease.EV_Catalogue.domain.*;
+import io.carlease.ev_catalogue.application.port.in.AddVehicleUseCase;
+import io.carlease.ev_catalogue.application.port.out.VehiclePersistencePort;
+import io.carlease.ev_catalogue.domain.*;
 import io.carlease.shared.domain.*;
 import org.jmolecules.architecture.layered.ApplicationLayer;
 import org.jmolecules.ddd.annotation.Service;
@@ -15,12 +15,12 @@ import java.util.List;
 @Component
 @ApplicationLayer
 @Service
-public class AddVehicleService implements addVehicle {
+public class AddVehicleService implements AddVehicleUseCase {
 
-    private final VehiclePersistancePort persistVehiclePort;
+    private final VehiclePersistencePort persistVehiclePort;
     private final Logger logger = LoggerFactory.getLogger(AddVehicleService.class);
 
-    public AddVehicleService(VehiclePersistancePort persistVehiclePort) {
+    public AddVehicleService(VehiclePersistencePort persistVehiclePort) {
         this.persistVehiclePort = persistVehiclePort;
     }
 

@@ -32,7 +32,7 @@ class CreateFleetContractServiceTest {
         @Test
         void savesFleetContractAndReturnsNonBlankContractNumber() {
             var result = service.create(
-                "John Buyer", "ACME AG", "john@example.com", 36, "ECO_FOCUSED", twoVehicles()
+                "John Buyer", "ACME AG", "john@example.com", 36, "BALANCED", twoVehicles()
             );
 
             assertThat(result.number()).isNotBlank();
@@ -42,7 +42,7 @@ class CreateFleetContractServiceTest {
         @Test
         void savedFleetContractContainsOneVehicleContractPerEntry() {
             service.create(
-                "John Buyer", "ACME AG", "john@example.com", 36, "ECO_FOCUSED", twoVehicles()
+                "John Buyer", "ACME AG", "john@example.com", 36, "BALANCED", twoVehicles()
             );
 
             var captor = forClass(FleetContract.class);

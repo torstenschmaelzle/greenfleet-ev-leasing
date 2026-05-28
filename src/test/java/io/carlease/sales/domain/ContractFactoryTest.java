@@ -63,14 +63,14 @@ public class ContractFactoryTest {
                 ContractNumber.of("FC-001"),
                 CUSTOMER,
                 LeaseTerm.of(36),
-                "ECO_FOCUSED",
+                "BALANCED",
                 List.of(vc),
                 Optional.empty());
 
         assertThat(fleet.number()).isEqualTo(ContractNumber.of("FC-001"));
         assertThat(fleet.customer()).isEqualTo(CUSTOMER);
         assertThat(fleet.leaseTerm()).isEqualTo(LeaseTerm.of(36));
-        assertThat(fleet.bundleType()).isEqualTo("ECO_FOCUSED");
+        assertThat(fleet.bundleType()).isEqualTo("BALANCED");
         assertThat(fleet.vehicleContracts()).hasSize(1);
         assertThat(fleet.isSigned()).isFalse();
     }
@@ -89,7 +89,7 @@ public class ContractFactoryTest {
                 ContractNumber.of("FC-001"),
                 CUSTOMER,
                 LeaseTerm.of(36),
-                "ECO_FOCUSED",
+                "BALANCED",
                 List.of(vc),
                 Optional.of(SignDate.of(2024, 6, 1)));
 

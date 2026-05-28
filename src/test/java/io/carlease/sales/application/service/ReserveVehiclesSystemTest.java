@@ -1,6 +1,6 @@
 package io.carlease.sales.application.service;
 
-import io.carlease.EV_Catalogue.adapter.out.persistence.VehicleRepository;
+import io.carlease.ev_catalogue.adapter.out.persistence.VehicleRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
