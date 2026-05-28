@@ -1,5 +1,6 @@
-package io.carlease.EV_Catalogue.application.service;
+package io.carlease.EV_Catalogue.adapter.out.sse;
 
+import io.carlease.EV_Catalogue.domain.VehicleStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -15,7 +16,6 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.then;
 import static org.mockito.BDDMockito.willThrow;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verifyNoInteractions;
 
 class VehicleStatusBroadcasterTest {
@@ -42,7 +42,7 @@ class VehicleStatusBroadcasterTest {
             emitters.add(emitter1);
             emitters.add(emitter2);
 
-            broadcaster.broadcast("WBA12345678901234", "RESERVED");
+            broadcaster.broadcast("WBA12345678901234", VehicleStatus.RESERVED);
 
             then(emitter1).should().send((SseEmitter.SseEventBuilder) any());
             then(emitter2).should().send((SseEmitter.SseEventBuilder) any());
@@ -50,7 +50,7 @@ class VehicleStatusBroadcasterTest {
 
         @Test
         void doesNothingWhenNoEmittersRegistered() {
-            assertThatCode(() -> broadcaster.broadcast("WBA12345678901234", "RESERVED"))
+            assertThatCode(() -> broadcaster.broadcast("WBA12345678901234", VehicleStatus.RESERVED))
                     .doesNotThrowAnyException();
         }
 
@@ -58,7 +58,7 @@ class VehicleStatusBroadcasterTest {
         void doesNotSendWhenNoEmittersRegistered() {
             SseEmitter neverCalled = mock(SseEmitter.class);
 
-            broadcaster.broadcast("WBA12345678901234", "RESERVED");
+            broadcaster.broadcast("WBA12345678901234", VehicleStatus.RESERVED);
 
             verifyNoInteractions(neverCalled);
         }
@@ -69,7 +69,7 @@ class VehicleStatusBroadcasterTest {
             emitters.add(failingEmitter);
             willThrow(IOException.class).given(failingEmitter).send((SseEmitter.SseEventBuilder) any());
 
-            broadcaster.broadcast("WBA12345678901234", "RESERVED");
+            broadcaster.broadcast("WBA12345678901234", VehicleStatus.RESERVED);
 
             assertThat(emitters).doesNotContain(failingEmitter);
         }
@@ -82,7 +82,7 @@ class VehicleStatusBroadcasterTest {
             emitters.add(workingEmitter);
             willThrow(IOException.class).given(failingEmitter).send((SseEmitter.SseEventBuilder) any());
 
-            broadcaster.broadcast("WBA12345678901234", "RESERVED");
+            broadcaster.broadcast("WBA12345678901234", VehicleStatus.RESERVED);
 
             then(workingEmitter).should().send((SseEmitter.SseEventBuilder) any());
         }

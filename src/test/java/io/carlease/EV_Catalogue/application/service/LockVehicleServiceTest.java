@@ -1,5 +1,6 @@
 package io.carlease.EV_Catalogue.application.service;
 
+import io.carlease.EV_Catalogue.application.port.out.VehicleBroadcastPort;
 import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
 import io.carlease.EV_Catalogue.domain.*;
 import io.carlease.shared.domain.*;
@@ -21,7 +22,7 @@ import static org.mockito.Mockito.never;
 class LockVehicleServiceTest {
 
     private final VehiclePersistancePort persistancePort = mock(VehiclePersistancePort.class);
-    private final VehicleStatusBroadcaster broadcaster = mock(VehicleStatusBroadcaster.class);
+    private final VehicleBroadcastPort broadcaster = mock(VehicleBroadcastPort.class);
     private final LockVehicleService service = new LockVehicleService(persistancePort, broadcaster);
 
     private VehicleId validVehicleId() {
@@ -71,7 +72,7 @@ class LockVehicleServiceTest {
 
             service.lock(validVehicleId(), validDuration());
 
-            then(broadcaster).should().broadcast(validVehicleId().getVin(), "RESERVED");
+            then(broadcaster).should().broadcast(validVehicleId().getVin(), VehicleStatus.RESERVED);
         }
     }
 
@@ -83,7 +84,7 @@ class LockVehicleServiceTest {
             given(persistancePort.findById(validVehicleId())).willReturn(Optional.empty());
 
             assertThatThrownBy(() -> service.lock(validVehicleId(), validDuration()))
-                    .isInstanceOf(IllegalArgumentException.class);
+                    .isInstanceOf(VehicleNotFoundException.class);
         }
 
         @Test
@@ -91,7 +92,7 @@ class LockVehicleServiceTest {
             given(persistancePort.findById(validVehicleId())).willReturn(Optional.empty());
 
             assertThatThrownBy(() -> service.lock(validVehicleId(), validDuration()))
-                    .isInstanceOf(IllegalArgumentException.class);
+                    .isInstanceOf(VehicleNotFoundException.class);
 
             then(persistancePort).should(never()).save(any());
         }

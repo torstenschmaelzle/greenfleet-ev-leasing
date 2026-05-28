@@ -66,7 +66,7 @@ class RemoveVehicleServiceTest {
             given(persistancePort.findById(validVehicleId())).willReturn(Optional.empty());
 
             assertThatThrownBy(() -> service.remove(validVehicleId()))
-                    .isInstanceOf(IllegalArgumentException.class);
+                    .isInstanceOf(VehicleNotFoundException.class);
         }
 
         @Test
@@ -74,7 +74,7 @@ class RemoveVehicleServiceTest {
             given(persistancePort.findById(validVehicleId())).willReturn(Optional.empty());
 
             assertThatThrownBy(() -> service.remove(validVehicleId()))
-                    .isInstanceOf(IllegalArgumentException.class);
+                    .isInstanceOf(VehicleNotFoundException.class);
 
             then(persistancePort).should(never()).deleteById(any());
         }

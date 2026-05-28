@@ -3,17 +3,16 @@ package io.carlease.EV_Catalogue.adapter.in.web;
 import io.carlease.EV_Catalogue.adapter.in.web.dto.AddVehicleRequest;
 import io.carlease.EV_Catalogue.adapter.in.web.dto.UpdateVehicleRequest;
 import io.carlease.EV_Catalogue.adapter.in.web.dto.VehicleDTO;
+import io.carlease.EV_Catalogue.application.port.in.GetVehicleUseCase;
 import io.carlease.EV_Catalogue.application.port.in.ListCatalogueUseCase;
 import io.carlease.EV_Catalogue.application.port.in.addVehicle;
 import io.carlease.EV_Catalogue.application.port.in.removeVehicle;
 import io.carlease.EV_Catalogue.application.port.in.updateVehicle;
-import io.carlease.EV_Catalogue.application.port.out.VehiclePersistancePort;
 import io.carlease.EV_Catalogue.domain.*;
 import io.carlease.shared.domain.Amount;
 import io.carlease.shared.domain.Currency;
 import io.carlease.shared.domain.VehicleType;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
@@ -24,21 +23,21 @@ import java.util.List;
 public class VehicleRestController {
 
     private final ListCatalogueUseCase listCatalogueUseCase;
+    private final GetVehicleUseCase getVehicleUseCase;
     private final addVehicle addVehicleUseCase;
     private final updateVehicle updateVehicleUseCase;
     private final removeVehicle removeVehicleUseCase;
-    private final VehiclePersistancePort vehiclePersistancePort;
 
     public VehicleRestController(ListCatalogueUseCase listCatalogueUseCase,
+                                  GetVehicleUseCase getVehicleUseCase,
                                   addVehicle addVehicleUseCase,
                                   updateVehicle updateVehicleUseCase,
-                                  removeVehicle removeVehicleUseCase,
-                                  VehiclePersistancePort vehiclePersistancePort) {
+                                  removeVehicle removeVehicleUseCase) {
         this.listCatalogueUseCase = listCatalogueUseCase;
+        this.getVehicleUseCase = getVehicleUseCase;
         this.addVehicleUseCase = addVehicleUseCase;
         this.updateVehicleUseCase = updateVehicleUseCase;
         this.removeVehicleUseCase = removeVehicleUseCase;
-        this.vehiclePersistancePort = vehiclePersistancePort;
     }
 
     @GetMapping
@@ -49,11 +48,8 @@ public class VehicleRestController {
     }
 
     @GetMapping("/{vin}")
-    public ResponseEntity<VehicleDTO> get(@PathVariable String vin) {
-        return vehiclePersistancePort.findById(VehicleId.of(vin))
-                .map(VehicleDTO::from)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    public VehicleDTO get(@PathVariable String vin) {
+        return VehicleDTO.from(getVehicleUseCase.getByVin(VehicleId.of(vin)));
     }
 
     @PostMapping

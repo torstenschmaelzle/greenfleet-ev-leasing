@@ -5,7 +5,6 @@ import io.carlease.sales.application.port.in.CreateFleetContractUseCase.VehicleE
 import io.carlease.sales.application.port.in.ListFleetContractsUseCase;
 import io.carlease.sales.application.port.in.DeleteFleetContractUseCase;
 import io.carlease.sales.application.port.in.ListMyContractsUseCase;
-import io.carlease.sales.application.port.in.ReleaseVehiclesUseCase;
 import io.carlease.sales.application.port.in.ReserveVehiclesUseCase;
 import io.carlease.sales.application.port.in.SignFleetContractUseCase;
 import io.carlease.sales.application.port.in.ViewFleetContractUseCase;
@@ -37,7 +36,6 @@ public class FleetContractController {
     private final SignFleetContractUseCase signFleetContractUseCase;
     private final DeleteFleetContractUseCase deleteFleetContractUseCase;
     private final ReserveVehiclesUseCase reserveVehiclesUseCase;
-    private final ReleaseVehiclesUseCase releaseVehiclesUseCase;
 
     public FleetContractController(CreateFleetContractUseCase createFleetContractUseCase,
                                    ListFleetContractsUseCase listFleetContractsUseCase,
@@ -45,8 +43,7 @@ public class FleetContractController {
                                    ViewFleetContractUseCase viewFleetContractUseCase,
                                    SignFleetContractUseCase signFleetContractUseCase,
                                    DeleteFleetContractUseCase deleteFleetContractUseCase,
-                                   ReserveVehiclesUseCase reserveVehiclesUseCase,
-                                   ReleaseVehiclesUseCase releaseVehiclesUseCase) {
+                                   ReserveVehiclesUseCase reserveVehiclesUseCase) {
         this.createFleetContractUseCase = createFleetContractUseCase;
         this.listFleetContractsUseCase = listFleetContractsUseCase;
         this.listMyContractsUseCase = listMyContractsUseCase;
@@ -54,7 +51,6 @@ public class FleetContractController {
         this.signFleetContractUseCase = signFleetContractUseCase;
         this.deleteFleetContractUseCase = deleteFleetContractUseCase;
         this.reserveVehiclesUseCase = reserveVehiclesUseCase;
-        this.releaseVehiclesUseCase = releaseVehiclesUseCase;
     }
 
     @GetMapping
@@ -95,11 +91,6 @@ public class FleetContractController {
     @PostMapping("/reserve")
     public void reserve(@Valid @RequestBody ReserveRequest request) {
         reserveVehiclesUseCase.reserve(request.vins());
-    }
-
-    @DeleteMapping("/reserve")
-    public void release(@Valid @RequestBody ReserveRequest request) {
-        releaseVehiclesUseCase.release(request.vins());
     }
 
     @DeleteMapping("/{number}")

@@ -1,6 +1,6 @@
 package io.carlease.EV_Catalogue.adapter.in.web;
 
-import io.carlease.EV_Catalogue.application.service.VehicleStatusBroadcaster;
+import io.carlease.EV_Catalogue.adapter.out.sse.VehicleStatusBroadcaster;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
