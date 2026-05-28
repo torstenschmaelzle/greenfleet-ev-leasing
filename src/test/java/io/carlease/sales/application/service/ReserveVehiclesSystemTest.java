@@ -24,7 +24,7 @@ class ReserveVehiclesSystemTest {
     @Sql("ReserveVehiclesSystemTest.sql")
     void reserveVehicles_locksVehiclesInEVCatalogue() {
         String body = """
-                { "vins": ["WBA00000000000201", "WBA00000000000202"] }
+                { "vins": ["WBA00000000000211", "WBA00000000000212"] }
                 """;
 
         HttpHeaders headers = new HttpHeaders();
@@ -36,7 +36,7 @@ class ReserveVehiclesSystemTest {
                 Void.class);
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
-        assertThat(vehicleRepository.findById("WBA00000000000201").orElseThrow().getStatus()).isEqualTo("RESERVED");
-        assertThat(vehicleRepository.findById("WBA00000000000202").orElseThrow().getStatus()).isEqualTo("RESERVED");
+        assertThat(vehicleRepository.findById("WBA00000000000211").orElseThrow().getStatus()).isEqualTo("RESERVED");
+        assertThat(vehicleRepository.findById("WBA00000000000212").orElseThrow().getStatus()).isEqualTo("RESERVED");
     }
 }
