@@ -9,6 +9,7 @@ import io.carlease.fleet_consulting.application.port.out.GetVehiclesPort;
 import io.carlease.fleet_consulting.domain.*;
 import io.carlease.shared.domain.Amount;
 import io.carlease.shared.domain.Currency;
+import io.carlease.shared.domain.LeaseTerm;
 import io.carlease.shared.domain.VehicleType;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;

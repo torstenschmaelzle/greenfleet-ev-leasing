@@ -1,5 +1,6 @@
 package io.carlease.fleet_consulting.domain;
 
+import io.carlease.shared.domain.LeaseTerm;
 import io.carlease.shared.domain.VehicleType;
 
 import org.jmolecules.ddd.annotation.ValueObject;
