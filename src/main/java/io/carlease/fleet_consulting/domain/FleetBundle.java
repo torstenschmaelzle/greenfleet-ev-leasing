@@ -54,4 +54,8 @@ public class FleetBundle {
     public double getBundleScore() {
         return bundleScore;
     }
+
+    public boolean isAffordableFor(Budget budget) {
+        return tco.getMonthlyTotal().getAmountInCents() <= budget.getMonthlyMax().getAmountInCents();
+    }
 }

@@ -8,7 +8,6 @@ import org.jmolecules.ddd.annotation.AggregateRoot;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -196,5 +195,19 @@ public class FleetBundleRecommendation {
 
     public List<FleetBundle> getBundles() {
         return bundles;
+    }
+
+    public List<FleetBundle> getBundlesWithinBudget(Budget budget) {
+        return bundles.stream()
+                .filter(b -> b.isAffordableFor(budget))
+                .collect(Collectors.toList());
+    }
+
+    public boolean hasCustomBundle() {
+        return bundles.stream().anyMatch(b -> b.getBundleType() == BundleType.CUSTOM);
+    }
+
+    public Optional<FleetBundle> getBestBundle() {
+        return bundles.stream().max(Comparator.comparingDouble(FleetBundle::getBundleScore));
     }
 }

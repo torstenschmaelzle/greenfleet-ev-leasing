@@ -11,13 +11,13 @@ public class BundleVehicle {
     private final String brand;
     private final String model;
     private final VehicleType vehicleType;
-    private final int rangeKm;
+    private final Kilometre rangeKm;
     private final Installment installment;
     private final double co2SavingsKgPerYear;
     private final IndividualVehicleScore score;
 
     private BundleVehicle(String vin, String brand, String model, VehicleType vehicleType,
-                          int rangeKm, Installment installment, double co2SavingsKgPerYear,
+                          Kilometre rangeKm, Installment installment, double co2SavingsKgPerYear,
                           IndividualVehicleScore score) {
         this.vin = vin;
         this.brand = brand;
@@ -30,7 +30,7 @@ public class BundleVehicle {
     }
 
     public static BundleVehicle of(String vin, String brand, String model, VehicleType vehicleType,
-                                   int rangeKm, Installment installment, double co2SavingsKgPerYear,
+                                   Kilometre rangeKm, Installment installment, double co2SavingsKgPerYear,
                                    IndividualVehicleScore score) {
         if (vin == null || vin.isBlank())
             throw new InvalidFleetAttributeException("vin", "must not be blank");
@@ -63,7 +63,7 @@ public class BundleVehicle {
         return vehicleType;
     }
 
-    public int getRangeKm() {
+    public Kilometre getRangeKm() {
         return rangeKm;
     }
 

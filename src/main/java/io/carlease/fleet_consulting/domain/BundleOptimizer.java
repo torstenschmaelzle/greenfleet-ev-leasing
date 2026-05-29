@@ -84,7 +84,7 @@ public class BundleOptimizer {
                     vs.getBrand(),
                     vs.getModel(),
                     vs.getVehicleType(),
-                    vs.getRangeKm().getValue(),
+                    vs.getRangeKm(),
                     sv.getVehicle().getInstallment(),
                     co2PerVehicle,
                     sv.getScore()
