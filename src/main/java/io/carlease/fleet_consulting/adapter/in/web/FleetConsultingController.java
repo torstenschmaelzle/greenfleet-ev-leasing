@@ -133,7 +133,7 @@ public class FleetConsultingController {
                 vehicle.getBrand(),
                 vehicle.getModel(),
                 vehicle.getVehicleType().name(),
-                vehicle.getRangeKm(),
+                vehicle.getRangeKm().getValue(),
                 vehicle.getInstallment().getMonthlyAmount().getAmountInCents(),
                 vehicle.getInstallment().getMonthlyAmount().getCurrency().name(),
                 vehicle.getCo2SavingsKgPerYear(),
