@@ -4,7 +4,7 @@ import io.carlease.fleet_consulting.application.port.out.CalculateInstallmentPor
 import io.carlease.fleet_consulting.domain.DomainConstants;
 import io.carlease.fleet_consulting.domain.FinancialCalculator;
 import io.carlease.fleet_consulting.domain.Installment;
-import io.carlease.fleet_consulting.domain.LeaseTerm;
+import io.carlease.shared.domain.LeaseTerm;
 import io.carlease.shared.domain.Amount;
 import org.springframework.stereotype.Component;
 

@@ -5,6 +5,7 @@ import io.carlease.fleet_consulting.application.port.in.GetRecommendationUseCase
 import io.carlease.fleet_consulting.domain.*;
 import io.carlease.shared.domain.Amount;
 import io.carlease.shared.domain.Currency;
+import io.carlease.shared.domain.LeaseTerm;
 import io.carlease.shared.domain.VehicleType;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

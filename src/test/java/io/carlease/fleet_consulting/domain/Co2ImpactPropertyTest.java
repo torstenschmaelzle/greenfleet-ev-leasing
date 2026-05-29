@@ -1,6 +1,7 @@
 package io.carlease.fleet_consulting.domain;
 
 import io.carlease.shared.domain.Amount;
+import io.carlease.shared.domain.LeaseTerm;
 import io.carlease.shared.domain.Currency;
 
 import net.jqwik.api.Assume;

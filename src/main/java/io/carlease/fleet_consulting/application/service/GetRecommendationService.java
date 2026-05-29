@@ -4,6 +4,7 @@ import io.carlease.fleet_consulting.application.port.in.GetRecommendationUseCase
 import io.carlease.fleet_consulting.application.port.out.CalculateInstallmentPort;
 import io.carlease.fleet_consulting.application.port.out.GetVehiclesPort;
 import io.carlease.fleet_consulting.domain.*;
+import io.carlease.shared.domain.LeaseTerm;
 import org.jmolecules.architecture.layered.ApplicationLayer;
 import org.jmolecules.ddd.annotation.Service;
 import org.springframework.stereotype.Component;
