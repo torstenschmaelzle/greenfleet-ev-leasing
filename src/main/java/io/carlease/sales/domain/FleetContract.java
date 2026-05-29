@@ -1,6 +1,7 @@
 package io.carlease.sales.domain;
 
 import io.carlease.shared.domain.Amount;
+import io.carlease.shared.domain.BundleType;
 import io.carlease.shared.domain.LeaseTerm;
 import org.jmolecules.ddd.annotation.AggregateRoot;
 import org.jmolecules.ddd.annotation.Identity;
@@ -18,12 +19,12 @@ public class FleetContract {
     private final ContractNumber number;
     private final Customer customer;
     private final LeaseTerm leaseTerm;
-    private final String bundleType;
+    private final BundleType bundleType;
     private final List<VehicleContract> vehicleContracts;
     private Optional<SignDate> signatureDate;
 
     FleetContract(ContractNumber number, Customer customer, LeaseTerm leaseTerm,
-                  String bundleType, List<VehicleContract> vehicleContracts,
+                  BundleType bundleType, List<VehicleContract> vehicleContracts,
                   Optional<SignDate> signatureDate) {
         requireNonNull(number);
         requireNonNull(customer);
@@ -52,7 +53,7 @@ public class FleetContract {
         return leaseTerm;
     }
 
-    public String bundleType() {
+    public BundleType bundleType() {
         return bundleType;
     }
 

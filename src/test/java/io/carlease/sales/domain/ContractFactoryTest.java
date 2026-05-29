@@ -1,6 +1,7 @@
 package io.carlease.sales.domain;
 
 import io.carlease.shared.domain.Amount;
+import io.carlease.shared.domain.BundleType;
 import io.carlease.shared.domain.Currency;
 import io.carlease.shared.domain.LeaseTerm;
 import org.junit.jupiter.api.Test;
@@ -63,14 +64,14 @@ public class ContractFactoryTest {
                 ContractNumber.of("FC-001"),
                 CUSTOMER,
                 LeaseTerm.of(36),
-                "BALANCED",
+                BundleType.BALANCED,
                 List.of(vc),
                 Optional.empty());
 
         assertThat(fleet.number()).isEqualTo(ContractNumber.of("FC-001"));
         assertThat(fleet.customer()).isEqualTo(CUSTOMER);
         assertThat(fleet.leaseTerm()).isEqualTo(LeaseTerm.of(36));
-        assertThat(fleet.bundleType()).isEqualTo("BALANCED");
+        assertThat(fleet.bundleType()).isEqualTo(BundleType.BALANCED);
         assertThat(fleet.vehicleContracts()).hasSize(1);
         assertThat(fleet.isSigned()).isFalse();
     }
@@ -89,7 +90,7 @@ public class ContractFactoryTest {
                 ContractNumber.of("FC-001"),
                 CUSTOMER,
                 LeaseTerm.of(36),
-                "BALANCED",
+                BundleType.BALANCED,
                 List.of(vc),
                 Optional.of(SignDate.of(2024, 6, 1)));
 

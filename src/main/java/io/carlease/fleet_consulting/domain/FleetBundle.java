@@ -1,5 +1,6 @@
 package io.carlease.fleet_consulting.domain;
 
+import io.carlease.shared.domain.BundleType;
 import org.jmolecules.ddd.annotation.Entity;
 
 import java.util.List;

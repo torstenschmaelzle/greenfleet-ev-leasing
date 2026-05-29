@@ -1,6 +1,7 @@
 package io.carlease.sales.adapter.out.persistence;
 
 import io.carlease.sales.domain.*;
+import io.carlease.shared.domain.BundleType;
 import io.carlease.shared.domain.Amount;
 import io.carlease.shared.domain.Currency;
 import io.carlease.shared.domain.LeaseTerm;
@@ -42,7 +43,7 @@ class FleetContractPersistenceAdapterTest {
             ContractNumber.generate(),
             Customer.of("John Buyer", "ACME AG", "john@example.com"),
             LeaseTerm.of(36),
-            "BALANCED",
+            BundleType.BALANCED,
             vehicleContracts
         );
     }

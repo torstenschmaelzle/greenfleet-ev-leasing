@@ -3,6 +3,7 @@ package io.carlease.sales.application.service;
 import io.carlease.sales.application.port.in.CreateFleetContractUseCase;
 import io.carlease.sales.application.port.out.FleetContractPersistencePort;
 import io.carlease.sales.domain.*;
+import io.carlease.shared.domain.BundleType;
 import io.carlease.shared.domain.Amount;
 import io.carlease.shared.domain.Currency;
 import io.carlease.shared.domain.LeaseTerm;
@@ -21,7 +22,7 @@ public class CreateFleetContractService implements CreateFleetContractUseCase {
 
     @Override
     public ContractNumber create(String customerName, String customerCompany, String customerEmail,
-                                 int leaseTermMonths, String bundleType, List<VehicleEntry> vehicles) {
+                                 int leaseTermMonths, BundleType bundleType, List<VehicleEntry> vehicles) {
 
         ContractNumber number = ContractNumber.generate();
         LeaseTerm leaseTerm = LeaseTerm.ofMonths(leaseTermMonths);

@@ -1,6 +1,7 @@
 package io.carlease.sales.adapter.out.persistence;
 
 import io.carlease.sales.domain.*;
+import io.carlease.shared.domain.BundleType;
 import io.carlease.shared.domain.LeaseTerm;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class FleetContractMapper {
                 fleetContract.customer().company(),
                 fleetContract.customer().email(),
                 fleetContract.leaseTerm().getMonths(),
-                fleetContract.bundleType(),
+                fleetContract.bundleType().name(),
                 fleetContract.isSigned() ? fleetContract.signatureDate().date() : null,
                 vehicleContractNumbers
         );
@@ -31,7 +32,7 @@ public class FleetContractMapper {
                 ContractNumber.of(entity.getNumber()),
                 Customer.of(entity.getCustomerName(), entity.getCustomerCompany(), entity.getCustomerEmail()),
                 LeaseTerm.ofMonths(entity.getLeaseTermMonths()),
-                entity.getBundleType(),
+                BundleType.valueOf(entity.getBundleType()),
                 vehicleContracts,
                 entity.getSignatureDate() != null
                         ? Optional.of(SignDate.of(entity.getSignatureDate()))
