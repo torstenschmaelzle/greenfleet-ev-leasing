@@ -509,7 +509,7 @@ Traefik automatically provisions and renews TLS certificates via **Let's Encrypt
 ## Team
 
 BSc Software Engineering · Spring 2026 · University of St. Gallen  
-**Group 04** — Paul Kottmann, Linus Ihringer, Torsten Schmälzle, Valeria Pointet, Kristian Suntev, Nevio Gübeli
+**Group 04**: Paul Kottmann, Linus Ihringer, Torsten Schmälzle, Valeria Pointet, Kristian Suntev, Nevio Gübeli
 
 ---
 
