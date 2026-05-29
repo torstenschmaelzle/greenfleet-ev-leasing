@@ -165,13 +165,14 @@ function VehicleImageCard({ v }: { v: BundleVehicle }) {
   );
 }
 
-function BundleCard({ bundle, expanded, onToggle, onReserve, reserving, reserveError }: {
+function BundleCard({ bundle, expanded, onToggle, onReserve, reserving, reserveError, reserved }: {
   bundle: FleetBundle;
   expanded: boolean;
   onToggle: () => void;
   onReserve: () => void;
   reserving: boolean;
   reserveError: string;
+  reserved: boolean;
 }) {
   const meta = BUNDLE_META[bundle.bundleType] ?? {
     label: bundle.bundleType, accent: 'var(--color-text-muted)', lightBg: 'var(--color-bg)',
@@ -261,20 +262,34 @@ function BundleCard({ bundle, expanded, onToggle, onReserve, reserving, reserveE
 
       {/* Reserve button */}
       <div style={{ padding: '14px 22px', borderBottom: '1px solid var(--color-border-light)', display: 'flex', alignItems: 'center', gap: 14 }}>
-        <button
-          onClick={onReserve}
-          disabled={reserving}
-          style={{
-            padding: '10px 24px', fontSize: 14, fontWeight: 600,
-            cursor: reserving ? 'default' : 'pointer',
-            background: reserving ? 'var(--color-brand-muted)' : meta.accent,
-            color: 'white', border: 'none', borderRadius: 6,
-            opacity: reserving ? 0.7 : 1,
-            transition: 'opacity var(--transition-fast)',
-          }}
-        >
-          {reserving ? 'Reserving vehicles…' : 'Reserve this bundle'}
-        </button>
+        {reserved ? (
+          <div style={{
+            display: 'flex', alignItems: 'center', gap: 8,
+            padding: '10px 20px', fontSize: 14, fontWeight: 600,
+            background: '#f0fdf4', color: '#16a34a',
+            border: '1.5px solid #86efac', borderRadius: 6,
+          }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            Reserved
+          </div>
+        ) : (
+          <button
+            onClick={onReserve}
+            disabled={reserving}
+            style={{
+              padding: '10px 24px', fontSize: 14, fontWeight: 600,
+              cursor: reserving ? 'default' : 'pointer',
+              background: reserving ? 'var(--color-brand-muted)' : meta.accent,
+              color: 'white', border: 'none', borderRadius: 6,
+              opacity: reserving ? 0.7 : 1,
+              transition: 'opacity var(--transition-fast)',
+            }}
+          >
+            {reserving ? 'Reserving vehicles…' : 'Reserve this bundle'}
+          </button>
+        )}
         {reserveError && (
           <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-error)', fontWeight: 500 }}>
             {reserveError}
@@ -503,14 +518,31 @@ export default function FleetConsultingPage() {
   const [vehicleType,  setVehicleType]  = useState('');
   const [weights,      setWeights]      = useState<[number, number, number]>([34, 33, 33]);
 
-  // Results state — unchanged
-  const [step,     setStep]     = useState<0 | 1>(0);
-  const [result,   setResult]   = useState<FleetBundleRecommendation | null>(null);
+  // Results state — persisted across navigation via sessionStorage
+  const [step, setStep] = useState<0 | 1>(() => {
+    try { return sessionStorage.getItem('fleet_step') === '1' ? 1 : 0; } catch { return 0; }
+  });
+  const [result, setResult] = useState<FleetBundleRecommendation | null>(() => {
+    try { const s = sessionStorage.getItem('fleet_result'); return s ? JSON.parse(s) : null; } catch { return null; }
+  });
+
+  useEffect(() => {
+    try { sessionStorage.setItem('fleet_step', String(step)); } catch {}
+  }, [step]);
+  useEffect(() => {
+    try {
+      if (result) sessionStorage.setItem('fleet_result', JSON.stringify(result));
+      else sessionStorage.removeItem('fleet_result');
+    } catch {}
+  }, [result]);
   const [loading,  setLoading]  = useState(false);
   const [error,    setError]    = useState('');
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const [reservingBundle, setReservingBundle] = useState<string | null>(null);
   const [reserveErrors, setReserveErrors] = useState<Record<string, string>>({});
+  const [reservedBundle, setReservedBundle] = useState<string | null>(() => {
+    try { return sessionStorage.getItem('fleet_reserved_bundle'); } catch { return null; }
+  });
   const [submitHov, setSubmitHov] = useState(false);
 
   const lastParams = useRef<Parameters<typeof getRecommendations>[0] | null>(null);
@@ -597,12 +629,12 @@ export default function FleetConsultingPage() {
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0 14px' }}>
                 <Field label="Daily route" hint="km per vehicle per day">
-                  <input type="number" min={1} value={dailyKm}
+                  <input type="number" min={1} value={dailyKm || ''}
                     onChange={e => setDailyKm(Number(e.target.value))}
                     style={inputStyle} />
                 </Field>
                 <Field label="Number of vehicles">
-                  <input type="number" min={1} value={vehicles}
+                  <input type="number" min={1} value={vehicles || ''}
                     onChange={e => setVehicles(Number(e.target.value))}
                     style={inputStyle} />
                 </Field>
@@ -625,7 +657,7 @@ export default function FleetConsultingPage() {
               </Field>
 
               <Field label="Electricity rate" hint="CHF per kWh">
-                <input type="number" min={0.01} step={0.01} value={rateChf}
+                <input type="number" min={0.01} step={0.01} value={rateChf || ''}
                   onChange={e => setRateChf(Number(e.target.value))}
                   style={inputStyle} />
               </Field>
@@ -739,7 +771,10 @@ export default function FleetConsultingPage() {
         subtitle={`${result?.numberOfVehicles} vehicles · ${result?.leaseTermMonths}-month lease · ${bundles.length} bundle${bundles.length !== 1 ? 's' : ''} generated`}
         action={
           <button
-            onClick={() => setStep(0)}
+            onClick={() => {
+              setStep(0); setResult(null); setReservedBundle(null);
+              try { sessionStorage.removeItem('fleet_reserved_bundle'); } catch {}
+            }}
             style={{
               background: 'transparent', color: 'var(--color-text-secondary)',
               border: '1px solid var(--color-border)', borderRadius: 'var(--radius-md)',
@@ -828,11 +863,14 @@ export default function FleetConsultingPage() {
               onToggle={() => toggleBundle(bundle.bundleType)}
               reserving={reservingBundle === bundle.bundleType}
               reserveError={reserveErrors[bundle.bundleType] ?? ''}
+              reserved={reservedBundle === bundle.bundleType}
               onReserve={async () => {
                 setReservingBundle(bundle.bundleType);
                 setReserveErrors(prev => ({ ...prev, [bundle.bundleType]: '' }));
                 try {
                   await reserveFleetBundle(bundle.vehicles.map(v => v.vin));
+                  try { sessionStorage.setItem('fleet_reserved_bundle', bundle.bundleType); } catch {}
+                  setReservedBundle(bundle.bundleType);
                   navigate('/dashboard/sales', {
                     state: {
                       bundleType: bundle.bundleType,

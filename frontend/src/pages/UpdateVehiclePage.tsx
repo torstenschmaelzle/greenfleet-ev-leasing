@@ -115,11 +115,11 @@ export default function UpdateVehiclePage() {
               </select>
             </Row>
             <Row label="Range (km)">
-              <input style={input} type="number" value={form.rangeKm}
+              <input style={input} type="number" value={form.rangeKm || ''}
                 onChange={e => set('rangeKm', +e.target.value)} required min={1} />
             </Row>
             <Row label="Consumption (kWh / 100 km)">
-              <input style={input} type="number" step="0.1" value={form.consumptionKwhPer100km}
+              <input style={input} type="number" step="0.1" value={form.consumptionKwhPer100km || ''}
                 onChange={e => set('consumptionKwhPer100km', +e.target.value)} required min={0.1} />
             </Row>
           </Grid2>
@@ -128,15 +128,15 @@ export default function UpdateVehiclePage() {
         <FormCard title="Battery Specification">
           <Grid2>
             <Row label="Capacity (kWh)">
-              <input style={input} type="number" step="0.1" value={form.capacityKwh}
+              <input style={input} type="number" step="0.1" value={form.capacityKwh || ''}
                 onChange={e => set('capacityKwh', +e.target.value)} required min={0.1} />
             </Row>
             <Row label="Voltage (V)">
-              <input style={input} type="number" step="0.1" value={form.voltageV}
+              <input style={input} type="number" step="0.1" value={form.voltageV || ''}
                 onChange={e => set('voltageV', +e.target.value)} required min={0.1} />
             </Row>
             <Row label="Max Charge Speed (kW)">
-              <input style={input} type="number" step="0.1" value={form.maxChargeSpeedKw}
+              <input style={input} type="number" step="0.1" value={form.maxChargeSpeedKw || ''}
                 onChange={e => set('maxChargeSpeedKw', +e.target.value)} required min={0.1} />
             </Row>
           </Grid2>
@@ -145,7 +145,7 @@ export default function UpdateVehiclePage() {
         <FormCard title="Pricing">
           <Grid2>
             <Row label="Purchase Price (cents)">
-              <input style={input} type="number" value={form.monthlyLeasePriceCents}
+              <input style={input} type="number" value={form.monthlyLeasePriceCents || ''}
                 onChange={e => set('monthlyLeasePriceCents', +e.target.value)} required min={1} />
             </Row>
             <Row label="Currency">
@@ -159,11 +159,11 @@ export default function UpdateVehiclePage() {
         <FormCard title="Battery Health — New Measurement">
           <Grid2>
             <Row label="State of Health (%)">
-              <input style={input} type="number" step="0.1" value={form.newStateOfHealth}
+              <input style={input} type="number" step="0.1" value={form.newStateOfHealth || ''}
                 onChange={e => set('newStateOfHealth', +e.target.value)} required min={0} max={100} />
             </Row>
             <Row label="Measured Range (km)">
-              <input style={input} type="number" value={form.newMeasuredRangeKm}
+              <input style={input} type="number" value={form.newMeasuredRangeKm || ''}
                 onChange={e => set('newMeasuredRangeKm', +e.target.value)} required min={1} />
             </Row>
           </Grid2>
