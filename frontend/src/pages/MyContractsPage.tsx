@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 import ContractCard from '../components/ContractCard';
-import { listMyContracts, getFleetContract } from '../api/sales';
+import { listMyContracts, getFleetContract, signFleetContract } from '../api/sales';
 import { vehiclesApi } from '../api/vehicles';
 import { useAuth } from '../context/AuthContext';
 import type { FleetContractResponse } from '../api/sales';
@@ -217,13 +217,84 @@ function ContractDocument({ contract, vehicleMap }: {
   );
 }
 
+// ─── Signature canvas modal ───────────────────────────────────────────────────
+
+function SignatureModal({ onConfirm, onCancel }: {
+  onConfirm: () => void;
+  onCancel: () => void;
+}) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const drawing = useRef(false);
+  const hasStrokes = useRef(false);
+
+  const getPos = (e: React.MouseEvent | React.TouchEvent, canvas: HTMLCanvasElement) => {
+    const rect = canvas.getBoundingClientRect();
+    if ('touches' in e) return { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
+    return { x: (e as React.MouseEvent).clientX - rect.left, y: (e as React.MouseEvent).clientY - rect.top };
+  };
+
+  const startDraw = useCallback((e: React.MouseEvent | React.TouchEvent) => {
+    const canvas = canvasRef.current; if (!canvas) return;
+    const ctx = canvas.getContext('2d')!;
+    const pos = getPos(e, canvas);
+    ctx.beginPath(); ctx.moveTo(pos.x, pos.y);
+    drawing.current = true; hasStrokes.current = true; e.preventDefault();
+  }, []);
+
+  const draw = useCallback((e: React.MouseEvent | React.TouchEvent) => {
+    if (!drawing.current) return;
+    const canvas = canvasRef.current; if (!canvas) return;
+    const ctx = canvas.getContext('2d')!;
+    ctx.strokeStyle = '#1e293b'; ctx.lineWidth = 2; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    const pos = getPos(e, canvas); ctx.lineTo(pos.x, pos.y); ctx.stroke(); e.preventDefault();
+  }, []);
+
+  const stopDraw = useCallback(() => { drawing.current = false; }, []);
+  const clear = () => {
+    const canvas = canvasRef.current; if (!canvas) return;
+    canvas.getContext('2d')!.clearRect(0, 0, canvas.width, canvas.height);
+    hasStrokes.current = false;
+  };
+
+  return (
+    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.65)', zIndex: 1100,
+      display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ background: 'white', borderRadius: 12, padding: 28, width: 480, boxShadow: '0 20px 60px rgba(0,0,0,0.3)' }}>
+        <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 4, color: '#0f172a' }}>Sign the Contract</div>
+        <div style={{ fontSize: 13, color: '#64748b', marginBottom: 18, lineHeight: 1.5 }}>
+          Draw your signature below to confirm acceptance of the fleet leasing agreement.
+        </div>
+        <canvas ref={canvasRef} width={424} height={160}
+          onMouseDown={startDraw} onMouseMove={draw} onMouseUp={stopDraw} onMouseLeave={stopDraw}
+          onTouchStart={startDraw} onTouchMove={draw} onTouchEnd={stopDraw}
+          style={{ display: 'block', width: '100%', border: '1.5px solid #cbd5e1',
+            borderRadius: 8, cursor: 'crosshair', background: '#f8fafc', touchAction: 'none' }} />
+        <div style={{ fontSize: 11, color: '#94a3b8', marginTop: 6, textAlign: 'center' }}>Sign above</div>
+        <div style={{ display: 'flex', gap: 10, marginTop: 20 }}>
+          <button onClick={clear} style={{ flex: 1, padding: '10px', fontSize: 14, cursor: 'pointer',
+            background: 'none', border: '1px solid #cbd5e1', borderRadius: 6, color: '#475569' }}>Clear</button>
+          <button onClick={onCancel} style={{ flex: 1, padding: '10px', fontSize: 14, cursor: 'pointer',
+            background: 'none', border: '1px solid #cbd5e1', borderRadius: 6, color: '#475569' }}>Cancel</button>
+          <button onClick={() => { if (hasStrokes.current) onConfirm(); }}
+            style={{ flex: 2, padding: '10px', fontSize: 14, fontWeight: 600,
+              cursor: 'pointer', background: '#16a34a', color: 'white', border: 'none', borderRadius: 6 }}>
+            Confirm Signature
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── Modal ──────────────────────────────────────────────────────────────────────
 
-function ContractModal({ number, onClose }: { number: string; onClose: () => void }) {
+function ContractModal({ number, onClose, onSigned }: { number: string; onClose: () => void; onSigned: () => void }) {
   const [contract, setContract]     = useState<FleetContractResponse | null>(null);
   const [vehicleMap, setVehicleMap] = useState<Record<string, Vehicle>>({});
   const [loading, setLoading]       = useState(true);
   const [error, setError]           = useState('');
+  const [showSig, setShowSig]       = useState(false);
+  const [signing, setSigning]       = useState(false);
   const printRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -247,6 +318,27 @@ function ContractModal({ number, onClose }: { number: string; onClose: () => voi
     return () => window.removeEventListener('keydown', handler);
   }, [onClose]);
 
+  const handleSign = async () => {
+    if (!contract) return;
+    setSigning(true);
+    try {
+      await signFleetContract(contract.number);
+      setContract(c => c ? { ...c, signed: true } : c);
+      onSigned();
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : 'Failed to sign';
+      if (msg.toLowerCase().includes('expired')) {
+        setError('Your reservation has expired. This contract has been removed. Please start a new fleet recommendation.');
+        onSigned();
+      } else {
+        setError(msg);
+      }
+    } finally {
+      setSigning(false);
+      setShowSig(false);
+    }
+  };
+
   const handlePrint = () => {
     const content = printRef.current;
     if (!content) return;
@@ -262,6 +354,8 @@ function ContractModal({ number, onClose }: { number: string; onClose: () => voi
   };
 
   return (
+    <>
+    {showSig && <SignatureModal onConfirm={handleSign} onCancel={() => setShowSig(false)} />}
     <div onClick={e => { if (e.target === e.currentTarget) onClose(); }}
       style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(0,0,0,0.6)',
         display: 'flex', alignItems: 'flex-start', justifyContent: 'center',
@@ -274,6 +368,14 @@ function ContractModal({ number, onClose }: { number: string; onClose: () => voi
             <div style={{ fontSize: 11, fontFamily: 'monospace', color: '#94a3b8', marginTop: 2 }}>{number}</div>
           </div>
           <div style={{ display: 'flex', gap: 8 }}>
+            {contract && !contract.signed && (
+              <button onClick={() => setShowSig(true)} disabled={signing}
+                style={{ padding: '8px 16px', fontSize: 13, fontWeight: 600,
+                  background: '#16a34a', color: 'white', border: 'none', borderRadius: 7,
+                  cursor: signing ? 'not-allowed' : 'pointer', opacity: signing ? 0.7 : 1 }}>
+                {signing ? 'Signing…' : 'Sign Contract'}
+              </button>
+            )}
             <button onClick={handlePrint} disabled={loading || !!error}
               style={{ display: 'flex', alignItems: 'center', gap: 7, padding: '8px 16px', fontSize: 13,
                 fontWeight: 600, background: '#0f172a', color: 'white', border: 'none', borderRadius: 7,
@@ -294,6 +396,7 @@ function ContractModal({ number, onClose }: { number: string; onClose: () => voi
         )}
       </div>
     </div>
+    </>
   );
 }
 
@@ -320,7 +423,13 @@ export default function MyContractsPage() {
   return (
     <div style={{ padding: 'var(--space-6)', minHeight: '100%', background: 'var(--color-bg)' }}>
 
-      {viewingNumber && <ContractModal number={viewingNumber} onClose={() => setViewingNumber(null)} />}
+      {viewingNumber && (
+        <ContractModal
+          number={viewingNumber}
+          onClose={() => setViewingNumber(null)}
+          onSigned={() => setContracts(cs => cs.map(c => c.number === viewingNumber ? { ...c, signed: true } : c))}
+        />
+      )}
 
       <PageHeader
         kicker="My Account"

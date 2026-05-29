@@ -1,4 +1,4 @@
-import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import logo from '../assets/logo.png';
 
@@ -77,6 +77,18 @@ const navStyle = ({ isActive }: { isActive: boolean }): React.CSSProperties => (
   boxShadow: isActive ? 'inset 2px 0 0 #4ade80' : 'none',
 });
 
+function MultiNavLink({ to, matchPaths, icon, label }: {
+  to: string; matchPaths: string[]; icon: React.ReactNode; label: string;
+}) {
+  const { pathname } = useLocation();
+  const isActive = matchPaths.some(p => pathname.startsWith(p));
+  return (
+    <Link to={to} style={navStyle({ isActive })}>
+      {icon}{label}
+    </Link>
+  );
+}
+
 export default function DashboardLayout() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
@@ -138,18 +150,14 @@ export default function DashboardLayout() {
           <NavLink to="/dashboard/fleet-consulting" style={navStyle}>
             <IconChart />Find Your Fleet
           </NavLink>
-          <NavLink to="/dashboard/contracts" style={navStyle}>
-            <IconContracts />Contracts
-          </NavLink>
+          <MultiNavLink to="/dashboard/contracts" matchPaths={['/dashboard/contracts', '/dashboard/sales']} icon={<IconContracts />} label="Contracts" />
         </>)}
 
         {user?.role === 'CUSTOMER' && (<>
           <NavLink to="/dashboard/fleet-consulting" style={navStyle}>
             <IconChart />Find Your Fleet
           </NavLink>
-          <NavLink to="/dashboard/my-contracts" style={navStyle}>
-            <IconContracts />My Contracts
-          </NavLink>
+          <MultiNavLink to="/dashboard/my-contracts" matchPaths={['/dashboard/my-contracts', '/dashboard/sales']} icon={<IconContracts />} label="My Contracts" />
         </>)}
 
         {/* Spacer */}

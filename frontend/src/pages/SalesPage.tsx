@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
-import { createFleetContract, getFleetContract, signFleetContract, releaseFleetBundle, deleteFleetContract } from '../api/sales';
+import { createFleetContract, getFleetContract, signFleetContract, releaseFleetBundle } from '../api/sales';
 import { useAuth } from '../context/AuthContext';
 import type { FleetContractResponse } from '../api/sales';
 
@@ -241,31 +241,12 @@ export default function SalesPage() {
   const [error,   setError]   = useState('');
 
   // Contract state
-  const [contract,      setContract]      = useState<FleetContractResponse | null>(null);
-  const [showSigModal,  setShowSigModal]  = useState(false);
-  const [signing,       setSigning]       = useState(false);
-  const [signatureImg,  setSignatureImg]  = useState<string | null>(null);
-  const [signed,        setSigned]        = useState(false);
-
-  // Refs to track latest contract/signed state for cleanup on unmount
-  const contractRef = useRef<FleetContractResponse | null>(null);
-  const signedRef   = useRef(false);
-
-  useEffect(() => { contractRef.current = contract; }, [contract]);
-  useEffect(() => { signedRef.current   = signed;   }, [signed]);
-
-  // Cleanup: delete unsigned contract + release vehicles when customer leaves
-  useEffect(() => {
-    if (!isCustomer || !state) return;
-    return () => {
-      if (contractRef.current && !signedRef.current) {
-        const vins = state.vehicles.map(v => v.vin);
-        releaseFleetBundle(vins).catch(() => {});
-        deleteFleetContract(contractRef.current.number).catch(() => {});
-      }
-    };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const [contract,           setContract]           = useState<FleetContractResponse | null>(null);
+  const [showSigModal,       setShowSigModal]       = useState(false);
+  const [signing,            setSigning]            = useState(false);
+  const [signatureImg,       setSignatureImg]       = useState<string | null>(null);
+  const [signed,             setSigned]             = useState(false);
+  const [reservationExpired, setReservationExpired] = useState(false);
 
   // Ref guard prevents double-creation in React StrictMode (double-mount in dev)
   const createCalledRef = useRef(false);
@@ -334,7 +315,13 @@ export default function SalesPage() {
       setSignatureImg(dataUrl);
       setSigned(true);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Sign failed');
+      const msg = err instanceof Error ? err.message : 'Sign failed';
+      if (msg.toLowerCase().includes('expired')) {
+        try { sessionStorage.removeItem('fleet_step'); sessionStorage.removeItem('fleet_result'); sessionStorage.removeItem('fleet_reserved_bundle'); } catch { /* ignore */ }
+        setReservationExpired(true);
+      } else {
+        setError(msg);
+      }
     } finally {
       setSigning(false);
     }
@@ -367,6 +354,26 @@ export default function SalesPage() {
 
           <ContractDocument contract={contract} vehicleInfo={vehicleInfo} signatureImg={signatureImg} />
         </div>
+      </div>
+    );
+  }
+
+  // ── Reservation expired ───────────────────────────────────────────────────
+  if (reservationExpired) {
+    return (
+      <div style={{ padding: '24px 28px', background: 'var(--color-bg)', minHeight: '100%' }}>
+        <PageHeader kicker="Sales" title="Reservation Expired" subtitle="" />
+        <div style={{ maxWidth: 480, padding: '20px 24px', background: '#fef2f2',
+          border: '1px solid #fca5a5', borderRadius: 10, color: '#991b1b', fontSize: 14, lineHeight: 1.7 }}>
+          <div style={{ fontWeight: 700, marginBottom: 6 }}>Your vehicle reservation has expired.</div>
+          The 15-minute hold on your selected vehicles ran out before the contract was signed.
+          Please start a new fleet recommendation to reserve a fresh set of vehicles.
+        </div>
+        <button onClick={() => navigate('/dashboard/fleet-consulting')}
+          style={{ marginTop: 16, padding: '10px 20px', background: 'var(--color-brand)', color: 'white',
+            border: 'none', borderRadius: 6, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>
+          Start New Recommendation
+        </button>
       </div>
     );
   }
