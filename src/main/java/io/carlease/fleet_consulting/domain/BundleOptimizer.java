@@ -1,5 +1,6 @@
 package io.carlease.fleet_consulting.domain;
 
+import io.carlease.shared.domain.BundleType;
 import org.jmolecules.ddd.annotation.Service;
 
 import java.util.ArrayList;

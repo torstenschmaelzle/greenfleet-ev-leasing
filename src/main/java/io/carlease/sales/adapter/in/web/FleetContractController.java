@@ -8,6 +8,7 @@ import io.carlease.sales.application.port.in.ListMyContractsUseCase;
 import io.carlease.sales.application.port.in.ReserveVehiclesUseCase;
 import io.carlease.sales.application.port.in.SignFleetContractUseCase;
 import io.carlease.sales.application.port.in.ViewFleetContractUseCase;
+import io.carlease.shared.domain.BundleType;
 import io.carlease.sales.domain.FleetContract;
 import io.carlease.sales.domain.ContractNumber;
 import io.carlease.sales.domain.SignDate;
@@ -76,7 +77,7 @@ public class FleetContractController {
                 request.customerCompany(),
                 request.customerEmail(),
                 request.leaseTermMonths(),
-                request.bundleType(),
+                BundleType.valueOf(request.bundleType()),
                 request.vehicles()
         );
         return number.number();
@@ -116,7 +117,7 @@ public class FleetContractController {
                 contract.customer().name(),
                 contract.customer().company(),
                 contract.customer().email(),
-                contract.bundleType(),
+                contract.bundleType().name(),
                 contract.leaseTerm().getMonths(),
                 contract.isSigned(),
                 contract.totalMonthlyInstallment().getAmountInCents(),

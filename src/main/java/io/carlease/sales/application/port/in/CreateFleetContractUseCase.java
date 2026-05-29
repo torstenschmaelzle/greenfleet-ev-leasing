@@ -1,6 +1,7 @@
 package io.carlease.sales.application.port.in;
 
 import io.carlease.sales.domain.ContractNumber;
+import io.carlease.shared.domain.BundleType;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -33,7 +34,7 @@ public interface CreateFleetContractUseCase {
             String customerCompany,
             String customerEmail,
             int leaseTermMonths,
-            String bundleType,
+            BundleType bundleType,
             List<VehicleEntry> vehicles
     );
 }

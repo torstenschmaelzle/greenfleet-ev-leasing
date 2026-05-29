@@ -3,6 +3,7 @@ package io.carlease.sales.application.service;
 import io.carlease.sales.application.port.in.CreateFleetContractUseCase.VehicleEntry;
 import io.carlease.sales.application.port.out.FleetContractPersistencePort;
 import io.carlease.sales.domain.FleetContract;
+import io.carlease.shared.domain.BundleType;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -32,7 +33,7 @@ class CreateFleetContractServiceTest {
         @Test
         void savesFleetContractAndReturnsNonBlankContractNumber() {
             var result = service.create(
-                "John Buyer", "ACME AG", "john@example.com", 36, "BALANCED", twoVehicles()
+                "John Buyer", "ACME AG", "john@example.com", 36, BundleType.BALANCED, twoVehicles()
             );
 
             assertThat(result.number()).isNotBlank();
@@ -42,7 +43,7 @@ class CreateFleetContractServiceTest {
         @Test
         void savedFleetContractContainsOneVehicleContractPerEntry() {
             service.create(
-                "John Buyer", "ACME AG", "john@example.com", 36, "BALANCED", twoVehicles()
+                "John Buyer", "ACME AG", "john@example.com", 36, BundleType.BALANCED, twoVehicles()
             );
 
             var captor = forClass(FleetContract.class);

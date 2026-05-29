@@ -1,7 +1,7 @@
 package io.carlease.sales.adapter.in.event;
 
-import io.carlease.ev_catalogue.domain.VehicleLockExpiredEvent;
 import io.carlease.sales.application.port.in.OnVehicleLockExpiredUseCase;
+import io.carlease.sales.domain.VehicleLocksExpiredEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
@@ -15,7 +15,7 @@ public class VehicleLockExpiredListener {
     }
 
     @EventListener
-    public void on(VehicleLockExpiredEvent event) {
+    public void on(VehicleLocksExpiredEvent event) {
         onVehicleLockExpiredUseCase.handle(event.vins());
     }
 }

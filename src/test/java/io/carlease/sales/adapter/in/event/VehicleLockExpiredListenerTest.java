@@ -1,7 +1,7 @@
 package io.carlease.sales.adapter.in.event;
 
-import io.carlease.ev_catalogue.domain.VehicleLockExpiredEvent;
 import io.carlease.sales.application.port.in.OnVehicleLockExpiredUseCase;
+import io.carlease.sales.domain.VehicleLocksExpiredEvent;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -20,7 +20,7 @@ class VehicleLockExpiredListenerTest {
         List<String> vins = List.of("WBA00000000000101", "WBA00000000000102");
         willDoNothing().given(useCase).handle(vins);
 
-        listener.on(new VehicleLockExpiredEvent(vins));
+        listener.on(new VehicleLocksExpiredEvent(vins));
 
         then(useCase).should().handle(vins);
     }

@@ -8,6 +8,7 @@ import io.carlease.sales.application.port.in.ReserveVehiclesUseCase;
 import io.carlease.sales.application.port.in.SignFleetContractUseCase;
 import io.carlease.sales.application.port.in.ViewFleetContractUseCase;
 import io.carlease.sales.domain.*;
+import io.carlease.shared.domain.BundleType;
 import io.carlease.shared.domain.Amount;
 import io.carlease.shared.domain.Currency;
 import io.carlease.shared.domain.LeaseTerm;
@@ -72,7 +73,7 @@ class FleetContractControllerTest {
             ContractNumber.of(number),
             Customer.of("John Buyer", "ACME AG", "john@example.com"),
             LeaseTerm.of(36),
-            "BALANCED",
+            BundleType.BALANCED,
             List.of(vc),
             Optional.empty()
         );

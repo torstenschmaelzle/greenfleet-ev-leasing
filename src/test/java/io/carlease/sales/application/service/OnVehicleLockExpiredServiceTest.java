@@ -2,6 +2,7 @@ package io.carlease.sales.application.service;
 
 import io.carlease.sales.application.port.out.FleetContractPersistencePort;
 import io.carlease.sales.domain.*;
+import io.carlease.shared.domain.BundleType;
 import io.carlease.shared.domain.Amount;
 import io.carlease.shared.domain.Currency;
 import io.carlease.shared.domain.LeaseTerm;
@@ -37,7 +38,7 @@ class OnVehicleLockExpiredServiceTest {
             ContractNumber.generate(),
             Customer.of("Test", "Test AG", "test@test.com"),
             LeaseTerm.of(36),
-            "BALANCED",
+            BundleType.BALANCED,
             vehicleContracts
         );
     }

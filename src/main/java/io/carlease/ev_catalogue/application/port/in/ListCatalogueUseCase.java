@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ListCatalogueUseCase {
     List<Vehicle> listAll();
+    List<CatalogueVehicleView> listSummaries();
 }
