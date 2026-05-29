@@ -260,6 +260,16 @@ The Spring Boot application starts on **http://localhost:8080**.
 
 #### 2. Start the Frontend
 
+**Environment Variables**
+Some features require API keys that are not committed to the repository.
+Before starting the frontend, create the following file:
+`frontend/.env.local`
+```
+VITE_UNSPLASH_KEY=your_key_here
+```
+This file is gitignored and must never be committed. Obtain the key from a team member or generate one at [unsplash.com/developers](https://unsplash.com/developers).
+In CI/CD the key is injected automatically via the `VITE_UNSPLASH_KEY` GitHub Secret.
+
 ```bash
 cd frontend
 npm install
