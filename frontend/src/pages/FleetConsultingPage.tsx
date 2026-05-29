@@ -6,7 +6,7 @@ import { reserveFleetBundle } from '../api/sales';
 import PageHeader from '../components/PageHeader';
 
 // ─── Unsplash image logic (unchanged) ───────────────────────────────────────
-const UNSPLASH_KEY = 'YOUR_UNSPLASH_ACCESS_KEY';
+const UNSPLASH_KEY = import.meta.env.VITE_UNSPLASH_KEY ?? '';
 const imageCache: Record<string, string | null> = {};
 
 async function resolveImage(brand: string, model: string): Promise<string | null> {
