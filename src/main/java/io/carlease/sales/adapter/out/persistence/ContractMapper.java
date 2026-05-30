@@ -19,10 +19,7 @@ public class ContractMapper {
                 contract.price().getAmountInCents(),
                 contract.price().getCurrency().name(),
                 null,
-                null,
                 contract.isSigned() ? contract.signatureDate().date() : null,
-                null,
-                null,
                 contract.installment().getAmountInCents());
     }
 

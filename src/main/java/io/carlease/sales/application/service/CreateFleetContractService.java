@@ -7,7 +7,10 @@ import io.carlease.shared.domain.BundleType;
 import io.carlease.shared.domain.Amount;
 import io.carlease.shared.domain.Currency;
 import io.carlease.shared.domain.LeaseTerm;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -15,14 +18,18 @@ import java.util.List;
 public class CreateFleetContractService implements CreateFleetContractUseCase {
 
     private final FleetContractPersistencePort fleetContractPersistencePort;
+    private final Logger logger = LoggerFactory.getLogger(CreateFleetContractService.class);
 
     public CreateFleetContractService(FleetContractPersistencePort fleetContractPersistencePort) {
         this.fleetContractPersistencePort = fleetContractPersistencePort;
     }
 
     @Override
+    @Transactional
     public ContractNumber create(String customerName, String customerCompany, String customerEmail,
                                  int leaseTermMonths, BundleType bundleType, List<VehicleEntry> vehicles) {
+        logger.info("Creating fleet contract for customer: {}, {} vehicles, {} months",
+                customerEmail, vehicles.size(), leaseTermMonths);
 
         ContractNumber number = ContractNumber.generate();
         LeaseTerm leaseTerm = LeaseTerm.ofMonths(leaseTermMonths);
@@ -35,6 +42,7 @@ public class CreateFleetContractService implements CreateFleetContractUseCase {
         FleetContract fleetContract = ContractFactory.createFleetContract(number, customer, leaseTerm, bundleType, vehicleContracts);
         fleetContractPersistencePort.save(fleetContract);
 
+        logger.info("Fleet contract created: {}", number.number());
         return number;
     }
 

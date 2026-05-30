@@ -7,6 +7,7 @@ import io.carlease.ev_catalogue.domain.Vehicle;
 import io.carlease.ev_catalogue.domain.VehicleId;
 import io.carlease.ev_catalogue.domain.VehicleNotFoundException;
 import io.carlease.ev_catalogue.domain.VehicleStatus;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,6 +22,7 @@ public class PlaceVehicleUnderContractService implements PlaceVehicleUnderContra
     }
 
     @Override
+    @Transactional
     public void assign(VehicleId vehicleId) {
         Vehicle vehicle = vehiclePersistancePort.findById(vehicleId)
                 .orElseThrow(() -> new VehicleNotFoundException(vehicleId));

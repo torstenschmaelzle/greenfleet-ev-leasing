@@ -28,7 +28,6 @@ public class SignFleetContractService implements SignFleetContractUseCase {
         contract.sign(date);
         fleetContractPersistencePort.save(contract);
 
-        // Transition each vehicle from RESERVED → UNDER_CONTRACT in the EV Catalogue
         contract.vehicleContracts().forEach(vc ->
                 placeVehicleUnderContractPort.placeUnderContract(vc.vehicle().vin()));
     }

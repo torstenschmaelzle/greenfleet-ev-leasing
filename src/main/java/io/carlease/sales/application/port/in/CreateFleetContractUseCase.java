@@ -2,9 +2,9 @@ package io.carlease.sales.application.port.in;
 
 import io.carlease.sales.domain.ContractNumber;
 import io.carlease.shared.domain.BundleType;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Positive;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ public interface CreateFleetContractUseCase {
             @NotBlank(message = "vin must not be blank")
             String vin,
 
-            @Min(value = 0, message = "monthlyInstallmentCents must not be negative")
+            @Positive(message = "monthlyInstallmentCents must be positive")
             long monthlyInstallmentCents,
 
             @NotBlank(message = "currency must not be blank")

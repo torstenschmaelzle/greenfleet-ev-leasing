@@ -1,6 +1,8 @@
 package io.carlease.sales.adapter.in.web;
 
 import io.carlease.sales.domain.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -16,6 +18,8 @@ import java.util.Map;
 @RestControllerAdvice
 public class SalesExceptionHandler extends ResponseEntityExceptionHandler {
 
+    private final Logger logger = LoggerFactory.getLogger(SalesExceptionHandler.class);
+
     // --- Bean Validation failures (@Valid on @RequestBody) ---
 
     @Override
@@ -26,6 +30,7 @@ public class SalesExceptionHandler extends ResponseEntityExceptionHandler {
                 .findFirst()
                 .map(fe -> fe.getField() + ": " + fe.getDefaultMessage())
                 .orElse("Validation failed");
+        logger.warn("Validation failed: {}", message);
         return ResponseEntity.badRequest().body(Map.of("error", message));
     }
 
@@ -33,6 +38,7 @@ public class SalesExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler({InvalidCustomerAttributeException.class, InvalidFleetAttributeException.class})
     public ResponseEntity<Map<String, String>> handleBadRequest(ContractDomainException ex) {
+        logger.warn("Invalid sales input: {}", ex.getMessage());
         return ResponseEntity.badRequest().body(Map.of("error", ex.getMessage()));
     }
 
@@ -40,6 +46,7 @@ public class SalesExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(ContractNotFoundException.class)
     public ResponseEntity<Map<String, String>> handleNotFound(ContractDomainException ex) {
+        logger.warn("Contract not found: {}", ex.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error", ex.getMessage()));
     }
 
@@ -47,6 +54,7 @@ public class SalesExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(ContractAlreadySignedException.class)
     public ResponseEntity<Map<String, String>> handleConflict(ContractAlreadySignedException ex) {
+        logger.warn("Contract already signed: {}", ex.getMessage());
         return ResponseEntity.status(HttpStatus.CONFLICT).body(Map.of("error", ex.getMessage()));
     }
 
@@ -54,6 +62,7 @@ public class SalesExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(ReservationExpiredException.class)
     public ResponseEntity<Map<String, String>> handleReservationExpired(ReservationExpiredException ex) {
+        logger.warn("Reservation expired: {}", ex.getMessage());
         return ResponseEntity.status(HttpStatus.CONFLICT).body(Map.of("error", ex.getMessage()));
     }
 

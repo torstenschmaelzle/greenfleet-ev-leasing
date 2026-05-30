@@ -35,13 +35,7 @@ public class ContractJpaEntity {
 
     private Integer leaseTermInMonths;
 
-    private Double interestPerYear;
-
 	private LocalDate signatureDate;
-
-    private Double downPayment;
-
-    private Double residualValue;
 
     private Long monthlyInstallmentCents;
 

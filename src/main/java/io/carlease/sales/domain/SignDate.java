@@ -3,12 +3,13 @@ package io.carlease.sales.domain;
 import org.jmolecules.ddd.annotation.ValueObject;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 @ValueObject
 public record SignDate(LocalDate date) {
 
 	public static SignDate of(LocalDate date) {
-		assert date != null;
+		Objects.requireNonNull(date, "date must not be null");
 		return new SignDate(date);
 	}
 

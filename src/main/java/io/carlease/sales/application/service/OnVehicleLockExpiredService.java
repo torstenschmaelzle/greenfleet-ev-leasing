@@ -2,6 +2,7 @@ package io.carlease.sales.application.service;
 
 import io.carlease.sales.application.port.in.OnVehicleLockExpiredUseCase;
 import io.carlease.sales.application.port.out.FleetContractPersistencePort;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -18,6 +19,7 @@ public class OnVehicleLockExpiredService implements OnVehicleLockExpiredUseCase 
     }
 
     @Override
+    @Transactional
     public void handle(List<String> vins) {
         Set<String> expiredVins = new HashSet<>(vins);
         fleetContractPersistencePort.listAll().stream()
