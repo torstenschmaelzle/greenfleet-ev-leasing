@@ -8,6 +8,7 @@ import io.carlease.ev_catalogue.domain.Vehicle;
 import io.carlease.ev_catalogue.domain.VehicleId;
 import io.carlease.ev_catalogue.domain.VehicleNotFoundException;
 import io.carlease.ev_catalogue.domain.VehicleStatus;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,6 +23,7 @@ public class LockVehicleService implements LockVehicleUseCase {
     }
 
     @Override
+    @Transactional
     public void lock(VehicleId vehicleId, LockDuration duration) {
         Vehicle vehicle = vehiclePersistancePort.findById(vehicleId)
                 .orElseThrow(() -> new VehicleNotFoundException(vehicleId));

@@ -89,4 +89,21 @@ class SignFleetContractServiceTest {
             then(placePort).should(never()).placeUnderContract(any());
         }
     }
+
+    @Nested
+    class whenVehicleReservationExpired {
+
+        @Test
+        void propagatesReservationExpiredException() {
+            var contract = unsignedContractWithVins("WBA00000000000101");
+            given(persistencePort.with(contract.number())).willReturn(contract);
+            willThrow(new ReservationExpiredException("WBA00000000000101"))
+                    .given(placePort).placeUnderContract("WBA00000000000101");
+
+            assertThatThrownBy(() -> service.sign(contract.number(), SignDate.of(2026, 5, 7)))
+                    .isInstanceOf(ReservationExpiredException.class);
+
+            then(persistencePort).should().save(any());
+        }
+    }
 }

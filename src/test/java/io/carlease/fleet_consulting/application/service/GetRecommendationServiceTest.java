@@ -1,6 +1,5 @@
 package io.carlease.fleet_consulting.application.service;
 
-import io.carlease.fleet_consulting.application.port.out.CalculateInstallmentPort;
 import io.carlease.fleet_consulting.application.port.out.GetVehiclesPort;
 import io.carlease.fleet_consulting.domain.*;
 import io.carlease.shared.domain.Amount;
@@ -15,17 +14,13 @@ import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
 
 class GetRecommendationServiceTest {
 
     private final GetVehiclesPort getVehiclesPort = mock(GetVehiclesPort.class);
-    private final CalculateInstallmentPort calculateInstallmentPort = mock(CalculateInstallmentPort.class);
-    private final GetRecommendationService service = new GetRecommendationService(getVehiclesPort, calculateInstallmentPort);
+    private final GetRecommendationService service = new GetRecommendationService(getVehiclesPort);
 
     private FleetRequirements defaultRequirements() {
         return FleetRequirements.of(
@@ -73,8 +68,6 @@ class GetRecommendationServiceTest {
             given(getVehiclesPort.getVehicles()).willReturn(List.of(
                     availableVehicle("WBA00000000000001", "BMW", "i3", 60000L, 460)
             ));
-            given(calculateInstallmentPort.calculateInstallment(any(), any()))
-                    .willReturn(Installment.of(Amount.ofCents(60000L, Currency.CHF)));
 
             FleetBundleRecommendation result = service.recommend(defaultRequirements(), Optional.empty());
 
@@ -82,17 +75,20 @@ class GetRecommendationServiceTest {
         }
 
         @Test
-        void recommend_callsInstallmentPortForEachVehicle() {
+        void recommend_calculatesInstallmentForEachVehicle() {
             given(getVehiclesPort.getVehicles()).willReturn(List.of(
                     availableVehicle("WBA00000000000001", "BMW", "i3", 60000L, 460),
                     availableVehicle("WBA00000000000002", "Tesla", "Model 3", 80000L, 500)
             ));
-            given(calculateInstallmentPort.calculateInstallment(any(), any()))
-                    .willReturn(Installment.of(Amount.ofCents(60000L, Currency.CHF)));
 
-            service.recommend(defaultRequirements(), Optional.empty());
+            FleetBundleRecommendation result = service.recommend(defaultRequirements(), Optional.empty());
 
-            verify(calculateInstallmentPort, times(2)).calculateInstallment(any(), any());
+            assertThat(result.getBundles()).isNotEmpty();
+            result.getBundles().forEach(bundle ->
+                    bundle.getVehicles().forEach(v ->
+                            assertThat(v.getInstallment().getMonthlyAmount().getAmountInCents()).isPositive()
+                    )
+            );
         }
 
         @Test
@@ -100,8 +96,6 @@ class GetRecommendationServiceTest {
             given(getVehiclesPort.getVehicles()).willReturn(List.of(
                     availableVehicle("WBA00000000000001", "BMW", "i3", 60000L, 460)
             ));
-            given(calculateInstallmentPort.calculateInstallment(any(), any()))
-                    .willReturn(Installment.of(Amount.ofCents(60000L, Currency.CHF)));
 
             FleetBundleRecommendation result = service.recommend(defaultRequirements(), Optional.empty());
 
@@ -123,8 +117,6 @@ class GetRecommendationServiceTest {
                     availableVehicle("WBA00000000000001", "BMW", "i3", 60000L, 460),
                     unavailableVehicle()
             ));
-            given(calculateInstallmentPort.calculateInstallment(any(), any()))
-                    .willReturn(Installment.of(Amount.ofCents(60000L, Currency.CHF)));
 
             FleetBundleRecommendation result = service.recommend(defaultRequirements(), Optional.empty());
 
@@ -138,8 +130,6 @@ class GetRecommendationServiceTest {
         @Test
         void recommend_throwsWhenAllVehiclesUnavailable() {
             given(getVehiclesPort.getVehicles()).willReturn(List.of(unavailableVehicle()));
-            given(calculateInstallmentPort.calculateInstallment(any(), any()))
-                    .willReturn(Installment.of(Amount.ofCents(70000L, Currency.CHF)));
 
             assertThatThrownBy(() -> service.recommend(defaultRequirements(), Optional.empty()))
                     .isInstanceOf(NoVehiclesMatchingRequirementsException.class);

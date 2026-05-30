@@ -1,5 +1,8 @@
 package io.carlease.fleet_consulting.domain;
 
+import org.jmolecules.ddd.annotation.ValueObject;
+
+@ValueObject
 public class VehicleSummaryWithInstallment {
 
     private final VehicleSummary vehicleSummary;

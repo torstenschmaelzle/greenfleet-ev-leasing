@@ -1,10 +1,10 @@
 package io.carlease.fleet_consulting.application.service;
 
+import io.carlease.ev_catalogue.application.port.in.CatalogueVehicleView;
 import io.carlease.ev_catalogue.application.port.out.ListCataloguePort;
 import io.carlease.ev_catalogue.application.service.ListCatalogueService;
 import io.carlease.ev_catalogue.domain.*;
 import io.carlease.fleet_consulting.adapter.out.catalogue.EVCatalogueVehicleAdapter;
-import io.carlease.fleet_consulting.application.port.out.CalculateInstallmentPort;
 import io.carlease.fleet_consulting.application.port.out.GetVehiclesPort;
 import io.carlease.fleet_consulting.domain.*;
 import io.carlease.shared.domain.Amount;
@@ -19,7 +19,6 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.mock;
@@ -83,15 +82,12 @@ class GetRecommendationBoundedContextIntegrationTest {
     class CallerInvokesCalleeWithCorrectData {
 
         private final GetVehiclesPort getVehiclesPort = mock(GetVehiclesPort.class);
-        private final CalculateInstallmentPort calculateInstallmentPort = mock(CalculateInstallmentPort.class);
         private final GetRecommendationService caller =
-                new GetRecommendationService(getVehiclesPort, calculateInstallmentPort);
+                new GetRecommendationService(getVehiclesPort);
 
         @Test
         void callerCallsGetVehiclesAndReflectsReturnedVehiclesInRecommendation() {
             given(getVehiclesPort.getVehicles()).willReturn(List.of(availableVehicleSummary(VIN)));
-            given(calculateInstallmentPort.calculateInstallment(any(), any()))
-                    .willReturn(Installment.of(Amount.ofCents(75000L, Currency.CHF)));
 
             FleetBundleRecommendation result = caller.recommend(defaultRequirements(), Optional.empty());
 
@@ -121,38 +117,35 @@ class GetRecommendationBoundedContextIntegrationTest {
             List<Vehicle> catalogue = List.of(catalogueVehicle(VIN));
             given(listCataloguePort.listAll()).willReturn(catalogue);
 
-            List<Vehicle> result = callee.listAll();
+            List<CatalogueVehicleView> result = callee.listSummaries();
 
             assertThat(result).hasSize(1);
-            assertThat(result.get(0).getVehicleId().getVin()).isEqualTo(VIN);
+            assertThat(result.get(0).vin()).isEqualTo(VIN);
         }
     }
 
 
     // Test 3 – End-to-end integration
     // Wires real implementations of all three classes together.
-    // Only infrastructure ports (ListCataloguePort, CalculateInstallmentPort)
-    // are mocked. Asserts that the VIN from the catalogue reaches the caller's
+    // Only the infrastructure port (ListCataloguePort) is mocked.
+    // Asserts that the VIN from the catalogue reaches the caller's
     // FleetBundleRecommendation return value.
 
     @Nested
     class EndToEndIntegration {
 
         private final ListCataloguePort listCataloguePort = mock(ListCataloguePort.class);
-        private final CalculateInstallmentPort calculateInstallmentPort = mock(CalculateInstallmentPort.class);
 
         private final ListCatalogueService listCatalogueService =
                 new ListCatalogueService(listCataloguePort);
         private final EVCatalogueVehicleAdapter adapter =
                 new EVCatalogueVehicleAdapter(listCatalogueService);
         private final GetRecommendationService caller =
-                new GetRecommendationService(adapter, calculateInstallmentPort);
+                new GetRecommendationService(adapter);
 
         @Test
         void vehicleFromCatalogueAppearsInRecommendationReturnValue() {
             given(listCataloguePort.listAll()).willReturn(List.of(catalogueVehicle(VIN)));
-            given(calculateInstallmentPort.calculateInstallment(any(), any()))
-                    .willReturn(Installment.of(Amount.ofCents(75000L, Currency.CHF)));
 
             FleetBundleRecommendation result = caller.recommend(defaultRequirements(), Optional.empty());
 

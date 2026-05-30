@@ -152,15 +152,14 @@ public class FleetContractSteps {
 
     @And("the contract is not yet signed")
     public void theContractIsNotYetSigned() {
-        // This step exposes the missing @Transactional on SignFleetContractService.sign().
-        // Because there is no transaction wrapping the method, fleetContractPersistencePort.save()
-        // commits the signature_date BEFORE the vehicle state transition throws — leaving the DB
-        // in an inconsistent state. This assertion is expected to FAIL until @Transactional is added.
+        // @Transactional on SignFleetContractService.sign() is what makes this hold:
+        // without it, save() commits the signature_date before the vehicle transition throws,
+        // leaving the DB inconsistent.
         ResponseEntity<Map> response = restTemplate.getForEntity(
                 "/api/sales/fleet-contracts/" + contractNumber, Map.class);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(response.getBody().get("signed"))
-                .as("Contract must NOT be signed when the signing attempt failed — requires @Transactional on SignFleetContractService.sign()")
+                .as("Contract must NOT be signed when the signing attempt failed")
                 .isEqualTo(false);
     }
 
