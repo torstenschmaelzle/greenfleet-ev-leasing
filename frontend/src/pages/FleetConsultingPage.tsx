@@ -165,7 +165,7 @@ function VehicleImageCard({ v }: { v: BundleVehicle }) {
   );
 }
 
-function BundleCard({ bundle, expanded, onToggle, onReserve, reserving, reserveError, reserved }: {
+function BundleCard({ bundle, expanded, onToggle, onReserve, reserving, reserveError, reserved, anyBundleReserved }: {
   bundle: FleetBundle;
   expanded: boolean;
   onToggle: () => void;
@@ -173,6 +173,7 @@ function BundleCard({ bundle, expanded, onToggle, onReserve, reserving, reserveE
   reserving: boolean;
   reserveError: string;
   reserved: boolean;
+  anyBundleReserved: boolean;
 }) {
   const meta = BUNDLE_META[bundle.bundleType] ?? {
     label: bundle.bundleType, accent: 'var(--color-text-muted)', lightBg: 'var(--color-bg)',
@@ -277,13 +278,13 @@ function BundleCard({ bundle, expanded, onToggle, onReserve, reserving, reserveE
         ) : (
           <button
             onClick={onReserve}
-            disabled={reserving}
+            disabled={reserving || anyBundleReserved}
             style={{
               padding: '10px 24px', fontSize: 14, fontWeight: 600,
-              cursor: reserving ? 'default' : 'pointer',
-              background: reserving ? 'var(--color-brand-muted)' : meta.accent,
+              cursor: (reserving || anyBundleReserved) ? 'default' : 'pointer',
+              background: (reserving || anyBundleReserved) ? 'var(--color-brand-muted)' : meta.accent,
               color: 'white', border: 'none', borderRadius: 6,
-              opacity: reserving ? 0.7 : 1,
+              opacity: (reserving || anyBundleReserved) ? 0.7 : 1,
               transition: 'opacity var(--transition-fast)',
             }}
           >
@@ -864,6 +865,7 @@ export default function FleetConsultingPage() {
               reserving={reservingBundle === bundle.bundleType}
               reserveError={reserveErrors[bundle.bundleType] ?? ''}
               reserved={reservedBundle === bundle.bundleType}
+              anyBundleReserved={reservedBundle !== null}
               onReserve={async () => {
                 setReservingBundle(bundle.bundleType);
                 setReserveErrors(prev => ({ ...prev, [bundle.bundleType]: '' }));
