@@ -6,7 +6,7 @@ import { useAuth } from '../context/AuthContext';
 import type { FleetContractResponse } from '../api/sales';
 
 // ─── Unsplash image resolution ────────────────────────────────────────────────
-const UNSPLASH_KEY = 'YOUR_UNSPLASH_ACCESS_KEY';
+const UNSPLASH_KEY = import.meta.env.VITE_UNSPLASH_KEY ?? '';
 const imageCache: Record<string, string | null> = {};
 async function resolveImage(brand: string, model: string): Promise<string | null> {
   const key = `${brand}::${model}`;

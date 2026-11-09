@@ -7,6 +7,7 @@
 ## Table of Contents
 
 - [Overview](#overview)
+- [My contribution](#my-contribution)
 - [Architecture](#architecture)
 - [Bounded Contexts](#bounded-contexts)
 - [Tech Stack](#tech-stack)
@@ -25,9 +26,21 @@
 
 ## Overview
 
-GreenFleet is a web-based EV fleet leasing platform developed as part of the Software Engineering course at the University of St. Gallen (HSG). The system allows fleet managers to discover, compare, and lease electric vehicles through a data-driven recommendation engine, while internal staff can manage the vehicle catalogue and oversee the full contract lifecycle.
+GreenFleet is a web-based EV fleet leasing platform. The system allows fleet managers to discover, compare, and lease electric vehicles through a data-driven recommendation engine, while internal staff can manage the vehicle catalogue and oversee the full contract lifecycle.
 
 The project is implemented following **Domain-Driven Design (DDD)** principles with a strict **Hexagonal Architecture** (Ports & Adapters) to ensure bounded contexts remain decoupled and the domain model stays free of infrastructure concerns.
+
+---
+
+## My contribution
+
+I was one of the main contributors to the codebase (most lines of code added in the team). My focus:
+
+- **Sales bounded context:** built the fleet contract lifecycle with its domain model, application services, ports and adapters, and system tests.
+- **EV Catalogue:** wrote the unit, integration and system tests for all application services, and later enforced the hexagonal architecture boundaries.
+- **Integration:** connected the Fleet Consulting context with the EV Catalogue, and added real-time vehicle status via Server-Sent Events, with automatic release of expired reservations.
+- **Code quality:** led the final refactoring across all contexts (naming, dead code, validation and error handling).
+- **Frontend:** the sales page and the reservation flow in React.
 
 ---
 
@@ -508,8 +521,8 @@ Traefik automatically provisions and renews TLS certificates via **Let's Encrypt
 
 ## Team
 
-BSc Software Engineering · Spring 2026 · University of St. Gallen  
-**Group 04**: Paul Kottmann, Linus Ihringer, Torsten Schmälzle, Valeria Pointet, Kristian Suntev, Nevio Gübeli
+Built by a team in a software engineering course, spring 2026:  
+Paul Kottmann, Linus Ihringer, Torsten Schmälzle, Valeria Pointet, Kristian Suntev, Nevio Gübeli
 
 ---
 

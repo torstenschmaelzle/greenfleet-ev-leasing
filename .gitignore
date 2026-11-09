@@ -2512,3 +2512,7 @@ frontend/generated
 /frontend/node_modules/yallist/yallist.js
 /frontend/node_modules/.package-lock.json
 /.jqwik-database
+
+# OS / logs
+.DS_Store
+logs/

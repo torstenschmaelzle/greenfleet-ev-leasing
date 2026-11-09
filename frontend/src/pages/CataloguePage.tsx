@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import type { Vehicle } from '../types';
 import PageHeader from '../components/PageHeader';
 
-const UNSPLASH_KEY = 'YOUR_UNSPLASH_ACCESS_KEY';
+const UNSPLASH_KEY = import.meta.env.VITE_UNSPLASH_KEY ?? '';
 
 const STATUS_STYLE: Record<string, { bg: string; color: string; label: string; sectionAccent: string }> = {
   AVAILABLE:      { bg: '#dcfce7', color: '#15803d', label: 'Available',      sectionAccent: '#16a34a' },
