@@ -10,6 +10,7 @@
 
 - [Why](#why)
 - [What it does](#what-it-does)
+- [How it was built](#how-it-was-built)
 - [Screenshots](#screenshots)
 - [My contribution](#my-contribution)
 - [Quick start](#quick-start)
@@ -27,6 +28,12 @@ Companies that want to switch their fleet to electric vehicles face many unknown
 - **EV Catalogue:** employees maintain the vehicle catalogue; vehicle availability updates live (Server-Sent Events) and expired reservations are released automatically.
 
 Built with **Domain-Driven Design** and a **hexagonal architecture** (ports and adapters): three bounded contexts with their own domain models, connected only through explicit ports. See [Architecture](docs/architecture.md).
+
+## How it was built
+
+The project followed a domain-driven process: product vision, domain stories, personas and user stories, bounded contexts with BDD scenarios, UML domain model, hexagonal architecture, a test pyramid with 337 tests, and exploratory and usability testing. See [Software engineering process](docs/process.md).
+
+![Domain story: fleet manager happy path](docs/images/diagrams/domain-story-fleet-manager.png)
 
 ## Screenshots
 
@@ -61,7 +68,10 @@ Log in as a customer with any name, email and company, or as an employee with `w
 
 | | |
 |---|---|
-| [Architecture](docs/architecture.md) | Hexagonal architecture, bounded contexts, project structure |
+| [Software engineering process](docs/process.md) | From vision and domain stories to tests and refactoring |
+| [Domain model](docs/domain.md) | Domain stories, bounded contexts, context map, UML |
+| [Requirements](docs/requirements.md) | Personas and user stories |
+| [Architecture](docs/architecture.md) | Hexagonal architecture, tactical DDD, project structure |
 | [Tech stack](docs/tech-stack.md) | Technologies and versions |
 | [Getting started](docs/getting-started.md) | Local setup, Docker, configuration |
 | [API and authentication](docs/api.md) | Login flows and REST endpoints |

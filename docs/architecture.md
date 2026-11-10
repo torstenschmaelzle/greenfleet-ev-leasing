@@ -1,5 +1,7 @@
 # Architecture
 
+![Hexagonal architecture: domain core, application services, ports and adapters](images/diagrams/hexagonal-architecture.png)
+
 The application is structured around **three independent bounded contexts**, each with its own domain model, application services, and adapter layer. All communication between bounded contexts goes through explicit ports.
 
 ```mermaid
@@ -140,6 +142,14 @@ BSC_FS26_SE_GROUP04/
 ├── pom.xml                              # Maven build descriptor
 └── mvnw / mvnw.cmd                      # Maven wrapper
 ```
+
+## Tactical DDD
+
+- **Aggregates** such as `Vehicle` and `FleetContract` enforce their invariants themselves, for example the vehicle state machine and lock rules.
+- **Value objects** (`Amount`, `LeaseTerm`, `VehicleId`, `ReservationLock`, ...) are immutable and validate on creation.
+- **Repositories** are output ports; the JPA implementations are adapters.
+- **Command-query separation** between use cases that change state and those that read it; DTOs at the REST boundary.
+- **Cross-context integration** only through inbound ports, with anti-corruption layers; see the [context map](domain.md#context-map).
 
 ---
 

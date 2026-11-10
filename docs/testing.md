@@ -47,6 +47,12 @@ Cover mathematical invariants in the domain model:
 
 Verify that domain exceptions are thrown correctly for invalid inputs and violated business rules across all bounded contexts.
 
+## Exploratory and usability testing
+
+- **Own exploratory testing** of the Fleet Consulting and EV Catalogue UIs.
+- **Cross-team testing:** another team tested GreenFleet and found, among others, a CO₂ double-division bug and an emission constant that was 24 times too low. Both were fixed, and the finding changed how the team reviewed code.
+- **Usability test** with a participant matching the fleet manager persona, across all main tasks. Reserving, signing and retrieving contracts worked smoothly; the main feedback was that similar-looking bundles needed a short explanation of their ranking, that CO₂ figures needed context, and that the catalogue lacked a range filter.
+
 ---
 
 [← Back to the README](../README.md) · [Documentation index](README.md)
