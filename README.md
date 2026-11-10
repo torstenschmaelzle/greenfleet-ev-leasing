@@ -43,7 +43,7 @@ The project followed a domain-driven process: product vision, domain stories, pe
 | **Vehicle catalogue (employee view)** | **Fleet contracts (employee view)** |
 | ![Vehicle catalogue](docs/images/vehicle-catalogue.jpg) | ![Fleet contracts](docs/images/fleet-contracts.jpg) |
 
-<sub>Vehicle photos: Wikimedia Commons, see [image credits](docs/image-credits.md).</sub>
+<sub>Vehicle photos are loaded from [Unsplash](https://unsplash.com), see [image credits](docs/image-credits.md).</sub>
 
 ## My contribution
 
