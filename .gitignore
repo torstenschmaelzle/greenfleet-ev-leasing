@@ -39,7 +39,6 @@ logs/
 
 # claude
 .claude
-docs/
 
 
 frontend/generated
