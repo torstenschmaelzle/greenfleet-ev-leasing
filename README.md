@@ -4,7 +4,7 @@
 
 **An EV fleet leasing platform: companies describe their fleet needs, get scored bundles of electric vehicles and lease them online.**
 
-![Bundle recommendations: three EV bundles scored by range, CO₂ and cost](docs/images/bundle-recommendations.jpg)
+![Bundle recommendation with the vehicles of a recommended EV bundle](docs/images/bundle-recommendations.jpg)
 
 ## Contents
 
@@ -42,6 +42,8 @@ The project followed a domain-driven process: product vision, domain stories, pe
 | ![Fleet requirements](docs/images/fleet-requirements.jpg) | ![Lease agreement](docs/images/lease-agreement.jpg) |
 | **Vehicle catalogue (employee view)** | **Fleet contracts (employee view)** |
 | ![Vehicle catalogue](docs/images/vehicle-catalogue.jpg) | ![Fleet contracts](docs/images/fleet-contracts.jpg) |
+
+<sub>Vehicle photos: Wikimedia Commons, see [image credits](docs/image-credits.md).</sub>
 
 ## My contribution
 
